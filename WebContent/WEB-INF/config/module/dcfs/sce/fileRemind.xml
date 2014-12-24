@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="fileRemind" namespace="/sce/fileRemind" extends="struts-default" >
+
+		<!-- 递交文件催办查询列表 -->
+	    <action name="findRemindList" class="com.dcfs.sce.fileRemind.FileRemindAction" method="findRemindList">
+	    	<result name="success">/jsp/dcfs/sce/fileRemind/fileremind_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 弹出催办通知查看页面-->
+        <action name="showRemindNotice" class="com.dcfs.sce.fileRemind.FileRemindAction" method="showRemindNotice" >
+			<result name="success">/jsp/dcfs/sce/fileRemind/fileremind_view.jsp</result>
+		</action>
+		
+	</package>
+</struts>

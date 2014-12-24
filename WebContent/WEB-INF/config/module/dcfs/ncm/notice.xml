@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="notice" namespace="/notice" extends="struts-default" >
+		<!-- 办公室通知书打印见列表 -->
+        <action name="BGSNoticePrintList" class="com.dcfs.ncm.BGSnotice.BGSNoticeAction" method="BGSNoticePrintList" >
+			<result name="success">/jsp/dcfs/ncm/BGSnotice/BGS_notice_print_list.jsp</result>
+		</action>
+		<!-- 办公室通知书修改打印 -->
+        <action name="BGSNoticePrintMod" class="com.dcfs.ncm.BGSnotice.BGSNoticeAction" method="BGSNoticePrintMod" >
+			<result name="success">/jsp/dcfs/ncm/BGSnotice/BGS_notice_print_mod.jsp</result>
+		</action>
+		<!-- 办公室通知书修改打印 -->
+        <action name="saveAndPrint" class="com.dcfs.ncm.BGSnotice.BGSNoticeAction" method="saveAndPrint" >
+			<result name="success">/jsp/dcfs/ncm/BGSnotice/BGS_notice_print.jsp</result>
+		</action>
+		<!-- 办公室通知书打印 -->
+        <action name="toPrintAll" class="com.dcfs.ncm.BGSnotice.BGSNoticeAction" method="toPrint" >
+			<result name="success">/jsp/dcfs/ncm/BGSnotice/BGS_notice_print.jsp</result>
+		</action>
+		<!-- 办公室通知书打印 -->
+        <action name="toPrintOne" class="com.dcfs.ncm.BGSnotice.BGSNoticeAction" method="toPrint" >
+			<result name="success">/jsp/dcfs/ncm/BGSnotice/BGS_notice_print_preview.jsp</result>
+		</action>
+		<!-- 办公室通知书寄发 -->
+        <action name="BGSNoticeSend" class="com.dcfs.ncm.BGSnotice.BGSNoticeAction" method="BGSNoticeSend" >
+			<result name="success" type="chain">BGSNoticePrintList</result>
+		</action>
+		
+		
+		
+		
+		<!-- 档案部通知书副本打印列表 -->
+        <action name="DABNoticePrintList" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="DABNoticePrintList" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_notice_print_list.jsp</result>
+		</action>
+		<!-- 档案部通知书副本打印预览 -->
+        <action name="DABNoticePrintPreview" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="DABNoticePrintPreview" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_notice_print_preview.jsp</result>
+		</action>
+		<!-- 档案部通知书副本打印 -->
+        <action name="DABNoticePrint" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="DABNoticePrint" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_notice_print.jsp</result>
+		</action>
+		
+		<!-- 档案部归档立卷列表 -->
+        <action name="DABArchiveFilingList" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="DABArchiveFilingList" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_archive_filing_list.jsp</result>
+		</action>
+		
+		<!-- 档案目录 -->
+        <action name="DABCatalog" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="DABCatalog" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_archive_catalogue.jsp</result>
+		</action>
+		<!-- 档案目录保存 -->
+        <action name="saveDABCatalog" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="saveDABCatalog" >
+			<result name="success" type="chain">DABArchiveFilingList</result>
+		</action>
+		
+		<!-- 档案目录批量打印信息 -->
+        <action name="getDABCatalogInfo" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="getDABCatalogInfo" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_archive_catalog_printAll.jsp</result>
+		</action>
+		
+		<!-- 归档 -->
+        <action name="toDABArchiveFiling" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="toDABArchiveFiling" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_archive_filing.jsp</result>
+		</action>
+		<!-- 归档保存 -->
+        <action name="saveDABArchiveFiling" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="saveDABArchiveFiling" >
+			<result name="success" type="chain">DABArchiveFilingList</result>
+		</action>
+		<!-- 解档 -->
+        <action name="toDABReleaseFiling" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="toDABReleaseFiling" >
+			<result name="success">/jsp/dcfs/ncm/DABnotice/DAB_archive_release_filing.jsp</result>
+		</action>
+		<!-- 解档保存 -->
+        <action name="saveDABReleaseFiling" class="com.dcfs.ncm.DABnotice.DABNoticeCopyAction" method="saveDABReleaseFiling" >
+			<result name="success" type="chain">DABArchiveFilingList</result>
+		</action>
+		
+		<!-- 省厅送养通知书列表 -->
+        <action name="STNoticeList" class="com.dcfs.ncm.STnotice.STNoticeAction" method="STNoticeList" >
+			<result name="success">/jsp/dcfs/ncm/STnotice/ST_notice_list.jsp</result>
+		</action>
+		<!-- 省厅送养通知书查看 -->
+        <action name="STNoticeAttDetail" class="com.dcfs.ncm.STnotice.STNoticeAction" method="noticeAttDetail" >
+			<result name="success">/jsp/dcfs/ncm/STnotice/ST_notice_detail.jsp</result>
+		</action>
+		
+		
+		<!-- 福利院送养通知书列表 -->
+        <action name="FLYNoticeList" class="com.dcfs.ncm.FLYnotice.FLYNoticeAction" method="FLYNoticeList" >
+			<result name="success">/jsp/dcfs/ncm/FLYnotice/FLY_notice_list.jsp</result>
+		</action>
+		<!-- 福利院送养通知书查看 -->
+        <action name="FLYNoticeAttDetail" class="com.dcfs.ncm.STnotice.STNoticeAction" method="noticeAttDetail" >
+			<result name="success">/jsp/dcfs/ncm/FLYnotice/FLY_notice_detail.jsp</result>
+		</action>
+	</package>
+</struts>

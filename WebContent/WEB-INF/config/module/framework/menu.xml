@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="menu" namespace="/menu" extends="struts-default" >
+	     <!--菜单action -->
+		<action name="menuFrame" class="com.hx.framework.appnavigation.menu.MenuAction" >
+			<result name="success">/jsp/framework/menu/menuframe.jsp</result>
+		</action>
+		
+		<!--菜单树-->
+		<action name="menuTree" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuTree">
+			<result name="success">/jsp/framework/menu/menuTree.jsp</result>
+		</action>
+		
+	    <!--菜单查询action -->
+		<action name="menuList" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuList">
+			<result name="success">/jsp/framework/menu/menuList.jsp</result>
+		</action>
+		
+		<!--菜单添加action -->
+		<action name="menuAdd" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuAdd">
+			<result name="success" type="chain">menuList</result>
+		</action>
+		<!--菜单修改action -->
+		<action name="menuModify" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuModify">
+			<result name="success" type="chain">menuList</result>
+		</action>
+		<!--菜单删除action -->
+		<action name="menuDelete" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuDelete">
+			<result name="success" type="chain">menuList</result>
+		</action>
+		<!--菜单添加跳转action -->
+		<action name="menuToAdd" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuToAdd">
+			<result name="success">/jsp/framework/menu/menuAdd.jsp</result>
+		</action>
+		<!--菜单查看action -->
+		<action name="menuDetailed" class="com.hx.framework.appnavigation.menu.MenuAction" method="menuDetailed">
+			<result name="look">/jsp/framework/menu/menuDetail.jsp</result>
+			<result name="modify">/jsp/framework/menu/menuEdit.jsp</result>
+		</action>
+	</package>
+</struts>

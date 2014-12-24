@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="insteadRecord" namespace="/rfm/insteadRecord" extends="struts-default">
+	
+		<!-- 退文代录列表 -->
+	    <action name="insteadRecordList" class="com.dcfs.rfm.insteadRecord.InsteadRecordAction" method="insteadRecordList">
+	    	<result name="success">/jsp/dcfs/rfm/insteadRecord/insteadrecord_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 退文代录选择文件列表 -->
+	    <action name="returnChoiceList" class="com.dcfs.rfm.insteadRecord.InsteadRecordAction" method="returnChoiceList">
+	    	<result name="success">/jsp/dcfs/rfm/insteadRecord/insteadrecord_choicelist.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 跳转退文代录确认页面 -->
+        <action name="confirmShow" class="com.dcfs.rfm.insteadRecord.InsteadRecordAction" method="confirmShow" >
+			<result name="success">/jsp/dcfs/rfm/insteadRecord/insteadrecord_confirmadd.jsp</result>
+		</action>
+		<!-- 保存退文代录确认信息 -->
+	    <action name="insteadRecordSave" class="com.dcfs.rfm.insteadRecord.InsteadRecordAction" method="insteadRecordSave">
+	    	<result name="success" type="chain">/insteadRecord/insteadRecordList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 查看退文详细信息 -->
+        <action name="showReturnFile" class="com.dcfs.rfm.insteadRecord.InsteadRecordAction" method="showReturnFile" >
+			<result name="success">/jsp/dcfs/rfm/insteadRecord/insteadrecord_view.jsp</result>
+		</action>
+		
+	</package>
+</struts>

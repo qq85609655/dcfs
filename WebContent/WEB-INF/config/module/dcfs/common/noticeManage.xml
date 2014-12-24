@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="noticeManage" namespace="/noticeManage" extends="struts-default" >
+      <!-- 维护列表页面-->
+        <action name="weiHuList" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="findList" >
+		<result name="success">/jsp/common/noticeManage/noticeManage_list.jsp</result>
+		</action>
+		<!-- 查询列表页面-->
+		<action name="findList" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="findList" >
+		<result name="success">/jsp/common/noticeManage/noticeManage_selectlist.jsp</result>
+		</action>
+     <!-- 转到添加页面-->
+        <action name="toAdd" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="toAdd" >
+		<result name="success">/jsp/common/noticeManage/noticeManage_add.jsp</result>
+		</action>
+	<!-- 保存-->
+        <action name="save" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="save" >
+		<result name="success" type="chain">weiHuList</result>
+		</action>
+	<!-- 查看修改页面-->
+        <action name="show" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="show" >
+		<result name="show">/jsp/common/noticeManage/noticeManage_detail.jsp</result>
+		<result name="mod">/jsp/common/noticeManage/noticeManage_modify.jsp</result>
+		</action>
+	 <!-- 删除-->
+        <action name="delete" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="delete" >
+		<result name="success" type="chain">weiHuList</result>
+		</action>
+		
+		<!-- 转到首页通知公告列表页面-->
+        <action name="showFirstPage" class="com.hx.oa.abroad.noticeManage.NoticeManageAction" method="showFirstPage" >
+		<result name="success">/jsp/common/noticeManage/noticeManage_FirstPage.jsp</result>
+		</action>
+	</package>
+</struts>

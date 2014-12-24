@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="channel" extends="struts-default" namespace="/channel">
+		<!-- ��Ŀ�б� ��Ŀ�����ҳChannelType!query.action -->
+		<action name="ChannelType" class="com.hx.cms.channel.ChannelTypeAction">
+			<result name="default">/jsp/cms/channelType/channelTypeList.jsp</result>
+			<result name="success">/jsp/cms/channelType/channelTypeList.jsp</result>
+			<result name="add">/jsp/cms/channelType/channelTypeAdd.jsp</result>
+			<result name="modify">/jsp/cms/channelType/channelTypeModify.jsp</result>
+			<result name="detail">/jsp/cms/channelType/channelTypeDetail.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">ChannelType</param>
+				<param name="namespace">/channel</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+		
+		<!-- ��Ŀ -->
+		<action name="Channel" class="com.hx.cms.channel.ChannelAction">
+			<!-- ��Ŀ��ҳ -->
+			<result name="index">/jsp/cms/channel/channelIndex.jsp</result>
+			<result name="default">/jsp/cms/channel/channelIndex.jsp</result>
+			<result name="success">/jsp/cms/channel/channelList.jsp</result>
+			<result name="add">/jsp/cms/channel/channelAdd.jsp</result>
+			<result name="modify">/jsp/cms/channel/channelModify.jsp</result>
+			<result name="channelTree">/jsp/cms/channel/channelTree.jsp</result>
+			<result name="articleTree">/jsp/cms/article/articleTree.jsp</result>
+			<result name="auditTree">/jsp/cms/article/auditTree.jsp</result>
+			<result name="tempTree">/jsp/cms/article/tempTree.jsp</result>
+			<result name="detail">/jsp/cms/channel/channelDetail.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">Channel</param>
+				<param name="namespace">/channel</param>
+				<param name="method">queryChildren</param>
+			</result>
+			<!-- ����Ŀǰ��ɫ����ӵ�еĽ�ɫ�б� -->
+			<result name="queryRole" type="chain">
+				<param name="actionName">RoleGroup</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryRoles</param>
+			</result>
+			
+			<!-- ��������������Ŀ -->
+			<result name="changeChannelTree">/jsp/cms/channel/changeChannelTree.jsp</result>
+			
+			<!-- ���»�ϵͳ��ҳ���� -->
+			<!--  <result name="channelDetail">/jsp/cms/view/channelDetail_jsh.jsp</result>-->
+			<result name="channelDetail">/jsp/cms/view/channelDetailInnerside_jsh.jsp</result>
+			<result name="channelDetailOutside">/jsp/cms/view/channelDetailOutside_jsh.jsp</result>
+			<result name="channelDetailOutsideExt">/jsp/cms/view/channelDetailOutside_ext${sign}_jsh.jsp</result>
+			<result name="channelDetailInnersideExt">/jsp/cms/view/channelDetailInnerside_ext${sign}_jsh.jsp</result>
+			<result name="channelDetailOutsideZJW">/jsp/cms/view/channelDetailOutside_zjw_jsh.jsp</result>
+			<result name="channelDetailForTechSupport">/jsp/cms/view/channelDetailForTechSupport_jsh.jsp</result>
+			<result name="channelDownload">/jsp/cms/view/downloadListInnerside_jsh.jsp</result>
+			<result name="channelDownloadOutside">/jsp/cms/view/downLoadListOutside_jsh.jsp</result>
+			
+			<!-- �ƶ���Ŀ -->
+			<result name="changeChannelFrame">/jsp/cms/channel/changeChannelTreeFrame4Channel.jsp</result>
+			<result name="changeChannel">/jsp/cms/channel/changeChannelTree4Channel.jsp</result>
+		</action>
+		
+		<!-- ��Ŀ��ҳ -->
+		<action name="ChannelIndex" class="com.hx.cms.channel.ChannelAction" method="index">
+			<result name="index">/jsp/cms/channel/channelIndex.jsp</result>
+		</action>
+	</package>
+</struts>

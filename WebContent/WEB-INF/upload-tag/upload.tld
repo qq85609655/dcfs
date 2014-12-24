@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+	<!-- 附件上传标签库 -->
+	<tlibversion>1.1</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>up</shortname>
+	<uri>/WEB-INF/upload-tag/upload</uri>
+	
+	<!-- 前版本
+	<uri>http://uploadComponent/tags</uri>
+	-->
+
+	<!-- 引入样式和js文件标签 -->
+	<tag>
+		<name>uploadResource</name>
+		<!-- 标签处理类 -->
+		<tagclass>com.hx.upload.tags.AttResourcesTag</tagclass>
+		<!-- 标签体为空 -->
+		<bodycontent>empty</bodycontent>
+		<info>
+			isImage:是否为图片缩略图式上传，默认是false &lt;br&gt;
+			checkFlash:是否校验IE安装flash插件，默认是false &lt;br&gt;
+			cancelJquerySupport:是否取消jquery.js文件的支持，默认是false,true为页面不导入jquery.js &lt;br&gt;
+		</info>
+		<attribute>
+			<!-- isImage -->
+			<name>isImage</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- checkFlash -->
+			<name>checkFlash</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- cancelJquerySupport:是否取消jquery.js文件的支持，默认是false,true为页面不导入jquery.js -->
+			<name>cancelJquerySupport</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+
+	<!-- 附件上传主体部分 -->
+	<tag>
+		<name>uploadBody</name>
+		<!-- 标签处理类 -->
+		<tagclass>com.hx.upload.tags.AttUploadTag</tagclass>
+		<!-- 标签体为空 -->
+		<bodycontent>empty</bodycontent>
+		<info>
+			id:唯一标识&lt;br&gt;
+			name:获取包ID的参数名&lt;br&gt;
+			attTypeCode:附件类型CODE值&lt;br&gt;
+			codeName:获取附件类型CODE值的参数名&lt;br&gt;
+			packageId:附件包ID值&lt;br&gt;
+			selectAreaStyle:选择区域style样式(选择框和按钮的外层div)&lt;br&gt;
+			selectFrameStyle:选择框style样式(不包括按钮)&lt;br&gt;
+			queueStyle:附件列表框外层div的style样式&lt;br&gt;
+			queueTableStyle:附件列表框内表格style样式&lt;br&gt;
+			proContainerStyle:上传进度条style样式&lt;br&gt;
+			firstColWidth:附件列表框第一列宽度&lt;br&gt;
+			secondColWidth:附件列表框第二列宽度&lt;br&gt;
+			thirdColWidth:附件列表框第三列宽度&lt;br&gt;
+			forthColWidth:附件列表框第四列宽度&lt;br&gt;
+			buttonClass:上传按钮class样式&lt;br&gt;
+			onMouseUp:上传按钮事件&lt;br&gt;
+			onMouseDown:上传按钮事件&lt;br&gt;
+			onMouseOver:上传按钮事件&lt;br&gt;
+			onMouseOut:上传按钮事件&lt;br&gt;
+			autoUpload:是否自动上传选中附件(不提供上传按钮)&lt;br&gt;
+				true为自动上传&lt;br&gt;
+				false(默认)为手动上传&lt;br&gt;
+			titleLength:标题长度&lt;br&gt;
+			selectTitle:选择框中的提示文字&lt;br&gt;
+			appendOnclick:上传后调用的js方法&lt;br&gt;
+			hiddenSelectTitle:隐藏选择框标题&lt;br&gt;
+			buttonImage:选择框上的图片src地址,可以是外部地址(要加http)&lt;br&gt;
+			buttonTitle:按钮处显示的文字&lt;br&gt;
+			unit:附件上传大小的单位显示【M/MB/兆】可自选设置&lt;br&gt;
+			selectAreaTableStyle:选择框所处table样式&lt;br&gt;
+			topDivClass:顶层div样式class引用&lt;br&gt;
+			showUploadTime:是否显示上传日期，默认false&lt;br&gt;
+			isDelAlert:是否提示删除确认，默认false&lt;br&gt;
+			diskStoreRuleParamValues:磁盘存储接口传递参数&lt;br&gt;
+			smallType:如果附件类别作为大类保存到字段BIG_TYPE,那么需要有个小类信息保存到SMALL_TYPE,使用此属性传入&lt;br&gt;
+			bigType:大类&lt;br&gt;
+			timeWidth:时间信息宽度设置&lt;br&gt;
+			afterDeleteClick删除后事件&lt;br&gt;
+		</info>
+		<attribute>
+			<!-- 上传组件唯一ID -->
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 获取包ID的参数名 -->
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 附件类型CODE -->
+			<name>attTypeCode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 获取包CODE的参数名 -->
+			<name>codeName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 包ID -->
+			<name>packageId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 选择区域样式，即选择框和按钮 -->
+			<name>selectAreaStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 选择框样式 -->
+			<name>selectFrameStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 队列列表样式 -->
+			<name>queueStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 队列列表内的table样式 -->
+			<name>queueTableStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 进度条样式 -->
+			<name>proContainerStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第一列宽度 -->
+			<name>firstColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第二列宽度 -->
+			<name>secondColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第三列宽度 -->
+			<name>thirdColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第四列宽度 -->
+			<name>forthColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式class属性 -->
+			<name>buttonClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseUp属性 -->
+			<name>onMouseUp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseDown属性 -->
+			<name>onMouseDown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseOver属性 -->
+			<name>onMouseOver</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseOut属性 -->
+			<name>onMouseOut</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 是否自动上传选中附件(不提供上传按钮) -->
+			<name>autoUpload</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 标题长度 -->
+			<name>titleLength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框中的提示文字 -->
+			<name>selectTitle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 上传后调用的js方法 -->
+			<name>appendOnclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 隐藏选择框中的所有提示文字 -->
+			<name>hiddenSelectTitle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框上的图片src地址 -->
+			<name>buttonImage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮处显示的文字 -->
+			<name>buttonTitle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 附件上传大小的单位显示【M/MB/兆】可自选设置 -->
+			<name>unit</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框所处table的样式 -->
+			<name>selectAreaTableStyle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 顶层div样式class引用 -->
+			<name>topDivClass</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- showUploadTime:是否显示上传日期，默认false -->
+			<name>showUploadTime</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- isDelAlert:是否提示删除确认，默认false -->
+			<name>isDelAlert</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- diskStoreRuleParamValues:磁盘存储规则接口参数 -->
+			<name>diskStoreRuleParamValues</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- smallType:小类数据 -->
+			<name>smallType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- bigType:大类数据 -->
+			<name>bigType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- timeWidth:时间信息宽度设置 -->
+			<name>timeWidth</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- afterDeleteClick:删除后触发事件 -->
+			<name>afterDeleteClick</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	
+	<!-- 附件上传列表标签 -->
+	<tag>
+		<name>uploadList</name>
+		<!-- 标签处理类 -->
+		<tagclass>com.hx.upload.tags.AttListTag</tagclass>
+		<!-- 标签体为空 -->
+		<bodycontent>empty</bodycontent>
+		<info>
+			id:唯一标识&lt;br&gt;
+			name:获取包ID的参数名&lt;br&gt;
+			attTypeCode:附件类型CODE值&lt;br&gt;
+			codeName:获取附件类型CODE值的参数名&lt;br&gt;
+			packageId:附件包ID值&lt;br&gt;
+			title:附件列表上方的标题名字&lt;br&gt;
+			titleAreaStyle:标题区域样式&lt;br&gt;
+			queueStyle:附件列表框外层div的style样式&lt;br&gt;
+			queueTableStyle:附件列表框内表格style样式&lt;br&gt;
+			proContainerStyle:上传进度条style样式&lt;br&gt;
+			firstColWidth:附件列表框第一列宽度&lt;br&gt;
+			secondColWidth:附件列表框第二列宽度&lt;br&gt;
+			thirdColWidth:附件列表框第三列宽度&lt;br&gt;
+			forthColWidth:附件列表框第四列宽度&lt;br&gt;
+			titleLength:标题长度&lt;br&gt;
+			listCellStyle:列表中标题对应的A标签的样式&lt;br&gt;
+			showUploadTime:是否显示上传日期，默认false&lt;br&gt;
+			smallType:小类&lt;br&gt;
+		</info>
+		<attribute>
+			<!-- 上传组件唯一ID -->
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 获取包ID的参数名 -->
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 附件类型CODE -->
+			<name>attTypeCode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 获取包CODE的参数名 -->
+			<name>codeName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 包ID -->
+			<name>packageId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 附件列表上方的标题名字 -->
+			<name>title</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 标题区域样式 -->
+			<name>titleAreaStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		
+		<attribute>
+			<!-- 队列列表样式 -->
+			<name>queueStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 队列列表内的table样式 -->
+			<name>queueTableStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 进度条样式 -->
+			<name>proContainerStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第一列宽度 -->
+			<name>firstColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第二列宽度 -->
+			<name>secondColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第三列宽度 -->
+			<name>thirdColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第四列宽度 -->
+			<name>forthColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 标题长度 -->
+			<name>titleLength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 列表中标题对应的A标签的样式 -->
+			<name>listCellStyle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- showUploadTime:是否显示上传日期，默认false -->
+			<name>showUploadTime</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 小类 -->
+			<name>smallType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- 附件下载：支持单附件或多附件中列表中的第一个附件 -->
+	<tag>
+		<name>attDownload</name>
+		<tagclass>com.hx.upload.tags.AttDownloadTag</tagclass>
+		<!-- 标签体为空 -->
+		<bodycontent>empty</bodycontent>
+		<info>
+			attId:下载的附件的ID值，且优先级高于packageId属性&lt;br&gt;
+			attTypeCode:附件类型值&lt;br&gt;
+			packageId:只适用于单附件：多附件的话则下载列表中的第一个附件&lt;br&gt;
+			isDownloadList:是否打包下载&lt;br&gt;
+			smallType:小类&lt;br&gt;
+		</info>
+		
+		<attribute>
+			<name>attId</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>attTypeCode</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>packageId</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>isDownloadList</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>smallType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- 上传图片 -->
+	<tag>
+		<name>uploadImage</name>
+		<!-- 标签处理类 -->
+		<tagclass>com.hx.upload.tags.AttImageTag</tagclass>
+		<!-- 标签体为空 -->
+		<bodycontent>empty</bodycontent>
+		<info>
+			id:唯一标识&lt;br&gt;
+			name:获取包ID的参数名&lt;br&gt;
+			attTypeCode:附件类型CODE值&lt;br&gt;
+			codeName:获取附件类型CODE值的参数名&lt;br&gt;
+			packageId:附件包ID值&lt;br&gt;
+			selectAreaStyle:选择区域style样式(选择框和按钮的外层div)&lt;br&gt;
+			selectFrameStyle:选择框style样式(不包括按钮)&lt;br&gt;
+			queueStyle:附件列表框外层div的style样式&lt;br&gt;
+			queueTableStyle:附件列表框内表格style样式&lt;br&gt;
+			proContainerStyle:上传进度条style样式&lt;br&gt;
+			firstColWidth:附件列表框第一列宽度&lt;br&gt;
+			secondColWidth:附件列表框第二列宽度&lt;br&gt;
+			thirdColWidth:附件列表框第三列宽度&lt;br&gt;
+			forthColWidth:附件列表框第四列宽度&lt;br&gt;
+			buttonClass:上传按钮class样式&lt;br&gt;
+			onMouseUp:上传按钮事件&lt;br&gt;
+			onMouseDown:上传按钮事件&lt;br&gt;
+			onMouseOver:上传按钮事件&lt;br&gt;
+			onMouseOut:上传按钮事件&lt;br&gt;
+			autoUpload:是否自动上传选中附件(不提供上传按钮)&lt;br&gt;
+				true为自动上传&lt;br&gt;
+				false(默认)为手动上传&lt;br&gt;
+			titleLength:标题长度&lt;br&gt;
+			selectTitle:选择框中的提示文字&lt;br&gt;
+			appendOnclick:上传后调用的js方法&lt;br&gt;
+			hiddenSelectTitle:隐藏选择框标题&lt;br&gt;
+			buttonImage:选择框上的图片src地址,可以是外部地址(要加http)&lt;br&gt;
+			buttonTitle:按钮处显示的文字&lt;br&gt;
+			imageStyle:图片样式（宽度、高度）&lt;br&gt;
+			hiddenProcess:隐藏进度条&lt;br&gt;
+			hiddenList:隐藏列表&lt;br&gt;
+			selectTitleWidth:选择框宽度&lt;br&gt;
+			selectTitleHeight:选择框高度&lt;br&gt;
+			selectAreaTableStyle:选择框所处table的样式&lt;br&gt;
+			diskStoreRuleParamValues:磁盘存储接口传递参数&lt;br&gt;
+			smallType:如果附件类别作为大类保存到字段BIG_TYPE,那么需要有个小类信息保存到SMALL_TYPE,使用此属性传入&lt;br&gt;
+			bigType:大类&lt;br&gt;
+			afterDeleteClick:大类&lt;br&gt;
+		</info>
+		<attribute>
+			<!-- 上传组件唯一ID -->
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 获取包ID的参数名 -->
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 附件类型CODE -->
+			<name>attTypeCode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 获取包CODE的参数名 -->
+			<name>codeName</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 包ID -->
+			<name>packageId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 选择区域样式，即选择框和按钮 -->
+			<name>selectAreaStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 选择框样式 -->
+			<name>selectFrameStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 队列列表样式 -->
+			<name>queueStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 队列列表内的table样式 -->
+			<name>queueTableStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 进度条样式 -->
+			<name>proContainerStyle</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第一列宽度 -->
+			<name>firstColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第二列宽度 -->
+			<name>secondColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第三列宽度 -->
+			<name>thirdColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 列表框第四列宽度 -->
+			<name>forthColWidth</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式class属性 -->
+			<name>buttonClass</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseUp属性 -->
+			<name>onMouseUp</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseDown属性 -->
+			<name>onMouseDown</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseOver属性 -->
+			<name>onMouseOver</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮样式onMouseOut属性 -->
+			<name>onMouseOut</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 是否自动上传选中附件(不提供上传按钮) -->
+			<name>autoUpload</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 标题长度 -->
+			<name>titleLength</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框中的提示文字 -->
+			<name>selectTitle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 上传后调用的js方法 -->
+			<name>appendOnclick</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 隐藏选择框中的所有提示文字 -->
+			<name>hiddenSelectTitle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框上的图片src地址 -->
+			<name>buttonImage</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 按钮处显示的文字 -->
+			<name>buttonTitle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 图片样式（宽度、高度） -->
+			<name>imageStyle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 隐藏进度条 -->
+			<name>hiddenProcess</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 隐藏列表 -->
+			<name>hiddenList</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框宽度 -->
+			<name>selectTitleWidth</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框高度 -->
+			<name>selectTitleHeight</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框上的文字偏离左侧图标的尺度 -->
+			<name>selectTitlePaddingLeft</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 选择框所处table的样式 -->
+			<name>selectAreaTableStyle</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- diskStoreRuleParamValues:磁盘存储规则接口参数 -->
+			<name>diskStoreRuleParamValues</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- smallType:小类数据 -->
+			<name>smallType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- bigType:大类数据 -->
+			<name>bigType</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- afterDeleteClick:删除后的事件 -->
+			<name>afterDeleteClick</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+</taglib>

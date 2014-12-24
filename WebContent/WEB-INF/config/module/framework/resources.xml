@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="resource" namespace="/resource" extends="struts-default" >
+	    <!--资源查询action -->
+		<action name="resourcesList" class="com.hx.framework.resource.resources.ResourcesAction" method="resourcesList">
+			<result name="success">/jsp/framework/resources/resourcesList.jsp</result>
+		</action>
+		<!--资源添加action -->
+		<action name="resourcesAdd" class="com.hx.framework.resource.resources.ResourcesAction" method="resourcesAdd">
+			<result name="success" type="chain">
+			 <param name="actionName">resourcesList</param>
+			   <param name="namespace">/resource</param>
+			   <param name="method">resourcesList</param>
+			</result>
+		</action>
+		
+		<!-- 组织应用授权 -->
+		<action name="ResourceApp" class="com.hx.framework.resource.app.ResourceAppAction">
+			<result name="organAppAuthorizeTree">/jsp/framework/authorize/organAppAuthorizeTree.jsp</result>
+			<result name="perAppAuthorizeTree">/jsp/framework/authorize/perAppAuthorizeTree.jsp</result>
+			<result name="queryAllotOrgan">/jsp/framework/resources/queryResourceTree.jsp</result>
+			<result name="queryAllotPerApp">/jsp/framework/resources/queryResourcePerAppTree.jsp</result>
+		</action>
+		
+		<!--应用修改action -->
+		<action name="resourcesModify" class="com.hx.framework.resource.resources.ResourcesAction" method="resourcesModify">
+			<result name="success" type="chain">resourcesList</result>
+		</action>
+		<!--应用删除action -->
+		<action name="resourcesDelete" class="com.hx.framework.resource.resources.ResourcesAction" method="resourcesDelete">
+			<result name="success" type="chain">resourcesList</result>
+		</action>
+		<!--资源添加跳转action -->
+		<action name="resourcesToAdd" class="com.hx.framework.resource.resources.ResourcesAction" method="resourcesToAdd">
+			<result name="success">/jsp/framework/resources/resourcesAdd.jsp</result>
+		</action>
+		<!--资源查看action -->
+		<action name="resourcesDetailed" class="com.hx.framework.resource.resources.ResourcesAction" method="resourcesDetailed">
+			<result name="look">/jsp/framework/resources/resourcesDetail.jsp</result>
+			<result name="modify">/jsp/framework/resources/resourcesEdit.jsp</result>
+		</action>
+		<!--根据资源生成菜单action -->
+		<action name="addMenue" class="com.hx.framework.resource.resources.ResourcesAction" method="addMenue">
+			<result name="success" type="chain">resourcesList</result>
+		</action>
+	</package>
+</struts>

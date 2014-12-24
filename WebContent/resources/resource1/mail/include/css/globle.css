@@ -1,0 +1,994 @@
+HTML {
+	
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+DIV {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+SPAN {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+IMG {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+B {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+TEXTAREA {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+SELECT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+A {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+TABLE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+TR {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: verdana,Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: none
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; BORDER-COLLAPSE: collapse
+}
+TABLE {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; BORDER-COLLAPSE: collapse
+}
+BODY.gb {
+	BACKGROUND-POSITION: -1411px 0px; BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #fff; min-width: 680px
+}
+.btnFnt {
+	BACKGROUND-POSITION: 0px -453px; CURSOR: pointer; PADDING-TOP: 2px; HEIGHT: 20px
+}
+UNKNOWN {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+.syBtn {
+	BORDER-RIGHT: 0px; BACKGROUND-POSITION: -1198px -13px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 69px; CURSOR: pointer; COLOR: #333; PADDING-TOP: 2px; BORDER-BOTTOM: 0px; HEIGHT: 24px; BACKGROUND-COLOR: transparent
+}
+.txtIpt {
+	BACKGROUND-POSITION: 0px -1698px; PADDING-LEFT: 2px; PADDING-TOP: 2px; HEIGHT: 20px; BACKGROUND-COLOR: #fff
+}
+.txtInput {
+	BACKGROUND-POSITION: 0px -1698px; PADDING-LEFT: 2px; PADDING-TOP: 2px; HEIGHT: 20px; BACKGROUND-COLOR: #fff
+}
+.optDinpt {
+	BACKGROUND-POSITION: 0px -1698px; PADDING-LEFT: 2px; PADDING-TOP: 2px; HEIGHT: 20px; BACKGROUND-COLOR: #fff
+}
+.tiOn {
+	BACKGROUND-COLOR: #ffc
+}
+.fLe {
+	FLOAT: left
+}
+.fLeft {
+	FLOAT: left
+}
+.fRi {
+	FLOAT: right
+}
+.fRig {
+	FLOAT: right
+}
+.hide {
+	DISPLAY: none
+}
+.clear {
+	CLEAR: both; FONT-SIZE: 0px; OVERFLOW: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; BACKGROUND-COLOR: transparent
+}
+.wd {
+	WIDTH: 100%
+}
+.bdr1w {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.gMenu {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.gMenu .bdy {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.gSipt {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.opWin {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.wbdyOut {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.wbdy {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.txInput {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.fLst {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.SpcBar {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.fBdy {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.opt_m_mob {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.optDinpt {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.optDTb TD {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.optTSY {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.newmAlert {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+TABLE.autofinish {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.gLoading {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.fcWin {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.cmpOpt {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.txtIpt {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.txtInput {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.optDinpt {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+.sysWin2 {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid
+}
+A.btnClose {
+	BACKGROUND-POSITION: -1693px -6px; DISPLAY: block; WIDTH: 14px; HEIGHT: 14px; BACKGROUND-COLOR: #000000
+}
+A.btnClose:hover {
+	BACKGROUND-POSITION: -1718px -6px
+}
+.sysTopMsg {
+	MARGIN-TOP: -1px; WIDTH: 100%; HEIGHT: 0px
+}
+.sysTopMsg TD {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: -2px -59px; PADDING-LEFT: 25px; PADDING-BOTTOM: 0px; COLOR: #525b65; LINE-HEIGHT: 22px; PADDING-TOP: 0px
+}
+.sysTopMsg A {
+	COLOR: #525b65; TEXT-DECORATION: underline
+}
+.sysTopMsg A:hover {
+	COLOR: #333
+}
+.gMenu {
+	Z-INDEX: 99; OVERFLOW: hidden; POSITION: absolute; TEXT-OVERFLOW: ellipsis; BACKGROUND-COLOR: #fff
+}
+.gMenu .bdy {
+	BORDER-LEFT-COLOR: #fff; BORDER-BOTTOM-COLOR: #fff; BORDER-TOP-COLOR: #fff; HEIGHT: 100%; BORDER-RIGHT-COLOR: #fff
+}
+.gMenuOpt A {
+	PADDING-RIGHT: 4px; DISPLAY: block; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 100%; PADDING-TOP: 4px; TEXT-OVERFLOW: ellipsis
+}
+UNKNOWN {
+	WIDTH: auto
+}
+.gMenuOpt A:hover {
+	TEXT-DECORATION: none
+}
+.gMenuOpt A.sub {
+	BACKGROUND-POSITION: -224px -76px
+}
+.gMenuOpt A.sub:hover {
+	BACKGROUND-POSITION: -414px -76px
+}
+.gMenuOpt A.itemOn {
+	BACKGROUND-POSITION: -414px -76px
+}
+.spline {
+	FONT-SIZE: 1px; HEIGHT: 1px
+}
+.gLoading {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 6px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; POSITION: absolute
+}
+.gNewFTip {
+	OVERFLOW: hidden; WIDTH: 214px; COLOR: #e31529; POSITION: absolute; HEIGHT: 86px
+}
+.gNewFTip .bdy {
+	POSITION: relative
+}
+.gNewFTip .bdy .clsWin {
+	RIGHT: 7px; POSITION: absolute; TOP: -7px
+}
+.gTop {
+	POSITION: relative; HEIGHT: 91px; BACKGROUND-COLOR: #fff
+}
+.gLogo {
+	LEFT: 12px; POSITION: relative; TOP: 10px
+}
+.usrMsg {
+	LEFT: 159px; POSITION: absolute; TOP: 19px
+}
+.tLink {
+	RIGHT: 14px; COLOR: #999; POSITION: absolute; TOP: 19px
+}
+.gNav {
+	LEFT: 7px; BOTTOM: -1px; POSITION: absolute
+}
+UNKNOWN {
+	BOTTOM: 0px
+}
+.gNav LI {
+	FLOAT: left; WIDTH: 104px; POSITION: relative; HEIGHT: 39px
+}
+.gNav LI A {
+	DISPLAY: block; FONT-WEIGHT: bold; WIDTH: 91px; LINE-HEIGHT: 39px; POSITION: relative; HEIGHT: 39px; TEXT-ALIGN: center
+}
+.gNav LI A:hover {
+	TEXT-DECORATION: none
+}
+.gNav LI A.on {
+	BACKGROUND-POSITION: -201px -41px
+}
+.gNav LI A.on:hover {
+	TEXT-DECORATION: none
+}
+.gSrh {
+	RIGHT: 0px; WIDTH: 194px; BOTTOM: 12px; POSITION: absolute; HEIGHT: 20px
+}
+.gSipt {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: 0px -968px; DISPLAY: block; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; WIDTH: 151px; PADDING-TOP: 2px; HEIGHT: 20px
+}
+.gSrh .gSipt {
+	BACKGROUND-COLOR: #fff
+}
+A.srhBtn {
+	BACKGROUND-POSITION: -281px -5px; DISPLAY: block; WIDTH: 22px; HEIGHT: 20px
+}
+A.srhBtn:hover {
+	BACKGROUND-POSITION: -309px -5px
+}
+A.AdsrhBtn {
+	BACKGROUND-POSITION: -1320px -15px; DISPLAY: block; WIDTH: 9px; HEIGHT: 20px
+}
+A.AdsrhBtn:hover {
+	BACKGROUND-POSITION: -1340px -15px
+}
+.srhBtn B {
+	DISPLAY: none
+}
+.AdsrhBtn B {
+	DISPLAY: none
+}
+.gSrh_Adv {
+	BORDER-RIGHT: #69788c 1px solid; PADDING-RIGHT: 4px; BORDER-TOP: #69788c 1px solid; PADDING-LEFT: 4px; PADDING-BOTTOM: 4px; BORDER-LEFT: #69788c 1px solid; WIDTH: 104px; PADDING-TOP: 4px; BORDER-BOTTOM: #69788c 1px solid; POSITION: absolute; BACKGROUND-COLOR: #fdfdfd
+}
+.gSrh_Adv A {
+	BORDER-RIGHT: #fdfdfd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fdfdfd 1px solid; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #fdfdfd 1px solid; CURSOR: hand; COLOR: #46618c; PADDING-TOP: 5px; BORDER-BOTTOM: #fdfdfd 1px solid; HEIGHT: 22px; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+.gSrh_Adv A:hover {
+	BORDER-RIGHT: #fdfdfd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fdfdfd 1px solid; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #fdfdfd 1px solid; CURSOR: hand; COLOR: #46618c; PADDING-TOP: 5px; BORDER-BOTTOM: #fdfdfd 1px solid; HEIGHT: 22px; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+.gSrh_Adv A:active {
+	BORDER-RIGHT: #fdfdfd 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #fdfdfd 1px solid; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #fdfdfd 1px solid; CURSOR: hand; COLOR: #46618c; PADDING-TOP: 5px; BORDER-BOTTOM: #fdfdfd 1px solid; HEIGHT: 22px; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+.gSrh_Adv A:hover {
+	BORDER-RIGHT: #ffc467 1px solid; BORDER-TOP: #ffc467 1px solid; BACKGROUND: #ffeda1; BORDER-LEFT: #ffc467 1px solid; BORDER-BOTTOM: #ffc467 1px solid
+}
+.gSrh_Adv A:active {
+	BORDER-RIGHT: #ffc467 1px solid; BORDER-TOP: #ffc467 1px solid; BACKGROUND: #ffeda1; BORDER-LEFT: #ffc467 1px solid; BORDER-BOTTOM: #ffc467 1px solid
+}
+.gSrh_Adv_l {
+	MARGIN-TOP: 1px; FONT-SIZE: 1px; MARGIN-BOTTOM: 2px; BORDER-BOTTOM: #d0d8e0 1px solid; HEIGHT: 1px
+}
+.spl {
+	BACKGROUND-POSITION: -109px -13px; DISPLAY: block; WIDTH: 2px; POSITION: absolute; TOP: 60px; HEIGHT: 20px
+}
+#sl1 {
+	LEFT: 103px
+}
+#sl2 {
+	LEFT: 207px
+}
+#sl3 {
+	LEFT: 311px
+}
+#sl4 {
+	LEFT: 415px
+}
+.gMain {
+	WIDTH: 100%
+}
+.gMain TR.gMtr {
+	VERTICAL-ALIGN: top
+}
+.gLe {
+	PADDING-BOTTOM: 15px; VERTICAL-ALIGN: top; WIDTH: 189px
+}
+.gRi {
+	VERTICAL-ALIGN: top
+}
+.gMbtn {
+	WIDTH: 188px; HEIGHT: 36px
+}
+.gMbtn A {
+	DISPLAY: block; HEIGHT: 36px
+}
+A.gCmBtn {
+	BACKGROUND-POSITION: -4px -5px; FLOAT: left; WIDTH: 91px
+}
+A.gCmBtn:hover {
+	BACKGROUND-POSITION: -4px -43px
+}
+A.gWmBtn {
+	BACKGROUND-POSITION: -95px -5px; FLOAT: left; WIDTH: 97px
+}
+A.gWmBtn:hover {
+	BACKGROUND-POSITION: -95px -43px
+}
+.gFd {
+	MARGIN: 5px 0px 0px 10px; WIDTH: 168px
+}
+.gfTit {
+	BACKGROUND-POSITION: -198px -1px; MARGIN-BOTTOM: 2px; POSITION: relative; HEIGHT: 29px
+}
+A.gfName {
+	FONT-WEIGHT: normal; LEFT: 21px; POSITION: absolute; TOP: 12px
+}
+A.gfName:hover {
+	TEXT-DECORATION: none
+}
+A.clsFd {
+	BACKGROUND-POSITION: -532px -26px; DISPLAY: block; LEFT: 3px; WIDTH: 14px; POSITION: absolute; TOP: 12px; HEIGHT: 14px
+}
+A.clsFd:hover {
+	BACKGROUND-POSITION: -549px -26px
+}
+A.opnFd {
+	BACKGROUND-POSITION: -532px -40px; DISPLAY: block; LEFT: 3px; WIDTH: 14px; POSITION: absolute; TOP: 12px; HEIGHT: 14px
+}
+A.opnFd:hover {
+	BACKGROUND-POSITION: -549px -40px
+}
+.addFd {
+	BACKGROUND-POSITION: -568px -25px; DISPLAY: block; RIGHT: 10px; WIDTH: 14px; POSITION: absolute; TOP: 12px; HEIGHT: 14px
+}
+.wjjGl {
+	BACKGROUND-POSITION: -1374px -18px; DISPLAY: block; RIGHT: 10px; WIDTH: 14px; POSITION: absolute; TOP: 12px; HEIGHT: 14px
+}
+A.addFd:hover {
+	BACKGROUND-POSITION: -588px -25px
+}
+.gFdBdy LI {
+	POSITION: relative; HEIGHT: 24px
+}
+.fpLstTip {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; COLOR: #777; LINE-HEIGHT: 160%; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.flTCtn {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; MARGIN: 0px 10px; PADDING-TOP: 3px
+}
+LI.fpLst1 {
+	OVERFLOW-X: hidden; OVERFLOW: auto; HEIGHT: 250px! important; TEXT-OVERFLOW: ellipsis
+}
+LI.fdLst1 {
+	OVERFLOW-X: hidden; OVERFLOW: auto; HEIGHT: 130px! important; TEXT-OVERFLOW: ellipsis
+}
+UNKNOWN {
+	HEIGHT: auto! important
+}
+UNKNOWN {
+	HEIGHT: auto! important
+}
+UNKNOWN {
+	HEIGHT: 25px
+}
+.gFdBdy LI.on {
+	BACKGROUND-POSITION: -346px -3px
+}
+.gFdBdy LI B.icos {
+	DISPLAY: block; FONT-SIZE: 1px; LEFT: 10px; WIDTH: 17px; POSITION: absolute; TOP: 6px; HEIGHT: 16px
+}
+.icoIbx {
+	BACKGROUND-POSITION: -9px -7px
+}
+.icoDft {
+	BACKGROUND-POSITION: -36px -7px
+}
+.icoSnt {
+	BACKGROUND-POSITION: -61px -7px
+}
+.icoDel {
+	BACKGROUND-POSITION: -88px -7px
+}
+.icoSpm {
+	BACKGROUND-POSITION: -114px -7px
+}
+.icomFd {
+	BACKGROUND-POSITION: -142px -8px
+}
+.icomFd2 {
+	BACKGROUND-POSITION: -228px -7px
+}
+.icoPsn {
+	BACKGROUND-POSITION: -168px -6px; MARGIN-TOP: -1px
+}
+A.gfNm {
+	padding:6px 0px 0px 33px;POSITION: absolute;
+}
+SPAN.gfNm {
+	LEFT: 33px; POSITION: absolute; TOP: 7px
+}
+A.gfNm {
+	DISPLAY: block; OVERFLOW: hidden; WIDTH: 150px; WHITE-SPACE: nowrap; HEIGHT: 24px
+}
+UNKNOWN {
+	TOP: 4px
+}
+SPAN.gfNm {
+	LEFT: 24px
+}
+A.gfNm:hover {
+	TEXT-DECORATION: none;
+}
+A.GmFd {
+	BACKGROUND-POSITION: -568px -48px; RIGHT: 0px; WIDTH: 14px; POSITION: absolute; TOP: 9px; HEIGHT: 14px
+}
+A.GmFd:hover {
+	BACKGROUND-POSITION: -587px -48px
+}
+A.EptFd {
+	BACKGROUND-POSITION: -610px -24px; RIGHT: 6px; WIDTH: 14px; POSITION: absolute; TOP: 6px; HEIGHT: 14px
+}
+A.EptFd:hover {
+	BACKGROUND-POSITION: -632px -24px
+}
+.gFdBdy LI.bar {
+	HEIGHT: 6px
+}
+.clsBar {
+	BACKGROUND-POSITION: -341px -37px; DISPLAY: block; WIDTH: 168px; HEIGHT: 11px
+}
+.clsBar:hover {
+	BACKGROUND-POSITION: -341px -55px
+}
+.expBar {
+	BACKGROUND-POSITION: -157px -37px; DISPLAY: block; WIDTH: 168px; HEIGHT: 11px
+}
+.expBar:hover {
+	BACKGROUND-POSITION: -157px -55px
+}
+LI.mIfoBar0 {
+	BACKGROUND-POSITION: -534px -9px; MARGIN-TOP: -10px; FONT-SIZE: 1px; MARGIN-BOTTOM: -1px; HEIGHT: 2px
+}
+UNKNOWN {
+	MARGIN-TOP: 1px; MARGIN-BOTTOM: 1px; HEIGHT: 2px
+}
+LI.mIfoBar {
+	BACKGROUND-POSITION: -534px 18px; HEIGHT: 29px
+}
+A.expBtn {
+	BACKGROUND-POSITION: -658px -25px; MARGIN-TOP: 1px; DISPLAY: block; FLOAT: left; WIDTH: 14px; HEIGHT: 14px
+}
+A.expBtn:hover {
+	BACKGROUND-POSITION: -681px -25px
+}
+LI.addPsnBar {
+	MARGIN-TOP: 5px; HEIGHT: 55px
+}
+UNKNOWN {
+	MARGIN-TOP: 0px; HEIGHT: 65px
+}
+.addPsnBar .tit {
+	PADDING-RIGHT: 4px; BACKGROUND-POSITION: -2px -95px; PADDING-LEFT: 10px; PADDING-TOP: 8px; HEIGHT: 23px
+}
+.addPsnBar .tit SPAN {
+	FLOAT: left; COLOR: #333
+}
+A.btnCls {
+	BACKGROUND-POSITION: -708px -26px; MARGIN-TOP: 1px; DISPLAY: block; FLOAT: right; WIDTH: 16px; HEIGHT: 16px
+}
+A.btnCls:hover {
+	BACKGROUND-POSITION: -729px -26px
+}
+.addPsnBar .bdy {
+	MARGIN-TOP: 2px; PADDING-LEFT: 10px
+}
+.gSevBdy LI {
+	Padding:6px 0px 0px 17px; POSITION: relative; HEIGHT: 24px
+}
+UNKNOWN {
+	HEIGHT: 22px
+}
+.gSevBdy LI A.clsFd {
+	LEFT: 17px; POSITION: absolute; TOP: 6px
+}
+.gSevBdy LI A.opnFd {
+	LEFT: 17px; POSITION: absolute; TOP: 6px
+}
+LI.subBar {
+	MARGIN-TOP: -3px; MARGIN-BOTTOM: 3px; HEIGHT: 19px
+}
+.gTlBar .on {
+	BACKGROUND-POSITION: 0px -250px
+}
+.gTlBar .click {
+	BACKGROUND-POSITION: 0px -291px
+}
+.btnLe {
+	BACKGROUND-POSITION: 0px 0px; LEFT: 0px; WIDTH: 5px; POSITION: absolute; TOP: 0px; HEIGHT: 26px
+}
+.gTlBar .on .btnLe {
+	BACKGROUND-POSITION: -757px -16px
+}
+.gTlBar .click .btnLe {
+	BACKGROUND-POSITION: -757px -57px
+}
+.btnRi {
+	BACKGROUND-POSITION: 0px 0px; RIGHT: 0px; WIDTH: 5px; POSITION: absolute; TOP: 0px; HEIGHT: 26px
+}
+.gTlBar .on .btnRi {
+	BACKGROUND-POSITION: -781px -16px; MARGIN-RIGHT: -1px
+}
+.gTlBar .click .btnRi {
+	BACKGROUND-POSITION: -781px -57px
+}
+.icoBtn {
+	DISPLAY: block; FONT-SIZE: 1px; FLOAT: left; MARGIN: 4px 0px 0px 4px; WIDTH: 20px; HEIGHT: 17px
+}
+.click .icoBtn {
+	MARGIN: 5px 0px 0px 4px
+}
+.btnTxt {
+	FLOAT: left; MARGIN: 7px 0px 0px 5px; COLOR: #333
+}
+.on .btnTxt {
+	COLOR: #000
+}
+.click .btnTxt {
+	MARGIN: 8px 0px 0px 5px
+}
+.btnDrop {
+	BACKGROUND-POSITION: -809px -57px; FLOAT: right; WIDTH: 16px; HEIGHT: 26px
+}
+.btnDrop2 {
+	BACKGROUND-POSITION: -809px -57px; FLOAT: right; WIDTH: 16px; HEIGHT: 26px
+}
+.gTlBar .on .btnDrop {
+	BACKGROUND-POSITION: -840px -57px
+}
+.gTlBar .click .btnDrop {
+	BACKGROUND-POSITION: -840px -56px
+}
+.gTlBar .on .btnDrop2 {
+	BACKGROUND-POSITION: -809px -57px
+}
+.gTlBar .click .btnDrop2 {
+	BACKGROUND-POSITION: -809px -56px
+}
+.expMenu {
+	BORDER-RIGHT: #fff 1px solid; BORDER-TOP: 0px; BORDER-LEFT: #fff 1px solid; WIDTH: 100px; BORDER-BOTTOM: #fff 1px solid; POSITION: absolute; BACKGROUND-COLOR: #efefef
+}
+.expMenu .bdy {
+	BORDER-RIGHT: #333 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; BORDER-LEFT: #999 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #333 1px solid
+}
+.expMenu A {
+	DISPLAY: block; PADDING-LEFT: 8px; LINE-HEIGHT: 23px; HEIGHT: 23px
+}
+.expMenu A:hover {
+	BACKGROUND-COLOR: #ccc; TEXT-DECORATION: none
+}
+.expMenu A.sep {
+	BORDER-TOP: #999 1px solid
+}
+.expMenu A.m1A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m2A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m3A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m4A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m5A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m6A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m7A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m8A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A.m15A {
+	PADDING-LEFT: 20px; POSITION: relative
+}
+.expMenu A B.mbm {
+	DISPLAY: block; LEFT: 3px; WIDTH: 14px; CURSOR: hand; POSITION: absolute; TOP: 2px; HEIGHT: 14px
+}
+
+.icoNdf {
+	BACKGROUND-POSITION: -257px -36px
+}
+.icoLcf {
+	BACKGROUND-POSITION: -279px -36px
+}
+.gp {
+	MARGIN: 4px 0px -2px; COLOR: #333; POSITION: relative; HEIGHT: 19px
+}
+.gp .bgF1 {
+	LEFT: 0px; TOP: 2px
+}
+.gp .gpTit {
+	DISPLAY: block; MARGIN-LEFT: 16px; COLOR: #000
+}
+INPUT.addfile {
+	FILTER: alpha(opacity=0); LEFT: -3px; WIDTH: 80px; CURSOR: hand; POSITION: absolute; TOP: 5px; HEIGHT: 18px; opacity: 0
+}
+.gSus {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 11px; PADDING-BOTTOM: 0px; PADDING-TOP: 11px
+}
+.gSLe {
+	FLOAT: left; WIDTH: 400px
+}
+.gSus H2 {
+	COLOR: #237630; POSITION: relative; HEIGHT: 20px
+}
+.icoSus {
+	BACKGROUND-POSITION: -1230px -37px; DISPLAY: block; FONT-SIZE: 0px; WIDTH: 17px; HEIGHT: 17px
+}
+.gSTit {
+	DISPLAY: block; FONT-SIZE: 14px; MARGIN: 2px 0px 0px 6px
+}
+.cmLogo {
+	BACKGROUND-POSITION: -1204px -61px; DISPLAY: block; RIGHT: -14px; WIDTH: 139px; POSITION: absolute; TOP: -2px; HEIGHT: 32px
+}
+.gSusBdy {
+	MARGIN: 20px 0px 0px 20px; COLOR: #666
+}
+.gSusBdy .row {
+	MARGIN: 6px 0px; FONT-FAMILY: "ËÎÌו"
+}
+.gSusBdy .row2 {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 15px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.susTb {
+	TABLE-LAYOUT: fixed; MARGIN-TOP: 5px; WIDTH: 100%
+}
+.susTb TD {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 15px; PADDING-BOTTOM: 5px; OVERFLOW: hidden; COLOR: #595959; PADDING-TOP: 5px; WHITE-SPACE: nowrap; TEXT-OVERFLOW: ellipsis; TEXT-ALIGN: left
+}
+.gSaddNew {
+	WIDTH: 360px; POSITION: relative; HEIGHT: 160px; BACKGROUND-COLOR: #fff
+}
+.gSaddNew INPUT {
+	COLOR: #000
+}
+.gSaddNew .name {
+	LEFT: 9px; WIDTH: 70px; POSITION: absolute; TOP: 12px; TEXT-ALIGN: right
+}
+.gSaddNew .iptName {
+	LEFT: 90px; WIDTH: 100px; POSITION: absolute; TOP: 10px
+}
+.gSaddNew .eml {
+	LEFT: 9px; WIDTH: 70px; POSITION: absolute; TOP: 42px; TEXT-ALIGN: right
+}
+.gSaddNew .iptEml {
+	LEFT: 90px; WIDTH: 180px; POSITION: absolute; TOP: 40px
+}
+.gSaddNew .gup {
+	LEFT: 9px; WIDTH: 70px; POSITION: absolute; TOP: 72px; TEXT-ALIGN: right
+}
+.gSaddNew .selGup {
+	LEFT: 90px; POSITION: absolute; TOP: 70px
+}
+.gSaddNew .phn {
+	LEFT: 9px; WIDTH: 70px; POSITION: absolute; TOP: 102px; TEXT-ALIGN: right
+}
+.gSaddNew .iptphn {
+	LEFT: 90px; WIDTH: 180px; POSITION: absolute; TOP: 100px
+}
+.gSaddNew .btnFnt {
+	LEFT: 90px; WIDTH: 63px; POSITION: absolute; TOP: 130px
+}
+.gSaddNew .btnFntOn {
+	LEFT: 90px; WIDTH: 63px; POSITION: absolute; TOP: 130px
+}
+.gSaddNew .bF2 {
+	LEFT: 170px; WIDTH: 63px; POSITION: absolute; TOP: 130px
+}
+.gSlnk {
+	MARGIN: 17px 0px 0px 3px; COLOR: #999
+}
+.susIfmAd {
+	MARGIN: 3px 0px; WIDTH: 390px; HEIGHT: 20px
+}
+.gSRi {
+	FLOAT: left; MARGIN-LEFT: 18px
+}
+.gSev {
+	PADDING-TOP: 12px
+}
+.gSbdy {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 5px; CURSOR: hand; PADDING-TOP: 5px
+}
+.gSbdy H2 {
+	BACKGROUND-POSITION: 0px -893px; MARGIN-BOTTOM: 5px; POSITION: relative; HEIGHT: 23px
+}
+.gSbdy H2 .tit {
+	PADDING-RIGHT: 4px; DISPLAY: block; PADDING-LEFT: 4px; LEFT: 10px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; POSITION: absolute; TOP: 4px; BACKGROUND-COLOR: #fff
+}
+.gSbdy H2 .tit A:hover {
+	TEXT-DECORATION: none
+}
+.gSbdy P A:hover {
+	TEXT-DECORATION: none
+}
+.gSbdy P {
+	MARGIN: 5px; COLOR: #666; LINE-HEIGHT: 190%
+}
+.gSbdy P A {
+	COLOR: #666
+}
+.gSev .on P {
+	MARGIN: 5px; COLOR: #000; LINE-HEIGHT: 190%
+}
+.gSev .on P A {
+	COLOR: #000
+}
+.iHeadWin {
+	WIDTH: 120px; BACKGROUND-COLOR: #fff
+}
+.iHeadWin .bdy {
+	TEXT-ALIGN: center
+}
+.iHeadWin .p2Pic {
+	MARGIN: 5px auto
+}
+.iHeadWin .p2Name {
+	FONT-WEIGHT: bold; MARGIN-BOTTOM: 5px; COLOR: #333
+}
+.dragDiv {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; OVERFLOW: hidden; BORDER-LEFT: 1px solid; WIDTH: 250px; BORDER-BOTTOM: 1px solid
+}
+.dragIconBot {
+	PADDING-LEFT: 2px; BACKGROUND: #acda2e; FLOAT: left; WIDTH: 22px; HEIGHT: 22px
+}
+.dragIconBot2 {
+	PADDING-LEFT: 2px; BACKGROUND: #acda2e; FLOAT: left; WIDTH: 22px; HEIGHT: 22px
+}
+.dragIconBot2 {
+	BACKGROUND: #ff672b
+}
+.dragCont {
+	FLOAT: left; MARGIN: 2px 0px 0px 4px
+}
+.dragContTB {
+	TABLE-LAYOUT: fixed; WIDTH: 200px
+}
+.dragContTB TD {
+	OVERFLOW: hidden; LINE-HEIGHT: 20px; TEXT-OVERFLOW: ellipsis
+}
+.icoBtn4 {
+	DISPLAY: block; WIDTH: 24px; HEIGHT: 20px
+}
+.btnMov {
+	BACKGROUND-POSITION: -1789px -2px; DISPLAY: block; WIDTH: 16px; HEIGHT: 18px
+}
+.btnNoMov {
+	BACKGROUND-POSITION: -1815px -2px; DISPLAY: block; WIDTH: 16px; HEIGHT: 18px
+}
+.txtEpm {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: -868px -62px; BACKGROUND-REPEAT: no-repeat
+}
+.txtEpm2 {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: -857px -62px; BACKGROUND-REPEAT: no-repeat
+}
+.ibxbar3 {
+	HEIGHT: 12px
+}
+.ibxBar2 {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: 0px -423px; PADDING-LEFT: 6px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; BORDER-BOTTOM: #d7d7d7 1px solid; HEIGHT: 27px
+}
+.ibxBar2 A:link {
+	COLOR: #999
+}
+.ibxBar2 A:visited {
+	COLOR: #999
+}
+.ibxBar2 A:hover {
+	COLOR: #999
+}
+.ibxBar {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: 0px -374px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 8px; HEIGHT: 37px
+}
+.ibxBar .bot {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px 4px; WIDTH: 47px; PADDING-TOP: 2px; HEIGHT: 22px
+}
+.ibxBar .bot4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px 4px; WIDTH: 70px; PADDING-TOP: 2px; HEIGHT: 22px
+}
+.ibxBar .bot2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px 4px; WIDTH: 47px; CURSOR: hand; PADDING-TOP: 2px; HEIGHT: 22px
+}
+.ibxBar .bot3 {
+	MARGIN-TOP: 1px; WIDTH: 110px
+}
+.ibxBar .bot5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px 4px; WIDTH: 70px; PADDING-TOP: 2px; HEIGHT: 22px
+}
+.ibxBar4 {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: 0px -375px; PADDING-LEFT: 6px; PADDING-BOTTOM: 0px; PADDING-TOP: 8px; BORDER-BOTTOM: #ebebeb 1px solid; HEIGHT: 35px
+}
+.ibxBar4 .bot2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px 4px; WIDTH: 47px; CURSOR: hand; PADDING-TOP: 2px; HEIGHT: 22px
+}
+.ibxBar4 .bot3 {
+	MARGIN-TOP: 1px; WIDTH: 110px
+}
+.ibxBot {
+	PADDING-RIGHT: 6px; BACKGROUND-POSITION: 0px -414px; PADDING-LEFT: 6px; PADDING-BOTTOM: 4px; COLOR: #333; LINE-HEIGHT: 25px; PADDING-TOP: 4px; HEIGHT: 25px
+}
+.ibxBot A:link {
+	COLOR: #333
+}
+.ibxBot A:visited {
+	COLOR: #333
+}
+.ibxBot A:hover {
+	COLOR: #333
+}
+.btnBack {
+	BACKGROUND-POSITION: -2052px -38px; WIDTH: 19px
+}
+.btnRej {
+	BACKGROUND-POSITION: -2082px -39px; WIDTH: 27px; HEIGHT: 20px
+}
+.btnState {
+	BACKGROUND-POSITION: -2021px -39px; WIDTH: 15px
+}
+.btnMove {
+	BACKGROUND-POSITION: -1471px -38px
+}
+.btnRef {
+	BACKGROUND-POSITION: -1728px -38px; WIDTH: 26px
+}
+.btnRe {
+	BACKGROUND-POSITION: -1825px -39px; WIDTH: 24px; HEIGHT: 20px
+}
+.btnFw {
+	BACKGROUND-POSITION: -1392px -39px; WIDTH: 24px; HEIGHT: 20px
+}
+.btnMark {
+	BACKGROUND-POSITION: -2126px -39px; WIDTH: 16px
+}
+.btnCode {
+	BACKGROUND-POSITION: -1987px -39px
+}
+.btnSend {
+	BACKGROUND-POSITION: -1318px -40px; WIDTH: 25px
+}
+.btnSave {
+	BACKGROUND-POSITION: -1356px -40px; WIDTH: 18px
+}
+.btnCrd {
+	BACKGROUND-POSITION: -1429px -40px; WIDTH: 22px
+}
+.btnCnl {
+	BACKGROUND-POSITION: -1615px -39px; WIDTH: 21px
+}
+.btnDel {
+	BACKGROUND-POSITION: -1654px -39px; WIDTH: 22px
+}
+.btnPre {
+	BACKGROUND-POSITION: -1765px -39px; WIDTH: 13px
+}
+.btnNxt {
+	BACKGROUND-POSITION: -1799px -39px; WIDTH: 13px
+}
+.btnWrite {
+	BACKGROUND-POSITION: -2160px -39px
+}
+.btnAddCnt {
+	BACKGROUND-POSITION: -1859px -37px; WIDTH: 20px; HEIGHT: 20px
+}
+.btnAddGroup {
+	BACKGROUND-POSITION: -1692px -37px; WIDTH: 28px; HEIGHT: 20px
+}
+.btnDelCnt {
+	BACKGROUND-POSITION: -1891px -37px; WIDTH: 20px; HEIGHT: 20px
+}
+.btnExp {
+	BACKGROUND-POSITION: -1921px -39px; WIDTH: 22px
+}
+.btnCntList {
+	BACKGROUND-POSITION: -2191px -37px; HEIGHT: 20px
+}
+.btnPrint {
+	BACKGROUND-POSITION: -1957px -39px
+}
+.btnSent {
+	BACKGROUND-POSITION: -2230px -43px; MARGIN-TOP: 3px; DISPLAY: block; WIDTH: 16px; CURSOR: pointer; HEIGHT: 12px
+}
+.btnDict {
+	BACKGROUND-POSITION: -2261px -40px; MARGIN-TOP: 4px; DISPLAY: block; WIDTH: 16px; CURSOR: pointer; HEIGHT: 16px
+}
+.btnMore {
+	BACKGROUND-POSITION: -1579px -39px; MARGIN-TOP: 4px; DISPLAY: block; WIDTH: 20px; CURSOR: pointer; HEIGHT: 16px
+}
+.btnAddEdit {
+	BACKGROUND-POSITION: -2288px -38px; WIDTH: 24px
+}
+.btnSpam {
+	BACKGROUND-POSITION: -2321px -38px; WIDTH: 23px
+}
+.btnNotSpam {
+	BACKGROUND-POSITION: -2355px -38px; WIDTH: 23px
+}
+.btnSet {
+	BACKGROUND-POSITION: -2385px -38px; WIDTH: 22px
+}
+.IcoCls {
+	BACKGROUND-POSITION: -422px 6px; DISPLAY: block; WIDTH: 18px; CURSOR: hand; HEIGHT: 20px
+}
+.IcoOpen {
+	BACKGROUND-POSITION: -422px 6px; DISPLAY: block; WIDTH: 18px; CURSOR: hand; HEIGHT: 20px
+}
+.IcoCls2 {
+	BACKGROUND-POSITION: -422px 6px; DISPLAY: block; WIDTH: 18px; CURSOR: hand; HEIGHT: 20px
+}
+.IcoOpen2 {
+	BACKGROUND-POSITION: -422px 6px; DISPLAY: block; WIDTH: 18px; CURSOR: hand; HEIGHT: 20px
+}
+.IcoOpen {
+	BACKGROUND-POSITION: -443px 6px
+}
+.IcoOpen2 {
+	BACKGROUND-POSITION: -443px 6px
+}

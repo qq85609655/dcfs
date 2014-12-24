@@ -1,0 +1,521 @@
+@charset "utf-8";
+
+body {
+	background-color: #FFF;
+	margin: 0px;
+	font: 12px "Verdana", "Arial", "Helvetica", "sans-serif", "宋体";
+}
+/* CSS Document */
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+/* 表格样式 */
+.list .heading {
+	background-color: #307ecc;
+	color: #FFF;
+	font-size: 14px;
+	line-height: 32px;
+	padding-left: 12px;
+	margin-bottom: 1px;
+	height: 32px;
+	padding-bottom: 0;
+}
+
+.list .heading .lighter {
+	margin: 0;
+	float: left;
+}
+
+.list .heading .widget-toolbar {
+	float: right;
+	cursor: pointer;
+}
+
+.list .heading .widget-toolbar .icon-chevron-up {
+
+}
+
+.list .heading .widget-toolbar .icon-chevron-down {
+
+}
+
+.list .table-row {
+	background-color: #eff3f8;
+	padding: 12px 0;
+	word-break: break-all;
+	word-wrap: break-word;
+	border-bottom: 1px solid #D5E3EF;
+}
+
+table {
+	background-color: transparent;
+}
+
+th {
+	text-align: left
+}
+
+.tableGrid {
+	width: 100%;
+}
+
+.tableGrid thead tr th,.tableGrid tbody tr th,.tableGrid tfoot tr th,.tableGrid thead tr td,.tableGrid tbody tr td,.tableGrid tfoot tr td
+	{
+	padding: 8px;
+	line-height: 1.428571429;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+
+.tableGrid thead tr th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #ddd
+}
+
+.tableGrid caption+thead tr:first-child th,.tableGrid colgroup+thead tr:first-child th,.tableGrid thead:first-child tr:first-child th,.tableGrid caption+thead tr:first-child td,.tableGrid colgroup+thead tr:first-child td,.tableGrid thead:first-child tr:first-child td
+	{
+	border-top: 0
+}
+
+.tableGrid tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.tableGrid {
+	background-color: #fff
+}
+
+.table-condensed thead tr th,.table-condensed tbody tr th,.table-condensed thead tr td,.table-condensed tbody tr td {
+	padding: 5px
+}
+
+.tableGrid {
+	border: 1px solid #ddd
+}
+
+.tableGrid tr td span,.tableGrid tr th span {
+	display: inline-block;
+	line-height: 22px;
+}
+
+.tableGrid thead tr th,.tableGrid tbody tr th,.tableGrid thead tr td,.tableGrid tbody tr td {
+	border: 1px solid #ddd;
+}
+
+.tableGrid thead tr th {
+	border-bottom-width: 2px
+}
+
+.tableGrid tbody .odd td {
+	background-color: #f9f9f9
+}
+
+.tableGrid tbody .hover td {
+	background-color: #f5f5f5
+}
+
+table col[class*="col-"] {
+	display: table-column;
+	float: none
+}
+
+table td[class*="col-"],table th[class*="col-"] {
+	display: table-cell;
+	float: none
+}
+
+.table thead tr td.active,.table tbody tr td.active,.table tfoot tr td.active,.table thead tr th.active,.table tbody tr th.active,.table tfoot tr th.active,.table thead tr.active td,.table tbody tr.active td,.table tfoot tr.active td,.table thead tr.active th,.table tbody tr.active th,.table tfoot tr.active th
+	{
+	background-color: #f5f5f5
+}
+
+.table thead tr td.success,.table tbody tr td.success,.table tfoot tr td.success,.table thead tr th.success,.table tbody tr th.success,.table tfoot tr th.success,.table thead tr.success td,.table tbody tr.success td,.table tfoot tr.success td,.table thead tr.success th,.table tbody tr.success th,.table tfoot tr.success th
+	{
+	background-color: #dff0d8;
+	border-color: #d6e9c6
+}
+
+.table-hover tbody tr td.success:hover,.table-hover tbody tr th.success:hover,.table-hover tbody tr.success:hover td {
+	background-color: #d0e9c6;
+	border-color: #c9e2b3
+}
+
+.table thead tr td.danger,.table tbody tr td.danger,.table tfoot tr td.danger,.table thead tr th.danger,.table tbody tr th.danger,.table tfoot tr th.danger,.table thead tr.danger td,.table tbody tr.danger td,.table tfoot tr.danger td,.table thead tr.danger th,.table tbody tr.danger th,.table tfoot tr.danger th
+	{
+	background-color: #f2dede;
+	border-color: #eed3d7
+}
+
+.table-hover tbody tr td.danger:hover,.table-hover tbody tr th.danger:hover,.table-hover tbody tr.danger:hover td {
+	background-color: #ebcccc;
+	border-color: #e6c1c7
+}
+
+.table thead tr td.warning,.table tbody tr td.warning,.table tfoot tr td.warning,.table thead tr th.warning,.table tbody tr th.warning,.table tfoot tr th.warning,.table thead tr.warning td,.table tbody tr.warning td,.table tfoot tr.warning td,.table thead tr.warning th,.table tbody tr.warning th,.table tfoot tr.warning th
+	{
+	background-color: #fcf8e3;
+	border-color: #fbeed5
+}
+
+.table-hover tbody tr td.warning:hover,.table-hover tbody tr th.warning:hover,.table-hover tbody tr.warning:hover td {
+	background-color: #faf2cc;
+	border-color: #f8e5be
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: 0
+}
+
+legend {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 20px;
+	font-size: 21px;
+	line-height: inherit;
+	color: #333;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5
+}
+
+th,td,.tableGrid {
+	border-radius: 0 !important
+}
+
+.tableGrid thead tr {
+	color: #707070;
+	font-weight: normal;
+	background: #f2f2f2;
+	background-image: -webkit-gradient(linear, left 0, left 100%, from(#f8f8f8), to(#ececec) );
+	background-image: -webkit-linear-gradient(top, #f8f8f8, 0%, #ececec, 100%);
+	background-image: -moz-linear-gradient(top, #f8f8f8 0, #ececec 100%);
+	background-image: linear-gradient(to bottom, #f8f8f8 0, #ececec 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff8f8f8', endColorstr='#ffececec', GradientType=0 )
+}
+
+.tableGrid thead tr th {
+	border-color: #DDD;
+	font-weight: bold
+}
+
+.tableGrid thead tr th [class*="icon-"]:first-child {
+	margin-right: 2px
+}
+
+.tableGrid thead tr th:first-child {
+	border-left-color: #f1f1f1
+}
+
+.tableGrid thead tr th:left-child {
+	border-right-color: #f1f1f1
+}
+
+.tableGrid.tableGrid thead tr th {
+	vertical-align: middle;
+}
+
+.tableGrid.tableGrid thead tr th:first-child {
+	border-left-color: #DDD
+}
+
+th.center,td.center {
+	text-align: center
+}
+
+th .lbl,td .lbl {
+	margin-bottom: 0
+}
+
+th .lbl:only-child,td .lbl:only-child {
+	vertical-align: top
+}
+
+.tableGrid thead tr {
+	color: #707070;
+	font-weight: normal;
+	background: #f2f2f2;
+	background: url(../../images/tableheader.png) repeat-x center center;
+	line-height: 37px;
+}
+
+.tableGrid {
+	border: 1px solid #ddd;
+}
+
+.dataTables_wrapper .row:first-child+.tableGrid {
+	border-top: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+}
+
+.tableGrid {
+	margin-bottom: 0;
+}
+
+.tableGrid .string {
+	background: url("../../images/arrow-double.png") no-repeat scroll right center;
+	height: 17px;
+	cursor: pointer;
+}
+
+.tableGrid .sorting_desc,.tableGrid .sorting_asc {
+	background: url(../../images/tableheadersort.png) repeat-x center center;
+	color: #307ECC;
+}
+
+.tableGrid .sorting_asc .string {
+	background: url("../../images/arrow-up.png") no-repeat scroll right center;
+}
+
+.tableGrid .sorting_desc .string {
+	background: url("../../images/arrow-down.png") no-repeat scroll right center;
+}
+
+.tableGrid th .string:hover {
+	color: #547ea8
+}
+
+.tableGrid .none {
+	cursor: inherit;
+}
+
+.action-buttons a {
+	display: inline-block;
+	margin: 0 3px;
+	opacity: 0.85;
+	transition: all 0.1s ease 0s;
+}
+
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px
+}
+
+.pagination li {
+	display: inline;
+	list-style: none;
+}
+
+.pagination li a,.pagination li span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.428571429;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.pagination li .paggo span,.pagination li .paggo a {
+	border: 0;
+	background: transparent;
+}
+
+.pagination li:first-child a,.pagination li:first-child span {
+	margin-left: 0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px
+}
+
+.pagination li:last-child a,.pagination li:last-child span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px
+}
+
+.pagination li a:hover,.pagination li span:hover,.pagination li a:focus,.pagination li span:focus {
+	background-color: #eee
+}
+
+.pagination .active a,.pagination .active span,.pagination .active a:hover,.pagination .active span:hover,.pagination .active a:focus,.pagination .active span:focus
+	{
+	z-index: 2;
+	color: #fff;
+	cursor: default;
+	background-color: #428bca;
+	border-color: #428bca
+}
+
+.pagination .disabled span,.pagination .disabled a,.pagination .disabled a:hover,.pagination .disabled a:focus {
+	color: #999;
+	cursor: not-allowed;
+	background-color: #fff;
+	border-color: #ddd
+}
+
+.pagination-lg li a,.pagination-lg li span {
+	padding: 10px 16px;
+	font-size: 18px
+}
+
+.pagination-lg li:first-child a,.pagination-lg li:first-child span {
+	border-bottom-left-radius: 6px;
+	border-top-left-radius: 6px
+}
+
+.pagination-lg li:last-child a,.pagination-lg li:last-child span {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px
+}
+
+.pagination-sm li a,.pagination-sm li span {
+	padding: 5px 10px;
+	font-size: 12px
+}
+
+.pagination-sm li:first-child a,.pagination-sm li:first-child span {
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px
+}
+
+.pagination-sm li:last-child a,.pagination-sm li:last-child span {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px
+}
+
+.label-success,.badge-success {
+	background-color: #82af6f !important
+}
+
+.label-inverse,.badge-inverse {
+	background-color: #333 !important
+}
+
+.label-warning,.badge-warning {
+	background-color: #f89406 !important
+}
+
+.label-error,.badge-error {
+	background-color: #D9534F !important
+}
+
+.label {
+	font-size: 12px;
+	color: #FFFFFF;
+	text-align: center;
+	vertical-align: baseline;
+	white-space: nowrap;
+}
+
+.label-sm {
+	padding: .2em .4em .3em;
+	font-size: 11px;
+	height: 18px;
+	line-height: 18px;
+}
+
+.table-row .table-pagina {
+	padding: 0 0 0 12px;
+}
+
+.table-row .table-pagina .col-sm-6 {
+	float: right;
+	display: inline;
+}
+
+.table-row .table-pagina .col-sm-4 {
+	float: left;
+	display: inline;
+}
+
+.pagination li .paggo,.pagination li .paggo:hover,.pagination li .paggo:focus {
+	border: 0;
+	background: none;
+	padding: 0 0 0 12px;
+}
+
+.dataTables_paginate {
+	text-align: right;
+}
+
+.dataTables_paginate .pagination {
+	margin: 0 12px;
+}
+
+.icon-zoom-in {
+	background: url(../../images/zoom-in-s.png) no-repeat center center;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+}
+
+.icon-pencil {
+	background: url(../../images/pencil-s.png) no-repeat center center;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+}
+
+.icon-trash {
+	background: url(../../images/trash-s.png) no-repeat center center;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+}
+
+.icon-zoom-in:hover {
+	background: url(../../images/zoom-in.png) no-repeat center center;
+}
+
+.icon-pencil:hover {
+	background: url(../../images/pencil.png) no-repeat center center;
+}
+
+.icon-trash:hover {
+	background: url(../../images/trash.png) no-repeat center center;
+}
+
+/*标题固定的样式**/
+.tableGrid .bz-list-top {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 1000;
+}
+
+.bz-list-bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0px;
+	right: 0px;
+	z-index: 1000;
+}
+
+.footer-frame {
+	width: 100%;
+}
+
+.operation {
+	background-color: #eff3f8;
+	padding: 12px 0;
+	word-break: break-all;
+	word-wrap: break-word;
+	width: 100%;
+}

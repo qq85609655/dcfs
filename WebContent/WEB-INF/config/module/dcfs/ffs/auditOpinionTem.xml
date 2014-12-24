@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="audit" namespace="/ffs/audit" extends="struts-default" >
+
+		<!-- 保存-->
+        <action name="saveOpinionTem" class="com.dcfs.ffs.audit.OpinionTemAction" method="saveOpinionTem" >
+			<!-- <result name="success" type="chain">audit/findListTem</result> -->
+		</action>
+		
+		<!-- 审核意见模板列表 -->
+	    <action name="findListTem" class="com.dcfs.ffs.audit.OpinionTemAction" method="findListTem">
+	    	<result name="success">/jsp/dcfs/ffs/audit/auditOpinionTem_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 查看修改页面-->
+        <action name="showOpinionTem" class="com.dcfs.ffs.audit.OpinionTemAction" method="showOpinionTem" >
+			<result name="show">/jsp/dcfs/ffs/audit/auditOpinionTem_view.jsp</result>
+			<result name="mod">/jsp/dcfs/ffs/audit/auditOpinionTem_revise.jsp</result>
+		</action>
+
+	</package>
+</struts>

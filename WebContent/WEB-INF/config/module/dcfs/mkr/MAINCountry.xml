@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="MAINCountry" namespace="/mkr/MAINCountry" extends="struts-default" >
+		 <!-- 跳转到国家树页面-->
+        <action name="mainCountryTree" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="mainCountryTree" >
+			<result name="success">/jsp/dcfs/mkr/MAINCountry/countryTree.jsp</result>
+		</action>
+		<!-- 跳转到国家树页面-->
+        <action name="findCountry" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="findCountry" >
+			<result name="success">/jsp/dcfs/mkr/MAINCountry/countryMessage.jsp</result>
+		</action>
+		<!-- 跳转的国家相关政府部门列表 -->
+		<action name="findGovement" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="findGovement" >
+			<result name="success">/jsp/dcfs/mkr/MAINCountry/govementMessage.jsp</result>
+		</action>
+		<!-- 跳转的国家相关政府部门列表 -->
+		<action name="reviseCountry" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="reviseCountry" >
+			<result name="success" type="chain">MAINCountry/findCountry.action</result> 
+		</action>
+		<!-- 查找政府部门，联系人信息 -->
+		<action name="findGovementAndContact" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="findGovementAndContact" >
+			<result name="success">/jsp/dcfs/mkr/MAINCountry/govement.jsp</result>
+			<result name="govementAdd">/jsp/dcfs/mkr/MAINCountry/govementAdd.jsp</result>
+		</action>
+		<!-- 修改政府部门信息，跳转到查找政府信息和相关联系人方法-->
+		<action name="reviseGovement" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="reviseGovement" >
+			<result name="success" type="chain">MAINCountry/findGovementAndContact.action</result> 
+		</action>
+		<!-- 添加政府部门信息 -->
+		<action name="addGovement" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="addGovement" >
+			<result name="success" type="chain">MAINCountry/findGovement.action</result> 
+		</action>
+		<!-- 添加联系人信息 -->
+		<action name="addContact" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="addContact" >
+			<result name="success" type="chain">MAINCountry/findGovementAndContact.action</result> 
+		</action>
+		<!-- 删除联系人信息 -->
+		<action name="delContact" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="delContact" >
+			<result name="success" type="chain">MAINCountry/findGovementAndContact.action</result> 
+		</action>
+		<!-- 删除政府部门信息 -->
+		<action name="delGovement" class="com.dcfs.mkr.MAINCountry.MAINCountryAction" method="delGovement" >
+			<result name="success" type="chain">MAINCountry/findCountry.action</result> 
+		</action>
+	</package>
+</struts>

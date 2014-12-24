@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="feedback" namespace="/feedback" extends="struts-default" >
+	<!-- 安置后报告Start -->
+		<!-- 儿童信息 -->
+        <action name="CIInfoShow" class="com.dcfs.pfr.feedback.PPFeedbackAction" method="CIInfoShow" >
+			<result name="success">/jsp/dcfs/pfr/feedback/CI_info.jsp</result>
+		</action>
+		<!-- 收养人信息 -->
+        <action name="AFInfoShow" class="com.dcfs.pfr.feedback.PPFeedbackAction" method="AFInfoShow" >
+			<result name="success">/jsp/dcfs/pfr/feedback/AF_info.jsp</result>
+		</action>
+		<!-- 安置后报告补充信息 -->
+        <action name="feedbackAdditonalShow" class="com.dcfs.pfr.feedback.PPFeedbackAction" method="feedbackAdditonalShow" >
+			<result name="success">/jsp/dcfs/pfr/feedback/feedback_additonal_info.jsp</result>
+		</action>
+	<!-- 安置后报告End -->
+	
+	
+	<!-- 报告附件Start -->
+		<!-- 报告附件 -->
+        <action name="findPPFdeedbackAtt" class="com.dcfs.pfr.PPFeebbackAttAction" method="findPPFdeedbackAtt" >
+			<result name="success">/jsp/dcfs/pfr/PP_feedback_att.jsp</result>
+		</action>
+		<!-- 附件图片输出 -->
+        <action name="showPicture" class="com.dcfs.pfr.PPFeebbackAttAction" method="showPicture" >
+			<result></result>
+		</action>
+		<!-- 附件图片缩略图输出 -->
+        <action name="showThumbnail" class="com.dcfs.pfr.PPFeebbackAttAction" method="showThumbnail" >
+			<result></result>
+		</action>
+	<!-- 报告附件End -->
+	
+		
+	<!-- 收养组织Start -->
+		<!-- 收养组织安置后报告反馈列表 -->
+        <action name="SYZZPPFeedbackList" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="SYZZPPFeedbackList" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_list.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告反馈录入 -->
+        <action name="toSYZZPPFeedbackInto" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="toSYZZPPFeedbackInto" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_into.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告反馈录入保存 -->
+        <action name="saveSYZZPPFeedbackInto" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="saveSYZZPPFeedbackInto" >
+			<result name="success" type="chain">SYZZPPFeedbackList</result>
+		</action>
+		<!-- 收养组织安置后报告反馈录入提交 -->
+        <action name="submitSYZZPPFeedbackInto" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="submitSYZZPPFeedbackInto" >
+			<result name="success" type="chain">SYZZPPFeedbackList</result>
+		</action>
+		<!-- 收养组织安置后报告反馈提交 -->
+        <action name="listSubmitSYZZPPFeedback" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="listSubmitSYZZPPFeedback" >
+			<result name="success" type="chain">SYZZPPFeedbackList</result>
+		</action>
+		<!-- 安置后报告首页 -->
+        <action name="PPFeedbackHomePage" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="PPFeedbackHomePage" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/PP_feedback_homepage.jsp</result>
+		</action>
+		<!-- 安置后报告查看 -->
+        <action name="SYZZPPFeedbackDetail" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="SYZZPPFeedbackDetail" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_detail.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告补充列表 -->
+        <action name="SYZZPPFeedbackAdditonalList" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="SYZZPPFeedbackAdditonalList" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_additonal_list.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告补充 -->
+        <action name="toSYZZPPFeedbackAdditonal" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="toSYZZPPFeedbackAdditonal" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_additonal_into.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告补充保存 -->
+        <action name="saveSYZZPPFeedbackAdditonal" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="saveSYZZPPFeedbackAdditonal" >
+			<result name="success" type="chain">SYZZPPFeedbackAdditonalList</result>
+		</action>
+		<!-- 收养组织安置后报告补充提交 -->
+        <action name="submitSYZZPPFeedbackAdditonal" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="submitSYZZPPFeedbackAdditonal" >
+			<result name="success" type="chain">SYZZPPFeedbackAdditonalList</result>
+		</action>
+		<!-- 收养组织安置后报告补充报告修改 -->
+        <action name="toSYZZPPFeedbackAdditonalMod" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="toSYZZPPFeedbackAdditonalMod" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_additonal_mod.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告补充报告修改保存 -->
+        <action name="saveSYZZPPFeedbackAdditonalMod" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="saveSYZZPPFeedbackAdditonalMod" >
+			<result></result>
+		</action>
+		
+		<!-- 收养组织安置后报告催交列表 -->
+        <action name="SYZZPPFeedbackReminderList" class="com.dcfs.pfr.SYZZ.SYZZPPFeedbackAction" method="SYZZPPFeedbackReminderList" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_reminder_list.jsp</result>
+		</action>
+		<!-- 收养组织安置后报告催交列表 -->
+        <action name="SYZZPPFeedbackReminderDetail" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackReminderDetail" >
+			<result name="success">/jsp/dcfs/pfr/SYZZ/SYZZ_PP_feedback_reminder_detail.jsp</result>
+		</action>
+	<!-- 收养组织End -->
+		
+		
+		
+		
+		
+		
+		
+		
+	<!-- 档案部Start -->
+		<!-- 档案部安置后报告反馈接收列表 -->
+        <action name="DABPPFeedbackReceiveList" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackReceiveList" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_receive_list.jsp</result>
+		</action>
+		<!-- 档案部安置后报告送翻 -->
+        <action name="DABSendTranslation" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABSendTranslation" >
+			<result name="success" type="chain">DABPPFeedbackReceiveList</result>
+		</action>
+		<!-- 档案部安置后报告送审 -->
+        <action name="DABSendAudit" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABSendAudit" >
+			<result name="success" type="chain">DABPPFeedbackReceiveList</result>
+		</action>
+		<!-- 档案部安置后报告退回 -->
+        <action name="toDABPPFeedbackReturn" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="toDABPPFeedbackReturn" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_return.jsp</result>
+		</action>
+		<!-- 档案部安置后报告退回保存 -->
+        <action name="saveDABPPFeedbackReturn" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="saveDABPPFeedbackReturn" >
+			<result name="success" type="chain">DABPPFeedbackReceiveList</result>
+		</action>
+		
+		<!-- 档案部安置后报告代录列表 -->
+        <action name="DABPPFeedbackReplaceList" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackReplaceList" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_replace_list.jsp</result>
+		</action>
+		<!-- 档案部安置后报告代录 -->
+        <action name="toDABPPFeedbackReplaceInto" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="toDABPPFeedbackReplaceInto" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_replace_into.jsp</result>
+		</action>
+		<!-- 档案部安置后报告代录保存并送翻 -->
+        <action name="DABSaveAndSendTrans" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABSaveAndSendTrans" >
+			<result name="success" type="chain">DABPPFeedbackReplaceList</result>
+		</action>
+		<!-- 档案部安置后报告代录保存并送审 -->
+        <action name="DABSaveAndSendAudit" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABSaveAndSendAudit" >
+			<result name="success" type="chain">DABPPFeedbackReplaceList</result>
+		</action>
+		
+		<!-- 档案部安置后报告审核列表 -->
+        <action name="DABPPFeedbackAuditList" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackAuditList" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_audit_list.jsp</result>
+		</action>
+		<!-- 档案部安置后报告审核 -->
+        <action name="toDABPPFeedbackAudit" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="toDABPPFeedbackAudit" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_audit.jsp</result>
+		</action>
+		<!-- 档案部安置后报告审核提交 -->
+        <action name="submitDABPPFeedbackAudit" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="submitDABPPFeedbackAudit" >
+			<result name="success" type="chain">DABPPFeedbackAuditList</result>
+		</action>
+		<!-- 档案部安置后报告审核保存 -->
+        <action name="saveDABPPFeedbackAudit" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="saveDABPPFeedbackAudit" >
+			<result name="success" type="chain">DABPPFeedbackAuditList</result>
+		</action>
+		<!-- 涉外收养档案案卷内目录（二） -->
+        <action name="toDABPPFeedbackCatalog" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="toDABPPFeedbackCatalog" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_catalog.jsp</result>
+		</action>
+		<!-- 涉外收养档案案卷内目录（二）保存 -->
+        <action name="saveDABPPFeedbackCatalog" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="saveDABPPFeedbackCatalog" >
+			<result name="success" type="chain">DABPPFeedbackAuditList</result>
+		</action>
+		<!-- 历次安置后报告查看 -->
+        <action name="getAllFeedbackDetail" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="getAllFeedbackDetail" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_detail_all.jsp</result>
+		</action>
+		<!-- 历次安置后报告 -->
+        <action name="getFeedbackRecordDetail" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="getFeedbackRecordDetail" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_record_detail.jsp</result>
+		</action>
+		<!-- 档案部安置后报告反馈催交列表 -->
+        <action name="DABPPFeedbackReminderList" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackReminderList" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_reminder_list.jsp</result>
+		</action>
+		<!-- 档案部安置后报告反馈催交查看 -->
+        <action name="DABPPFeedbackReminderDetail" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackReminderDetail" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_reminder_detail.jsp</result>
+		</action>
+		
+		<!-- 档案部安置后报告反馈查询列表 -->
+        <action name="DABPPFeedbackSearchList" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackSearchList" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_search_list.jsp</result>
+		</action>
+		<!-- 档案部安置后报告反馈查看 -->
+        <action name="DABPPFeedbackSearchDetail" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="DABPPFeedbackSearchDetail" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_search_detail.jsp</result>
+		</action>
+		<!-- 历次安置后报告 -->
+        <action name="DABPPFeedbackRecordSearchDetail" class="com.dcfs.pfr.DAB.DABPPFeedbackAction" method="getFeedbackRecordDetail" >
+			<result name="success">/jsp/dcfs/pfr/DAB/DAB_PP_feedback_search_record_detail.jsp</result>
+		</action>
+	<!-- 档案部End -->
+	
+	
+	
+	<!-- 爱之桥Start -->
+		<!-- 爱之桥安置后报告翻译列表 -->
+        <action name="AZQPPFeedbackTransList" class="com.dcfs.pfr.AZQ.AZQPPFeedbackAction" method="AZQPPFeedbackTransList" >
+			<result name="success">/jsp/dcfs/pfr/AZQ/AZQ_PP_feedback_translation_list.jsp</result>
+		</action>
+		<!-- 爱之桥安置后报告翻译分发 -->
+        <action name="dispatch" class="com.dcfs.pfr.AZQ.AZQPPFeedbackAction" method="dispatch" >
+			<result name="success" type="chain">AZQPPFeedbackTransList</result>
+		</action>
+		<!-- 爱之桥安置后报告翻译 -->
+        <action name="toAZQPPFeedbackTranslation" class="com.dcfs.pfr.AZQ.AZQPPFeedbackAction" method="toAZQPPFeedbackTranslation" >
+			<result name="success">/jsp/dcfs/pfr/AZQ/AZQ_PP_feedback_translation.jsp</result>
+		</action>
+		<!-- 爱之桥安置后报告翻译保存 -->
+        <action name="saveAZQPPFeedbackTranslation" class="com.dcfs.pfr.AZQ.AZQPPFeedbackAction" method="saveAZQPPFeedbackTranslation" >
+			<result name="success" type="chain">AZQPPFeedbackTransList</result>
+		</action>
+		<!-- 爱之桥安置后报告翻译提交 -->
+        <action name="submitAZQPPFeedbackTranslation" class="com.dcfs.pfr.AZQ.AZQPPFeedbackAction" method="submitAZQPPFeedbackTranslation" >
+			<result name="success" type="chain">AZQPPFeedbackTransList</result>
+		</action>
+		<!-- 爱之桥安置后报告翻译查看 -->
+        <action name="AZQPPFeedbackTranslationDetail" class="com.dcfs.pfr.AZQ.AZQPPFeedbackAction" method="AZQPPFeedbackTranslationDetail" >
+			<result name="success">/jsp/dcfs/pfr/AZQ/AZQ_PP_feedback_translation_detail.jsp</result>
+		</action>
+	<!-- 爱之桥End -->
+	
+	<!-- 翻译公司Start -->
+		<!-- 翻译公司安置后报告翻译列表 -->
+        <action name="FYGSPPFeedbackTransList" class="com.dcfs.pfr.FYGS.FYGSPPFeedbackAction" method="FYGSPPFeedbackTransList" >
+			<result name="success">/jsp/dcfs/pfr/FYGS/FYGS_PP_feedback_translation_list.jsp</result>
+		</action>
+		<!-- 翻译公司安置后报告翻译 -->
+		<action name="toFYGSPPFeedbackTranslation" class="com.dcfs.pfr.FYGS.FYGSPPFeedbackAction" method="toFYGSPPFeedbackTranslation" >
+			<result name="success">/jsp/dcfs/pfr/FYGS/FYGS_PP_feedback_translation.jsp</result>
+		</action>
+		<!-- 翻译公司安置后报告翻译保存 -->
+        <action name="saveFYGSPPFeedbackTranslation" class="com.dcfs.pfr.FYGS.FYGSPPFeedbackAction" method="saveFYGSPPFeedbackTranslation" >
+			<result name="success" type="chain">FYGSPPFeedbackTransList</result>
+		</action>
+		<!-- 翻译公司安置后报告翻译提交 -->
+        <action name="submitFYGSPPFeedbackTranslation" class="com.dcfs.pfr.FYGS.FYGSPPFeedbackAction" method="submitFYGSPPFeedbackTranslation" >
+			<result name="success" type="chain">FYGSPPFeedbackTransList</result>
+		</action>
+		<!-- 翻译公司安置后报告翻译查看 -->
+		<action name="FYGSPPFeedbackTranslationDetail" class="com.dcfs.pfr.FYGS.FYGSPPFeedbackAction" method="FYGSPPFeedbackTranslationDetail" >
+			<result name="success">/jsp/dcfs/pfr/FYGS/FYGS_PP_feedback_translation_detail.jsp</result>
+		</action>
+	<!-- 翻译公司End -->
+	
+	<!-- 省厅Start -->
+		<!-- 省厅安置后报告查看列表 -->
+        <action name="STPPFeedbackList" class="com.dcfs.pfr.ST.STPPFeedbackAction" method="STPPFeedbackList" >
+			<result name="success">/jsp/dcfs/pfr/ST/ST_PP_feedback_list.jsp</result>
+		</action>
+	<!-- 省厅End -->
+	
+	<!-- 福利院Start -->
+		<!-- 福利院安置后报告查看列表 -->
+        <action name="FLYPPFeedbackList" class="com.dcfs.pfr.FLY.FLYPPFeedbackAction" method="FLYPPFeedbackList" >
+			<result name="success">/jsp/dcfs/pfr/FLY/FLY_PP_feedback_list.jsp</result>
+		</action>
+		<!-- 安置后报告查看 -->
+        <action name="PPFeedbackRecordDetail" class="com.dcfs.pfr.FLY.FLYPPFeedbackAction" method="PPFeedbackRecordDetail" >
+			<result name="success">/jsp/dcfs/pfr/FLY/PP_feedback_record_detail.jsp</result>
+		</action>
+	<!-- 福利院End -->
+	</package>
+</struts>

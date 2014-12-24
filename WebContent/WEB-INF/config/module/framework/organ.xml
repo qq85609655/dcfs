@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 组织机构 -->
+	<package name="organ" extends="struts-default" namespace="/organ">
+		<!-- 组织机构类型处理器 -->
+		<action name="OrganType" class="com.hx.framework.organ.OrganTypeAction">
+			<result name="success">/jsp/framework/organtype/organTypeList.jsp</result>
+			<result name="add">/jsp/framework/organtype/organTypeAdd.jsp</result>
+			<result name="modify">/jsp/framework/organtype/organTypeModify.jsp</result>
+			<result name="detail">/jsp/framework/organtype/organTypeDetail.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">OrganType</param>
+				<param name="namespace">/organ</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+		
+		<!-- 组织机构处理器 -->
+		<action name="Organ" class="com.hx.framework.organ.OrganAction">
+			<result name="default">/jsp/framework/organ/organIndex.jsp</result>
+			<result name="success">/jsp/framework/organ/organList.jsp</result>
+			<result name="add">/jsp/framework/organ/organAdd.jsp</result>
+			<result name="modify">/jsp/framework/organ/organModify.jsp</result>
+			<result name="organTree">/jsp/framework/organ/organTree.jsp</result>
+			<result name="menuTree">/jsp/framework/menu/menuTree.jsp</result>
+			<result name="personTree">/jsp/framework/person/personTree.jsp</result>
+			<result name="selectOrganTree">/jsp/framework/authorize/selectOrganTree.jsp</result>
+			<result name="personAuthorizeTree">/jsp/framework/authorize/personAuthorizeTree.jsp</result>
+			<result name="organAuthorizeTree">/jsp/framework/authorize/organAuthorizeTree.jsp</result>
+			<result name="selectOrgMulti">/jsp/framework/organ/selectOrgTreeMulti.jsp</result>
+			<result name="detail">/jsp/framework/organ/organDetail.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">Organ</param>
+				<param name="namespace">/organ</param>
+				<param name="method">queryChildrenPage</param>
+			</result>
+			<result name="changeOrgFrame">/jsp/framework/organ/changeOrg4OrgTreeFrame.jsp</result>
+			<result name="changeOrg">/jsp/framework/organ/changeOrg4OrgTree.jsp</result>
+			
+			<result name="appAuthorizeTree">/jsp/framework/authorize/appAuthorizeTree.jsp</result>
+			<result name="personAppAuthorizeTree">/jsp/framework/authorize/personAppAuthorizeTree.jsp</result>
+		</action>
+		
+	</package>
+	
+	<!-- 人员 -->
+	<package name="person" extends="struts-default" namespace="/person">
+		<!-- 人员处理器 -->
+		<action name="Person" class="com.hx.framework.person.PersonAction">
+			<result name="default">/jsp/framework/person/personIndex.jsp</result>
+			<result name="success">/jsp/framework/person/personList.jsp</result>
+			<result name="queryPerson">/jsp/framework/person/personListPublic.jsp</result>
+			
+			<result name="ldapAddPersonAccount" type="chain">
+				<param name="actionName">Person</param>
+				<param name="namespace">/person</param>
+				<param name="method">toAddAccount</param>
+			</result>
+			<result name="ldapAddPersonAccountSuccess">/jsp/framework/person/personIndex.jsp</result>
+			<result name="personAuthorizeList">/jsp/framework/authorize/personAuthorizeList.jsp</result>
+			<result name="add">/jsp/framework/person/personAdd.jsp</result>
+			<result name="addAccount">/jsp/framework/person/personAddAccount.jsp</result>
+			<result name="resetPwd">/jsp/framework/person/personAddAccount.jsp</result>
+			<result name="changeOrg">/jsp/framework/organ/changeOrgTree.jsp</result>
+			<result name="changeOrgFrame">/jsp/framework/organ/changeOrgTreeFrame.jsp</result>
+			<result name="changeBelongFrame">/jsp/framework/organ/changeBelongFrame.jsp</result>
+			<result name="changeBelong">/jsp/framework/organ/changeBelong.jsp</result>
+			<result name="selfModify">/jsp/framework/person/personSelfModify.jsp</result>
+			<result name="password">/jsp/framework/person/password.jsp</result>
+			<result name="modify">/jsp/framework/person/personModify.jsp</result>
+			<result name="detail">/jsp/framework/person/personDetail.jsp</result>
+			<result name="setAdmin">/jsp/framework/person/setAdmin.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">Person</param>
+				<param name="namespace">/person</param>
+				<param name="method">query</param>
+			</result>
+			
+			<result name="queryPersonAppList">/jsp/framework/authorize/queryPersonAppList.jsp</result>
+		</action>
+		<action name="selectPerson" class="com.hx.framework.person.PersonAction" method="tree">
+			<result name="success">/jsp/framework/person/selectPersonTree.jsp</result>
+		</action>
+		<action name="exportExcel" class="com.hx.framework.person.PersonAction" method="exportExcel">
+		  <result></result>
+		</action>
+		<action name="exportExcelPublic" class="com.hx.framework.person.PersonAction" method="exportExcelPublic">
+		  <result></result>
+		</action>
+		<!-- 设置在编 -->
+		<action name="doChangeBelong" class="com.hx.framework.person.PersonAction" method="changeBelong">
+			<result></result>
+		</action>
+	</package>
+	
+	<!-- 管理员 -->
+	<package name="admin" extends="struts-default" namespace="/admin">
+		<action name="adminList" class="com.hx.framework.person.AdminAction" method="adminList">
+			<result>/jsp/framework/person/adminList.jsp</result>
+		</action>
+		<action name="toAdd" class="com.hx.framework.person.AdminAction" method="toAdd">
+			<result>/jsp/framework/person/addAdmin.jsp</result>
+		</action>
+		<action name="toModify" class="com.hx.framework.person.AdminAction" method="toModify">
+			<result>/jsp/framework/person/modifyAdmin.jsp</result>
+		</action>
+		<action name="addAdmin" class="com.hx.framework.person.AdminAction" method="addAdmin">
+			<result type="chain">
+				<param name="actionName">adminList</param>
+				<param name="namespace">/admin</param>
+				<param name="method">adminList</param>
+			</result>
+		</action>
+		<action name="modifyAdmin" class="com.hx.framework.person.AdminAction" method="modifyAdmin">
+			<result type="chain">
+				<param name="actionName">adminList</param>
+				<param name="namespace">/admin</param>
+				<param name="method">adminList</param>
+			</result>
+		</action>
+		<action name="deleteBatch" class="com.hx.framework.person.AdminAction" method="deleteBatch">
+			<result type="chain">
+				<param name="actionName">adminList</param>
+				<param name="namespace">/admin</param>
+				<param name="method">adminList</param>
+			</result>
+		</action>
+		<action name="selectPersonsFrame" class="com.hx.framework.person.AdminAction" method="selectPersonsFrame">
+			<result>/jsp/framework/person/selectPersonsFrame.jsp</result>
+		</action>
+		<action name="selectPersons" class="com.hx.framework.person.AdminAction" method="selectPersons">
+			<result>/jsp/framework/person/selectPersons.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 角色 -->
+	<package name="role" extends="struts-default" namespace="/role">
+		<action name="exportExcel" class="com.hx.framework.role.RoleAction" method="exportExcel">
+		</action>
+		<action name="Role" class="com.hx.framework.role.RoleAction">
+			<result name="default">/jsp/framework/role/roleIndex.jsp</result>
+			<result name="success">/jsp/framework/role/roleList.jsp</result>
+			<result name="add">/jsp/framework/role/roleAdd.jsp</result>
+			<result name="modify">/jsp/framework/role/roleModify.jsp</result>
+			<result name="detail">/jsp/framework/role/roleDetail.jsp</result>
+			<result name="allotResource">/jsp/framework/resources/allotResourceTree.jsp</result>
+			<result name="queryAllotResource">/jsp/framework/resources/queryResourceTree.jsp</result>
+			<result name="selectResource">/jsp/framework/resources/selectResourceTree.jsp</result>
+			<result name="selectOrg">/jsp/framework/organ/selectOrgTree.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">Role</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryChildren</param>
+			</result>
+		</action>
+		
+		<!-- 角色组 -->
+		<action name="RoleGroup" class="com.hx.framework.role.RoleGroupAction">
+			<result name="default">/jsp/framework/role/roleGroupIndex.jsp</result>
+			<result name="success">/jsp/framework/role/roleGroupList.jsp</result>
+			<result name="add">/jsp/framework/role/roleGroupAdd.jsp</result>
+			<result name="modify">/jsp/framework/role/roleGroupModify.jsp</result>
+			<result name="roleGroupTree">/jsp/framework/role/roleGroupTree.jsp</result>
+			<result name="roleAuthorizeTree">/jsp/framework/authorize/roleAuthorizeTree.jsp</result>
+			<result name="roleTree">/jsp/framework/role/roleTree.jsp</result>
+			<result name="ownRoleList">/jsp/framework/role/ownRoleList.jsp</result>
+			<result name="allotRole">/jsp/framework/role/allotRoleList.jsp</result>
+			<result name="detail">/jsp/framework/role/roleGroupDetail.jsp</result>
+			<result name="noRolesFrame">/jsp/framework/role/allotRoleListFrame.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">RoleGroup</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryChildrenPage</param>
+			</result>
+			<!-- 请求目前角色组中拥有的角色列表 -->
+			<result name="queryRole" type="chain">
+				<param name="actionName">RoleGroup</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryRoles</param>
+			</result>
+		</action>
+		
+		<!-- 权限访问 -->
+		<!-- 人员权限首页 -->
+		<action name="PersonAuthorize">
+			<result>/jsp/framework/authorize/personAuthorizeIndex.jsp</result>
+		</action>
+
+		<!-- 组织授权首页 -->
+		<action name="OrganAuthorize">
+			<result>/jsp/framework/authorize/organAuthorizeIndex.jsp</result>
+		</action>
+		
+		<!-- 组织应用授权首页 -->
+		<action name="OrganAppAuthorize">
+			<result>/jsp/framework/authorize/organAppAuthorizeIndex.jsp</result>
+		</action>
+		
+		<!-- 人员应用权限首页 -->
+		<action name="PersonAppAuthorize">
+			<result>/jsp/framework/authorize/personAppAuthorizeIndex.jsp</result>
+		</action>
+		
+		<action name="Authorize" class="com.hx.framework.authorize.AuthorizeAction">
+			<result name="roleOfOrgList">/jsp/framework/authorize/roleOfOrgList.jsp</result>
+			<result name="roleOfPerList">/jsp/framework/authorize/roleOfPerList.jsp</result>
+			<result name="orgFrame">/jsp/framework/authorize/roleOfOrgListFrame.jsp</result>
+			<result name="perFrame">/jsp/framework/authorize/roleOfPerListFrame.jsp</result>
+			<result name="queryOrgRole" type="chain">
+				<param name="actionName">Authorize</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryRoleOfOrg</param>
+			</result>
+			<result name="queryPerRole" type="chain">
+				<param name="actionName">Authorize</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryRoleOfPerson</param>
+			</result>
+			<result name="organAuthorize" type="chain">
+				<param name="actionName">Organ</param>
+				<param name="namespace">/organ</param>
+				<param name="method">generateTree</param>
+				<param name="treeDispatcher">organAuthorizeTree</param>
+			</result>
+			<result name="personAuthorize" type="chain">
+				<param name="actionName">Person</param>
+				<param name="namespace">/person</param>
+				<param name="method">queryChildren</param>
+			</result>
+			<result name="queryNoRolesPerson" type="chain">
+				<param name="actionName">Person</param>
+				<param name="namespace">/person</param>
+				<param name="method">queryNoRolesPersons</param>
+			</result>
+			
+			<result name="organAppAuthorize" type="chain">
+				<param name="actionName">Organ</param>
+				<param name="namespace">/organ</param>
+				<param name="method">generateTree</param>
+				<param name="treeDispatcher">appAuthorizeTree</param>
+			</result>
+			
+			<result name="orgAppFrame">/jsp/framework/authorize/appOfOrgListFrame.jsp</result>
+			<result name="appOfOrgList">/jsp/framework/authorize/appOfOrgList.jsp</result>
+			<result name="queryOrgApp" type="chain">
+				<param name="actionName">Authorize</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryAppOfOrg</param>
+			</result>
+			<result name="personAppAuthorize" type="chain">
+				<param name="actionName">Person</param>
+				<param name="namespace">/person</param>
+				<param name="method">queryPersonAppList</param>
+			</result>
+			<result name="perAppFrame">/jsp/framework/authorize/appOfPerListFrame.jsp</result>
+			<result name="appOfPerList">/jsp/framework/authorize/appOfPerList.jsp</result>
+			<result name="queryPerApp" type="chain">
+				<param name="actionName">Authorize</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryAppOfPerson</param>
+			</result>
+		</action>
+		<action name="exportpersonRoleExcel" class="com.hx.framework.authorize.AuthorizeAction" method="exportpersonRoleExcel">
+		  <result></result>
+		</action>
+	</package>
+</struts>

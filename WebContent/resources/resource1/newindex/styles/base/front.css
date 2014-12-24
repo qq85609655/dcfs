@@ -1,0 +1,93 @@
+.front-blocks {
+	width: 98%;
+	margin: 0 auto;
+}
+.front-blocks .leftbar {
+	width: 49%;
+	float: left;
+	display: inline-block;
+}
+.front-blocks .rightbar {
+	width: 49%;
+	float: right;
+	display: inline-block;
+}
+.front-blocks .blockbox {
+	width: 100%;
+	margin: 10px 0;
+}
+.front-blocks .blockbox .blockhead {
+	background:url(./images/fbh.png) repeat-x center center;
+	height: 36px;
+	position: relative;
+	border-width: 0 2px 0 2px;
+	border-color: #cdcdcd;
+	border-style: solid;
+}
+.front-blocks .blockbox .blockhead .blocktitle {
+	position: absolute;
+	background:url(./images/fbt.png) no-repeat center center;
+	width: 201px;
+	height: 36px;
+	text-align: center;
+	line-height: 36px;
+	font-size: 16px;
+	color: #FFF;
+	top: 0;
+	left: 10px;
+}
+.front-blocks .blockbox .blockhead .blocktitle .tzggico {
+	background:url(./images/tzgg.png) no-repeat left center;
+	padding-left: 20px;
+}
+.front-blocks .blockbox .blockhead .blocktitle .zlxzico {
+	background:url(./images/zlxz.png) no-repeat left center;
+	padding-left: 20px;
+}
+.front-blocks .blockbox .blockhead .blocktitle .zcckico {
+	background:url(./images/zcck.png) no-repeat left center;
+	padding-left: 25px;
+}
+.front-blocks .blockbox .blockhead .more {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: #000;
+}
+.front-blocks .blockbox .blocklist {
+	padding: 18px 30px;
+	border-width: 0 2px 2px 2px;
+	border-color: #cdcdcd;
+	border-style: solid;
+}
+.front-blocks .blockbox .blocklist ul li {
+	height: 25px;
+	line-height: 25px;
+	border-bottom: 1px dotted #afafaf;
+	list-style: none;
+	background:url(./images/blocktip.png) no-repeat left center;
+	padding-left: 10px;
+	margin-bottom: 3px;
+}
+.front-blocks .blockbox .blocklist ul li .title {
+	float: left;
+	display: inline;
+	width: 70%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.front-blocks .blockbox .blocklist ul li .date {
+	float: right;
+	display: inline;
+}
+.front-blocks .dbsw .blocklist ul li {
+	background:url(./images/tip2.png) no-repeat center top;
+	padding-top: 40px;
+	border: 0;
+	width: 22%;
+	float: left;
+	display: inline;
+	text-align: center;
+	height: 31px;
+}

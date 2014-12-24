@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="advice" namespace="/advice" extends="struts-default" >
+		<!-- 安置部征求意见列表 -->
+        <action name="AZBAdviceList" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="AZBAdviceList" >
+			<result name="success">/jsp/dcfs/ncm/AZBadvice/AZB_advice_list.jsp</result>
+		</action>
+		<!-- 安置部打印征求意见书预览 -->
+        <action name="toAZBPrintPreview" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="toAZBPrintPreview" >
+			<result name="success">/jsp/dcfs/ncm/AZBadvice/AZB_advice_print_preview.jsp</result>
+		</action>
+		<!-- 安置部打印征求意见书 -->
+        <action name="AZBprint" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="AZBprint" >
+			<result name="success">/jsp/dcfs/ncm/AZBadvice/AZB_advice_print.jsp</result>
+		</action>
+		<!-- 安置部通知收养组织 -->
+        <action name="AZBnotice" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="AZBnotice" >
+			<result name="success" type="chain">AZBAdviceList</result>
+		</action>
+		<!-- 安置部反馈确认 -->
+        <action name="feedbackConfirm" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="feedbackConfirm" >
+			<result name="success">/jsp/dcfs/ncm/AZBadvice/advice_feedback_confirm.jsp</result>
+		</action>
+		<!-- 安置部反馈确认保存 -->
+        <action name="feedbackConfirmSave" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="feedbackConfirmSave" >
+			<result name="success" type="chain">AZBAdviceList</result>
+		</action>
+		<!-- 安置部反馈查看 -->
+        <action name="feedbackDetail" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="feedbackDetail" >
+			<result name="success">/jsp/dcfs/ncm/AZBadvice/advice_feedback_detail.jsp</result>
+		</action>
+		<!-- 安置部催办通知查看 -->
+        <action name="AZBreminderDetail" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="reminderDetail" >
+			<result name="success">/jsp/dcfs/ncm/AZBadvice/AZB_reminder_detail.jsp</result>
+		</action>
+		
+        <action name="createPDF" class="com.dcfs.ncm.AZBadvice.AZBAdviceAction" method="createPDF" >
+			<result></result>
+		</action>
+		
+		
+		
+		<!-- 收养组织征求意见列表 -->
+        <action name="SYZZAdviceList" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="SYZZAdviceList" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/SYZZ_advice_list.jsp</result>
+		</action>
+		
+		<!-- 收养组织征求意见反馈 -->
+        <action name="adviceFeedbackAdd" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="adviceFeedbackAdd" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/advice_feedback_add.jsp</result>
+		</action>
+		<!-- 收养组织征求意见反馈保存 -->
+        <action name="adviceFeedbackSave" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="adviceFeedbackSave" >
+			<result name="success" type="chain">SYZZAdviceList</result>
+		</action>
+		<!-- 收养组组查看安置部确认情况 -->
+        <action name="CFMDetail" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="CFMDetail" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/advice_feedback_detail.jsp</result>
+		</action>
+		<!-- 收养组织催办通知查看 -->
+        <action name="reminderDetail" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="reminderDetail" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/SYZZ_reminder_detail.jsp</result>
+		</action>
+		<!-- 收养组织来华领养通知书列表 -->
+        <action name="SYZZNoticeList" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="SYZZNoticeList" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/SYZZ_notice_list.jsp</result>
+		</action>
+		<!-- 收养组织来华领养通知书查看 -->
+        <action name="SYZZNoticeAttDetail" class="com.dcfs.ncm.SYZZadvice.SYZZAdviceAction" method="SYZZNoticeAttDetail" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/SYZZ_notice_detail.jsp</result>
+		</action>
+		<!-- 收养组织申请书打印 -->
+        <action name="SYZZAdoptionRegistrationApplication" class="com.dcfs.ncm.MatchAction" method="AdoptionRegistrationApplication" >
+			<result name="success">/jsp/dcfs/ncm/SYZZadvice/SYZZ_Application.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="DABdisposal" namespace="/rfm/DABdisposal" extends="struts-default">
+	
+		<!-- 退文处置列表 -->
+	    <action name="DABdisposalList" class="com.dcfs.rfm.DABdisposal.DABdisposalAction" method="DABdisposalList">
+	    	<result name="success">/jsp/dcfs/rfm/DABdisposal/DABdisposal_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 跳转退文处置页面 -->
+        <action name="disposalShow" class="com.dcfs.rfm.DABdisposal.DABdisposalAction" method="disposalShow" >
+			<result name="success">/jsp/dcfs/rfm/DABdisposal/DABdisposal_disposal.jsp</result>
+		</action>
+		<!-- 退文处置操作 -->
+	    <action name="DABdisposalSave" class="com.dcfs.rfm.DABdisposal.DABdisposalAction" method="DABdisposalSave">
+	    	<result name="success" type="chain">/DABdisposal/DABdisposalList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 查看退文详细信息 -->
+        <action name="showReturnFile" class="com.dcfs.rfm.DABdisposal.DABdisposalAction" method="showReturnFile" >
+			<result name="success">/jsp/dcfs/rfm/DABdisposal/DABdisposal_view.jsp</result>
+		</action>
+		
+	</package>
+</struts>

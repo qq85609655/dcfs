@@ -1,0 +1,54 @@
+#warp {
+  position: absolute;
+  width:450px;
+  left:50%;
+  margin-left:-225px;
+  border-bottom:solid 1px #999;
+  border-left:solid 1px #999;
+  border-right:solid 1px #999;
+  border-top:solid 9px #000;
+}
+.clearfix:after {
+   content: ".";
+   display: block;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+   font-size: 0;
+}
+.clearfix {
+	display: inline-block;
+}
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+.clearfix {
+	zoom: 1;
+}
+#title{
+	padding:0px;
+	text-align:left;
+}
+.org{
+	width:96px;
+	cursor:pointer;
+	display: inline;
+	float: left;
+	text-align:center;
+	padding:2px;
+	font-size:14px;
+	color:#000;
+	font-weight:bold;
+	margin:0px 0px 0px 10px ;
+}
+.orgName{
+	margin:3px 0;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	width:96px;
+	height:16px;
+}

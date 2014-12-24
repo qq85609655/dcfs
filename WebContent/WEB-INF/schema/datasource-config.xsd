@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="group">
+        <xsd:annotation>
+        	<xsd:documentation>数据源分组</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="datasource"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>分组的名称</xsd:documentation>
+      	</xsd:annotation></xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="datasources">
+        <xsd:annotation>
+        	<xsd:documentation>数据源的集合</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="group"/>
+      </xsd:sequence>
+      <xsd:attribute name="groupName" type="xsd:string" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>启用的数据源组名称</xsd:documentation>
+      	</xsd:annotation></xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="detectLeaks">
+        <xsd:annotation>
+        	<xsd:documentation>泄漏检测</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+      <xsd:attribute name="pollThreadTime" type="xsd:string"/>
+      <xsd:attribute name="detect" type="xsd:string"/>
+      <xsd:attribute name="leakTime" type="xsd:string"/>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="description" type="xsd:string">
+  	<xsd:annotation>
+  		<xsd:documentation>对数据源的描述</xsd:documentation>
+  	</xsd:annotation></xsd:element>
+  <xsd:element name="password" type="xsd:string">
+  	<xsd:annotation>
+  		<xsd:documentation>密码</xsd:documentation>
+  	</xsd:annotation></xsd:element>
+  <xsd:element name="validatorQuery" type="xsd:string">
+  	<xsd:annotation>
+  		<xsd:documentation>检查连接是否有效的sql</xsd:documentation>
+  	</xsd:annotation></xsd:element>
+  <xsd:element name="userName" >
+  	<xsd:annotation>
+  		<xsd:documentation>用户名</xsd:documentation>
+  	</xsd:annotation>
+  	 <xsd:complexType mixed="true">
+      <xsd:attribute name="type" use="optional">
+      	<xsd:annotation>
+           <xsd:documentation>用户的类型</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="Normal"></xsd:enumeration>
+      			<xsd:enumeration value="SYSDBA"></xsd:enumeration>
+      			<xsd:enumeration value="SYSPOER"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+    </xsd:complexType>
+  	</xsd:element>
+  <xsd:element name="datasource">
+        <xsd:annotation>
+        	<xsd:documentation>一个数据源</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="description"/>
+        <xsd:element minOccurs="0" ref="jndiName"/>
+        <xsd:element minOccurs="0" ref="driverClass"/>
+        <xsd:element maxOccurs="unbounded" minOccurs="0" ref="connectionUrl"/>
+        <xsd:element minOccurs="0" ref="userName"/>
+        <xsd:element minOccurs="0" ref="password"/>
+        <xsd:element minOccurs="0" ref="validatorQuery"/>
+        <xsd:element minOccurs="0" ref="detectLeaks"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>数据源名称，数据库连接·的名称</xsd:documentation>
+      	</xsd:annotation></xsd:attribute>
+      <xsd:attribute name="connectionType" use="required">
+                <xsd:annotation>
+                	<xsd:documentation>
+                		连接的类型，枚举：jdbc，jndi
+                	</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="jdbc"></xsd:enumeration>
+      			<xsd:enumeration value="jndi"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="prefix" use="optional">
+      	<xsd:annotation>
+      		<xsd:documentation>
+      			如果是jndi的连接，此处输入数据源前缀，例如：java:comp/env/
+      		</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="java:comp/env/"></xsd:enumeration>
+      			<xsd:enumeration value="env/"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="default" use="optional">
+                <xsd:annotation>
+                	<xsd:documentation>
+                		true代表默认的数据源，每个group中有且只有一个值为true的
+                	</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="true"></xsd:enumeration>
+      			<xsd:enumeration value="false"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+        </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="jndiName" type="xsd:string">
+  	<xsd:annotation>
+  		<xsd:documentation>
+  			jndi的名称，只有connectionType为jndi才可以
+  		</xsd:documentation>
+  	</xsd:annotation></xsd:element>
+  <xsd:element name="connectionUrl">
+        <xsd:annotation>
+        	<xsd:documentation>jdbc连接字符串</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+      <xsd:attribute name="name" type="xsd:string">
+      	<xsd:annotation>
+      		<xsd:documentation>名称</xsd:documentation>
+      	</xsd:annotation></xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="driverClass">
+        <xsd:annotation>
+        	<xsd:documentation>jdbc驱动实现类</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType mixed="true">
+      <xsd:attribute name="releaseBy" type="xsd:int" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>没有用连接的时候，释放连接的个数</xsd:documentation>
+      	</xsd:annotation></xsd:attribute>
+      <xsd:attribute name="defaultPool" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>默认池，建议是用false</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="true"></xsd:enumeration>
+      			<xsd:enumeration value="false"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="threadStickiness" use="required">
+                <xsd:annotation>
+                	<xsd:documentation>线程支持，一般选择true</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="true"></xsd:enumeration>
+      			<xsd:enumeration value="false"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="autoClose" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>自动管理连接，一般选择true</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:simpleType>
+      		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="true"></xsd:enumeration>
+      			<xsd:enumeration value="false"></xsd:enumeration>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="incrementBy" type="xsd:int" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>每次增加的连接数</xsd:documentation>
+      	</xsd:annotation></xsd:attribute>
+      <xsd:attribute name="maxConnection" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>最大连接数</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:simpleType>
+      		<xsd:restriction base="xsd:int">
+      			<xsd:minInclusive value="1"></xsd:minInclusive>
+      			<xsd:maxInclusive value="5000"></xsd:maxInclusive>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="timeOut" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>超时的时间，毫秒</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:simpleType>
+      		<xsd:restriction base="xsd:int">
+      			<xsd:minInclusive value="1"></xsd:minInclusive>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="idleTime" use="required">
+      	<xsd:annotation>
+      		<xsd:documentation>连接允许空闲的时间</xsd:documentation>
+      	</xsd:annotation>
+      	<xsd:simpleType>
+      		<xsd:restriction base="xsd:int">
+      			<xsd:minInclusive value="1"></xsd:minInclusive>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="minConnection" use="required">
+                <xsd:annotation>
+                	<xsd:documentation>最小连接数</xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+      		<xsd:restriction base="xsd:int">
+      			<xsd:maxInclusive value="50"></xsd:maxInclusive>
+      			<xsd:minInclusive value="1"></xsd:minInclusive>
+      		</xsd:restriction>
+      	</xsd:simpleType>
+      </xsd:attribute>
+        </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

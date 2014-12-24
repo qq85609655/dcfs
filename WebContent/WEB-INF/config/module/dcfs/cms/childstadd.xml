@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="childstadd" namespace="/cms/childstadd" extends="struts-default" >
+      <!-- 列表页面-->
+        <action name="findList" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="findList" >
+			<result name="success">/jsp/dcfs/cms/childSTAdd/childinfo_list.jsp</result>
+		</action>
+       <!-- 儿童材料录入基本信息页面-->
+       <action name="basicinfoadd" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="basicinfoadd" >
+		 <result name="success">/jsp/dcfs/cms/childSTAdd/child_basic_info_add.jsp</result>
+		 <!-- 2、错误处理页面 -->
+		 <result name="error">/jsp/error.jsp</result>
+	   </action>
+	    <!-- 儿童材料录入详细信息页面-->
+        <action name="infoadd" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="infoadd" >
+			<!-- 1、成功页面 -->
+			<result name="success">/jsp/dcfs/cms/childSTAdd/childinfo_add.jsp</result>
+			<!-- 2、业务错误提醒页面 -->
+			<result name="bizerror">/jsp/dcfs/common/bizerror.jsp</result>
+		</action>
+		<!-- 儿童材料信息修改页面-->
+        <action name="show" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="show" >
+        <!-- 1、省厅-材料办理-材料修改 -->
+		<result name="success">/jsp/dcfs/cms/childSTAdd/childinfo_modify.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		 <!-- 删除-->
+	    <action name="delete" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="delete" >
+			<result name="success" type="chain">childstadd/findList</result>
+		</action>
+		<!-- 儿童材料信息批量提交页面-->
+        <action name="stBatchSubmit" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="stBatchSubmit" >
+        <!-- 1、省厅-材料办理-材料提交 -->
+		<result name="success" type="chain">childstadd/findList</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料保存信息页面-->
+        <action name="save" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="save">
+        <!-- 1、省厅-材料办理-材料提交 -->
+		<result name="submit" type="chain">childstadd/findList</result>
+		<!-- 2、省厅-材料办理-材料保存 -->
+		<result name="save" type="chain">childstadd/show</result>
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料设置同胞页面-->
+        <action name="twinslist" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="twinsList" >
+        <!-- 1、省厅-材料办理 -同胞设置-->
+		<result name="success">/jsp/dcfs/cms/childSTAdd/cmsTwins_List.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料设置同胞-增加同胞-->
+        <action name="twinsadd" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="twinsadd" >
+        <!-- 1、省厅-材料办理 -同胞设置-->
+        <result name="success" type="chain">childstadd/twinslist</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料设置同胞-删除同胞-->
+        <action name="twinsdelete" class="com.dcfs.cms.childSTAdd.ChildSTAddAction" method="twinsdelete" >
+        <!-- 1、省厅-材料办理 -同胞设置-->
+		<result name="success" type="chain">childstadd/twinslist</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+	</package>
+</struts>

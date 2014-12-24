@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<html desc="html标签">
+		<head>
+<![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</html>
+]]>
+		</foot>
+	</html>
+		<display>
+				<head>
+<![CDATA[
+]]>
+		</head>
+		<foot>
+<![CDATA[
+{$value}
+]]>
+		</foot>
+	</display>
+	<head desc="head的标签">
+	<temp>
+	<![CDATA[
+	<meta http-equiv="X-UA-Compatible" content="IE=4">   <!-- IE5 mode -->
+	<meta http-equiv="X-UA-Compatible" content="IE=7.5"> <!-- IE7 mode -->
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"><!-- IE7 mode -->
+	<meta http-equiv="X-UA-Compatible" content="IE=100"> <!-- IE8 mode -->
+	<meta http-equiv="X-UA-Compatible" content="IE=a">   <!-- IE5 mode -->
+	<meta http-equiv="X-UA-Compatible" content="IE=5; IE=8" /><!-- 排除IE7 mode -->
+	]]>
+	</temp>
+		<head language="CN">
+<![CDATA[
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" >
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<script type="text/javascript">
+	var resourcePath = "{$resourcePath}/";
+	var path = "{$url}/";
+	var language ="{$language}/";
+</script>
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</head>
+]]>
+		</foot>
+	</head>
+	<url desc="页面路径">
+		<head>
+<![CDATA[
+{$url}
+]]>
+		</head>
+	</url>
+	<resourcePath desc="资源库的URL">
+		<head basePath="/resources" userPath="/resource1" child="">
+<![CDATA[
+{$url}{$basePath}{$userPath}{$child}
+]]>
+		</head>
+	</resourcePath>
+	<script desc="资源引入">
+		<head isAjax="false" isEdit="false" isList="false" isTab="false"
+			isWord="false" isDate="false" isSubList="false" isAttachment="false" isSuggest="false">
+<![CDATA[
+<link rel="stylesheet" type="text/css" href="{$resourcePath}/style/breezeBase.css" />
+<link rel="stylesheet" type="text/css" href="{$resourcePath}/style/icons.css" />
+<link href="{$resourcePath}/newindex/styles/base/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/newindex/styles/base/page.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/newindex/styles/base/form.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/newindex/styles/base/ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$resourcePath}/newindex/scripts/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{$resourcePath}/newindex/scripts/iframe.js"></script>
+{if $isList == "true"}
+<script type="text/javascript" src="{$resourcePath}/newindex/scripts/page.js"></script>
+<link href="{$resourcePath}/newindex/styles/base/list.css" rel="stylesheet" type="text/css" />
+{/if}
+{if $isSuggest=="true"}
+<link rel="stylesheet" type="text/css" href="{$resourcePath}/style/suggest.css">
+<script type="text/javascript" src="{$resourcePath}/js/suggest.js"></script>
+{/if}
+<script type="text/javascript" src="{$resourcePath}/js/extendString.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/breezeCommon.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/formVerify.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/runFormVerify.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/page.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/datetime.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/UrlBase64.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/ajax.js"></script>
+{if $isAjax == "true"}{/if}
+{if $isEdit == "true"}
+<link href="{$resourcePath}/newindex/styles/base/edit.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$resourcePath}/js/edit.js"></script>
+{/if}
+{if $isList == "true"}
+<script type="text/javascript" src="{$resourcePath}/js/list.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/standardList.js"></script>
+{/if}
+{if $isTab == "true"}{/if}
+{if $isWord == "true"}{/if}
+{if $isDate == "true"}
+<script type="text/javascript" defer="defer" src="{$resourcePath}/js/My97DatePicker/WdatePicker.js"></script>
+{/if}
+{if $isSubList == "true"}{/if}
+{if $isAttachment == "true"}{/if}
+{if $tree == "true"}
+<script type="text/javascript" src="{$resourcePath}/js/tree.js"></script>
+{/if}
+{if $isHelperSuggest == "true"}
+<script type="text/javascript" src="{$resourcePath}/js/suggest/jdimensions.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/suggest/jsuggest.js"></script>
+{/if}
+]]>
+		</head>
+	</script>
+	<body>
+		<head>
+<![CDATA[
+<body class="base" {if $onload} onload="{$onload}"{/if}{if $onunload} onunload="{$onunload}"{/if}{if $style} style="{$style}"{/if}{if $scroll} scroll="{$scroll}"{/if} >
+<script type="text/javascript">
+var jsCodeList = new Array();
+{foreach from=$jsList item="ite" key="k"}
+jsCodeList["{$ite.name}"]=new Array();
+{foreach from=$ite.CodeList item="l" key="m"}
+jsCodeList["{$ite.name}"]["{$l.value}"]="{$l.name}";
+{/foreach}
+{/foreach}
+</script>
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</body>
+]]>
+		</foot>
+	</body>
+	<form>
+		<head method="POST" target="_self" isContextPath="true"
+			enctype="application/x-www-form-urlencoded">
+<![CDATA[
+	<form name="{$name}" {if $id}id="{$id}" {/if}action="{$action}" method="{$method|upper}" target="{$target}"{if $className} class="{$className}"{/if} enctype="{$enctype}"{if $onsubmit} onsubmit="{$onsubmit}"{/if}{if $style} style="{$style}"{/if}{if $title} title="{$title}"{/if}>
+	{if $token}
+		<input type="hidden" name="RESUBMIT_TOKEN" value="{$token}"  />
+		<input type="hidden" name="{$token}" value="{$tokenValue}"  />
+
+	{/if}
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</form>
+]]>
+		</foot>
+	</form>
+	<th desc="标题头">
+		<head desc="标签部分" sortType="none" width="auto" sortplan="jsp" sortfield="">
+<![CDATA[
+<th class="sorting_" style="width: {$width}"><div tCaption="{$name}" sortType="{$sortType}" class="{$sortType}" name="{$sortplan}" id="{$sortfield}"><span style='float: left'>{$name}</span></div></th>
+]]>
+		</head>
+	</th>
+	<ty desc="序号排序操作标签">
+		<head desc="标签部分" serialnumber="0">
+<![CDATA[
+</span><img src="{$resourcePath}/images/select.gif" style="width:14px;left:14px;display:none;"><img src="{$resourcePath}/images/quxiao.gif" style="width:14px;left:14px;display:none;">
+]]>
+		</head>
+	</ty>
+	<col desc="colgroup标签生成">
+		<head desc="标签部分" colnumber="0">
+<![CDATA[
+<colgroup>
+{foreach from=$colnumber item="item"}
+<col>
+{/foreach}
+</colgroup>
+]]>
+		</head>
+	</col>
+	<table>
+		<head desc="列表table标签" tableid="tableGrid" tablename="tableGrid" tableclass="tableGrid">
+<![CDATA[
+<div class="gridOutDiv">
+<table id="{$tableid}" class="{$tableclass}">
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</table>
+</div>
+]]>
+		</foot>
+	</table>
+	<i>
+		<head desc="循环的序号">
+<![CDATA[
+<span>&nbsp;{$i}</span>
+]]>
+		</head>
+	</i>
+	<page>
+		<head type="default">
+<![CDATA[
+{if $pageSize > 0}
+{if $type=="default"}
+<div class="table-row tablepager">
+	<div class="table-pagina clearfix">
+		<input type="hidden" name="page" value="{$nowPage}">
+		<div class="col-sm-4">
+			<div {if !$count} style="display:none"{/if} class="dataTables_info" id="sample-table-2_info">显示<span id="page_page_start">{$start}</span>到<span id="page_page_end">{$end}</span>，共<span id="page_page_dataTotal">{$dataTotal}</span>条记录，每页<select class="pageSelect" name="pageSize" style="width:45px" onchange="_goto(document.{$form},'1',document.getElementById('page_pageNum').value)">
+				<option value="5"{if $pageSize == 5} selected{/if}>5</option>
+				<option value="10"{if $pageSize == 10} selected{/if}>10</option>
+				<option value="15"{if $pageSize == 15} selected{/if}>15</option>
+				<option value="20"{if $pageSize == 20} selected{/if}>20</option>
+				<option value="30"{if $pageSize == 30} selected{/if}>30</option>
+				<option value="50"{if $pageSize == 50} selected{/if}>50</option>
+				<option value="100"{if $pageSize == 100} selected{/if}>100</option>
+			</select>条</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="dataTables_paginate paging_bootstrap">
+				<textarea name="page_exportTitle" style="display:none">{$exportTitle}</textarea>
+				<textarea name="page_exportField" style="display:none">{$exportField}</textarea>
+				<textarea name="page_exportCode" style="display:none">{$exportCode}</textarea>
+				<input type="hidden" name="isShowEN" id="isShowEN" value="{$isShowEN}">
+				<input type="hidden" name="exportType" id="exportType" value="">
+				<input type="hidden" id="page_pageNum" value="{$pageNum}">
+				<input type="hidden" id="page_previousPage" value="{$previousPage}">
+				<input type="hidden" id="page_nextPage" value="{$nextPage}">
+				<input type="hidden" id="page_dataTotal" value="{$dataTotal}">
+				<input type="hidden" id="page_count" value="{$count}">
+				<input type="hidden" name="page_sql" id="page_sql" value="{$sql}">
+				<ul class="pagination" align="right">
+					<li><a onclick="_goto(document.{$form},'1',document.getElementById('page_pageNum').value,document.getElementById('page_count').value)" href="javascript:void(0);">第一页</a></li>
+					<li><a onclick="_goto(document.{$form},document.getElementById('page_previousPage').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value);" href="javascript:void(0);">&laquo; 上一页</a></li>
+					<li><a onclick="_goto(document.{$form},document.getElementById('page_nextPage').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value);" href="javascript:void(0);">下一页  &raquo;</a></li>
+					<li><a onclick="_goto(document.{$form},document.getElementById('page_pageNum').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value);" href="javascript:void(0);">最末页</a></li>
+					<li><span class="paggo">
+						<span class="pull-left">到</span>
+						<input id="page_inputPage" type="text" class="pull-left" style="width: 30px;" onkeydown="_gotoEnter(document.{$form},this.value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value)" value="{$nowPage}">
+						<span class="pull-left" id="page_hidden_1" {if !$count} style="display:none"{/if}>/{$pageNum}&nbsp;页</span>
+						<button style="margin-left: 12px;" onclick="_goto(document.{$form},document.getElementById('page_inputPage').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value)" class="button_add pull-left">Go</button>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{if !$count}
+<script type="text/javascript">
+var page_j_pageSize_{$form}={$pageSize};
+var page_j_countSql_{$form}="k={$countSql}";
+var page_j_nowPage_{$form}={$nowPage};
+_loadDataCount(page_j_pageSize_{$form},page_j_countSql_{$form},page_j_nowPage_{$form});
+</script>
+{/if}
+{/if}
+{if $type=="1"}
+<input type="hidden" name="page" value="{$nowPage}">
+<table style="width:100%">
+	<tr>
+		<td class="page_simple"><a href="#" onclick="javascript:_goto(document.{$form},'1',{$pageNum});">首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="_goto(document.{$form},'{$previousPage}',{$pageNum});">上一页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="_goto(document.{$form},'{$nextPage}',{$pageNum});">下一页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="_goto(document.{$form},'{$pageNum}',{$pageNum});">尾页</a>&nbsp;&nbsp;|&nbsp;&nbsp;共{$dataTotal}条&nbsp;&nbsp;第{$start}至{$end}条&nbsp;&nbsp;&nbsp;第{$nowPage}页/共{if $pageNum=="0"}1{else}{$pageNum}{/if}页</td>
+	</tr>
+</table>
+{/if}
+{/if}
+
+{if $type=="EN"}
+<div class="table-row tablepager">
+	<div class="table-pagina clearfix">
+		<input type="hidden" name="page" value="{$nowPage}">
+		<div class="col-sm-4">
+			<div {if !$count} style="display:none"{/if} class="dataTables_info" id="sample-table-2_info">Show <span id="page_page_start">{$start}</span> To <span id="page_page_end">{$end}</span>, Total <span id="page_page_dataTotal">{$dataTotal}</span> Records, Each Page <select class="pageSelect" name="pageSize" style="width:45px" onchange="_goto(document.{$form},'1',document.getElementById('page_pageNum').value)">
+				<option value="5"{if $pageSize == 5} selected{/if}>5</option>
+				<option value="10"{if $pageSize == 10} selected{/if}>10</option>
+				<option value="15"{if $pageSize == 15} selected{/if}>15</option>
+				<option value="20"{if $pageSize == 20} selected{/if}>20</option>
+				<option value="30"{if $pageSize == 30} selected{/if}>30</option>
+				<option value="50"{if $pageSize == 50} selected{/if}>50</option>
+				<option value="100"{if $pageSize == 100} selected{/if}>100</option>
+			</select> Records</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="dataTables_paginate paging_bootstrap">
+				<textarea name="page_exportTitle" style="display:none">{$exportTitle}</textarea>
+				<textarea name="page_exportField" style="display:none">{$exportField}</textarea>
+				<textarea name="page_exportCode" style="display:none">{$exportCode}</textarea>
+				<input type="hidden" name="isShowEN" id="isShowEN" value="{$isShowEN}">
+				<input type="hidden" name="exportType" id="exportType" value="">
+				<input type="hidden" id="page_pageNum" value="{$pageNum}">
+				<input type="hidden" id="page_previousPage" value="{$previousPage}">
+				<input type="hidden" id="page_nextPage" value="{$nextPage}">
+				<input type="hidden" id="page_dataTotal" value="{$dataTotal}">
+				<input type="hidden" id="page_count" value="{$count}">
+				<input type="hidden" name="page_sql" id="page_sql" value="{$sql}">
+				<ul class="pagination" align="right">
+					<li><a onclick="_goto(document.{$form},'1',document.getElementById('page_pageNum').value,document.getElementById('page_count').value)" href="javascript:void(0);">First Page</a></li>
+					<li><a onclick="_goto(document.{$form},document.getElementById('page_previousPage').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value);" href="javascript:void(0);">&laquo; Prev Page</a></li>
+					<li><a onclick="_goto(document.{$form},document.getElementById('page_nextPage').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value);" href="javascript:void(0);">Next Page &raquo;</a></li>
+					<li><a onclick="_goto(document.{$form},document.getElementById('page_pageNum').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value);" href="javascript:void(0);">Last Page</a></li>
+					<li><span class="paggo">
+						<span class="pull-left">Jump</span>
+						<input id="page_inputPage" type="text" class="pull-left" style="width: 30px;" onkeydown="_gotoEnter(document.{$form},this.value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value)" value="{$nowPage}">
+						<span class="pull-left" id="page_hidden_1" {if !$count} style="display:none"{/if}>/{$pageNum}&nbsp;Page</span>
+						<button style="margin-left: 12px;" onclick="_goto(document.{$form},document.getElementById('page_inputPage').value,document.getElementById('page_pageNum').value,document.getElementById('page_count').value)" class="button_add pull-left">Go</button>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{/if}
+
+]]>
+		</head>
+	</page>
+
+	<thead>
+		<head>
+<![CDATA[
+<thead>
+<tr>
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</tr>
+</thead>
+]]>
+		</foot>
+	</thead>
+	<tbody>
+		<head>
+<![CDATA[
+<tbody>
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</tbody>
+]]>
+		</foot>
+	</tbody>
+	<data>
+		<head className="data" target="_self">
+<![CDATA[
+{if $onlyValue}{$value}{else}{if $href}<a href="{$href}" class="{$className}" title="{$hrefTitle}" target="{$target}">{/if}<span class="{$className}"{if $style} style="{$style}"{/if} title="{$title}" {if $onclick} onclick="{$onclick}"{/if}>{$value}</span>{if $href}</a>{/if}{/if}
+]]>
+		</head>
+	</data>
+	<dataValue>
+		<foot className="data" target="_self">
+<![CDATA[
+{if $onlyValue}{$value}{else}{if $href}<a href="{$href}" class="{$className}" title="{$hrefTitle}" target="{$target}">{/if}<span class="{$className}"{if $style} style="{$style}"{/if}{if $onclick} style="{$onclick}"{/if} title="{$title}">{$value}</span>{if $href}</a>{/if}{/if}
+]]>
+		</foot>
+	</dataValue>
+	<a>
+		<head className="data">
+<![CDATA[
+<a href="
+]]>
+		</head>
+		<foot className="data" target="_self">
+<![CDATA[
+" target="{$target}" class="{$className}" title="{$title}">{$value}</a>
+]]>
+		</foot>
+	</a>
+	<attribute>
+		<head>
+<![CDATA[
+{$value}
+]]>
+		</head>
+	</attribute>
+	<input>
+		<string className="inputText">
+<![CDATA[
+<input name="{$name}" {if $id} id="{$id}" {/if} class="{$className}"{if $maxlength} maxlength="{$maxlength}"{/if} formTitle="{$formTitle}"{if $notnull} notnull="{$notnull}"{/if}{if $restriction} restriction="{$restriction}"{/if} type="text"
+onkeyup="_check_one(this);{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="_inputMouseBlur(this);error_onblur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}" onclick="error_onclick(this);{if $onclick}{$onclick}{/if}" onchange="{if $onchange}{$onchange}{/if}" value="{$value}"
+{if $disabled=='true'}disabled="disabled"{/if} {if $readonly=='true'}readonly="readonly"{/if} {if $size}size="{$size}"{/if} style="{if $style}{$style}{/if}" />
+]]>
+		</string>
+
+		<suggest className="inputText">
+<![CDATA[
+<input type="text" name="{$name}" {if $id} id="{$id}" {/if} {if $style} style="{$style}"{/if} value="{$value}" onkeyup="search_suggest(this);{if $onkeyup}{$onkeyup}{/if}" skey="{$skey}" ext="{$ext}" onclick="clearAll();{if $onclick}{$onclick}{/if}" onblur="clearAll();{if $onblur}{$onblur}{/if}" class="{if $classname}{$classname}{else}inputStyle{/if}"
+{if $maxlength} maxlength="{$maxlength}"{/if} formTitle="{$formTitle}" {if $notnull} notnull="{$notnull}"{/if} {if $restriction} restriction="{$restriction}"{/if} {if $onmouseout}onmouseout="{$onmouseout}"{/if} {if $onmousemove}onmousemove="{$onmousemove}"{/if} {if $onmouseover}onmouseover="{$onmouseover}"{/if} {if $onfocus}onfocus="{$onfocus}"{/if}
+{if $onchange}onchange="{$onchange}"{/if} {if $disabled=='true'}disabled="disabled"{/if} {if $readonly=='true'}readonly="readonly"{/if} {if $title}title="{$title}"{/if}
+/>
+<input type="hidden" name="smaxnum" id="{$sprefix}smaxnum" value="{$smaxnum}"/>
+<input type="hidden" name="sonmouseover" id="{$sprefix}sonmouseover" value="{$sonmouseover}"/>
+<input type="hidden" name="sstyle" id="{$sprefix}sstyle" value="{$sstyle}"/>
+<div id="{$sprefix}show_suggest" {if $sstyle}style="{$sstyle}"{/if} class="divStyle"></div>
+]]>
+		</suggest>
+		<helpersuggest className="inputText">
+<![CDATA[
+<input type="hidden" name="{$name}"{if $id} id="{$id}" {else} id="{$name}" {/if} value="{if $value!==null && $value!=='null'}{$value}{/if}">
+<input name="{$showName}" id="{$showFieldId}" {if $id} hidid="{$id}" {else} hidid="{$name}" {/if} class="{$className}"{if $maxlength} maxlength="{$maxlength}"{/if} formTitle="{$formTitle}"{if $notnull} notnull="{$notnull}"{/if}{if $restriction} restriction="{$restriction}"{/if} type="text"
+onkeyup="_check_one(this);{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="_inputMouseBlur(this);error_onblur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}" onclick="error_onclick(this);{if $onclick}{$onclick}{/if}" onchange="{if $onchange}{$onchange}{/if}" value="{$showValue}"
+{if $disabled=='true'}disabled="disabled"{/if} {if $readonly=='true'}readonly="readonly"{/if} {if $size}size="{$size}"{/if} style="{if $style}{$style}{/if}" />
+<div id='{$showFieldId}_suggest' class="ac_results" style="{if $style}{$style}{/if}"></div>
+<script type="text/javascript">
+$(function(){
+	$("#{$showFieldId}").suggest({$showFieldId}_datas,{$ldelim}hot_list:{$showFieldId}_commondatas,attachObject:"#{$showFieldId}_suggest"{$rdelim});
+});
+//循环数据
+var {$showFieldId}_commondatas=new Array();
+var {$showFieldId}_datas=new Array();
+{foreach from=$codeList item="ite" key="k"}
+	{$showFieldId}_datas[{$showFieldId}_datas.length]=new Array('{$ite.value}','{$ite.name}','{$ite.pinyin}','{$ite.pyHead}');
+{/foreach}
+{foreach from=$commoncodeList item="ite" key="k"}
+	{$showFieldId}_commondatas[{$showFieldId}_commondatas.length]=new Array('{$ite.value}','{$ite.name}','{$ite.pinyin}','{$ite.pyHead}');
+{/foreach}
+</script>
+]]>
+		</helpersuggest>
+
+		<date className="inputText" dateFormat="yyyy-MM-dd">
+<![CDATA[
+{if $readonly=='true'}
+<input name="{$name}" {if $id} id="{$id}" {/if} class="{$className}"{if $maxlength} maxlength="{$maxlength}"{/if} formTitle="{$formTitle}"{if $notnull} notnull="{$notnull}"{/if}{if $restriction} restriction="{$restriction}"{/if} type="text"
+onkeyup="_check_one(this);{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="error_onblur(this);_inputMouseBlur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}" onclick="error_onclick(this);{if $onclick}{$onclick}{/if}" onchange="{if $onchange}{$onchange}{/if}" value="{$value}"
+{if $disabled=='true'}disabled="disabled"{/if} {if $readonly=='true'}readonly="readonly"{/if} {if $size}size="{$size}"{/if} style="{if $style}{$style}{/if}" />
+{else}
+<input onclick="error_onclick(this);{if $onclick}{$onclick}{/if}" {if $message}onfocus="_msgAlert(this,'{$message}');" onblur="hide(true);"{/if} style="width:125px;height:18px;padding-top:4px;padding-left:2px;font-size: 12px;{if $style}{$style}{/if}" {if $onblur }onblur="{$onblur}" {/if}formTitle="{$formTitle}" {if $onchange}onchange="{$onchange}"{/if} name="{$name}"{if $restriction} restriction="{$restriction}"{/if}{if $notnull} notnull="{$notnull}"{/if}{if $id} id="{$id}"{/if} type="text" onfocus="WdatePicker({$ldelim}dateFmt:'{$dateFormat}'{if $dateExtend},{$dateExtend}{/if}{$rdelim})" class="Wdate" value="{$value}"/>{/if}
+]]>
+		</date>
+		<dateFormat className="inputText" dateFormat="yyyy年MM月dd日">
+<![CDATA[
+<input {if $message}onfocus="_msgAlert(this,'{$message}');" onblur="error_onblur(this);hide(true);"{/if} style="width:125px;height:18px;padding-top:4px;padding-left:2px;font-size: 12px;{if $style}{$style}{/if}" name="{$name}_dateName"{if $id} id="{$id}"{/if} type="text" onfocus="WdatePicker({$ldelim}dateFmt:'{$dateFormat}',vel:'{if $id}{$id}{else}{$name}_dateId{/if}'{if $dateExtend},{$dateExtend}{/if}{$rdelim})" onclick="error_onclick(this);{if $onclick}{$onclick}{/if}" class="Wdate"/>
+<input name="{$name}" {if $notnull} notnull="{$notnull}"{/if} id="{if $id}{$id}{else}{$name}_dateId{/if}" type="hidden" value="{$value}"/>
+]]>
+		</dateFormat>
+		<datetime className="inputText" dateFormat="yyyy-MM-dd HH:mm:ss">
+<![CDATA[
+<input {if $message}onfocus="_msgAlert(this,'{$message}');" onblur="error_onblur(this);hide(true);"{/if} style="width:160px;height:18px;padding-top:4px;padding-left:2px;font-size: 12px;{if $style}{$style}{/if}" name="{$name}"{if $notnull} notnull="{$notnull}"{/if}{if $id} id="{$id}"{/if} type="text" onfocus="WdatePicker({$ldelim}dateFmt:'{$dateFormat}'{if $dateExtend},{$dateExtend}{/if}{$rdelim})" class="Wdate" value="{$value}"/>
+]]>
+		</datetime>
+		<datetimeFormat className="inputText" dateFormat="yyyy年MM月dd日  HH时mm分ss秒">
+<![CDATA[
+<input {if $message}onfocus="_msgAlert(this,'{$message}');" onblur="hide(true);"{/if} style="width:150px;height:18px;padding-top:4px;padding-left:2px;font-size: 12px;{if $style}{$style}{/if}" name="{$name}_dateName"{if $id} id="{$id}"{/if} type="text" onfocus="WdatePicker({$ldelim}dateFmt:'{$dateFormat}',vel:'{if $id}{$id}{else}{$name}_dateId{/if}'{if $dateExtend},{$dateExtend}{/if}{$rdelim})" class="Wdate" />
+<input name="{$name}"{if $notnull} notnull="{$notnull}"{/if} id="{if $id}{$id}{else}{$name}_dateId{/if}" type="hidden" value="{$value}"/>
+]]>
+		</datetimeFormat>
+		<hidden>
+<![CDATA[
+<textarea name="{$name}" style="display:none" {if $id} id="{$id}" {/if} {if $disabled=='true'}disabled="disabled"{/if}>{$value}</textarea>
+]]>
+		</hidden>
+		<textarea>
+<![CDATA[
+<textarea {if $maxlength} maxlength="{$maxlength}"{/if} {if $readonly=='true'}readonly="readonly"{/if}
+onkeyup="_check_one(this);{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="_inputMouseBlur(this);error_onblur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}" onclick="error_onclick(this);{if $onclick}{$onclick}{/if}" onchange="{if $onchange}{$onchange}{/if}"
+{if $message}onfocus="_msgAlert(this,'{$message}');"{/if} name="{$name}" class="{$className}" {if $style}style="{$style}"{/if} {if $id} id="{$id}" {/if} {if $disabled=='true'}disabled="disabled"{/if}>{$value}</textarea>
+]]>
+		</textarea>
+		<helper className="inputText">
+<![CDATA[
+<table id="TB_{$showFieldId}" style="{if $style}{$style}{/if}" class="Tsearch_input" cellspacing="0" cellpadding="0">
+	<tr style="height:18px;">
+		<td style="width:100%;border:0px;height:16px;padding:0px;">
+<input inputType="helper" selectValue="{if $value!==null && $value!=='null'}{$value}{/if}" name="{$showName}" id="{$showFieldId}" formTitle="{$formTitle}"{if $notnull} notnull="{$notnull}"{/if}{if $restriction} restriction="{$restriction}"{/if} type="text"
+onkeyup="{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="_inputMouseBlur(this);error_onblur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}"
+onclick="{if $onclick}{$onclick};{/if}" ondblclick="_clearHelperValue('{$showFieldId}','{if $id}{$id}{else}{$name}{/if}')" onchange="{if $onchange}{$onchange}{/if}" value="{$showValue}"
+{if $size}size="{$size}"{/if} title="{if $showValue}双击清除选择内容：{$showValue}{/if}" readonly/></td>
+		<td class="Tsearch_td" >
+		<div class="Tsearch_div" onmouseover="_moveImg(this,'Tsearch_div_move');" onmouseout="_moveImg(this,'Tsearch_div');">
+		<img src="{$resourcePath}/images/ps1.gif" title="点击选择" onclick="_showHelper('{$showFieldId}','{if $id}{$id}{else}{$name}{/if}','{if $helperTitle}{$helperTitle}{/if}','{$helperCode}','{if $showParent}{$showParent}{/if}','{if $helperParam}{$helperParam}{/if}','{$treeType}','{if $sync}{$sync}{/if}');"/>
+		</div>
+		</td>
+	</tr>
+</table>
+
+<textarea name="{$name}"{if $id} id="{$id}" {else} id="{$name}" {/if} style="display:none">{if $value!==null && $value!=='null'}{$value}{/if}</textarea>
+]]>
+		</helper>
+		<helper1 className="inputText">
+<![CDATA[
+<table style="{if $style}{$style}{/if}" class="Tsearch_input" cellspacing="1" cellpadding="1">
+	<tr style="height:18px;">
+		<td style="width:100%;border:0px;height:16px;padding:0px;">
+<input name="{$showName}" id="{$showName}" formTitle="{$formTitle}"{if $notnull} notnull="{$notnull}"{/if}{if $restriction} restriction="{$restriction}"{/if} type="text"
+onkeyup="_check_one(this);{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="_inputMouseBlur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}"
+onclick="{if $onclick}{$onclick};{/if}" ondblclick="_clearHelperValue('{$showName}','{if $id}{$id}{else}{$name}{/if}')" onchange="{if $onchange}{$onchange}{/if}" value="{$showValue}"
+readonly="readonly" {if $size}size="{$size}"{/if} title="{if $showValue}双击清除选择内容：{$showValue}{/if}" style="width:100%;height:18px;cursor:text;padding-top:2px;vertical-align: middle;border:0px;{if $style}{$style}{/if}"/></td>
+		<td style="width:120px;height:18px;text-align:center;border:0px;white-space:nowrap;font-size:12px;padding:4px 0px 0px 0px;" ><a href="#" onclick="_showHelper('{$showName}','{if $id}{$id}{else}{$name}{/if}','{if $helperTitle}{$helperTitle}{/if}','{$helperCode}','{if $showParent}{$showParent}{/if}','{if $helperParam}{$helperParam}{/if}','{$treeType}');return false;" class="Tsearch_pointer" title="点击选择">　　选择</a></td>
+	</tr>
+</table>
+<textarea name="{$name}"{if $id} id="{$id}" {else} id="{$name}" {/if} style="display:none">{$value}</textarea>
+]]>
+		</helper1>
+		<check className="inputText">
+<![CDATA[
+<table style="{if $style}{$style}{/if}" class="Tsearch_input" cellspacing="0" cellpadding="0">
+	<tr style="height:18px;">
+		<td style="width:100%;border:0px;height:16px;padding:0px;"><input inputType="check" name="{$name}" {if $id} id="{$id}" {/if} class="{$className}"{if $maxlength} maxlength="{$maxlength}"{/if} formTitle="{$formTitle}"{if $notnull} notnull="{$notnull}"{/if}{if $restriction} restriction="{$restriction}"{/if} type="text"
+onkeyup="{if $onkeyup}{$onkeyup}{/if}" onmouseout="_inputMouseOut(this);{if $onmouseout}{$onmouseout}{/if}" onmousemove="_inputMouseOver(this);{if $onmousemove}{$onmousemove}{/if}"
+onblur="_inputMouseBlur(this);error_onblur(this);hide(true);{if $onblur}{$onblur}{/if}" onfocus="_inputMouseFocus(this);this.select();{if $message}_msgAlert(this,'{$message}');{/if}{if $onfocus}{$onfocus}{/if}" onclick="error_onclick(this);" onchange="{if $onchange}{$onchange}{/if}" value="{$value}"
+{if $disabled=='true'}disabled="disabled"{/if} {if $readonly=='true'}readonly="readonly"{/if} {if $size}size="{$size}"{/if} style="padding-top:2px;height:18px;cursor:default;width:100%;border:0px;" /></td>
+	{if $onclick}
+	<td class="Tsearch_td" >
+		<div class="Tsearch_div" onmouseover="_moveImg(this,'Tsearch_div_move');" onmouseout="_moveImg(this,'Tsearch_div');">
+		<img src="{$resourcePath}/images/ps1.gif" title="点击选择" onclick="{$onclick}"/>
+		</div>
+	</td>
+	{/if}
+	</tr>
+</table>
+
+
+]]>
+		</check>
+	</input>
+	<radios>
+		<head>
+<![CDATA[
+{$html}
+]]>
+		</head>
+	</radios>
+	<checkboxs>
+		<head>
+<![CDATA[
+{$html}
+]]>
+		</head>
+	</checkboxs>
+	<tree>
+		<head treeName="tree" iconPath="/images/tree/">
+<![CDATA[
+
+<script language="JavaScript">
+var {$treeName}Data=new Array();
+{if $root=='false'}
+	{$treeName}Data["-1#0"] = "text:{$topName};";
+{else}
+	{$treeName}Data["-1#0"] = "text:;";
+{/if}
+
+{foreach from=$cList item="ite" key="k"}
+{if $sync=='false'}
+	{$treeName}Data["{$ite.parentvalue}#{$ite.value}"]="text:{$ite.codename};{if !$ite.rem && $ite.hasChild!=='false'}XMLData:CodeListServlet?parentId={$ite.value};{/if}{if $ite.url}url:{$ite.url}{if $ite.exp}&{$ite.exp}{/if};{if $ite.target}target:{$ite.target};{else}{if $target}target:{$target};{/if}{/if}{else}{if $url}url:{$url}{$ite.value}{if $ite.exp}&{$ite.exp}{/if};{if $ite.target}target:{$ite.target};{else}{if $target}target:{$target};{/if}{/if}{/if}{/if}{if $ite.icon}icon:{$ite.icon};{/if}data:roomid={$ite.value};pinyin:{$ite.pinyin};pyhead:{$ite.pyhead};canCheck:{$ite.canCheck}";
+{else}
+	{$treeName}Data["{$ite.parentvalue}#{$ite.value}"]="text:{$ite.codename};{if $ite.url}url:{$ite.url}{if $ite.exp}&{$ite.exp}{/if};{if $ite.target}target:{$ite.target};{else}{if $target}target:{$target};{/if}{/if}{else}{if $url}url:{$url}{$ite.value}{if $ite.exp}&{$ite.exp}{/if};{if $ite.target}target:{$ite.target};{else}{if $target}target:{$target};{/if}{/if}{/if}{/if}{if $ite.icon}icon:{$ite.icon};{/if}data:roomid={$ite.value};pinyin:{$ite.pinyin};pyhead:{$ite.pyhead};canCheck:{$ite.canCheck}";
+{/if}
+{/foreach}
+
+Using("system.web.ui.webcontrols.MzTreeView");
+var {$treeName} = new MzTreeView();
+{$treeName}.dataSource = {$treeName}Data;
+{$treeName}.rootId="0";
+{$treeName}.autoSort={$autoSort};
+{if $type=='-1' || $type=='3'}
+{$treeName}.onlyCheckChild=true;
+{/if}
+{if $type=='0' || $type=='-1'}
+{$treeName}.useCheckbox=false;
+{else}
+{if $type=='2'}
+{$treeName}.onlySelectSelf=true;
+{/if}
+{$treeName}.useCheckbox=true;
+{/if}
+{$treeName}.TreeObjName="{$treeName}";
+{$treeName}.TreeObjType="{$type}";
+{$treeName}.canOperate={$canOperate};
+document.write({$treeName}.render());
+{$treeName}.expandLevel(1);
+loadTreeValues({$treeName},"{$treeName}","{$values}");
+</script>
+]]>
+		</head>
+	</tree>
+
+	<codetree>
+	<head iconPath="/images/tree/">
+<![CDATA[
+<div id="areatree" style="width: 100%; height: 100%; overflow: auto; scrollbar-base-color: #CCCFFF;background:#FFFFFF" ></div>
+<script language="JavaScript">
+tree = new MzTreeView("tree");
+tree.setIconPath("{$resourcePath}{$iconPath}");
+with(tree){
+{if $root=='false'}
+N["0#-1"]="T:{$topName};C:L('-1',true);";
+{/if}
+{foreach from=$cList item="ite" key="k"}
+N["{$ite.parentvalue}#{$ite.value}"]={if $type == 0}"C:L('{$ite.value}',true);T:{$ite.codename};F:{$ite.parentvalue}"{elseif $type == 1}"ctrl:sel;checked:{$ite.select};X:true;S:false;C:L('{$ite.value}',true);T:{$ite.codename};F:{$ite.parentvalue}"{elseif $type == 2}"ctrl:sel;checked:{$ite.select};X:false;S:true;C:L('{$ite.value}',true);T:{$ite.codename};F:{$ite.parentvalue}"{elseif $type == 3}"ctrl:sel;checked:{$ite.select};X:false;S:false;C:L('{$ite.value}',true);T:{$ite.codename};F:{$ite.parentvalue}"{elseif $type == 4}"ctrl:sel;checked:{$ite.select};X:true;S:true;C:L('{$ite.value}',true);T:{$ite.codename};F:{$ite.parentvalue}"{elseif $type == 5}"C:L('{$ite.value}',false);T:{$ite.codename};F:{$ite.parentvalue}"{/if};
+{/foreach}
+}
+tree.setURL="#";
+document.getElementById("areatree").innerHTML=tree.toString();
+{if $sl > 0}
+{foreach from=$splitValue item="ov"}
+tree.Click("{$ov|replace:" ":""}")
+{/foreach}
+{/if}
+</script>
+]]>
+		</head>
+	</codetree>
+	<frameDiv>
+<head className="kuangjia">
+<![CDATA[
+<div class="{$className}">
+{if $show == 1}
+{if $infotype == 0}
+<table border="0" cellpadding="0" cellspacing="0" class="clewtable" id="clewtableid" style="display:none">
+<tr>
+<td class="clewid_cg"></td>
+<td class="clewcontent_cg"><script>alert('{$infocontent}')</script></td>
+</tr>
+</table>
+{elseif $infotype == 1}
+<table border="0" cellpadding="0" cellspacing="0" class="clewtable" id="clewtableid" style="display:none">
+<tr>
+<td class="clewid_yc"></td>
+<td class="clewcontent_yc"><script>alert('{$infocontent}')</script></td>
+</tr>
+</table>
+{elseif $infotype == 2}
+<table border="0" cellpadding="0" cellspacing="0" class="clewtable" id="clewtableid" style="display:none">
+<tr>
+<td class="clewid_cw"></td>
+<td class="clewcontent_cw"><script>alert('{$infocontent}')</script></td>
+</tr>
+</table>
+{/if}
+{/if}
+]]>
+		</head>
+		<foot>
+<![CDATA[
+</div>
+{if $show == 1}
+<script type="text/javascript">
+var intervalID =window.setInterval("_closeshowdiv()",3000);
+function _closeshowdiv(){
+	document.getElementById('clewtableid').style.display='none';
+	window.clearInterval(intervalID);
+}
+</script>
+{/if}
+]]>
+		</foot>
+	</frameDiv>
+
+	<tail desc="网站尾部">
+		<head>
+<![CDATA[
+<div class="footer">
+管理维护：   &nbsp;&nbsp;&nbsp;&nbsp; 电话： <br />
+地址： <br/>
+</div>
+]]>
+		</head>
+	</tail>
+	<taildetail desc="详细页面尾部">
+		<head>
+<![CDATA[
+<div class="footer w850 noprint">
+管理维护：   &nbsp;&nbsp;&nbsp;&nbsp; 电话： <br />
+地址： <br/>
+</div>
+]]>
+		</head>
+	</taildetail>
+
+	<table_oa>
+		<head desc="列表table标签" tableid="tableGrid" tablename="tableGrid"
+			tableclass="tableGrid">
+	<![CDATA[
+	<table id="{$tableid}" width="100%" border="0" cellspacing="0" cellpadding="0" class="{$tableclass}">
+	]]>
+			</head>
+			<foot>
+	<![CDATA[
+	</table>
+	]]>
+		</foot>
+	</table_oa>
+
+	<thead_oa>
+		<head>
+	<![CDATA[
+	<tr>
+	]]>
+			</head>
+			<foot>
+	<![CDATA[
+	</tr>
+	]]>
+		</foot>
+	</thead_oa>
+
+	<th_oa desc="标题头">
+		<head desc="标签部分" sortType="none" width="auto" sortplan="jsp" sortfield="">
+	<![CDATA[
+	<th width="{$width}" onmouseout="thmoveout(this)" onmouseover="thmovrover(this)" id="titleth_{$sortfield}" {if $sortType=='yes'} onclick="_sort('DESC','{$sortfield}')" {/if} >{$name}{if $sortType=='yes'}<img src="{$resourcePath}/images/oajpg/title_up.png" class="title_up_down" style="display:none;" />{/if}</th>
+	]]>
+		</head>
+	</th_oa>
+
+	<tbody_oa>
+		<head>
+	<![CDATA[
+	]]>
+			</head>
+			<foot>
+	<![CDATA[
+	]]>
+		</foot>
+	</tbody_oa>
+
+	<ty_oa>
+		<head>
+	<![CDATA[
+	<tr onmouseout="trmoveout(this)" onmouseover="trmovrover(this)">
+	]]>
+			</head>
+			<foot>
+	<![CDATA[
+	</tr>
+	]]>
+		</foot>
+	</ty_oa>
+
+	<valiCode>
+		<head>
+	<![CDATA[
+	<tr>
+		<td class="txt" nowrap>验证码：</td>
+		<td align="left"><input type="text" name="j_code" size=5/><img id="codeImg" onclick="getValiCode({$imgWidth},{$imgHeight},{$strNum},'{$codeType}','{$imgPath}');" alt="点击刷新" style="cursor:pointer"/></td>
+	</tr>
+	]]>
+		</head>
+	</valiCode>
+
+	<webscript desc="资源引入">
+		<head index="false" list="false" edit="false" tree="false" date="false">
+<![CDATA[
+<link href="{$resourcePath}/style/base/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/style/base/icons.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/style/base/form.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/style/base/ui-1.10.3.css" rel="stylesheet" type="text/css" />
+<link href="{$resourcePath}/style/base/page.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"  src="{$resourcePath}/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript"  src="{$resourcePath}/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript"  src="{$resourcePath}/js/breeze.index.js"></script>
+<script type="text/javascript" src="{$resourcePath}/js/iframe.js"></script>
+<!--校验用资源-->
+<link rel="stylesheet" type="text/css" href="{$oldResourcePath}/style/breezeBase.css" />
+<script type="text/javascript" src="{$oldResourcePath}/js/extendString.js"></script>
+<script type="text/javascript" src="{$oldResourcePath}/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="{$oldResourcePath}/js/breezeCommon.js"></script>
+<script type="text/javascript" src="{$oldResourcePath}/js/formVerify.js"></script>
+<script type="text/javascript" src="{$oldResourcePath}/js/runFormVerify.js"></script>
+
+{if $index == "true"}
+<link href="{$resourcePath}/style/base/breeze2_index.css" rel="stylesheet" type="text/css" />
+{/if}
+{if $list == "true"}
+<link href="{$resourcePath}/style/base/list.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{$resourcePath}/js/list.js"></script>
+{/if}
+{if $edit == "true"}
+<link href="{$resourcePath}/style/base/edit.css" rel="stylesheet" type="text/css" />
+{/if}
+{if $tree == "true"}
+<script type="text/javascript" src="{$oldResourcePath}/js/page.js"></script>
+{/if}
+{if $isAjax == "true"}
+<script type="text/javascript" src="{$oldResourcePath}/js/ajax.js"></script>
+{/if}
+]]>
+		</head>
+	</webscript>
+</taglib>

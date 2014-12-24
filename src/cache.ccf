@@ -1,0 +1,163 @@
+# DEFAULT CACHE REGION
+
+# sets the default aux value for any non configured caches
+jcs.default=
+jcs.default.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.default.cacheattributes.MaxObjects=1000
+jcs.default.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+jcs.default.elementattributes=org.apache.jcs.engine.ElementAttributes
+jcs.default.elementattributes.IsEternal=false
+jcs.default.elementattributes.MaxLifeSeconds=3600
+jcs.default.elementattributes.IdleTime=1
+jcs.default.elementattributes.IsSpool=true
+jcs.default.elementattributes.IsRemote=false
+jcs.default.elementattributes.IsLateral=true
+
+#默认缓存
+jcs.BreezeCache= 
+jcs.BreezeCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.BreezeCache.cacheattributes.MaxObjects=5000 
+jcs.BreezeCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+#上面配置了默认缓冲属性。一个应用中，由于对象类型的不同，可能会使用多个缓冲区，每个缓冲区都会有一个名字，
+#如果在配置文件中没有指明特定的缓冲区的属性，所有的缓冲区都会根据默认属性来构建。上面的内容，
+#指明缓冲区的大小为存放1000个对象，内存缓冲器使用LRUMemoryCache对象。可选的还有MRUMemoryCache，
+#应该可以自定义新的内存缓冲区。1000个缓冲对象这个容量，是指每个缓冲区都缓冲1000个，而不是指所有缓冲区总容量。
+
+#数据库的缓存用
+jcs.SqlCache= 
+jcs.SqlCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.SqlCache.cacheattributes.MaxObjects=1000 
+jcs.SqlCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.SqlCache.cacheattributes.cacheattributes.UseMemoryShrinker=true 
+jcs.SqlCache.cacheattributes.cacheattributes.MaxMemoryIdleTimeSeconds=3600 
+jcs.SqlCache.cacheattributes.cacheattributes.ShrinkerIntervalSeconds=60 
+#配置文件缓存
+jcs.ConfigCache= 
+jcs.ConfigCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.ConfigCache.cacheattributes.MaxObjects=10000 
+jcs.ConfigCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+#页面缓存
+jcs.PageCache= 
+jcs.PageCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.PageCache.cacheattributes.MaxObjects=1000 
+jcs.PageCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.PageCache.cacheattributes.cacheattributes.UseMemoryShrinker=true 
+jcs.PageCache.cacheattributes.cacheattributes.MaxMemoryIdleTimeSeconds=3600 
+jcs.PageCache.cacheattributes.cacheattributes.ShrinkerIntervalSeconds=60 
+#其它的缓存
+jcs.OtherCache= 
+jcs.OtherCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.OtherCache.cacheattributes.MaxObjects=1000 
+jcs.OtherCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.OtherCache.cacheattributes.cacheattributes.UseMemoryShrinker=true 
+jcs.OtherCache.cacheattributes.cacheattributes.MaxMemoryIdleTimeSeconds=3600 
+jcs.OtherCache.cacheattributes.cacheattributes.ShrinkerIntervalSeconds=60 
+#Framework缓存  组织
+jcs.FrameworkOrganCache= 
+jcs.FrameworkOrganCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkOrganCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkOrganCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkOrganCache.elementattributes.IsEternal=true
+#Framework缓存  组织与人员关系
+jcs.FrameworkOrgPersonCache= 
+jcs.FrameworkOrgPersonCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkOrgPersonCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkOrgPersonCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+jcs.FrameworkOrgPersonCache.elementattributes.IsEternal=true
+#Framework缓存  人员
+jcs.FrameworkPersonCache= 
+jcs.FrameworkPersonCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkPersonCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkPersonCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkPersonCache.elementattributes.IsEternal=true
+#Framework缓存  人员账号
+jcs.FrameworkAccountCache= 
+jcs.FrameworkAccountCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkAccountCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkAccountCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkAccountCache.elementattributes.IsEternal=true
+#Framework缓存  管理员
+jcs.FrameworkAdminCache= 
+jcs.FrameworkAdminCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkAdminCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkAdminCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkAdminCache.elementattributes.IsEternal=true
+#Framework缓存  管理员可管理机构
+jcs.FrameworkAdminOrgCache= 
+jcs.FrameworkAdminOrgCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkAdminOrgCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkAdminOrgCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkAdminOrgCache.elementattributes.IsEternal=true
+#Framework缓存  管理员可管理应用
+jcs.FrameworkAdminAppCache= 
+jcs.FrameworkAdminAppCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkAdminAppCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkAdminAppCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkAdminAppCache.elementattributes.IsEternal=true
+#Framework缓存  角色
+jcs.FrameworkRoleCache= 
+jcs.FrameworkRoleCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkRoleCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkRoleCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkRoleCache.elementattributes.IsEternal=true
+#Framework缓存  角色授权组织
+jcs.FrameworkRoleOrgCache= 
+jcs.FrameworkRoleOrgCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkRoleOrgCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkRoleOrgCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkRoleOrgCache.elementattributes.IsEternal=true
+#Framework缓存  角色授权人员
+jcs.FrameworkRolePersonCache= 
+jcs.FrameworkRolePersonCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkRolePersonCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkRolePersonCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkRolePersonCache.elementattributes.IsEternal=true
+#Framework缓存  角色 模块
+jcs.FrameworkRoleModuleCache= 
+jcs.FrameworkRoleModuleCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkRoleModuleCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkRoleModuleCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkRoleModuleCache.elementattributes.IsEternal=true
+#Framework缓存  角色 资源
+jcs.FrameworkRoleResourceCache= 
+jcs.FrameworkRoleResourceCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkRoleResourceCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkRoleResourceCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkRoleResourceCache.elementattributes.IsEternal=true
+#Framework缓存  应用
+jcs.FrameworkAppCache= 
+jcs.FrameworkAppCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkAppCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkAppCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkAppCache.elementattributes.IsEternal=true
+#Framework缓存  模块
+jcs.FrameworkModuleCache= 
+jcs.FrameworkModuleCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkModuleCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkModuleCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkModuleCache.elementattributes.IsEternal=true
+#Framework缓存  资源
+jcs.FrameworkResourceCache= 
+jcs.FrameworkResourceCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkResourceCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkResourceCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkResourceCache.elementattributes.IsEternal=true
+#Framework缓存  应用导航
+jcs.FrameworkNavigationCache= 
+jcs.FrameworkNavigationCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkNavigationCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkNavigationCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkNavigationCache.elementattributes.IsEternal=true
+#Framework缓存  菜单
+jcs.FrameworkMenuCache= 
+jcs.FrameworkMenuCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkMenuCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkMenuCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkMenuCache.elementattributes.IsEternal=true
+#Framework缓存  应用环境信息
+jcs.FrameworkAppCtxCache= 
+jcs.FrameworkAppCtxCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes 
+jcs.FrameworkAppCtxCache.cacheattributes.MaxObjects=10000 
+jcs.FrameworkAppCtxCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache 
+jcs.FrameworkAppCtxCache.elementattributes.IsEternal=true
+

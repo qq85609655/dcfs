@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:task="base/resource/console/task/model" targetNamespace="base/resource/console/task/model" elementFormDefault="qualified">
+	<xs:element name="Tasks">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="task" type="task:taskType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="taskType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="task_name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="run_type" type="xs:string"/>
+			<xs:element name="continue_flag" type="xs:string"/>
+			<xs:element name="run_state" type="xs:string"/>
+			<xs:element name="priority" type="xs:int"/>
+			<xs:element name="time_out" type="xs:int"/>
+			<xs:element name="start_time" type="xs:dateTime"/>
+			<xs:element name="end_time" type="xs:dateTime"/>
+			<xs:element name="schedule_type" type="xs:string"/>
+			<xs:element name="schedule_flag" type="xs:string"/>
+			<xs:element name="schedule_detail" type="xs:string"/>
+			<xs:element name="forcast_time" type="xs:int"/>
+			<xs:element name="max_time" type="xs:int"/>
+			<xs:element name="status" type="xs:string"/>
+			<xs:element name="createtime" type="xs:dateTime"/>
+			<xs:element name="creator" type="xs:string"/>
+			<xs:element name="modifytime" type="xs:dateTime"/>
+			<xs:element name="modifier" type="xs:string"/>
+			<xs:element name="task_catalog" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

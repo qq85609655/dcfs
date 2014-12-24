@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="adoptionRegis" namespace="/adoptionRegis" extends="struts-default" >
+		<!-- 收养登记列表 -->
+        <action name="adoptionRegisList" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="adoptionRegisList" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_list.jsp</result>
+		</action>
+		<!-- 登记预打印 -->
+        <action name="toAdoptionRegisPrePrint" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="toAdoptionRegisPrePrint" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_preprint_preview.jsp</result>
+		</action>
+		<!-- 收养登记添加 -->
+        <action name="toAdoptionRegAdd" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="toAdoptionRegAdd" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_add.jsp</result>
+		</action>
+		<!-- 收养登记保存 -->
+        <action name="saveAdoptionReg" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="saveAdoptionReg" >
+			<result name="invalid" type="chain">adoptionRegisList</result>
+			<result name="ok" type="chain">adoptionRegisPrint</result>
+		</action>
+		<!-- 收养登记添加 -->
+        <action name="adoptionRegisPrint" class="com.dcfs.ncm.MatchAction" method="AdoptionRegistration" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_print.jsp</result>
+		</action>
+		<!-- 收养登记信息修改 -->
+        <action name="adoptionRegInfoMod" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="adoptionRegInfoMod" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_info_mod.jsp</result>
+		</action>
+		<!-- 收养登记信息修改保存 -->
+        <action name="saveAdoptionRegInfo" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="saveAdoptionRegInfo" >
+			<result name="success" type="chain">adoptionRegisList</result>
+		</action>
+		<!-- 收养登记信息查看 -->
+        <action name="adoptionRegInfoShow" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="adoptionRegInfoShow" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_show.jsp</result>
+		</action>
+		<!-- 收养登记注销列表 -->
+        <action name="adoptionRegisCancelList" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="adoptionRegisCancelList" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_cancel_list.jsp</result>
+		</action>
+		<!-- 收养登记注销 -->
+        <action name="toAdoptionRegisCancel" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="toAdoptionRegisCancel" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_cancel.jsp</result>
+		</action>
+		<!-- 收养登记注销保存 -->
+        <action name="saveAdoptionRegisCancel" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="saveAdoptionRegisCancel" >
+			<result name="success" type="chain">adoptionRegisCancelList</result>
+		</action>
+		<!-- 收养登记注销查看 -->
+        <action name="adoptionRegisCancelDetail" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="adoptionRegisCancelDetail" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/adoption_regis_cancel_detail.jsp</result>
+		</action>
+		
+		<!-- 福利院收养登记列表 -->
+        <action name="FLYAdoptionRegisList" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="FLYAdoptionRegisList" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/FLY_adoption_regis_list.jsp</result>
+		</action>
+		<!-- 福利院收养登记查看 -->
+        <action name="FLYAdoptionRegisDetail" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="FLYAdoptionRegisDetail" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/FLY_adoption_regis_detail.jsp</result>
+		</action>
+		
+		<!-- 收养组织收养登记列表 -->
+        <action name="SYZZAdoptionRegisList" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="SYZZAdoptionRegisList" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/SYZZ_adoption_regis_list.jsp</result>
+		</action>
+		<!-- 收养组织收养登记查看 -->
+        <action name="SYZZAdoptionRegisDetail" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="SYZZAdoptionRegisDetail" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/SYZZ_adoption_regis_detail.jsp</result>
+		</action>
+		
+		<!-- 安置部收养登记列表 -->
+        <action name="AZBAdoptionRegisList" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="AZBAdoptionRegisList" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/AZB_adoption_regis_list.jsp</result>
+		</action>
+		<!-- 安置部收养登记查看 -->
+        <action name="AZBAdoptionRegisDetail" class="com.dcfs.far.adoptionRegis.AdoptionRegisAction" method="AZBAdoptionRegisDetail" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/AZB_adoption_regis_detail.jsp</result>
+		</action>
+		<!-- 安置部收养登记证查看 -->
+        <action name="AZBAdoptionRegistration" class="com.dcfs.ncm.MatchAction" method="AdoptionRegistration" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/AZB_adoption_registration.jsp</result>
+		</action>
+		<!-- 安置部跨国收养合格证查看 -->
+        <action name="AZBIntercountryAdoption" class="com.dcfs.ncm.MatchAction" method="AdoptionRegistration" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/AZB_intercountry_adoption.jsp</result>
+		</action>
+	</package>
+</struts>

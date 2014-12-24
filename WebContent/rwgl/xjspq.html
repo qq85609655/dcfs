@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F4F9FF;
+}
+-->
+</style>
+</head>
+<script>
+function saveNewGroup(){
+	alert("新建适配器");
+}
+function returnHome(){
+	document.location.href="spqgl.html";
+}
+function openAddWindow(){
+	var returnValue=window.showModalDialog('addnewparams.html','','dialogTop=280px;dialogLeft=350px;dialogHeight:200px;dialogWidth:400px;status=no;scrollbars=no;resizable=no');
+    alert(returnValue.toString());
+	var optionObj= document.createElement("option");
+	optionObj.value=returnValue[0]+";"+returnValue[1]+";"+returnValue[2];
+	optionObj.text=returnValue[0]+";"+returnValue[1]+";"+returnValue[2];
+	document.all.options.appendChild(optionObj);
+}
+</script>
+<body>
+<form>
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="text01">
+  <tr>
+    <td height="18"  valign="middle"><img src="../images/currentpositionbg.jpg" width="8" height="18" id="positionimg"/><div class="currentposition"><strong>&nbsp;当前位置：数据交换平台-&gt; 任务管理-&gt;适配器管理-&gt;新建适配器</strong></div></td>
+    <td  class="currentposition" align="right"><strong></strong></td>
+    <td width="4%" align="right"> 
+    <div align="right"><img src="image/wenhao.jpg" width="16" height="16"></div>
+    </td>
+    <td width="9%"> 
+      <div align="center"><font color="FF6D00"><a href="#" class="A_Help">使用帮助</a></font></div>
+    </td>
+  </tr>
+</table>	
+<br>
+<br>
+<br>
+<br>
+<br>
+<table width="60%" border="0" cellpadding="1" cellspacing="1" align="center" class="text01">
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" bgcolor="#9CC6F7">
+      <tr>
+        <td width="18%" class="listdata"><div align="right">适配器名称：</div></td>
+        <td class="listdata" colspan="2"><div align="left"><input type="text" name="groupname" size="20" maxlength="30"><font  class="text01" color="#FF0000">*</font></div></td>
+      </tr>
+      <tr>
+        <td class="listdata"><div align="right">适用数据源类型：</div></td>
+        <td class="listdata" colspan="2"><div align="left">
+          <select name="select2">
+            <option value="0" selected>JDBC数据源</option>
+            <option value="1">JNDI数据源</option>
+            <option value="2">OLAP数据源</option>
+            <option value="3">EXCEL数据源</option>
+            <option value="4">XML数据源</option>
+            <option value="5">TXT数据源</option>
+            <option value="6">SOKET数据源</option>
+            <option value="7">WEBSERVICE数据源</option>
+            <option value="8">MQ数据源</option>
+          </select>
+          <font  class="text01" color="#FF0000">*</font></div></td>
+      </tr>		
+	    <tr>
+        <td class="listdata"><div align="right">适配器描述：</div></td>
+        <td class="listdata" colspan="2"><div align="left">
+          <input name="textfield" type="text" size="50" maxlength="50">
+        </div></td>
+      </tr>	
+	    <tr>
+        <td class="listdata"><div align="right">实现类名：</div></td>
+        <td class="listdata" colspan="2"><div align="left">
+          <input name="textfield2" type="text" size="50" maxlength="100">
+          <font  class="text01" color="#FF0000">*</font></div></td>
+      </tr>	
+	    <tr>
+        <td class="listdata"><div align="right">自定义参数：</div></td>
+        <td width="58%" height="100"  bgcolor="#FFFFFF">
+		<select name="options" size="8" multiple style="width:100%; height:100% " class="text01">
+        </select>		</td>
+		<td width="24%" class="listdata"><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="insert" value="添加" onClick="openAddWindow();" class="button"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="delelte" value="删除" class="button"></div></td>
+      </tr>	  		  		  		  		  
+      <tr class="listdata"><td align="center" colspan="3"><input type="button" name="addNewButton" value="保存" class="input01" onClick="saveNewGroup();">&nbsp;<input type="button" name="returnButton" value="返回" class="input01" onClick="returnHome();"></td></tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

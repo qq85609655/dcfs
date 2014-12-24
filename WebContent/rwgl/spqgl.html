@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F4F9FF;
+}
+-->
+</style>
+</head>
+<script>
+function _retrieve(){
+	alert("查询");
+}
+function newGroup(){
+	document.location.href="xjspq.html";
+}
+</script>
+<body>
+<form>
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="text01">
+  <tr>
+    <td height="18"  valign="middle"><img src="../images/currentpositionbg.jpg" width="8" height="18" id="positionimg"/><div class="currentposition"><strong>&nbsp;当前位置：数据交换平台-&gt; 任务管理-&gt; 适配器管理</strong></div></td>
+    <td  class="currentposition" align="right"><strong></strong></td>
+    <td width="4%" align="right"> 
+    <div align="right"><img src="image/wenhao.jpg" width="16" height="16"></div>
+    </td>
+    <td width="9%"> 
+      <div align="center"><font color="FF6D00"><a href="#" class="A_Help">使用帮助</a></font></div>
+    </td>
+  </tr>
+    
+  <tr>
+  <td height="25" colspan="4">
+	<div id="query">
+		  适配器名称：&nbsp;
+		  <input name="enterpriseid" type="text" class="queryinput" size="11" maxlength="9" />
+		  &nbsp;
+		  使用数据源类型：&nbsp;
+		  <select name="enterprisename">
+		  	<option value="0">【-全部-】</option>
+		  	<option value="1">XML适配器</option>
+			<option value="2">Txt适配器</option>
+			<option value="3">Excel适配器</option>
+			<option value="4">Web服务适配器</option>
+		  </select>
+		  <input type="button" name="submit" value="查询(Q)" class="input01" accesskey="Q" onclick="_retrieve();"/ tabindex="100" Onkeydown="">
+	  </div>		  
+ </td>
+ </tr>	
+  <tr>
+        <td height="18" colspan="4">
+			&nbsp;	 	  
+		</td>
+</tr>
+ <tr>
+      <td colspan="4">
+		<div id="primarydata" style="width:100%; overflow:hidden" >
+		<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#9CC6F7">
+	    <tr height="22">
+		  <th width="5%"><div align="center">&nbsp;</div></th>
+	      <th width="5%"><div align="center">序号</div></th>
+	      <th width="20%"><div align="center">适配器名称</div></th>
+	      <th width="20%"><div align="center">适用数据源类型</div></th> 
+		  <th width="30%"><div align="center">适配器描述</div></th>   
+		  <th width="20%"><div align="center">建立时间</div></th>         	
+      </tr>
+      <tr height="22" >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">1</div></td>
+        <td class="listdata"><div align="left">XML适配器</div></td>       
+        <td class="listdata"><div align="left">XML数据源</div></td>  
+		<td class="listdata"><div align="left">XML适配器</div></td> 
+		<td class="listdata"><div align="left">2006-04-20</div></td>        				
+      </tr>
+      <tr height="22" >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">2</div></td>
+        <td class="listdata"><div align="left">Txt适配器</div></td>        
+        <td class="listdata"><div align="left">TXT数据源</div></td>   
+		<td class="listdata"><div align="left">Txt适配器</div></td> 
+		<td class="listdata"><div align="left">2006-04-20</div></td>         						
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">3</div></td>
+        <td class="listdata"><div align="left">Excel适配器</div></td>
+        <td class="listdata"><div align="left">EXCEL数据源</div></td>
+		<td class="listdata"><div align="left">Excel适配器</div></td> 
+		<td class="listdata"><div align="left">2006-04-20</div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">4</div></td>
+        <td class="listdata"><div align="left">虚表RDB适配器</div></td>
+        <td class="listdata"><div align="left">JDBC数据源</div></td>
+		<td class="listdata"><div align="left">虚表RDB适配器</div></td> 
+		<td class="listdata"><div align="left">2006-04-20</div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">5</div></td>
+        <td class="listdata"><div align="left">Web服务适配器</div></td>
+        <td class="listdata"><div align="left">WEBSERVICE数据源</div></td>
+		<td class="listdata"><div align="left">Web服务适配器</div></td> 
+		<td class="listdata"><div align="left">2006-04-20</div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">6</div></td>
+        <td class="listdata"><div align="left">RDB适配器</div></td>
+        <td class="listdata"><div align="left">JDBC数据源</div></td>
+		<td class="listdata"><div align="left">RDB配器</div></td> 
+		<td class="listdata"><div align="left">2006-04-20</div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">7</div></td>
+        <td class="listdata"><div align="center"></div></td>
+        <td class="listdata"><div align="center"></div></td>
+		<td class="listdata"><div align="left"></div></td> 
+		<td class="listdata"><div align="left"></div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">8</div></td>
+        <td class="listdata"><div align="center"></div></td>
+        <td class="listdata"><div align="center"></div></td>
+		<td class="listdata"><div align="left"></div></td> 
+		<td class="listdata"><div align="left"></div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">9</div></td>
+        <td class="listdata"><div align="center"></div></td>
+        <td class="listdata"><div align="center"></div></td>
+		<td class="listdata"><div align="left"></div></td> 
+		<td class="listdata"><div align="left"></div></td>  
+      </tr>
+      <tr >
+        <td class="listdata"><div align="center"><input type="checkbox" name="checkbox" value="checkbox" class="input"></div></td>
+        <td class="listdata"><div align="center">10</div></td>
+        <td class="listdata"><div align="center"></div></td>
+        <td class="listdata"><div align="center"></div></td>
+		<td class="listdata"><div align="left"></div></td> 
+		<td class="listdata"><div align="left"></div></td>  
+      </tr>		  		  		  		  		  
+    </table>
+		</div>
+		</td>
+    </tr>
+    <tr>
+    <td colspan="4">
+		<div id="pagezone" class="pagination">
+			<ul>
+			<li class="firstpage">第 1 页&nbsp;共 12 页</li>
+			<li class="firstpage">&nbsp;&nbsp;<a href="#">首&nbsp;&nbsp;页</a></li>
+			<li class="disablepage">上一页</li>			
+			<li class="nextpage"><a href="#">下一页</a></li>
+			<li class="endpage"><a href="#">尾&nbsp;&nbsp;页</a></li>
+			<!-- li class="gonum">&nbsp;&nbsp;<input name="gopage" type="text" class="queryinput" size="1" /></li>
+			<li class="gobutton"><a href="#">GO</a></li -->
+			</ul>
+	  </div>
+  </td>
+  </tr>
+  <tr class="text01"><td align="center"><input type="button" name="addButton" value="新建" class="input01" onClick="newGroup();">&nbsp;<input type="button" name="delButton" value="删除" class="input01" onClick="alert('删除');"></td></tr>
+</table>
+
+</form>
+</body>
+</html>

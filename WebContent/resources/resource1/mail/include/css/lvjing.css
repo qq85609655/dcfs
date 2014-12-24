@@ -1,0 +1,42 @@
+/* CSS Document */
+   <style>
+    <!--
+    #newPreview
+   { 
+    filter : progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale); 
+	width:320;
+	height:210;
+   } 
+    -->
+    #diban
+	{display:block;
+	 background-color:#999;
+	 padding:5px; 
+	 width:320px;
+	 height:210px;
+	}
+	#diban1
+	{z-index:10;
+	 background-color:#efefef;
+	 cursor:pointer;
+	 color:#999;
+	 display:block;
+	 height:20px;
+	 width:60px;
+	 font-size:16px;
+	 font-weight:bold;
+	}
+	#photopos
+	{Z-INDEX:130;
+	align:center;
+	position:absolute;
+	cursor:hand;
+	}
+	.file
+	{filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;
+	width:0px;
+	
+	}
+    </style>

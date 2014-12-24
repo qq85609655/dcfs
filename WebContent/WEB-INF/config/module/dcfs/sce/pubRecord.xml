@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="record" namespace="/record" extends="struts-default" >	
+		<!-- 安置部点发退回列表 -->
+		<action name="PUBRecordList" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="PUBRecordList" >
+			<result name="success">/jsp/dcfs/sce/pubRecord/PUB_record_list.jsp</result>
+		</action>
+		<!-- 安置部点发退回信息确认页面 -->
+		<action name="PUBConfirm" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="PUBConfirm" >
+			<result name="success">/jsp/dcfs/sce/pubRecord/PUB_record_confirm.jsp</result>
+		</action>
+		<action name="returnTypeCheck" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="returnTypeCheck" >
+			<result name="child">/jsp/dcfs/sce/pubRecord/PUB_record_child.jsp</result>
+			<result name="returnShow">/jsp/dcfs/sce/pubRecord/PUB_record_returnShow.jsp</result>
+		</action>
+		<action name="PUBCheck" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="PUBCheck" >
+			<result name="success">/jsp/dcfs/sce/pubRecord/PUB_record_show.jsp</result>
+		</action>
+		<!-- 安置部点发退回确认 -->
+		<action name="PUBReturn" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="PUBReturn" >
+			<result name="success" type="chain">PUBRecordList</result>
+		</action>
+		<!-- 收养组织点发退回查看列表 -->
+		<action name="SYZZPUBRecordList" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="SYZZPUBRecordList" >
+			<result name="success">/jsp/dcfs/sce/pubRecord/SYZZPUB_record_list.jsp</result>
+		</action>
+		<!-- 收养组织点发退回信息查看页面 -->
+		<action name="SYZZPUBRecordDetail" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="SYZZPUBRecordDetail" >
+			<result name="show">/jsp/dcfs/sce/pubRecord/SYZZPUB_record_detail.jsp</result>
+			<result name="success">/jsp/dcfs/sce/pubRecord/SYZZPUB_record_return.jsp</result>
+		</action>
+		<!-- 收养组织委托退回 -->
+		<action name="SYZZPUBRecordAddReason" class="com.dcfs.sce.PUBRecord.PUBRecordAction" method="SYZZPUBRecordAddReason" >
+			<result name="success" type="chain">SYZZPUBRecordList</result>
+		</action>
+	</package>
+</struts>

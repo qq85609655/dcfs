@@ -1,0 +1,1076 @@
+CREATE TABLE IM_MESSAGE
+(
+   ID                   VARCHAR(64) NOT NULL,
+   SENDER               VARCHAR(64) NOT NULL,
+   SENDER_DEPT          VARCHAR(64),
+   RECEIVER             VARCHAR(64) NOT NULL,
+   RECEIVER_DEPT        VARCHAR(64),
+   SEND_TIME            TIMESTAMP,
+   SEND_YEAR            INT,
+   SEND_MONTH           INT,
+   SEND_DAY             INT,
+   SENDER_IP            VARCHAR(20),
+   RECEIVER_IP          VARCHAR(20),
+   SESSION_CATALOG      VARCHAR(1) COMMENT '1 普通消息 2 提醒信息',
+   SESSION_TYPE         VARCHAR(1) NOT NULL COMMENT '1：1对1，   2：群聊',
+   SESSION_SEC_LEVEL    INT COMMENT '密级代码集',
+   MSG_TYPE             VARCHAR(1) NOT NULL COMMENT '1：文字 2 文件传输',
+   MSG_CONTENT          VARCHAR(1000) COMMENT '文件传输时，为文件路径',
+   ATT_ID               VARCHAR(64),
+   ATT_SECURITY_LEVEL   INT,
+   ATT_SECURITY_LEVEL_NAME VARCHAR(50),
+   ATT_PROTECT_PERIOD   INT COMMENT '单位：月，从创建时间开始算起',
+   ATT_PROTECT_PERIOD_NAME VARCHAR(50),
+   RECEIVE_FLAG         VARCHAR(1) NOT NULL COMMENT '0 未接收  1 已接收',
+   CHAT_GROUP_ID        VARCHAR(100) COMMENT '群组会话时有效'
+);
+
+ALTER TABLE IM_MESSAGE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE IM_MESSAGE_ARCHIVE
+(
+   ID                   VARCHAR(64) NOT NULL,
+   SENDER               VARCHAR(64) NOT NULL,
+   SENDER_DEPT          VARCHAR(64),
+   RECEIVER             VARCHAR(64) NOT NULL,
+   RECEIVER_DEPT        VARCHAR(64),
+   SEND_TIME            TIMESTAMP,
+   SEND_YEAR            INT,
+   SEND_MONTH           INT,
+   SEND_DAY             INT,
+   SENDER_IP            VARCHAR(20),
+   RECEIVER_IP          VARCHAR(20),
+   SESSION_CATALOG      VARCHAR(1) COMMENT '1 普通消息 2 提醒信息',
+   SESSION_TYPE         VARCHAR(1) NOT NULL COMMENT '1：1对1，   2：群聊',
+   SESSION_SEC_LEVEL    INT COMMENT '密级代码集',
+   MSG_TYPE             VARCHAR(1) NOT NULL COMMENT '1：文字 2 文件传输',
+   MSG_CONTENT          VARCHAR(1000) COMMENT '文件传输时，为文件路径',
+   ATT_ID               VARCHAR(64),
+   ATT_SECURITY_LEVEL   INT,
+   ATT_SECURITY_LEVEL_NAME VARCHAR(50),
+   ATT_PROTECT_PERIOD   INT COMMENT '单位：月，从创建时间开始算起',
+   ATT_PROTECT_PERIOD_NAME VARCHAR(50),
+   RECEIVE_FLAG         VARCHAR(1) NOT NULL COMMENT '0 未接收  1 已接收',
+   CHAT_GROUP_ID        VARCHAR(100) COMMENT '群组会话时有效'
+);
+
+ALTER TABLE IM_MESSAGE_ARCHIVE COMMENT '从历史表中转移过来的超期消息记录';
+
+ALTER TABLE IM_MESSAGE_ARCHIVE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE IM_MESSAGE_HISTORY
+(
+   ID                   VARCHAR(64) NOT NULL,
+   SENDER               VARCHAR(64) NOT NULL,
+   SENDER_DEPT          VARCHAR(64),
+   RECEIVER             VARCHAR(64) NOT NULL,
+   RECEIVER_DEPT        VARCHAR(64),
+   SEND_TIME            TIMESTAMP,
+   SEND_YEAR            INT,
+   SEND_MONTH           INT,
+   SEND_DAY             INT,
+   SENDER_IP            VARCHAR(20),
+   RECEIVER_IP          VARCHAR(20),
+   SESSION_CATALOG      VARCHAR(1) COMMENT '1 普通消息 2 提醒信息',
+   SESSION_TYPE         VARCHAR(1) NOT NULL COMMENT '1：1对1，   2：群聊',
+   SESSION_SEC_LEVEL    INT COMMENT '密级代码集',
+   MSG_TYPE             VARCHAR(1) NOT NULL COMMENT '1：文字 2 文件传输',
+   MSG_CONTENT          VARCHAR(1000) COMMENT '文件传输时，为文件路径',
+   ATT_ID               VARCHAR(64),
+   ATT_SECURITY_LEVEL   INT,
+   ATT_SECURITY_LEVEL_NAME VARCHAR(50),
+   ATT_PROTECT_PERIOD   INT COMMENT '单位：月，从创建时间开始算起',
+   ATT_PROTECT_PERIOD_NAME VARCHAR(50),
+   RECEIVE_FLAG         VARCHAR(1) NOT NULL COMMENT '0 未接收  1 已接收',
+   CHAT_GROUP_ID        VARCHAR(100) COMMENT '群组会话时有效'
+);
+
+ALTER TABLE IM_MESSAGE_HISTORY COMMENT '消息表中移入的已接收的记录';
+
+ALTER TABLE IM_MESSAGE_HISTORY
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ACCOUNT
+(
+   ACCOUNT_ID           VARCHAR(254) NOT NULL,
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   PASSWORD             VARCHAR(254) NOT NULL,
+   ACCOUNT_TYPE         VARCHAR(1) NOT NULL COMMENT '0,临时 1,普通用户 2,guest用户
+            
+            ',
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1,正常 2,系统锁定(如密码错误太多) 3 删除 4 人工禁用(管理员操作)',
+   PASS_QUESTION        VARCHAR(254),
+   PASS_ANSWER          VARCHAR(254),
+   ACCOUNT_TTL          DATE,
+   LOGIN_FAIL_NUM       INT NOT NULL,
+   LAST_LOGIN_IP        VARCHAR(30),
+   LAST_LOGIN_DATE      TIMESTAMP,
+   CREATE_TIME          TIMESTAMP,
+   PASS_LAST_CHG_TIME   TIMESTAMP NOT NULL,
+   DEFAULT_APP          VARCHAR(64) COMMENT '默认应用',
+   AUTH_TYPE            VARCHAR(1) COMMENT '1 密码 ， 2 密码+其它因子  如与域绑定，使用域认证 ',
+   IS_CHANGED_PWD       VARCHAR(1) COMMENT '1 是 0 否',
+   ORGAN_TYPE           VARCHAR(100),
+   ORGAN_RIGHT          VARCHAR(64) COMMENT '选择组织、人员时，可选择的顶级组织，只能选此组织及以下的'
+);
+
+ALTER TABLE PUB_ACCOUNT
+   ADD PRIMARY KEY (ACCOUNT_ID);
+
+CREATE TABLE PUB_ACCOUNT_TYPE
+(
+   ID                 VARCHAR(64) NOT NULL,
+   TYPE_CODE            VARCHAR(100) NOT NULL COMMENT '唯一',
+   CNAME                VARCHAR(100) NOT NULL,
+   MEMO                 VARCHAR(200),
+   EXT_METADATA         VARCHAR(1000) COMMENT 'xml',
+   TYPE_EXT_VALUES      VARCHAR(1000) COMMENT 'xml'
+);
+
+ALTER TABLE PUB_ACCOUNT_TYPE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ADMIN
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   ADMIN_TYPE           CHAR(1) COMMENT '0 超级管理员（组织、人员、普通角色、管理角色、授权、应用、模块、资源、菜单）
+            1 管理员（组织、人员、普通角色、管理角色） 
+            2 保密员（授权普通角色）
+            3 审核员（行为日志、系统访问日志、系统运行日志、授权审核员）
+            
+            9 自定义管理员',
+   MEMO                 VARCHAR(500),
+   CREATE_TIME          TIMESTAMP,
+   CREATOR              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ADMIN
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ADMIN_APP_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   APP_ID               VARCHAR(64) NOT NULL,
+   CREATE_TIME          TIMESTAMP,
+   CREATOR              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ADMIN_APP_RELA COMMENT '应用ID为0时，表示拥有所有应用的管理权限';
+
+ALTER TABLE PUB_ADMIN_APP_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ADMIN_ORGAN_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PUB_ID               VARCHAR(64),
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   ORGAN_ID             VARCHAR(64) NOT NULL,
+   CREATE_TIME          TIMESTAMP,
+   CREATOR              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ADMIN_ORGAN_RELA COMMENT '机构ID为0时，表示拥有所有组织的管理权限';
+
+ALTER TABLE PUB_ADMIN_ORGAN_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ADMIN_ROLE_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   ROLE_ID              VARCHAR(64) NOT NULL,
+   CREATE_TIME          TIMESTAMP,
+   CREATOR              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ADMIN_ROLE_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_APP
+(
+   ID                   VARCHAR(64) NOT NULL,
+   APP_NAME             VARCHAR(254) NOT NULL,
+   DEVELOPER            VARCHAR(254),
+   VERSION              VARCHAR(20),
+   URL_PREFIX           VARCHAR(254),
+   MEMO                 VARCHAR(1000),
+   CREATE_TIME          TIMESTAMP
+);
+
+ALTER TABLE PUB_APP
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_APP_CONTEXT
+(
+   ID                   VARCHAR(64) NOT NULL,
+   APP_ID               VARCHAR(254) NOT NULL,
+   APP_IP               VARCHAR(254),
+   APP_PORT             VARCHAR(254),
+   APP_CONTEXT          VARCHAR(200),
+   MEMO                 VARCHAR(1000),
+   CREATE_DATE          TIMESTAMP
+);
+
+ALTER TABLE PUB_APP_CONTEXT
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_APP_NAV
+(
+   ID                   VARCHAR(64) NOT NULL,
+   APP_ID               VARCHAR(64) NOT NULL,
+   NAV_NAME             VARCHAR(100) NOT NULL,
+   NAV_URL              VARCHAR(1000),
+   URL_PROMPT           VARCHAR(1000),
+   SEQ_NUM              INT NOT NULL,
+   STATUS               CHAR(1) NOT NULL COMMENT '1 启用,0 停用',
+   URL_PREFIX           VARCHAR(100) COMMENT 'http:ip:port/context，点击时资源菜单的url都会拼接上次前缀，外部菜单不拼接',
+   HELP_FILE_PATH       VARCHAR(200)
+);
+
+ALTER TABLE PUB_APP_NAV
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_AUDIT
+(
+   ACT_ID               VARCHAR(64) NOT NULL,
+   ACTOR_IP             VARCHAR(128) NOT NULL,
+   ACTOR_ID             VARCHAR(64) COMMENT '人员ID',
+   ACTOR_NAME           VARCHAR(100) COMMENT '人中文名[账号ID]',
+   ACT_TYPE             VARCHAR(128),
+   ACT_ACTION           VARCHAR(50) NOT NULL,
+   ACT_OBJ_TYPE         VARCHAR(50),
+   ACT_OBJ              VARCHAR(1000) NOT NULL COMMENT '对象中文名',
+   ACT_RESULT           VARCHAR(50) COMMENT '操作结果',
+   ACT_TIME             TIMESTAMP NOT NULL,
+   ACT_LEVEL            INT,
+   MEMO                 VARCHAR(200)
+);
+
+ALTER TABLE PUB_AUDIT
+   ADD PRIMARY KEY (ACT_ID);
+
+CREATE TABLE PUB_AUDIT_ACT_TYPE
+(
+   ID                   VARCHAR(10) NOT NULL,
+   CNAME                VARCHAR(100),
+   MEMO                 VARCHAR(200)
+);
+
+ALTER TABLE PUB_AUDIT_ACT_TYPE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_AUDIT_ARCHIVE
+(
+   ACT_ID               VARCHAR(64) NOT NULL,
+   ACTOR_IP             VARCHAR(128) NOT NULL,
+   ACTOR_ID             VARCHAR(64) COMMENT '人员ID',
+   ACTOR_NAME           VARCHAR(100) COMMENT '人中文名[账号ID]',
+   ACT_TYPE             VARCHAR(128),
+   ACT_ACTION           VARCHAR(50) NOT NULL,
+   ACT_OBJ_TYPE         VARCHAR(50),
+   ACT_OBJ              VARCHAR(1000) NOT NULL COMMENT '对象中文名',
+   ACT_RESULT           VARCHAR(50) COMMENT '操作结果',
+   ACT_TIME             TIMESTAMP NOT NULL,
+   ACT_LEVEL            INT,
+   MEMO                 VARCHAR(200),
+   ARCHIVE_ID           VARCHAR(64)
+);
+
+ALTER TABLE PUB_AUDIT_ARCHIVE
+   ADD PRIMARY KEY (ACT_ID);
+
+CREATE TABLE PUB_AUDIT_ARCHIVE_SET
+(
+   ID                   VARCHAR(65) NOT NULL,
+   DATA_PERIOD          INT COMMENT '前n个月',
+   DATA_TYPE            VARCHAR(10) COMMENT '逗号分隔，类型id见归档记录表',
+   SETTING_TYPE         VARCHAR(1) COMMENT '见归档记录表 归档、删除',
+   STATUS               VARCHAR(1) COMMENT '1 是 0 否',
+   LAST_EXEC_TIME       TIMESTAMP,
+   MIN_PERIOD           INT COMMENT '必须是至少n个月以前的数据'
+);
+
+ALTER TABLE PUB_AUDIT_ARCHIVE_SET COMMENT '就两条记录：自动删除设置、自动归档设置';
+
+ALTER TABLE PUB_AUDIT_ARCHIVE_SET
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_AUDIT_CLEAR_LOG
+(
+   ID                   VARCHAR(64) NOT NULL,
+   OPERATION_TIME       TIMESTAMP NOT NULL,
+   OPERATION_TYPE       VARCHAR(1) NOT NULL COMMENT '1 手工  2 自动',
+   OPERATION_RESULT     VARCHAR(1) NOT NULL COMMENT '1 成功 2 失败',
+   DATA_HANDLE_TYPE     VARCHAR(1) COMMENT '1 归档  2 删除',
+   DATA_TYPE            VARCHAR(128) NOT NULL COMMENT '1 系统管理行为 2 系统访问控制 3  用户登录行为 4 应用操作行为',
+   DATA_ROW_COUNT       INT NOT NULL,
+   OPERATION_PERSON     VARCHAR(64),
+   MEMO                 VARCHAR(500),
+   DATA_PERIOD          INT COMMENT '归档/删除的几个月前的数据'
+);
+
+ALTER TABLE PUB_AUDIT_CLEAR_LOG
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_AUDIT_SYSTEM
+(
+   ACT_ID               VARCHAR(64) NOT NULL,
+   ACTOR_IP             VARCHAR(128) NOT NULL,
+   ACTOR_ID             VARCHAR(64) COMMENT '人员ID',
+   ACTOR_NAME           VARCHAR(100) COMMENT '人中文名[账号ID]',
+   ACT_TYPE             VARCHAR(128),
+   ACT_ACTION           VARCHAR(50) NOT NULL,
+   ACT_OBJ_TYPE         VARCHAR(50),
+   ACT_OBJ              VARCHAR(1000) NOT NULL COMMENT '对象中文名',
+   ACT_RESULT           VARCHAR(50) COMMENT '操作结果',
+   ACT_TIME             TIMESTAMP NOT NULL,
+   ACT_LEVEL            INT,
+   MEMO                 VARCHAR(200)
+);
+
+ALTER TABLE PUB_AUDIT_SYSTEM
+   ADD PRIMARY KEY (ACT_ID);
+
+CREATE TABLE PUB_AUDIT_SYSTEM_ARCHIVE
+(
+   ACT_ID               VARCHAR(64) NOT NULL,
+   ACTOR_IP             VARCHAR(128) NOT NULL,
+   ACTOR_ID             VARCHAR(64) COMMENT '人员ID',
+   ACTOR_NAME           VARCHAR(100) COMMENT '人中文名[账号ID]',
+   ACT_TYPE             VARCHAR(128),
+   ACT_ACTION           VARCHAR(50) NOT NULL,
+   ACT_OBJ_TYPE         VARCHAR(50),
+   ACT_OBJ              VARCHAR(1000) NOT NULL COMMENT '对象中文名',
+   ACT_RESULT           VARCHAR(50) COMMENT '操作结果',
+   ACT_TIME             TIMESTAMP NOT NULL,
+   ACT_LEVEL            INT,
+   MEMO                 VARCHAR(200),
+   ARCHIVE_ID           VARCHAR(64)
+);
+
+ALTER TABLE PUB_AUDIT_SYSTEM_ARCHIVE
+   ADD PRIMARY KEY (ACT_ID);
+
+CREATE TABLE PUB_CLICK_COUNT
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CATALOG_ID           VARCHAR(64),
+   PAGE_ID              VARCHAR(64) NOT NULL,
+   START_TIME           TIMESTAMP NOT NULL,
+   LAST_CLICK_TIME      TIMESTAMP,
+   TOTAL_COUNT          INT NOT NULL,
+   CLICK_PERSON         VARCHAR(64) NOT NULL,
+   CLICK_DEPT           VARCHAR(64) NOT NULL
+);
+
+ALTER TABLE PUB_CLICK_COUNT
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_CLICK_COUNT_DETAIL
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CATALOG_ID           VARCHAR(64),
+   PAGE_ID              VARCHAR(64) NOT NULL,
+   CLICK_DATE           INT NOT NULL,
+   CLICK_YEAR           INT NOT NULL,
+   CLICK_MONTH          INT NOT NULL,
+   CLICK_DAY            INT NOT NULL,
+   CLICK_COUNT          INT NOT NULL,
+   CLICK_PERSON         VARCHAR(64) NOT NULL,
+   CLICK_DEPT           VARCHAR(64) NOT NULL
+);
+
+ALTER TABLE PUB_CLICK_COUNT_DETAIL
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_COUNT_CATALOG
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(200) NOT NULL,
+   PARENT_ID            VARCHAR(64) NOT NULL COMMENT '-1 根节点',
+   TYPE                 VARCHAR(1) NOT NULL COMMENT '1 分类 0 页面',
+   CREATE_TIME          TIMESTAMP,
+   MEMO                 VARCHAR(200),
+   SEQ_NUM              INT
+);
+
+ALTER TABLE PUB_COUNT_CATALOG
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_EXT_INFO
+(
+   EXT_TYPE_ID          VARCHAR(50) NOT NULL COMMENT 'ORGAN:组织，PERSON：人，ACCOUNT：账号',
+   EXT_META_INFO        VARCHAR(3000)
+);
+
+ALTER TABLE PUB_EXT_INFO
+   ADD PRIMARY KEY (EXT_TYPE_ID);
+
+CREATE TABLE PUB_LOG
+(
+   LOG_ID               VARCHAR(64) NOT NULL,
+   LOG_TIME             TIMESTAMP NOT NULL,
+   LOG_WRITOR           VARCHAR(50) NOT NULL,
+   LOG_TYPE             VARCHAR(30),
+   LOG_LEVEL            VARCHAR(30) NOT NULL,
+   LOG_SOURCE           VARCHAR(50) NOT NULL,
+   LOG_MESSAGE          VARCHAR(200) NOT NULL
+);
+
+ALTER TABLE PUB_LOG
+   ADD PRIMARY KEY (LOG_ID);
+
+CREATE TABLE PUB_LOG_SYSTEM
+(
+   LOG_ID               VARCHAR(64) NOT NULL,
+   ACTOR_IP             VARCHAR(18),
+   ACTOR_ID             VARCHAR(64) NOT NULL,
+   ACTOR_NAME           VARCHAR(64),
+   MODULE_ID            VARCHAR(64),
+   RESOURCE_ID          VARCHAR(64),
+   RESOURCE_URL         VARCHAR(1024),
+   ACCESS_TIME          TIMESTAMP NOT NULL,
+   MEMO                 VARCHAR(200),
+   LOG_LEVEL            INT
+);
+
+ALTER TABLE PUB_LOG_SYSTEM COMMENT '记录对系统的所有访问
+日志级别：
+  非法请求：-1
+
+资源级别';
+
+ALTER TABLE PUB_LOG_SYSTEM
+   ADD PRIMARY KEY (LOG_ID);
+
+CREATE TABLE PUB_MENU
+(
+   MENU_ID              VARCHAR(64) NOT NULL,
+   NAV_ID               VARCHAR(64) NOT NULL,
+   MENU_NAME            VARCHAR(100) NOT NULL,
+   MENU_TYPE            VARCHAR(1) NOT NULL COMMENT '资源菜单，外部url',
+   MODULE_ID            VARCHAR(64),
+   RES_ID               VARCHAR(64),
+   PARENT_ID            VARCHAR(64),
+   SEQ_NUM              INT NOT NULL,
+   MENU_URL             VARCHAR(254),
+   TARGET               VARCHAR(64),
+   IS_LEFT              VARCHAR(1) COMMENT '1 是 0 否',
+   IS_MODULE_ENTRY      VARCHAR(1) NOT NULL COMMENT '左????航栏显示时，是否在右侧区域打开该菜单的URL',
+   CREATOR              VARCHAR(64),
+   CREATE_TIME          TIMESTAMP,
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 启用,0 停用',
+   PAGE_SCROLL          VARCHAR(1) COMMENT '代码集 ',
+   HELP_FILE_PATH       VARCHAR(200)
+);
+
+ALTER TABLE PUB_MENU COMMENT '菜单类型：1 资源菜单，2 外部url
+菜单内容显示区域：界面frame的id
+状态：1:有效，';
+
+ALTER TABLE PUB_MENU
+   ADD PRIMARY KEY (MENU_ID);
+
+CREATE TABLE PUB_MODULE
+(
+   ID                   VARCHAR(64) NOT NULL COMMENT '全局唯一',
+   APP_ID               VARCHAR(64),
+   CNAME                VARCHAR(254) NOT NULL,
+   ENNAME               VARCHAR(254) NOT NULL,
+   PMOUDLE              VARCHAR(64),
+   NEED_RIGHT           CHAR(1) NOT NULL,
+   ADMIN_FLAG           CHAR(1),
+   STATUS               CHAR(1) NOT NULL COMMENT '1 启用,0 停用',
+   CREATE_TIME          TIMESTAMP,
+   MEMO                 VARCHAR(254)
+);
+
+ALTER TABLE PUB_MODULE COMMENT '模块是否可用，是否需要权限控制，是否可管理：1/0';
+
+ALTER TABLE PUB_MODULE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ORGAN
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PUB_ID               INT,
+   CNAME                VARCHAR(254) NOT NULL,
+   SHORT_CNAME          VARCHAR(100),
+   ORG_CODE             VARCHAR(254),
+   ENNAME               VARCHAR(254),
+   ORG_TYPE             INT NOT NULL,
+   ORG_GRADE            VARCHAR(20),
+   ORG_LEVEL            INT,
+   PARENT_ID            VARCHAR(64) NOT NULL DEFAULT '0' COMMENT '顶级组织时，取值 0',
+   ORG_PHONE            VARCHAR(21),
+   ORG_ADDR             VARCHAR(100),
+   ORG_EMAIL            VARCHAR(50),
+   ORG_DOOR_NUM         VARCHAR(100),
+   ORG_LEVEL_CODE       VARCHAR(254) COMMENT '每四位代表一层,总共支持63层,63层之后认为是同一层(63层).',
+   SEQ_NUM              INT NOT NULL,
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1----正常 2----禁用 3----删除',
+   MEMO                 VARCHAR(254),
+   RESP_PERSON          VARCHAR(64),
+   LINK_MAN             VARCHAR(200),
+   EXT_INFO             VARCHAR(2000) COMMENT '保存自定义扩展信息',
+   AREA_CODE            VARCHAR(6),
+   EXTEND_PROPS         VARCHAR(3000)
+);
+
+ALTER TABLE PUB_ORGAN COMMENT '状态:1正常';
+
+ALTER TABLE PUB_ORGAN
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ORGAN_TYPE
+(
+   ID                   INT NOT NULL,
+   TYPE_CODE            VARCHAR(50) NOT NULL,
+   CNAME                VARCHAR(200) NOT NULL,
+   IS_RESERVED          VARCHAR(1) NOT NULL COMMENT '1 内置，0 非内置',
+   CREATE_TIME          TIMESTAMP,
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 有效 2 禁用 3 删除',
+   MEMO                 VARCHAR(500)
+);
+
+ALTER TABLE PUB_ORGAN_TYPE COMMENT '类型ID:
+1：组织
+-1：目录
+
+状态：1:有效，2 禁用 3 删除';
+
+ALTER TABLE PUB_ORGAN_TYPE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ORG_APP_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ORG_ID               VARCHAR(64),
+   APP_ID               VARCHAR(64)
+);
+
+ALTER TABLE PUB_ORG_APP_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ORG_GRADE_ROLE_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ORG_ID               VARCHAR(64),
+   PG_ID                VARCHAR(64),
+   ROLE_ID              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ORG_GRADE_ROLE_RELA COMMENT '组织ID：职务所在组织，如果分配权限时不与组织关联，该值为 0';
+
+ALTER TABLE PUB_ORG_GRADE_ROLE_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ORG_PERSON_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ORG_ID               VARCHAR(64),
+   PERSON_ID            VARCHAR(64),
+   IS_BELONG            CHAR(1) COMMENT '1 是，0 否',
+   POST                 VARCHAR(64)
+);
+
+ALTER TABLE PUB_ORG_PERSON_RELA COMMENT '职务：必填，一个机构下一个人一个
+职级：可选，';
+
+ALTER TABLE PUB_ORG_PERSON_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ORG_ROLE_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ORG_ID               VARCHAR(64),
+   ROLE_ID              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ORG_ROLE_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_PERSON
+(
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(254) NOT NULL,
+   ENNAME               VARCHAR(254),
+   PERSON_CODE          VARCHAR(254),
+   FIRST_NAME           VARCHAR(254),
+   LAST_NAME            VARCHAR(254),
+   CNAME_SHORT_SPELL    VARCHAR(10),
+   CNAME_FULL_SPELL     VARCHAR(20),
+   CARD_NUM             VARCHAR(50),
+   CARD_CODE            VARCHAR(2),
+   SEX                  VARCHAR(1) COMMENT '0,保密 1,男 2,女 3,未知',
+   BIRTHDAY             DATE COMMENT '2010-10-10',
+   NATION               VARCHAR(64),
+   MARRY_CODE           VARCHAR(1),
+   POLITIC_CODE         VARCHAR(1),
+   POST_LEVEL           VARCHAR(64) COMMENT '可选',
+   OFFICE_TEL           VARCHAR(64),
+   OFFICE_FAX           VARCHAR(64),
+   MOBILE               VARCHAR(128),
+   EMAIL                VARCHAR(128),
+   NATIVE_PLACE         VARCHAR(254),
+   COUNTRY              VARCHAR(64),
+   PROVINCE_ID          VARCHAR(64),
+   CITY_ID              VARCHAR(10),
+   CONNECT_ADDR         VARCHAR(254),
+   ZIP                  VARCHAR(6),
+   SEQ_NUM              INT NOT NULL,
+   ROOM_NUM             VARCHAR(20),
+   SECURITY_LEVEL       INT,
+   RESP_DEPT            VARCHAR(1024) COMMENT '所负责部门的id，多个用逗号分隔',
+   PERSON_STATUS        VARCHAR(1) COMMENT '1,正常 3 删除 ',
+   EXTEND_PROPS         VARCHAR(3000),
+   PERSON_TYPE          VARCHAR(1)
+);
+
+ALTER TABLE PUB_PERSON
+   ADD PRIMARY KEY (PERSON_ID);
+
+CREATE TABLE PUB_PERSON_APP_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PERSON_ID            VARCHAR(64),
+   APP_ID               VARCHAR(64) NOT NULL
+);
+
+ALTER TABLE PUB_PERSON_APP_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_PERSON_EXT
+(
+   PERSON_ID            VARCHAR(64) NOT NULL,
+   DEGREE_CODE          VARCHAR(2),
+   EDU_CODE             VARCHAR(2),
+   OTHER_INFO           VARCHAR(254),
+   HOME_FAX             VARCHAR(64),
+   HOME_TEL             VARCHAR(64),
+   MSN                  VARCHAR(128),
+   QQ                   VARCHAR(128),
+   HOME_PAGE            VARCHAR(128),
+   IS_IMP_CONTACT       VARCHAR(1) COMMENT '1 是 0 否',
+   EXT_INFO             VARCHAR(2000) COMMENT '保存自定义扩展信息',
+   SIGNATURE            LONGBLOB COMMENT '作废',
+   SIGNATURE_FILE_ID    VARCHAR(64) COMMENT '存在 FRAMEWORK_COMMON 附件类型中',
+   PHOTO_FILE_ID        VARCHAR(64) COMMENT '存在 FRAMEWORK_COMMON 附件类型中'
+);
+
+ALTER TABLE PUB_PERSON_EXT
+   ADD PRIMARY KEY (PERSON_ID);
+
+CREATE TABLE PUB_PERSON_ROLE_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PERSON_ID            VARCHAR(64),
+   ROLE_ID              VARCHAR(64) NOT NULL
+);
+
+ALTER TABLE PUB_PERSON_ROLE_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POLICY_ACCOUNT_PWD
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(100),
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 启用 0 停用',
+   MEMO                 VARCHAR(200),
+   MIN_LENGTH           INT NOT NULL COMMENT '0 无效',
+   MAX_LENGTH           INT COMMENT '0 无效',
+   CHANGE_PERIOD        INT NOT NULL COMMENT '0 无效',
+   LOGIN_RETRY_MAX_NUM  INT NOT NULL COMMENT '0 无效',
+   RULE_REGULAR_STR     VARCHAR(100),
+   RULE_NAME            VARCHAR(100),
+   DEFAULT_PWD          VARCHAR(100) COMMENT '用于检验用户是否已改了密码，明文',
+   IS_MUST_CHG_DEFAULT_PWD VARCHAR(1) NOT NULL COMMENT '1 是 0 否',
+   ACCOUNT_TYPE         VARCHAR(300) NOT NULL COMMENT '多个用逗号分隔，=all时适用于全部用户'
+);
+
+ALTER TABLE PUB_POLICY_ACCOUNT_PWD
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POLICY_ACCOUNT_PWD_RULE
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PWD_REGULAR_STR      VARCHAR(100) NOT NULL,
+   CNAME                VARCHAR(30) NOT NULL
+);
+
+ALTER TABLE PUB_POLICY_ACCOUNT_PWD_RULE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POLICY_ACCOUNT_UNLOCK
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(100),
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 启用 0 停用',
+   MEMO                 VARCHAR(200),
+   UNLOCK_LIMIT         INT COMMENT '分钟',
+   ACCOUNT_TYPE         VARCHAR(300) NOT NULL COMMENT '多个用逗号分隔，=all时适用于全部用户'
+);
+
+ALTER TABLE PUB_POLICY_ACCOUNT_UNLOCK
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POLICY_IP
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(100),
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 启用 0 停用',
+   MEMO                 VARCHAR(200),
+   ADDRESS_TYPE         VARCHAR(1) NOT NULL COMMENT '1 单个IP 2 IP段',
+   IP_ADDRESS           VARCHAR(30) NOT NULL COMMENT '两个ip时逗号分隔',
+   ACCESS_TYPE          VARCHAR(1) NOT NULL COMMENT '0 禁止  1允许',
+   ACCOUNT_TYPE         VARCHAR(300) NOT NULL COMMENT '多个用逗号分隔，=all时适用于全部用户'
+);
+
+ALTER TABLE PUB_POLICY_IP
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POSITION
+(
+   ID                   VARCHAR(64) NOT NULL,
+   POST_CODE            VARCHAR(50) NOT NULL,
+   CNAME                VARCHAR(20) NOT NULL,
+   MEMO                 VARCHAR(500),
+   SEQ_NUM              INT NOT NULL
+);
+
+ALTER TABLE PUB_POSITION
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POSITION_GRADE
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(50) NOT NULL,
+   PG_CODE              VARCHAR(10),
+   GRADE                INT,
+   MEMO                 VARCHAR(50),
+   SEQ_NUM              INT NOT NULL
+);
+
+ALTER TABLE PUB_POSITION_GRADE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_POSITION_ROLE_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ORG_ID               VARCHAR(64),
+   POST_ID              VARCHAR(64),
+   ROLE_ID              VARCHAR(64)
+);
+
+ALTER TABLE PUB_POSITION_ROLE_RELA COMMENT '
+组织ID：职务所在组织，如果分配权限时不与组织关联，该值为 0';
+
+ALTER TABLE PUB_POSITION_ROLE_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_PROP_EXTEND
+(
+   ID                   VARCHAR(64) NOT NULL,
+   PROP_TYPE            VARCHAR(50),
+   PROP_NAME            VARCHAR(50),
+   PROP_CODE            VARCHAR(50),
+   INPUT_TYPE           VARCHAR(50),
+   CREATE_TIME          TIMESTAMP,
+   SEQ_NUM              INT
+);
+
+ALTER TABLE PUB_PROP_EXTEND COMMENT '扩展属性表';
+
+ALTER TABLE PUB_PROP_EXTEND
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_PROP_EXTEND_DATA
+(
+   ID					VARCHAR(64) NOT NULL,   
+   DATA_NAME           VARCHAR(50) NOT NULL,
+   DATA_VALUE           VARCHAR(50),
+   PROP_ID              VARCHAR(64)
+);
+
+ALTER TABLE PUB_PROP_EXTEND_DATA COMMENT '扩展属性子数据表';
+
+ALTER TABLE PUB_PROP_EXTEND_DATA
+   ADD PRIMARY KEY (DATA_NAME);
+
+CREATE TABLE PUB_RESOURCE
+(
+   ID                   VARCHAR(64) NOT NULL COMMENT '全局唯一',
+   MODULE_ID            VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(254) NOT NULL,
+   RES_URL              VARCHAR(254) NOT NULL,
+   CTR_URL              VARCHAR(254),
+   IS_NAVIGATE          VARCHAR(1),
+   STATUS               VARCHAR(1) NOT NULL,
+   CREATE_TIME          TIMESTAMP,
+   MEMO                 VARCHAR(200),
+   IS_VERIFY_AUTH       VARCHAR(1) COMMENT '1 是 0 否'
+);
+
+ALTER TABLE PUB_RESOURCE COMMENT '状态：1 可用，0 停用';
+
+ALTER TABLE PUB_RESOURCE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ROLE
+(
+   ROLE_ID              VARCHAR(64) NOT NULL,
+   ROLE_TYPE            VARCHAR(1) NOT NULL COMMENT '1 管理员角色 2 普通角色 ；只有管理员才能授权管理角色',
+   CNAME                VARCHAR(254) NOT NULL,
+   APP_ID               VARCHAR(64) NOT NULL COMMENT '0 所有app都可用，app_id 指定应用内可用',
+   ORGAN_ID             VARCHAR(64) COMMENT '0 所有组织都可用，organ_id 指定组织内可用',
+   IS_ORGAN_INHERIT     VARCHAR(1) COMMENT '1 是 0 否',
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 可用 2 禁用 3 删除',
+   SEQ_NUM              INT NOT NULL,
+   MEMO                 VARCHAR(254),
+   CREATE_TIME          TIMESTAMP
+);
+
+ALTER TABLE PUB_ROLE COMMENT '状态：1:有效，2 禁用 3 删除
+内置几种管理员角色：
+	0 超级管理员（应用、模块、资源、菜';
+
+ALTER TABLE PUB_ROLE
+   ADD PRIMARY KEY (ROLE_ID);
+
+CREATE TABLE PUB_ROLE_GROUP
+(
+   ID                   VARCHAR(64) NOT NULL,
+   CNAME                VARCHAR(100) NOT NULL,
+   PARENT_ID            VARCHAR(64) NOT NULL,
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 启用 0 停用',
+   CREATE_TIME          TIMESTAMP,
+   MEMO                 VARCHAR(200)
+);
+
+ALTER TABLE PUB_ROLE_GROUP COMMENT '父角色组ID：0：无父角色组
+状态：1:有效，2 禁用 3 删除';
+
+ALTER TABLE PUB_ROLE_GROUP
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ROLE_GROUP_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   GROUP_ID             VARCHAR(64),
+   ROLE_ID              VARCHAR(64)
+);
+
+ALTER TABLE PUB_ROLE_GROUP_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ROLE_MODULE_RELA
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ROLE_ID              VARCHAR(64),
+   MODULE_ID            VARCHAR(64)
+);
+
+ALTER TABLE PUB_ROLE_MODULE_RELA
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_ROLE_RESOURCE
+(
+   ID                   VARCHAR(64) NOT NULL,
+   ROLE_ID              VARCHAR(64),
+   RES_ID               VARCHAR(64)
+);
+
+ALTER TABLE PUB_ROLE_RESOURCE
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_SCHEDULE_TASK
+(
+   ID                   VARCHAR(64) NOT NULL,
+   TASK_CODE            VARCHAR(50) NOT NULL COMMENT 'schedule操作的标示',
+   TASK_CNAME           VARCHAR(100) NOT NULL,
+   GROUP_CODE           VARCHAR(50),
+   GROUP_CNAME          VARCHAR(100),
+   TASK_CLASS           VARCHAR(100) COMMENT '实现quartz的Job接口',
+   SCHEDULE_RULE        VARCHAR(30) NOT NULL COMMENT 'cron表达式',
+   STATUS               VARCHAR(1) NOT NULL COMMENT '1 启用 0 停用',
+   MEMO                 VARCHAR(200)
+);
+
+ALTER TABLE PUB_SCHEDULE_TASK
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_SECURITY_POLICY
+(
+   ID                   VARCHAR(64) NOT NULL COMMENT 'PWD_POLICY,UNLOCK_POLICK',
+   POLICY_CODE          VARCHAR(100) NOT NULL COMMENT '唯一,PWD_POLICY,UNLOCK_POLICK',
+   CNAME                VARCHAR(100),
+   MEMO                 VARCHAR(200) COMMENT '描述信息',
+   STATUS               VARCHAR(1000) NOT NULL COMMENT '0 停用 1 启用'
+);
+
+ALTER TABLE PUB_SECURITY_POLICY
+   ADD PRIMARY KEY (ID);
+
+CREATE TABLE PUB_SYNC_CONFIG
+(
+   CONFIG_ID            VARCHAR(64) NOT NULL COMMENT '主键ID',
+   TARGET_ID            VARCHAR(64) COMMENT '目标系统ID',
+   TARGET_NAME          VARCHAR(200) COMMENT '目标系统名称',
+   EVENT_TYPE           VARCHAR(200) COMMENT '事件类型:
+            
+            1、添加用户
+            2、更新用户
+            3、删除用户
+            4、添加组织机构
+            5、更新组织机构
+            6、删除组织机构
+            7、修改用户密码',
+   CREATE_DATE          TIMESTAMP COMMENT '创建时间',
+   CREATE_PERSON_ID     VARCHAR(200) COMMENT '创建人'
+);
+
+ALTER TABLE PUB_SYNC_CONFIG
+   ADD PRIMARY KEY (CONFIG_ID);
+
+CREATE TABLE PUB_SYNC_IMPL_PARAM
+(
+   PARAM_ID             VARCHAR(64) NOT NULL,
+   TARGET_ID            VARCHAR(64),
+   PARAM_TYPE           VARCHAR(50) COMMENT '参数类别：
+            1、用户同步
+            2、组织机构同步',
+   PARAM_NAME           VARCHAR(500) COMMENT '参数名',
+   PARAM_VALUE          VARCHAR(500) COMMENT '参数值'
+);
+
+ALTER TABLE PUB_SYNC_IMPL_PARAM
+   ADD PRIMARY KEY (PARAM_ID);
+
+CREATE TABLE PUB_SYNC_RECORD
+(
+   DATA_NAME            VARCHAR(500) COMMENT '数据名称',
+   DATA_ID              VARCHAR(64) NOT NULL COMMENT '数据唯一标识',
+   DATA_TYPE            VARCHAR(500) COMMENT '数据类别
+            1、用户同步
+            2、组织机构同步',
+   CREATE_DATE          TIMESTAMP COMMENT '创建时间'
+);
+
+ALTER TABLE PUB_SYNC_RECORD
+   ADD PRIMARY KEY (DATA_ID);
+
+CREATE TABLE PUB_SYNC_RECORD_HISTORY
+(
+   DATA_NAME            VARCHAR(500) COMMENT '数据名称',
+   DATA_ID              VARCHAR(64) NOT NULL COMMENT '数据唯一标识',
+   DATA_TYPE            VARCHAR(500) COMMENT '数据类别
+            1、用户同步
+            2、组织机构同步',
+   CREATE_DATE          TIMESTAMP COMMENT '创建时间'
+);
+
+ALTER TABLE PUB_SYNC_RECORD_HISTORY
+   ADD PRIMARY KEY (DATA_ID);
+
+CREATE TABLE PUB_SYNC_RECORD_STATUS
+(
+   STATE_ID             VARCHAR(64) NOT NULL,
+   DATA_ID              VARCHAR(64),
+   EVENT_TYPE           VARCHAR(500) COMMENT '事件类型:
+            1、添加用户
+            2、更新用户
+            3、删除用户
+            4、添加组织机构
+            5、更新组织机构
+            6、删除组织机构
+            7、修改用户密码',
+   TARGET_ID            VARCHAR(64) COMMENT '目标系统ID',
+   LAST_SYNC_TIME       TIMESTAMP COMMENT '最近同步时间',
+   SYNC_TIMES           INT COMMENT '同步次数',
+   STATUS               VARCHAR(10) COMMENT '同步状态',
+   SYNC_TYPE            VARCHAR(100) COMMENT '同步方式
+            1、自动
+            2、手动'
+);
+
+ALTER TABLE PUB_SYNC_RECORD_STATUS
+   ADD PRIMARY KEY (STATE_ID);
+
+CREATE TABLE PUB_SYNC_RECORD_STATUS_HISTORY
+(
+   STATE_ID             VARCHAR(64) NOT NULL,
+   DATA_ID              VARCHAR(64),
+   EVENT_TYPE           VARCHAR(500) COMMENT '事件类型:
+            1、添加用户
+            2、更新用户
+            3、删除用户
+            4、添加组织机构
+            5、更新组织机构
+            6、删除组织机构
+            7、修改用户密码',
+   TARGET_ID            VARCHAR(64) COMMENT '目标系统ID',
+   LAST_SYNC_TIME       TIMESTAMP COMMENT '最近同步时间',
+   SYNC_TIMES           INT COMMENT '同步次数',
+   STATUS               VARCHAR(10) COMMENT '同步状态',
+   SYNC_TYPE            VARCHAR(100) COMMENT '同步方式'
+);
+
+ALTER TABLE PUB_SYNC_RECORD_STATUS_HISTORY
+   ADD PRIMARY KEY (STATE_ID);
+
+CREATE TABLE PUB_SYNC_TARGET
+(
+   TARGET_ID            VARCHAR(64) NOT NULL,
+   TARGET_NAME          VARCHAR(200) COMMENT '系统名称',
+   USER_IMPL            VARCHAR(500) COMMENT '用户同步实现类：
+            1、用户同步
+            2、用户组同步',
+   ORG_IMPL             VARCHAR(500) COMMENT '组织机构同步实现类',
+   CREATE_DATE          TIMESTAMP COMMENT '创建时间',
+   CREATE_PERSON_ID     VARCHAR(100) COMMENT '创建人',
+   MODIFY_DATE          TIMESTAMP COMMENT '最后修改时间',
+   MODIFY_PERSON_ID     VARCHAR(100) COMMENT '最后修改人',
+   STATUS               VARCHAR(10) COMMENT '状态'
+);
+
+ALTER TABLE PUB_SYNC_TARGET
+   ADD PRIMARY KEY (TARGET_ID);
+
+CREATE TABLE BZ_DATA_ELE_SORT
+(
+   ELE_SORT_ID          VARCHAR(64) NOT NULL,
+   ELE_SORT_NAME        VARCHAR(100) NOT NULL,
+   ELE_SORT_DESC        VARCHAR(200),
+   PARENT_ID            VARCHAR(64),
+   SEQ_NUM              INT,
+   CREATE_DATE          TIMESTAMP
+);
+
+ALTER TABLE BZ_DATA_ELE_SORT
+   ADD PRIMARY KEY (ELE_SORT_ID);
+
+CREATE TABLE BZ_DATA_ELE
+(
+   UUID                 VARCHAR(64) NOT NULL,
+   ELE_SORT_ID          VARCHAR(64),
+   DATA_ELE_ID          VARCHAR(64),
+   ELE_NAME_ZH          VARCHAR(100),
+   ELE_NAME_EN          VARCHAR(100),
+   ELE_NAME_SYN         VARCHAR(100),
+   DEFINITION           VARCHAR(500),
+   SORT_MODE            VARCHAR(100),
+   SHOW_FORM            VARCHAR(100),
+   DATA_TYPE            VARCHAR(100),
+   SHOW_FORMAT          VARCHAR(100),
+   ALLOW_VALUE          VARCHAR(100),
+   CREATE_DATE          TIMESTAMP
+);
+
+ALTER TABLE BZ_DATA_ELE
+   ADD PRIMARY KEY (UUID);
+   

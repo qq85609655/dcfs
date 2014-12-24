@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="childreturn" namespace="/cms/childreturn" extends="struts-default" >
+		<!-- 福利院儿童材料退材料列表页面-->
+        <action name="returnListFLY" class="com.dcfs.cms.childReturn.ChildReturnAction" method="returnListFLY" >
+        <result name="success">/jsp/dcfs/cms/childReturn/childReturn_list_fly.jsp</result>
+		</action>
+		<!-- 省厅儿童材料退材料确认列表页面-->
+        <action name="returnListST" class="com.dcfs.cms.childReturn.ChildReturnAction" method="returnListST" >
+        <result name="success">/jsp/dcfs/cms/childReturn/childReturn_list_st.jsp</result>
+		</action>
+		<!-- 中心（安置部）儿童材料退材料确认列表页面-->
+        <action name="returnListZX" class="com.dcfs.cms.childReturn.ChildReturnAction" method="returnListZX" >
+        <result name="success">/jsp/dcfs/cms/childReturn/childReturn_list_zx.jsp</result>
+		</action>
+		<!-- 福利院儿童材料退 材料选择列表页面-->
+		<action name="returnSelectFLY" class="com.dcfs.cms.childReturn.ChildReturnAction" method="returnSelectFLY" >
+        <result name="success">/jsp/dcfs/cms/childReturn/returnSelect_list_fly.jsp</result>
+		</action>
+		<!-- 省厅儿童材料退材料选择列表页面-->
+		<action name="returnSelectST" class="com.dcfs.cms.childReturn.ChildReturnAction" method="returnSelectST" >
+        <result name="success">/jsp/dcfs/cms/childReturn/returnSelect_list_st.jsp</result>
+		</action>
+		<!-- 中心（安置部）儿童材料退材料选择列表页面-->
+		<action name="returnSelectZX" class="com.dcfs.cms.childReturn.ChildReturnAction" method="returnSelectZX" >
+        <result name="success">/jsp/dcfs/cms/childReturn/returnSelect_list_zx.jsp</result>
+		</action>
+		<!-- 儿童材料退 材料申请保存操作-->
+		<action name="saveReturnData" class="com.dcfs.cms.childReturn.ChildReturnAction" method="saveReturnData" >
+        <result name="1" type="chain">/childreturn/returnListFLY</result>
+    	<result name="2" type="chain">/childreturn/returnListST</result>
+    	<result name="3" type="chain">/childreturn/returnListZX</result>
+    	<result name="error1">/error.jsp</result>
+    	<result name="error2">/error.jsp</result>
+		</action>
+		<!-- 儿童材料退材料添加页面-->
+	    <action name="toReturnAdd" class="com.dcfs.cms.childReturn.ChildReturnAction" method="toReturnAdd" >
+        <result name="success">/jsp/dcfs/cms/childReturn/childReturn_add.jsp</result>
+		</action>
+		<!-- 儿童材料退材料确认页面-->
+	    <action name="toConfirm" class="com.dcfs.cms.childReturn.ChildReturnAction" method="toConfirm" >
+        <result name="success">/jsp/dcfs/cms/childReturn/childReturn_confirm.jsp</result>
+		</action>
+		<!-- 儿童材料退材料确认页面的确认及取消退材料操作-->
+	    <action name="saveConfirmResult" class="com.dcfs.cms.childReturn.ChildReturnAction" method="saveConfirmResult" >
+        <result name="2" type="chain">/childreturn/returnListST</result>
+    	<result name="3" type="chain">/childreturn/returnListZX</result>
+    	<result name="error1">/error.jsp</result>
+    	<result name="error2">/error.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,78 @@
+.toast-dialog {
+	z-index: 1002;
+	word-break: break-all;
+	width: auto!important;
+	max-width: 400px!important;
+	_width: 400px!important;
+	border: 1px solid #fbda91!important;
+	-moz-box-shadow: 1px 2px 5px rgba(0,0,0,.5)!important;
+	-webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.5)!important;
+	box-shadow: 1px 2px 5px rgba(0,0,0,.5)!important;
+	position: absolute!important;
+	border-radius: 4px!important;
+	display: none
+}
+.toast-content {
+	left: 0;
+	top: 0;
+	background: #f9edbe!important;
+	padding: 0 28px 0 8px
+}
+.toast-dialog .toast-outer {
+	max-width: 370px;
+	_width: 370px
+}
+.toast-dialog .toast-msg {
+	border-top: 1px solid #FBF2D1;
+	color: #000;
+	line-height: 21px;
+	margin: 0;
+	text-align: center;
+	font-size: 12px;
+	overflow-x: hidden;
+	white-space: nowrap
+}
+.toast-dialog .toast-msg .close-tips {
+	background: url(/yun-static/common/images/btn_icon.gif) no-repeat -112px -114px;
+	cursor: pointer;
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	right: 8px;
+	top: 5px
+}
+.toast-dialog .sprite-ic {
+	margin: 2px 5px 0 0;
+	width: 20px;
+	height: 20px;
+	background: url(/yun-static/common/images/btn_icon.gif?t=201306190041?) 9999px 9999px no-repeat;
+	display: inline-block;
+	float: left
+}
+.toast-dialog .toast-type {
+	display: -moz-inline-stack;
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle
+}
+.toast-dialog .ellipsis {
+	word-break: break-word;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+.toast-dialog .toast-loading {
+	background: url(/yun-static/common/widget/toast/img/loading_7ad8ea6.gif) 50% 50% no-repeat
+}
+.toast-dialog .toast-caution {
+	background-position: -42px -269px
+}
+.toast-dialog .toast-ok {
+	background-position: -42px -226px
+}
+.toast-dialog .toast-failure {
+	background-position: -42px -246px
+}
+.toast-dialog .toast-none {
+	display: none
+}

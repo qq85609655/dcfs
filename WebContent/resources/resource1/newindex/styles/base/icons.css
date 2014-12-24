@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+.nav-list li .icon,
+.user-menu li .icon {
+	height: 20px;
+	width: 20px;
+}
+
+.user-menu li .icon {
+	display: inline-block;
+	float: left;
+}
+
+.nav-list li .icon-dashboard {
+	background:url(../../images/bs_gray_icons/dashboard.png) no-repeat center center;
+}
+
+.nav-list li .icon-text-width {
+	background:url(../../images/bs_gray_icons/text-width.png) no-repeat center center;
+}
+
+.nav-list li .icon-desktop {
+	background:url(../../images/bs_gray_icons/screen.png) no-repeat center center;
+}
+
+.nav-list li .icon-calendar {
+	background:url(../../images/bs_gray_icons/calendar.png) no-repeat center center;
+}
+
+.nav-list li .icon-list {
+	background:url(../../images/bs_gray_icons/list.png) no-repeat center center;
+}
+
+.nav-list li .icon-edit {
+	background:url(../../images/bs_gray_icons/edit.png) no-repeat center center;
+}
+
+.nav-list li .icon-list-alt {
+	background:url(../../images/bs_gray_icons/list-alt.png) no-repeat center center;
+}
+
+.nav-list li .icon-picture {
+	background:url(../../images/bs_gray_icons/picture.png) no-repeat center center;
+}
+
+.nav-list li .icon-tag {
+	background:url(../../images/bs_gray_icons/tag.png) no-repeat center center;
+}
+
+.nav-list li .icon-file-alt {
+	background:url(../../images/bs_gray_icons/file-alt.png) no-repeat center center;
+}
+
+.user-menu li .icon-user {
+	background:url(../../images/user.png) no-repeat center center;
+}
+
+.user-menu li .icon-lock {
+	background:url(../../images/lock.png) no-repeat center center;
+}
+
+.user-menu li .icon-screen {
+	background:url(../../images/screen.png) no-repeat center center;
+}
+
+.user-menu li .icon-off {
+	background:url(../../images/off.png) no-repeat center center;
+}
+
+.nav-list .active .icon-dashboard,
+.nav-list .hover .icon-dashboard,
+.nav-list .open .icon-dashboard {
+	background:url(../../images/bs_blue_icons/dashboard.png) no-repeat center center;
+}
+
+.nav-list .active .icon-text-width,
+.nav-list .hover .icon-text-width,
+.nav-list .open .icon-text-width {
+	background:url(../../images/bs_blue_icons/text-width.png) no-repeat center center;
+}
+
+.nav-list .active .icon-desktop,
+.nav-list .hover .icon-desktop,
+.nav-list .open .icon-desktop {
+	background:url(../../images/bs_blue_icons/screen.png) no-repeat center center;
+}
+
+.nav-list .active .icon-list,
+.nav-list .hover .icon-list,
+.nav-list .open .icon-list {
+	background:url(../../images/bs_blue_icons/list.png) no-repeat center center;
+}
+
+.nav-list .active .icon-edit,
+.nav-list .hover .icon-edit,
+.nav-list .open .icon-edit {
+	background:url(../../images/bs_blue_icons/edit.png) no-repeat center center;
+}
+
+.nav-list .active .icon-list-alt,
+.nav-list .hover .icon-list-alt,
+.nav-list .open .icon-list-alt {
+	background:url(../../images/bs_blue_icons/list-alt.png) no-repeat center center;
+}
+
+.nav-list .active .icon-picture,
+.nav-list .hover .icon-picture,
+.nav-list .open .icon-picture {
+	background:url(../../images/bs_blue_icons/picture.png) no-repeat center center;
+}
+
+.nav-list .active .icon-tag,
+.nav-list .hover .icon-tag,
+.nav-list .open .icon-tag {
+	background:url(../../images/bs_blue_icons/tag.png) no-repeat center center;
+}
+
+.nav-list .active .icon-file-alt,
+.nav-list .hover .icon-file-alt,
+.nav-list .open .icon-file-alt {
+	background:url(../../images/bs_blue_icons/file-alt.png) no-repeat center center;
+}
+
+.nav-list .active .icon-calendar,
+.nav-list .hover .icon-calendar,
+.nav-list .open .icon-calendar {
+	background:url(../../images/bs_blue_icons/calendar.png) no-repeat center center;
+}
+
+.nav-list li .icon-angle-down {
+	background:url(../../images/chevron-down.png) no-repeat center center;
+}
+
+.nav-list .active .icon-angle-down {
+	background:url(../../images/chevron-up.png) no-repeat center center;
+}
+
+.nav-list li ul li .icon-angle-down,
+.nav-list .active ul li .icon-angle-down,
+.nav-list .open ul li .icon-angle-down {
+	background:url(../../images/chevron-down_12_12.png) no-repeat center center;
+}
+

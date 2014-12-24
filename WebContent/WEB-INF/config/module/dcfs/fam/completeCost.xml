@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="completeCost" namespace="/fam/completeCost" extends="struts-default">
+	
+		<!-- 支票托收列表 -->
+	    <action name="completeCostList" class="com.dcfs.fam.completeCost.CompleteCostAction" method="completeCostList">
+	    	<result name="success">/jsp/dcfs/fam/completeCost/completecost_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到完费维护页面、查看页面-->
+        <action name="completeCostShow" class="com.dcfs.fam.completeCost.CompleteCostAction" method="completeCostShow" >
+			<result name="maintain">/jsp/dcfs/fam/completeCost/completecost_confirm.jsp</result>
+			<result name="show">/jsp/dcfs/fam/completeCost/completecost_view.jsp</result>
+		</action>
+		
+		<!-- 跳转到票据缴费查看页面-->
+        <action name="billShow" class="com.dcfs.fam.completeCost.CompleteCostAction" method="billShow" >
+			<result name="success">/jsp/dcfs/fam/completeCost/completecost_billview.jsp</result>
+		</action>
+		
+		<!-- 完费维护提交-->
+        <action name="completeCostSave" class="com.dcfs.fam.completeCost.CompleteCostAction" method="completeCostSave" >
+			<result name="success" type="chain">
+				<param name="actionName">completeCostList</param>
+				<param name="namespace">/fam/completeCost</param>
+				<param name="method">completeCostList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+	</package>
+</struts>

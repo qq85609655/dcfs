@@ -1,0 +1,65 @@
+html {
+	height: 100%;
+}
+body {
+	background:url(../indeximages/loginbg.jpg) repeat-x center bottom #3c84b4;
+	height: 100%;
+	width: 100%;
+}
+#indexpage .pagewrap {
+	background:url(../indeximages/loginbox.png) no-repeat center center;
+	width: 1024px;
+	height: 568px;
+	margin: 0 auto;
+	position: relative;
+}
+#indexpage .pagewrap .page-title {
+	background:url(../indeximages/pagetitle.png) no-repeat center center;
+	width: 394px;
+	height: 60px;
+	position: absolute;
+	top: 370px;
+	left: 192px;
+}
+#indexpage .pagewrap .loginbox {
+	position: absolute;
+	width: 245px;
+	height: 154px;
+	left: 640px;
+	top: 286px;
+	padding: 0 8px;
+}
+#indexpage .pagewrap .loginbox .msg {
+	padding-left: 5px;
+	text-align: center;
+}
+#indexpage .pagewrap .loginbox .input-txt {
+	width: 100px;
+}
+#indexpage .pagewrap .loginbox .from-item {
+	margin-bottom: 10px;
+	height: 26px;
+	line-height: 26px;
+}
+#indexpage .pagewrap .loginbox .from-item img {
+	vertical-align: middle;
+}
+#indexpage #yzm {
+	width: 45px;
+	float: left;
+	display: inline-block;
+}
+#indexpage .btns {
+	clear: both;
+	height: 24px;
+}
+#indexpage .loginbtn {
+	background:url(../indeximages/okbtn.jpg) no-repeat center center;
+	width: 77px;
+	height: 24px;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	line-height: 24px;
+	color: #FFF;
+}

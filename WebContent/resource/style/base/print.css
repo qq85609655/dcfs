@@ -1,0 +1,235 @@
+@CHARSET "UTF-8";
+ /*  ------ Global settings */
+ 
+ *{
+ 	font: 10.5pt "宋体","Times New Roman", "Arial", "Helvetica", "sans-serif" ;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	color: #000;
+ }
+ 
+ body {
+	
+}
+
+/* ------- Pagination--------------*/
+h1, h2 {
+    page-break-after: avoid;
+    page-break-before: always;
+}
+
+/*
+* orphans:设置当元素内部发生分页时必须在页面底部保留的最少行数。
+* widows:设置当元素内部发生分页时必须在页面顶部保留的最少行数。
+*/
+p {
+      orphans:3;
+      widows:3;
+}
+
+/* Default left, right, top, bottom margin is 2cm */
+@page { margin: 2cm } 
+ 
+/* First page, 10 cm margin on top */
+@page :first {
+  margin-top: 2cm 
+}
+ 
+/* Left pages, a wider margin on the left */
+@page :left {
+  margin-left: 2cm;
+  margin-right: 2cm;
+}
+ 
+@page :right {
+  margin-left: 2cm;
+  margin-right: 2cm;
+}
+
+ 
+.print-title1  {
+	font-size: 16pt;
+	color: #000;
+	font-weight: bold;
+	text-align:center;
+}
+
+/**标题一：1号字体**/
+.title1  {
+	font-size: 26pt;
+	color: #000;
+	font-weight: bold;
+	text-align:center;
+}
+
+/**标题二：2号字体**/
+.title2  {
+	font-size: 22pt;
+	color: #000;
+	font-weight: bold;
+	text-align:center;
+}
+
+/**标题三：3号字体**/
+.title3  {
+	font-size: 16pt;
+	color: #000;
+	font-weight: bold;
+	text-align:center;
+}
+/**标题四：4号字体**/
+.title4  {
+	font-family:"Times New Roman";
+	font-size: 14pt;
+	color: #000;
+	font-weight: bold;
+	text-align:center;
+}
+
+/**标题：黑体**/
+.title-black  {
+	font: 19pt "黑体";
+	color: #000;
+	font-weight: bold;
+	text-align:center;
+}
+
+.table-print{
+	border-style: solid; 
+	border-width: 2px;
+	border-collapse: collapse;	
+	border-spacing: 1;
+	width: 100%;
+	background-color: transparent;
+	font-size: inherit;
+}
+
+.table-print tr{  
+	height:30px;
+}
+
+.table-print th{  
+	padding:4px;  
+	text-align: center;
+	border: 1px black solid;
+	font-size: inherit;
+}
+
+.table-print td{
+	padding:4px;  
+	/*text-align: center;*/
+	border: 1px black solid;
+	font-size: inherit;
+}
+
+.table-print-small{
+	border-style: solid; 
+	border-width: 2px;
+	border-collapse: collapse;	
+	border-spacing: 1;
+	width: 100%;
+	background-color: transparent;
+	font-size: 9pt;
+}
+
+.table-print-small tr{  
+	height:30px;
+}
+
+.table-print-small th{  
+	padding:4px;  
+	text-align: center;
+	border: 1px black solid;
+	font-size: 9pt;
+}
+
+.table-print-small td{
+	padding:4px;  
+	/*text-align: center;*/
+	border: 1px black solid;
+	font-size: 9pt;
+}
+
+.table-print-s4{
+	border-style: solid; 
+	border-width: 2px;
+	border-collapse: collapse;	
+	border-spacing: 1;
+	width: 100%;
+	background-color: transparent;
+	font-size: 12pt;
+}
+
+.table-print-s4 tr{  
+	height:30px;
+}
+
+.table-print-s4 th{  
+	padding:4px;  
+	text-align: center;
+	border: 1px black solid;
+	font-size: 12pt;
+}
+
+.table-print-s4 td{
+	padding:4px;  
+	/*text-align: center;*/
+	border: 1px black solid;
+	font-size: 12pt;
+}
+
+.table-print-s5{
+	border-style: solid; 
+	border-width: 2px;
+	border-collapse: collapse;	
+	border-spacing: 1;
+	width: 100%;
+	background-color: transparent;
+	font-size: 10.5pt;
+}
+
+.table-print-s5 tr{  
+	height:30px;
+}
+
+.table-print-s5 th{  
+	padding:4px;  
+	text-align: center;
+	border: 1px black solid;
+	font-size: 10.5pt;
+}
+
+.table-print-s5 td{
+	padding:4px;  
+	/*text-align: center;*/
+	font-size: 10.5pt;
+}
+
+input[type=text] {
+	color: #000;
+	background-color: #fff;
+	border: 0px;
+	padding: 0px 4px;
+	line-height: 1.2;
+	font-size: inherit;
+	font-family: inherit;
+	height:30px !important;
+}
+
+.Wdate{
+	font-size: 10.5pt  !important;
+}
+
+.center {
+	text-align: center;
+}
+
+.print-barcode {
+	height:30px !important;
+}
+
+/* ------ Normal elements */
+
+
+     

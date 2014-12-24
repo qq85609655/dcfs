@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="extensionapply" namespace="/sce/extensionapply" extends="struts-default">
+		<!-- 交文延期申请操作begin -->
+		<!-- 交文延期申请列表 -->
+		<action name="ExtensionApplyList" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionApplyList">
+	    	<result name="success">/jsp/dcfs/sce/extensionApply/extensionapply_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请选择列表 -->
+		<action name="PreApproveApplySelect" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="PreApproveApplySelect">
+	    	<result name="success">/jsp/dcfs/sce/extensionApply/preapprove_select.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期申请添加页 -->
+		<action name="ExtensionApplyAdd" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionApplyAdd">
+	    	<result name="success">/jsp/dcfs/sce/extensionApply/extensionapply_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期申请保存 -->
+		<action name="ExtensionApplySave" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionApplySave">
+	    	<result name="success" type="chain">/extensionapply/ExtensionApplyList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期申请查看 -->
+		<action name="ExtensionApplyShow" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionApplyShow">
+	    	<result name="apply">/jsp/dcfs/sce/extensionApply/extensionapply_view.jsp</result>
+	    	<result name="audit">/jsp/dcfs/sce/extensionApply/extensionaudit_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期申请操作end -->
+	    
+	   	<!-- 交文延期审核操作begin --> 
+	    <!-- 交文延期审核列表 -->
+		<action name="ExtensionAuditList" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionAuditList">
+	    	<result name="success">/jsp/dcfs/sce/extensionApply/extensionaudit_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期审核添加 -->
+		<action name="ExtensionAuditAdd" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionAuditAdd">
+	    	<result name="success">/jsp/dcfs/sce/extensionApply/extensionaudit_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期审核保存 -->
+		<action name="ExtensionAuditSave" class="com.dcfs.sce.extensionApply.ExtensionApplyAction" method="ExtensionAuditSave">
+	    	<result name="success" type="chain">/extensionapply/ExtensionAuditList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 交文延期审核操作end -->
+	</package>
+</struts>

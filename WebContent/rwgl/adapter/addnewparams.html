@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="/task/css/style.css" rel="stylesheet" type="text/css" />
+<title>自定义参数页面</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F4F9FF;
+}
+-->
+</style>
+</head>
+<script>
+
+function addNewParams(){
+	var arr= new Array();
+	arr[0]=document.all.paraname.value;
+	arr[1]=document.all.parasdesc.value;
+	arr[2]=document.all.defaultvalue.value;
+	window.returnValue= arr;
+	window.close();
+}
+function cancelAdd(){
+	window.close();
+}
+</script>
+<body>
+<br>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" class="text01">
+<tr>
+<td>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" bgcolor="#9CC6F7">
+      <tr>
+        <td width="18%" class="listdata" nowrap><div align="right">参数名称：</div></td>
+        <td class="listdata" colspan="2"><div align="left"><input type="text" name="paraname" size="20" maxlength="30"><font  class="text01" color="#FF0000">*</font></div></td>
+      </tr>
+      <tr>
+        <td class="listdata" nowrap><div align="right">参数中文描述：</div></td>
+        <td class="listdata" colspan="2" nowrap><div align="left">
+          <input name="parasdesc" type="text" size="30" maxlength="50">          
+          <font  class="text01" color="#FF0000">*</font></div></td>
+      </tr>		
+	    <tr>
+        <td class="listdata" nowrap><div align="right">参数默认值：</div></td>
+        <td class="listdata" colspan="2" nowrap><div align="left">
+          <input name="defaultvalue" type="text" size="10" maxlength="20">
+        </div></td>
+      </tr>	  		  		  		  		  
+      <tr class="listdata"><td align="center" colspan="3"><input type="button" name="addNewButton" value="添加" class="input01" onClick="addNewParams();">
+      &nbsp;<input type="button" name="returnButton" value="取消" class="input01" onClick="cancelAdd();"></td></tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

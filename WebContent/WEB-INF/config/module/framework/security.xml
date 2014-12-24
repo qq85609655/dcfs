@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="accType" namespace="/accType" extends="struts-default" >
+	    <!--账号类型查询action -->
+		<action name="accTypeList" class="com.hx.framework.security.AccountTypeAction" method="accTypeList">
+			<result name="success">/jsp/framework/security/accTypeList.jsp</result>
+		</action>
+		<!--账号类型添加action -->
+		<action name="accTypeAdd" class="com.hx.framework.security.AccountTypeAction" method="accTypeAdd">
+			<result name="success" type="chain">accTypeList</result>
+		</action>
+		<!--账号类型修改action -->
+		<action name="accTypeModify" class="com.hx.framework.security.AccountTypeAction" method="accTypeModify">
+			<result name="success" type="chain">accTypeList</result>
+		</action>
+		<!--账号类型删除action -->
+		<action name="accTypeDelete" class="com.hx.framework.security.AccountTypeAction" method="accTypeDelete">
+			<result name="success" type="chain">accTypeList</result>
+		</action>
+		<!--账号类型添加跳转action -->
+		<action name="accTypeToAdd" class="com.hx.framework.security.AccountTypeAction" method="accTypeToAdd">
+			<result name="success">/jsp/framework/security/accTypeAdd.jsp</result>
+		</action>
+		<!--账号类型查看action -->
+		<action name="accTypeDetailed" class="com.hx.framework.security.AccountTypeAction" method="accTypeDetailed">
+			<result name="detail">/jsp/framework/security/accTypeDetail.jsp</result>
+			<result name="edit">/jsp/framework/security/accTypeEdit.jsp</result>
+		</action>
+	</package>
+	<package name="pwdPolicy" namespace="/pwdPolicy" extends="struts-default">
+	   <action name="tosetUp" class="com.hx.framework.security.PwdPolicyAction" method="tosetUp">
+	      <result>/jsp/framework/security/pwdPolicy.jsp</result>
+	   </action>
+	   <action name="setUp" class="com.hx.framework.security.PwdPolicyAction" method="setUp">
+	      <result name="success" type="chain">tosetUp</result>
+	   </action>
+	</package>
+	<package name="poAccUnlock" namespace="/poAccUnlock" extends="struts-default">
+	   <action name="poAccList" class="com.hx.framework.security.PolicyAccountUnlockAction" method="poAccUnlockList">
+	      <result name="success">/jsp/framework/security/poAccUnlockList.jsp</result>
+	   </action>
+	   <action name="poAccSave" class="com.hx.framework.security.PolicyAccountUnlockAction" method="poAccSave">
+	      <result name="success" type="chain">poAccList</result>
+	   </action>
+	</package>
+	<package name="securityPolicy" namespace="/securityPolicy" extends="struts-default">
+	   <action name="securityPolicyList" class="com.hx.framework.security.SecurityPolicyAction" method="securityPolicyList">
+	      <result name="success">/jsp/framework/security/securityPolicyList.jsp</result>
+	   </action>
+	   <action name="updateSecurityPolicy" class="com.hx.framework.security.SecurityPolicyAction" method="changeStatus">
+	      <result name="success" type="chain">securityPolicyList</result>
+	   </action>
+	</package>
+	<package name="clearLog" namespace="/clearLog" extends="struts-default">
+	   <!--审计日志归档List页面action -->
+	   <action name="queryList" class="com.hx.framework.security.AuditClearLogAction" method="queryList">
+	      <result>/jsp/framework/security/auditClearLogList.jsp</result>
+	   </action>
+	   <!--跳转审计日志手动归档页面action -->
+	   <action name="toHandLogClear" class="com.hx.framework.security.AuditClearLogAction" method="toHandLogClear">
+	      <result>/jsp/framework/security/auditClearLogHand.jsp</result>
+	   </action>
+	   <!--审计日志手动归档action -->
+	   <action name="handLogClear" class="com.hx.framework.security.AuditClearLogAction" method="handLogClear">
+	      <result name="success" type="chain">queryList</result>
+	   </action>
+	    <!--跳转审计日志自动归档设置页面action -->
+	   <action name="toAutoClearSetUp" class="com.hx.framework.security.AuditClearLogAction" method="toAutoClearSetUp">
+	      <result>/jsp/framework/security/auditClearLogAuto.jsp</result>
+	   </action>
+	   <!--审计日志自动归档设置action -->
+	   <action name="autoClearSetUp" class="com.hx.framework.security.AuditClearLogAction" method="autoClearSetUp">
+	      <result name="success" type="chain">queryList</result>
+	   </action>
+	   <!--审计日志删除List页面action -->
+	   <action name="queryDelList" class="com.hx.framework.security.AuditClearLogAction" method="queryDelList">
+	      <result>/jsp/framework/security/auditDelLogList.jsp</result>
+	   </action>
+	   <!--跳转审计日志自动删除设置action -->
+	   <action name="toAutoDelSetUp" class="com.hx.framework.security.AuditClearLogAction" method="toAutoDelSetUp">
+	      <result>/jsp/framework/security/auditDelLogAuto.jsp</result>
+	   </action>
+	   <!--审计日志自动删除设置action -->
+	   <action name="autoDelSetUp" class="com.hx.framework.security.AuditClearLogAction" method="autoDelSetUp">
+	      <result name="success" type="chain">queryDelList</result>
+	   </action>
+	   <!--跳转审计日志手动动删除action -->
+	   <action name="toHandDelLog" class="com.hx.framework.security.AuditClearLogAction" method="toHandDelLog">
+	      <result name="success">/jsp/framework/security/auditDelLogHand.jsp</result>
+	   </action>
+	   <!--审计日志手动删除action -->
+	   <action name="handDelLog" class="com.hx.framework.security.AuditClearLogAction" method="handDelLog">
+	      <result name="success" type="chain">queryDelList</result>
+	   </action>
+	</package>
+</struts>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="app" namespace="/app" extends="struts-default" >
+	    <!--应用查询action -->
+		<action name="resourceAppList" class="com.hx.framework.resource.app.ResourceAppAction" method="resourceAppList">
+			<result name="success">/jsp/framework/resourceapp/resourceappList.jsp</result>
+		</action>
+		<!--应用添加action -->
+		<action name="resourceAppAdd" class="com.hx.framework.resource.app.ResourceAppAction" method="resourceAppAdd">
+			<result name="success" type="chain">resourceAppList</result>
+		</action>
+		<!--应用修改action -->
+		<action name="resourceAppModify" class="com.hx.framework.resource.app.ResourceAppAction" method="resourceAppModify">
+			<result name="success" type="chain">
+				<param name="actionName">resourceAppList</param>
+			</result>
+		</action>
+		<!--应用删除action -->
+		<action name="resourceAppDelete" class="com.hx.framework.resource.app.ResourceAppAction" method="resourceAppDelete">
+			<result name="success" type="chain">resourceAppList</result>
+		</action>
+		<!--应用添加跳转action -->
+		<action name="resourceAppToAdd" class="com.hx.framework.resource.app.ResourceAppAction" method="resourceAppToAdd">
+			<result name="success">/jsp/framework/resourceapp/resourceappAdd.jsp</result>
+		</action>
+		<!--应用查看action -->
+		<action name="resourceAppDetailed" class="com.hx.framework.resource.app.ResourceAppAction" method="resourceAppDetailed">
+			<result name="look">/jsp/framework/resourceapp/resourceappDetail.jsp</result>
+			<result name="modify">/jsp/framework/resourceapp/resourceappEdit.jsp</result>
+		</action>
+		<!--生成导航栏action -->
+		<action name="addNavBar" class="com.hx.framework.resource.app.ResourceAppAction" method="addNavBar">
+			<result name="success" type="chain">resourceAppList</result>
+		</action>
+		<!--导出XMLaction -->
+		<action name="outputXml" class="com.hx.framework.resource.app.ResourceAppAction" method="outputXml">
+		</action>
+		<!--导入XMLaction -->
+		<action name="inputXml" class="com.hx.framework.resource.app.ResourceAppAction" method="inputXml">
+			<result name="success" type="chain">resourceAppList</result>
+		</action>
+		<action name="toAllResource" class="com.hx.framework.resource.app.ResourceAppAction" method="toAllResource">
+			<result name="success">/jsp/framework/resources/selectResTree.jsp</result>
+		</action>
+		
+		 <!--应用环境信息查询action -->
+		<action name="appContextList" class="com.hx.framework.resource.app.AppContextAction" method="appContextList">
+			<result name="success">/jsp/framework/resourceapp/appContextList.jsp</result>
+		</action>
+		 <!--应用环境信息删除action -->
+		<action name="appContextDelete" class="com.hx.framework.resource.app.AppContextAction" method="appContextDelete">
+			<result name="success" type="chain">appContextList</result>
+		</action>
+		 <!--应用环境信息添加action(转向) -->
+		<action name="toAppContextAdd" class="com.hx.framework.resource.app.AppContextAction" method="toAppContextAdd">
+			<result name="success">/jsp/framework/resourceapp/appContextAdd.jsp</result>
+		</action>
+		 <!--应用环境信息添加action(保存) -->
+		<action name="appContextAdd" class="com.hx.framework.resource.app.AppContextAction" method="appContextAdd">
+			<result name="success" type="chain">appContextList</result>
+		</action>
+		 <!--应用环境信息查看action -->
+		<action name="appContextDetail" class="com.hx.framework.resource.app.AppContextAction" method="appCtxDetailed">
+			<result name="look">/jsp/framework/resourceapp/appContextDetail.jsp</result>
+			<result name="modify">/jsp/framework/resourceapp/appContextEdit.jsp</result>
+		</action>
+		 <!--应用环境信息编辑action(保存) -->
+		<action name="appContextModify" class="com.hx.framework.resource.app.AppContextAction" method="appContextModify">
+			<result name="success" type="chain">appContextList</result>
+		</action>
+	</package>
+</struts>

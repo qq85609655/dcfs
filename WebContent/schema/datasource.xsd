@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:datasource="base/resource/console/datasource/model" targetNamespace="base/resource/console/datasource/model" elementFormDefault="qualified">
+	<xs:element name="DataSources">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dataSource" type="datasource:dataSource" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="dataSource">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="ds_name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="ds_type" type="xs:string"/>
+			<xs:element name="systemid" type="xs:string"/>
+			<xs:element name="def_adapter" type="xs:string"/>
+			<xs:element name="createtime" type="xs:date"/>
+			<xs:element name="creator" type="xs:string"/>
+			<xs:element name="modifytime" type="xs:date"/>
+			<xs:element name="modifier" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

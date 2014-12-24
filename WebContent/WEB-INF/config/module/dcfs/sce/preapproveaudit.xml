@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="preapproveaudit" namespace="/sce/preapproveaudit" extends="struts-default">
+		<!-- 安置部预批申请审核列表 -->
+		<action name="PreApproveAuditListAZB" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveAuditListAZB">
+	    	<result name="success">/jsp/dcfs/sce/preApproveAudit/preapproveauditAZB_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请审核添加 -->
+		<action name="PreApproveAuditShow" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveAuditShow">
+	    	<result name="AZBadd">/jsp/dcfs/sce/preApproveAudit/preapproveauditAZB_add.jsp</result>
+	    	<result name="AZBshow">/jsp/dcfs/sce/preApproveAudit/preapproveauditAZB_view.jsp</result>
+	    	<result name="SHBadd">/jsp/dcfs/sce/preApproveAudit/preapproveauditSHB_add.jsp</result>
+	    	<result name="SHBshow">/jsp/dcfs/sce/preApproveAudit/preapproveauditAZB_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请审核提交 -->
+		<action name="PreApproveAuditSave" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveAuditSave">
+	    	<result name="AZB" type="chain">/preapproveaudit/PreApproveAuditListAZB</result>
+	    	<result name="SHB" type="chain">/preapproveaudit/PreApproveAuditListSHB</result>
+	    	<result name="AZBbc" type="chain">
+	    		<param name="actionName">findAddList</param>
+				<param name="namespace">/sce/additional</param>
+				<param name="method">findAddList</param>
+			</result>
+			<result name="SHBbc" type="chain">
+	    		<param name="actionName">findAddList</param>
+				<param name="namespace">/sce/additional</param>
+				<param name="method">findAddList</param>
+			</result>
+			<result name="AZBbf" type="chain">
+	    		<param name="actionName">addTranslationList</param>
+				<param name="namespace">/sce/addTranslation</param>
+				<param name="method">addTranslationList</param>
+			</result>
+			<result name="SHBbf" type="chain">
+	    		<param name="actionName">addTranslationList</param>
+				<param name="namespace">/sce/addTranslation</param>
+				<param name="method">addTranslationList</param>
+			</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请补充记录列表 -->
+		<action name="PreApproveSuppleRecordsList" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveSuppleRecordsList">
+	    	<result name="success">/jsp/dcfs/sce/preApproveAudit/preapprovesupplerecords_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请审核记录列表 -->
+		<action name="PreApproveAuditRecordsList" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveAuditRecordsList">
+	    	<result name="success">/jsp/dcfs/sce/preApproveAudit/preapproveauditrecords_list.jsp</result>
+	    	<result name="SHB">/jsp/dcfs/sce/preApproveAudit/preapproveauditrecordsSHB_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 安置部撤销预批申请 -->
+		<action name="PreApproveCancelApplyAdd" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveCancelApplyAdd">
+	    	<result name="success">/jsp/dcfs/sce/preApproveAudit/preapprovecancelapply_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 安置部撤销预批申请保存 -->
+		<action name="PreApproveCancelApplySave" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveCancelApplySave">
+	    	<result name="success" type="chain">/preapproveaudit/PreApproveAuditListAZB</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 审核部预批申请审核列表 -->
+		<action name="PreApproveAuditListSHB" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveAuditListSHB">
+	    	<result name="one">/jsp/dcfs/sce/preApproveAudit/preapproveauditSHB_oneLevel_list.jsp</result>
+	    	<result name="two">/jsp/dcfs/sce/preApproveAudit/preapproveauditSHB_twoLevel_list.jsp</result>
+	    	<result name="three">/jsp/dcfs/sce/preApproveAudit/preapproveauditSHB_threeLevel_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 审核部预批申请审核列表 -->
+		<action name="PreFileShow" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreFileShow">
+	    	<result name="success">/jsp/dcfs/sce/preApproveAudit/prefileinfo_view.jsp</result>
+	    	<result name="doubleinfoEN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_doubleview.jsp</result>
+	    	<result name="doubleinfoCN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_doubleview.jsp</result>
+	    	<result name="singleinfoEN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_singleview.jsp</result>
+	    	<result name="singleinfoCN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_singleview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <action name="GetPreFileInfo" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="GetPreFileInfo">
+	    	<result name="doubleinfoEN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_doubleview.jsp</result>
+	    	<result name="doubleinfoCN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_doubleview.jsp</result>
+	    	<result name="singleinfoEN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_singleview.jsp</result>
+	    	<result name="singleinfoCN">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_singleview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 审核部预批申请审核列表 -->
+		<action name="PreApproveShow" class="com.dcfs.sce.preApproveAudit.PreApproveAuditAction" method="PreApproveShow">
+	    	<result name="success">/jsp/dcfs/sce/preApproveAudit/preapproveapply_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	</package>
+</struts>

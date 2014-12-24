@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./style/breezeBase.css" />
+<script type="text/javascript" src="./js/extendString.js"></script>
+<script type="text/javascript" src="./js/breezeCommon.js"></script>
+<script type="text/javascript" src="./js/formVerify.js"></script>
+<script type="text/javascript" src="./js/runFormVerify.js"></script>
+<style type="text/css">
+.style1 {
+	border-collapse: collapse;
+	border: 1px solid #3399FF;
+}
+
+.style2 {
+	font-weight: bold;
+	font-size: 12px;
+	border-left: 1px solid #C0C0C0;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top: 1px solid #C0C0C0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+</style>
+
+<script type="text/javascript">
+	var resourcePath = "./";
+	var path = "./";
+</script>
+</head>
+<body>
+<table id="msg1" style="width: 100%;display:none" cellspacing="1" class="style1">
+	<tr>
+		<td class="style2">提示信息</td>
+	</tr>
+	<tr>
+		<td id="msgContent"></td>
+	</tr>
+</table>
+
+<form action="" name="aa">标题：<input name="aaa" formTitle="标题"
+	restriction="wordchar" type="text" onkeyup=
+	_check_one(this);;;
+onmouseout=
+	_inputMouseOut(this);;;
+onmousemove=
+	_inputMouseOver(this);;;
+onblur="_inputMouseBlur(this);hide(true);"
+	onfocus="_inputMouseFocus(this);this.select();"
+	notnull="测试标题不能为空，请重新输入" /> 标题：<input name="aaa" type="text"
+	onkeyup=
+	_check_one(this);;;
+onmouseout=
+	_inputMouseOut(this);;;
+onmousemove=
+	_inputMouseOver(this);;;
+onblur="_inputMouseBlur(this);hide(true);"
+	onfocus="_inputMouseFocus(this);this.select();" notnull="测34" /> <input
+	type="button" value="submit" onclick=
+	pageshow(document.aa);
+></form>
+</body>
+</html>

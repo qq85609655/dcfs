@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="orgexpmgr" namespace="/mkr/orgexpmgr" extends="struts-default">
+		<action name="organExpTree" class="com.dcfs.mkr.organexp.OrganExpAction" method="organExpTree">
+			<result name="success">/jsp/dcfs/mkr/orgexp/organExpTree.jsp</result>
+		</action>
+		<action name="organExpList" class="com.dcfs.mkr.organexp.OrganExpAction" method="organExpList">
+			<result name="success">/jsp/dcfs/mkr/orgexp/organExpListMessage.jsp</result>
+		</action>
+		<action name="organSyzzMaintain" class="com.dcfs.mkr.organexp.OrganExpAction" method="organSyzzMaintain">
+			<result name="success">/jsp/dcfs/mkr/orgexp/organExpList.jsp</result>
+		</action>
+		<action name="organModify" class="com.dcfs.mkr.organexp.OrganExpAction" method="organModify">
+			<result name="success">/jsp/dcfs/mkr/orgexp/organModify.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/orgexp/shbOrganModify.jsp</result>
+		</action>
+		<action name="organModifySubmit" class="com.dcfs.mkr.organexp.OrganExpAction" method="organModifySubmit">
+			<result name="success">/jsp/dcfs/mkr/orgexp/organModify.jsp</result>
+		</action>
+		<action name="headerModifySubmit" class="com.dcfs.mkr.organexp.OrganExpAction" method="headerModifySubmit">
+			<result name="success">/jsp/dcfs/mkr/orgexp/headerModify.jsp</result>
+			<result name="success">/jsp/dcfs/mkr/orgexp/shbHeaderModify.jsp</result>
+		</action>
+		<action name="branchOrganList" class="com.dcfs.mkr.organexp.OrganExpAction" method="branchOrganList">
+			<result name="success">/jsp/dcfs/mkr/orgexp/branchOrganList.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/orgexp/shbBranchOrganList.jsp</result>
+		</action>
+		<action name="deleteBranch" class="com.dcfs.mkr.organexp.OrganExpAction" method="deleteBranch">
+			<result name="success">/jsp/dcfs/mkr/orgexp/branchOrganList.jsp</result>
+		</action>
+		<action name="branchModify" class="com.dcfs.mkr.organexp.OrganExpAction" method="branchModify">
+			<result name="success">/jsp/dcfs/mkr/orgexp/branchModify.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/orgexp/shbBranchModify.jsp</result>
+		</action>
+		<action name="headerModify" class="com.dcfs.mkr.organexp.OrganExpAction" method="headerModify">
+			<result name="success">/jsp/dcfs/mkr/orgexp/headerModify.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/orgexp/shbHeaderModify.jsp</result>
+		</action>
+		<action name="isOrgan" class="com.dcfs.mkr.organexp.OrganExpAction" method="isOrgan" />
+		<action name="branchModifySubmit" class="com.dcfs.mkr.organexp.OrganExpAction" method="branchModifySubmit">
+			<result name="success" type="chain">orgexpmgr/organNull</result>
+		</action>
+		<!-- 跳转到空白页面 -->
+		<action name="organNull" class="com.dcfs.mkr.organexp.OrganExpAction" method="organNull">
+			<result name="success">/jsp/dcfs/mkr/orgexp/ModifyNull.jsp</result>
+		</action>
+		<!-- 机构维护英文版页面 -->
+		<action name="organExpListEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="organExpListEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/organExpList.jsp</result>
+		</action>
+		<action name="organModifyEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="organModifyEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/organModify.jsp</result>
+		</action>
+		<action name="organModifySubmitEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="organModifySubmitEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/organModify.jsp</result>
+		</action>
+		<action name="branchOrganListEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="branchOrganListEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/branchOrganList.jsp</result>
+		</action>
+		<action name="branchModifyEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="branchModifyEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/branchModify.jsp</result>
+		</action>
+		<action name="deleteBranchEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="deleteBranchEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/branchOrganList.jsp</result>
+		</action>
+		<action name="branchModifySubmitEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="branchModifySubmitEn">
+			<result name="success" type="chain">orgexpmgr/organNullEn</result>
+		</action>
+		<action name="organNullEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="organNullEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/ModifyNullEn.jsp</result>
+		</action>
+		<action name="headerModifyEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="headerModifyEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/headerModify.jsp</result>
+		</action>
+		<action name="headerModifySubmitEn" class="com.dcfs.mkr.organexp.OrganExpAction" method="headerModifySubmitEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/headerModify.jsp</result>
+		</action>
+	</package>
+</struts>

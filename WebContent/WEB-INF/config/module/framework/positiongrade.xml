@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="positiongrade" namespace="/positiongrade" extends="struts-default" >
+	    <!--职级查询action -->
+		<action name="positionGradeList" class="com.hx.framework.positiongrade.PositionGradeAction" method="positionGradeList">
+			<result name="success">/jsp/framework/positiongrade/positionGradeList.jsp</result>
+		</action>
+		<!--职级添加action -->
+		<action name="positionGradeAdd" class="com.hx.framework.positiongrade.PositionGradeAction" method="positionGradeAdd">
+			<result name="success" type="chain">
+			   <param name="actionName">positionGradeList</param>
+			   <param name="namespace">/positiongrade</param>
+			   <param name="method">positionGradeList</param>
+			</result>
+		</action>
+		<!--职级修改action -->
+		<action name="positionGradeModify" class="com.hx.framework.positiongrade.PositionGradeAction" method="positionGradeModify">
+			<result name="success" type="chain">positionGradeList</result>
+		</action>
+		<!--职级删除action -->
+		<action name="positionGradeDelete" class="com.hx.framework.positiongrade.PositionGradeAction" method="positionGradeDelete">
+			<result name="success" type="chain">positionGradeList</result>
+		</action>
+		<!--职级添加跳转action -->
+		<action name="positionGradeToAdd" class="com.hx.framework.positiongrade.PositionGradeAction" method="positionGradeToAdd">
+			<result name="success">/jsp/framework/positiongrade/positionGradeAdd.jsp</result>
+		</action>
+		<!--职级查看action -->
+		<action name="positionGradeDetailed" class="com.hx.framework.positiongrade.PositionGradeAction" method="positionGradeDetailed">
+			<result name="look">/jsp/framework/positiongrade/positionGradeDetail.jsp</result>
+			<result name="modify">/jsp/framework/positiongrade/positionGradeEdit.jsp</result>
+		</action>
+	</package>
+</struts>

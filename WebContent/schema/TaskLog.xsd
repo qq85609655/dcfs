@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tasklog="base/resource/console/tasklog/model" targetNamespace="base/resource/console/tasklog/model" elementFormDefault="qualified">
+	<xs:element name="TaskLogs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="taskLog" type="tasklog:taskLogType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="taskLogType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="task_id" type="xs:string"/>
+			<xs:element name="start_time" type="xs:dateTime"/>
+			<xs:element name="end_time" type="xs:dateTime"/>
+			<xs:element name="run_state" type="xs:string"/>
+			<xs:element name="curr_job_id" type="xs:string"/>
+			<xs:element name="run_msg" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

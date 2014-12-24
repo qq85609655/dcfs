@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="pause" namespace="/ffs/pause" extends="struts-default" >
+
+		
+		<!-- 文件暂停信息列表 -->
+	    <action name="pauseFileList" class="com.dcfs.ffs.pause.PauseFileAction" method="pauseFileList">
+	    	<result name="success">/jsp/dcfs/ffs/pause/pauseFile_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+		<!-- 收养组织文件暂停信息查询列表 -->
+	    <action name="pauseSearchList" class="com.dcfs.ffs.pause.PauseFileAction" method="pauseSearchList">
+	    	<result name="success">/jsp/dcfs/ffs/pause/pauseFile_listSYZZ.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到文件超期提醒页面 -->
+        <action name="remindShow" class="com.dcfs.ffs.pause.PauseFileAction" method="remindShow" >
+			<result name="success">/jsp/dcfs/ffs/pause/pauseFile_remindview.jsp</result>
+		</action>
+	    
+		<!-- 暂停文件选择列表 -->
+	    <action name="pauseChoiceList" class="com.dcfs.ffs.pause.PauseFileAction" method="pauseChoiceList">
+	    	<result name="success">/jsp/dcfs/ffs/pause/pauseFile_choicelist.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到文件暂停确认页面 -->
+        <action name="confirmShow" class="com.dcfs.ffs.pause.PauseFileAction" method="confirmShow" >
+			<result name="success">/jsp/dcfs/ffs/pause/pauseFile_confirmadd.jsp</result>
+		</action>
+		
+		<!-- 提交文件暂停确认信息-->
+        <action name="pauseFileSave" class="com.dcfs.ffs.pause.PauseFileAction" method="pauseFileSave" >
+		</action>
+		
+		<!-- 文件信息查看页面 -->
+	    <action name="fileInfoShow" class="com.dcfs.ffs.pause.PauseFileAction" method="fileInfoShow">
+	    	<result name="double">/jsp/dcfs/ffs/pause/pauseFile_doubletempleteview.jsp</result>
+	    	<result name="single">/jsp/dcfs/ffs/pause/pauseFile_singletempleteview.jsp</result>
+	    	<result name="step">/jsp/dcfs/ffs/pause/pauseFile_steptempleteview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		
+		<!-- 文件取消暂停操作 -->
+	    <action name="fileRecovery" class="com.dcfs.ffs.pause.PauseFileAction" method="fileRecovery">
+	    	<result name="success" type="chain">pause/pauseFileList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到退文确认页面 -->
+        <action name="returnFileShow" class="com.dcfs.ffs.pause.PauseFileAction" method="returnFileShow" >
+			<result name="success">/jsp/dcfs/ffs/pause/pauseFile_retfileadd.jsp</result>
+		</action>
+		
+		<!-- 保存退文确认信息 -->
+	    <action name="returnFileSave" class="com.dcfs.ffs.pause.PauseFileAction" method="returnFileSave">
+	    	<result name="success" type="chain">/pause/pauseFileList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+		<!-- 打开修改暂停期限 -->
+        <action name="modDeadline" class="com.dcfs.ffs.pause.PauseFileAction" method="modDeadline" >
+			<result name="success">/jsp/dcfs/ffs/pause/pauseFile_recrevise.jsp</result>
+		</action>
+		
+		<!-- 修改暂停期限保存 -->
+	    <action name="reviseDeadline" class="com.dcfs.ffs.pause.PauseFileAction" method="reviseDeadline">
+	    </action>
+	    
+	    <!-- 文件暂停信息查看页面 -->
+        <action name="pauseSearchShow" class="com.dcfs.ffs.pause.PauseFileAction" method="pauseSearchShow" >
+			<result name="ZX">/jsp/dcfs/ffs/pause/pauseFile_view.jsp</result>
+			<result name="SYZZ">/jsp/dcfs/ffs/pause/pauseFile_viewSYZZ.jsp</result>
+		</action>
+	</package>
+</struts>

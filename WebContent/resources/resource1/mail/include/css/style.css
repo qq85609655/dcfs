@@ -1,0 +1,87 @@
+<STYLE>
+DIV{font-size: 9pt line-height: 13pt WORD-SPACING: 1px; font-family: "宋体", "Times New Roman"}
+TD{FONT-SIZE: 9pt; line-height: 13pt: 1px; font-family: "宋体", "Times New Roman"}
+P{FONT-SIZE: 9pt; line-height: 13pt: 13pt WORD-SPACING: 1px; font-family: "宋体", "Times New Roman"}
+.normal{FONT-SIZE: 9pt;LINE-HEIGHT: 13pt;WORD-SPACING: 1px; font-family: "宋体", "Times New Roman"}
+.text{FONT-SIZE: 9pt; LINE-HEIGHT: 13pt;WORD-SPACING: 1px;font-family: "宋体", "Times New Roman"; list-style-position: outside; clip:  rect(   )}
+.title1{FONT-SIZE: 14px; font-family: "宋体", "Times New Roman"; font-weight: bold; color: #003399}
+.title2{COLOR: #0033cc;FONT-SIZE: 14pt;FONT-WEIGHT: bold;LINE-HEIGHT: 25pt; font-family: "宋体", "Times New Roman"}
+.title3{FONT-SIZE: 18pt;FONT-WEIGHT: bold;LINE-HEIGHT: 25pt; font-family: "宋体", "Times New Roman"}
+a:hover {font-family: "宋体", "Times New Roman"; color: #CC0000; text-decoration: none}
+a:visited {font-family: "宋体", "Times New Roman"; color: #0000CC; text-decoration: none}
+a:link {font-family: "宋体", "Times New Roman"; color: #0000CC; text-decoration: none}
+a:active {font-family: "宋体", "Times New Roman"; color: #FF0000}
+a.top:link {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #000000; text-decoration: none}
+a.top:hover {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #FF6600; text-decoration: none}
+a.top:visited {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #000000; text-decoration: none}
+a.left:link {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #FFFFFF; text-decoration: none}
+a.left:hover {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #FFCC00; text-decoration: none}
+a.left:visited {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #FFFFFF; text-decoration: none}
+a.menu:active {  color: #FFFFFF; background-color: #003399}
+a.menu:link {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #000000; text-decoration: none}
+a.menu:hover {font-family: "宋体", "Times New Roman"; font-size: 10pt; color: #FFFFFF; text-decoration: none; background-color: #003399}
+a.menu:visited {font-family: "宋体", "Times New Roman"; font-size: 9pt; color: #000000; text-decoration: none}
+a.home:hover {  font-family: "宋体"; font-size: 9pt; color: #FFCC00; text-decoration: none}
+a.home:link {  font-family: "宋体"; font-size: 9pt; color: #FFFFFF; text-decoration: none}
+a.home:visited {  font-family: "宋体"; font-size: 9pt; color: #FFFFFF; text-decoration: none}
+a.home:hover {  font-family: "宋体"; font-size: 9pt; color: #FFCC00; text-decoration: none}
+body {
+	SCROLLBAR-FACE-COLOR: #D1D1D1; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #ffffff; SCROLLBAR-3DLIGHT-COLOR: #D1D1D1; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #D1D1D1; FONT-FAMILY: "宋体"; SCROLLBAR-DARKSHADOW-COLOR: #D1D1D1
+}
+input {
+	BACKGROUND-COLOR: #FFFFFF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+}
+input.bt1{
+	BACKGROUND-COLOR: #FFFFFF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+input.bt2{
+    BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #999999 1px solid; HEIGHT: 22px; BACKGROUND-COLOR: #eeeeee;FONT-SIZE: 9pt
+}
+input.txt1{
+	 BACKGROUND-COLOR: #EEF4FF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+	 }
+input.txt2{
+	 BACKGROUND-COLOR: #F7F5EE;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+	 }
+select.slect1{
+	 BACKGROUND-COLOR: #EEF4FF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+	 }
+radio.radio1{
+	 BACKGROUND-COLOR: #EEF4FF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+	 }
+chekbox.chk1{
+	 BACKGROUND-COLOR: #EEF4FF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+	 }
+.TreePoint {
+       BACKGROUND-POSITION: left 0%; BACKGROUND-IMAGE: url(/resourceone/images/point.gif); WIDTH: 22px; BACKGROUND-REPEAT: repeat-y;
+}
+.TreeBgColor {
+		        BACKGROUND-COLOR: #eeeeee;
+}
+.TreeSign {
+		        WIDTH: 22px; CURSOR: hand;
+}
+.ExplainON {
+		        FONT-SIZE: 9pt; MARGIN: 10%; CURSOR: hand; COLOR: #ff0000; FONT-FAMILY: Arial; WHITE-SPACE: nowrap; TEXT-DECORATION: none;
+}
+.ExplainOFF {
+		        FONT-SIZE: 9pt; MARGIN: 10%; CURSOR: hand; COLOR: #000000; FONT-FAMILY: Arial; WHITE-SPACE: nowrap; TEXT-DECORATION: none;
+}
+.ExplainOFFNoHand {
+		        FONT-SIZE: 9pt; MARGIN: 10%; COLOR: #000000; FONT-FAMILY: Arial; WHITE-SPACE: nowrap; TEXT-DECORATION: none;
+}
+
+.smcDiv {height:117px; overflow-x:auto; overflow-y:auto; margin:0px;padding:0px}
+
+.tagTablePosition {position:absolute; left:60px; top:20px;}
+.tagTd {cursor:hand}
+.inp1 { 	
+	BACKGROUND-COLOR: #FFFFFF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+}
+.inp2 {
+	BACKGROUND-COLOR: #FFFFFF;BACKGROUND-IMAGE: none;BACKGROUND-REPEAT: repeat; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT:#999999 1px solid; BORDER-RIGHT:#999999 1px solid; BORDER-TOP:#999999 1px solid; FONT-FAMILY: 宋体, Arial;FONT-SIZE: 9pt;FONT-WEIGHT: normal
+}
+.style1 {
+	font-size: 14pt;
+	font-family: Arial;
+}
+</STYLE>

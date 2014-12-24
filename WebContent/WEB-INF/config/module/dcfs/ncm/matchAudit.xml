@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="matchAudit" namespace="/matchAudit" extends="struts-default" >
+		<!-- 审核列表 -->
+        <action name="matchAuditList" class="com.dcfs.ncm.audit.MatchAuditAction" method="matchAuditList" >
+			<result name="success">/jsp/dcfs/ncm/audit/matchAudit_list.jsp</result>
+		</action>
+		<!-- 审核信息添加 -->
+        <action name="toMatchAuditAdd" class="com.dcfs.ncm.audit.MatchAuditAction" method="toMatchAuditAdd" >
+			<result name="success">/jsp/dcfs/ncm/audit/matchAudit_add.jsp</result>
+		</action>
+		<!-- 抚育计划和组织意见 -->
+        <action name="getTendingAndOpinion" class="com.dcfs.ncm.audit.MatchAuditAction" method="getTendingAndOpinion" >
+			<result name="success">/jsp/dcfs/ncm/audit/tending_and_opinion.jsp</result>
+		</action>
+		<!-- 审核上报 -->
+        <action name="auditSubmit" class="com.dcfs.ncm.audit.MatchAuditAction" method="auditSubmit" >
+			<result name="success" type="chain">matchAuditList</result>
+		</action>
+		<!-- 审核 保存 -->
+        <action name="auditSave" class="com.dcfs.ncm.audit.MatchAuditAction" method="auditSave" >
+			<result name="success" type="chain">matchAuditList</result>
+		</action>
+		<!-- 审核查看 -->
+        <action name="matchAuditDetail" class="com.dcfs.ncm.audit.MatchAuditAction" method="matchAuditDetail" >
+			<result name="success">/jsp/dcfs/ncm/audit/matchAudit_detail.jsp</result>
+		</action>
+		<!-- 复核列表 -->
+        <action name="matchAuditAgainList" class="com.dcfs.ncm.audit.MatchAuditAction" method="matchAuditAgainList" >
+			<result name="success">/jsp/dcfs/ncm/audit/matchAuditAgain_list.jsp</result>
+		</action>
+		<!-- 复核信息添加 -->
+        <action name="toMatchAuditAgainAdd" class="com.dcfs.ncm.audit.MatchAuditAction" method="toMatchAuditAgainAdd" >
+			<result name="success">/jsp/dcfs/ncm/audit/matchAuditAgain_add.jsp</result>
+		</action>
+		<!-- 复核信息保存 -->
+        <action name="auditAgainSave" class="com.dcfs.ncm.audit.MatchAuditAction" method="auditAgainSave" >
+			<result name="success" type="chain">matchAuditAgainList</result>
+		</action>
+		<!-- 复核查看 -->
+        <action name="matchAuditAgainDetail" class="com.dcfs.ncm.audit.MatchAuditAction" method="matchAuditAgainDetail" >
+			<result name="success">/jsp/dcfs/ncm/audit/matchAuditAgain_detail.jsp</result>
+		</action>
+		<!-- 解除匹配 -->
+        <action name="toRelieveMatch" class="com.dcfs.ncm.audit.MatchAuditAction" method="toRelieveMatch" >
+			<result name="success">/jsp/dcfs/ncm/audit/relieve_match_add.jsp</result>
+		</action>
+		<!-- 解除匹配提交 -->
+        <action name="relieveMatchSave" class="com.dcfs.ncm.audit.MatchAuditAction" method="relieveMatchSave" >
+			<result name="success" type="chain">matchAuditList</result>
+		</action>
+	</package>
+</struts>

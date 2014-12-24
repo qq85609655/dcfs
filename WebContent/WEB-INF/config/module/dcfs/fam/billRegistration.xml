@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="billRegistration" namespace="/fam/billRegistration" extends="struts-default">
+	
+		<!-- 票据登记列表 -->
+	    <action name="billRegistrationList" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="billRegistrationList">
+	    	<result name="success">/jsp/dcfs/fam/billRegistration/billregistration_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到票据登记页面-->
+        <action name="billRegistrationAdd" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="billRegistrationAdd" >
+			<result name="success">/jsp/dcfs/fam/billRegistration/billregistration_add.jsp</result>
+		</action>
+		
+		<!-- 添加文件选择列表 -->
+        <action name="selectFileList" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="selectFileList" >
+			<result name="success">/jsp/dcfs/fam/billRegistration/billregistration_selectfile.jsp</result>
+		</action>
+		
+		<!-- 票据登记提交 -->
+	    <action name="billRegistrationSave" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="billRegistrationSave">
+	    	<result name="success" type="chain">/billRegistration/billRegistrationList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到修改页面-->
+        <action name="billRevise" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="billRevise" >
+			<result name="success">/jsp/dcfs/fam/billRegistration/billregistration_add.jsp</result>
+		</action>
+	    
+	    <!-- 票据删除 -->
+	    <action name="billDelete" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="billDelete">
+	    	<result name="success" type="chain">/billRegistration/billRegistrationList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 文件缴费通知单打印页面 -->
+        <action name="billPrint" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="billPrint" >
+			<result name="success">/jsp/dcfs/fam/billRegistration/billregistration_print.jsp</result>
+		</action>
+	    
+		<!-- 打印页面-->
+        <action name="checkCollectionPrint" class="com.dcfs.fam.billRegistration.BillRegistrationAction" method="checkCollectionPrint" >
+			<result name="success">/jsp/dcfs/fam/checkCollection/checkcollection_print.jsp</result>
+		</action>
+	    
+	</package>
+</struts>

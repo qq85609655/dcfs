@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="appointment" namespace="/appointment" extends="struts-default" >
+		<!-- 预约申请列表 -->
+        <action name="SYZZAppointmentRecordList" class="com.dcfs.far.appointment.AppointmentAction" method="SYZZAppointmentRecordList" >
+			<result name="success">/jsp/dcfs/far/appointment/SYZZ_appointment_record_list.jsp</result>
+		</action>
+		<!-- 预约申请选择列表 -->
+        <action name="SYZZAppointmentSelectList" class="com.dcfs.far.appointment.AppointmentAction" method="SYZZAppointmentSelectList" >
+			<result name="success">/jsp/dcfs/far/appointment/SYZZ_appointment_select_list.jsp</result>
+		</action>
+		<!-- 预约申请添加 -->
+        <action name="toSYZZAppointmentAdd" class="com.dcfs.far.appointment.AppointmentAction" method="toSYZZAppointmentAdd" >
+			<result name="success">/jsp/dcfs/far/appointment/SYZZ_appointment_add.jsp</result>
+		</action>
+		<!-- 预约申请保存 -->
+        <action name="SYZZAppointmentSave" class="com.dcfs.far.appointment.AppointmentAction" method="SYZZAppointmentSave" >
+			<result name="success" type="chain">SYZZAppointmentRecordList</result>
+		</action>
+		<!-- 预约申请修改 -->
+        <action name="toSYZZAppointmentMod" class="com.dcfs.far.appointment.AppointmentAction" method="toSYZZAppointmentMod" >
+			<result name="success">/jsp/dcfs/far/appointment/SYZZ_appointment_mod.jsp</result>
+		</action>
+		<!-- 预约申请修改保存 -->
+        <action name="saveSYZZAppointmentMod" class="com.dcfs.far.appointment.AppointmentAction" method="saveSYZZAppointmentMod" >
+			<result name="success" type="chain">SYZZAppointmentRecordList</result>
+		</action>
+		<!-- 预约申请修改 -->
+        <action name="SYZZAppointmentDetail" class="com.dcfs.far.appointment.AppointmentAction" method="toSYZZAppointmentMod" >
+			<result name="success">/jsp/dcfs/far/appointment/SYZZ_appointment_detail.jsp</result>
+		</action>
+		<!-- 申请书打印预览 -->
+        <action name="toApplicationPrint" class="com.dcfs.far.appointment.AppointmentAction" method="toApplicationPrint" >
+			<result name="success">/jsp/dcfs/far/adoptionRegis/application_print.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 省厅预约受理列表 -->
+        <action name="STAppointmentAcceptList" class="com.dcfs.far.appointment.AppointmentAction" method="STAppointmentAcceptList" >
+			<result name="success">/jsp/dcfs/far/appointment/ST_appointment_accept_list.jsp</result>
+		</action>
+		<!-- 省厅预约受理 -->
+        <action name="toSTAppointmentAcceptAdd" class="com.dcfs.far.appointment.AppointmentAction" method="toSTAppointmentAcceptAdd" >
+			<result name="success">/jsp/dcfs/far/appointment/ST_appointment_accept_add.jsp</result>
+		</action>
+		<!-- 省厅预约受理保存 -->
+        <action name="saveSTAppointmentAcceptAdd" class="com.dcfs.far.appointment.AppointmentAction" method="saveSTAppointmentAcceptAdd" >
+			<result name="success" type="chain">STAppointmentAcceptList</result>
+		</action>
+		<!-- 省厅预约受理查看 -->
+        <action name="STAppointmentAcceptDetail" class="com.dcfs.far.appointment.AppointmentAction" method="STAppointmentAcceptDetail" >
+			<result name="success">/jsp/dcfs/far/appointment/ST_appointment_accept_detail.jsp</result>
+		</action>
+		
+		
+		<!-- 福利院预约列表 -->
+        <action name="FLYApppointmentList" class="com.dcfs.far.appointment.AppointmentAction" method="FLYApppointmentList" >
+			<result name="success">/jsp/dcfs/far/appointment/FLY_appointment_list.jsp</result>
+		</action>
+		<!-- 福利院预约查看 -->
+        <action name="FLYAppointmentDetail" class="com.dcfs.far.appointment.AppointmentAction" method="FLYAppointmentDetail" >
+			<result name="success">/jsp/dcfs/far/appointment/FLY_appointment_detail.jsp</result>
+		</action>
+		
+		
+	</package>
+</struts>

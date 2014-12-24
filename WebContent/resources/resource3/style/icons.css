@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* CSS Document */
+/****查看按钮***/
+input.view{border-width: 0px;background: url('../images/ico/cz_ck.gif') no-repeat;background-position:left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.view:hover{border-width: 0px;background:url('../images/ico/cz_ck.gif') no-repeat;background-position:-65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****添加（新建）按钮***/
+input.add{border-width: 0px;background: url('../images/ico/page_white.gif') no-repeat;background-position:left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.add:hover{border-width: 0px;background:url('../images/ico/page_white.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****修改按钮***/
+input.updata{border-width: 0px;background: url('../images/ico/cz_xg.gif') no-repeat;background-position:left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.updata:hover{border-width: 0px;background:url('../images/ico/cz_xg.gif') no-repeat;background-position:-65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****申请修改按钮***/
+input.toupdata{border-width: 0px;background: url('../images/ico/cz_sqsh.gif') no-repeat;background-position: left;width: 90px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.toupdata:hover{border-width: 0px;background:url('../images/ico/cz_sqsh.gif') no-repeat;background-position: -95px;width: 90px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****删除按钮***/
+input.delete{border-width: 0px;background: url('../images/ico/cross.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.delete:hover{border-width: 0px;background:url('../images/ico/cross.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****解锁按钮***/
+input.unlock{border-width: 0px;background: url('../images/ico/cz_qd.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.unlock:hover{border-width: 0px;background:url('../images/ico/cz_qd.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****锁定按钮***/
+input.lock{border-width: 0px;background: url('../images/ico/lock.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.lock:hover{border-width: 0px;background:url('../images/ico/lock.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****搜索按钮***/
+input.search{border-width: 0px;background: url('../images/ico/search.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.search:hover{border-width: 0px;background:url('../images/ico/search.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****取消按钮***/
+input.stop{border-width: 0px;background: url('../images/ico/stop.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.stop:hover{border-width: 0px;background:url('../images/ico/stop.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****保存按钮***/
+input.disk{border-width: 0px;background: url('../images/ico/disk.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.disk:hover{border-width: 0px;background:url('../images/ico/disk.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****确定按钮***/
+input.do{border-width: 0px;background: url('../images/ico/do.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.do:hover{border-width: 0px;background:url('../images/ico/do.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****下一步按钮***/
+input.nest{border-width: 0px;background: url('../images/ico/nest.gif') no-repeat;background-position: left;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.nest:hover{border-width: 0px;background:url('../images/ico/nest.gif') no-repeat;background-position: -75px;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****上一步按钮***/
+input.last{border-width: 0px;background: url('../images/ico/last.gif') no-repeat;background-position: left;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.last:hover{border-width: 0px;background:url('../images/ico/last.gif') no-repeat;background-position: -75px;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****退回按钮***/
+input.back{border-width: 0px;background: url('../images/ico/back.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.back:hover{border-width: 0px;background:url('../images/ico/back.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****撤销按钮***/
+input.cancellation{border-width: 0px;background: url('../images/ico/cancellation.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.cancellation:hover{border-width: 0px;background:url('../images/ico/cancellation.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****关闭按钮***/
+input.cancel{border-width: 0px;background: url('../images/ico/cancel.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.cancel:hover{border-width: 0px;background:url('../images/ico/cancel.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****复制按钮***/
+input.copy{border-width: 0px;background: url('../images/ico/copy.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.copy:hover{border-width: 0px;background:url('../images/ico/copy.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****粘帖按钮***/
+input.paste{border-width: 0px;background: url('../images/ico/paste.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.paste:hover{border-width: 0px;background:url('../images/ico/paste.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****正文按钮***/
+input.word{border-width: 0px;background: url('../images/ico/word.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.word:hover{border-width: 0px;background:url('../images/ico/word.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****备份按钮***/
+input.database_copy{border-width: 0px;background: url('../images/ico/database_copy.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.database_copy:hover{border-width: 0px;background:url('../images/ico/database_copy.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****导入按钮***/
+input.package_in{border-width: 0px;background: url('../images/ico/package_in.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.package_in:hover{border-width: 0px;background:url('../images/ico/package_in.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****导出按钮***/
+input.package_out{border-width: 0px;background: url('../images/ico/package_out.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.package_out:hover{border-width: 0px;background:url('../images/ico/package_out.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****导出EXCEL按钮***/
+input.page_white_excel{border-width: 0px;background: url('../images/ico/page_white_excel.gif') no-repeat;background-position: left;width: 90px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.page_white_excel:hover{border-width: 0px;background:url('../images/ico/page_white_excel.gif') no-repeat;background-position: -95px;width: 90px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****查重按钮***/
+input.find_repeat{border-width: 0px;background: url('../images/ico/find_repeat.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.find_repeat:hover{border-width: 0px;background:url('../images/ico/find_repeat.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****转发按钮***/
+input.forwarding{border-width: 0px;background: url('../images/ico/forwarding.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.forwarding:hover{border-width: 0px;background:url('../images/ico/forwarding.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****打印按钮***/
+input.print{border-width: 0px;background: url('../images/ico/print.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.print:hover{border-width: 0px;background:url('../images/ico/print.gif') no-repeat;background-position: -65px;width: 90px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****同批号信息按钮***/
+input.information{border-width: 0px;background: url('../images/ico/information.gif') no-repeat;background-position: left;width: 100px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.information:hover{border-width: 0px;background:url('../images/ico/information.gif') no-repeat;background-position: -105px;width: 100px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****启动按钮***/
+input.start{border-width: 0px;background: url('../images/ico/start.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.start:hover{border-width: 0px;background:url('../images/ico/start.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****暂停按钮***/
+input.pause{border-width: 0px;background: url('../images/ico/pause.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.pause:hover{border-width: 0px;background:url('../images/ico/pause.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****停止按钮***/
+input.shutdown{border-width: 0px;background: url('../images/ico/shutdown.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.shutdown:hover{border-width: 0px;background:url('../images/ico/shutdown.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****禁止按钮***/
+input.ban{border-width: 0px;background: url('../images/ico/ban.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.ban:hover{border-width: 0px;background:url('../images/ico/ban.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****展开按钮***/
+input.launched{border-width: 0px;background: url('../images/ico/launched.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.launched:hover{border-width: 0px;background:url('../images/ico/launched.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****折叠按钮***/
+input.fold{border-width: 0px;background: url('../images/ico/fold.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.fold:hover{border-width: 0px;background:url('../images/ico/fold.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****计算按钮***/
+input.calculation{border-width: 0px;background: url('../images/ico/calculation.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.calculation:hover{border-width: 0px;background:url('../images/ico/calculation.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****设置按钮***/
+input.settings{border-width: 0px;background: url('../images/ico/settings.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.settings:hover{border-width: 0px;background:url('../images/ico/settings.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****统计按钮***/
+input.statistics{border-width: 0px;background: url('../images/ico/statistics.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.statistics:hover{border-width: 0px;background:url('../images/ico/statistics.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****折线图按钮***/
+input.linecharts{border-width: 0px;background: url('../images/ico/linecharts.gif') no-repeat;background-position: left;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.linecharts:hover{border-width: 0px;background:url('../images/ico/linecharts.gif') no-repeat;background-position: -75px;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****饼图按钮***/
+input.piechart{border-width: 0px;background: url('../images/ico/piechart.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.piechart:hover{border-width: 0px;background:url('../images/ico/piechart.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****柱状图按钮***/
+input.histogram{border-width: 0px;background: url('../images/ico/histogram.gif') no-repeat;background-position: left;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.histogram:hover{border-width: 0px;background:url('../images/ico/histogram.gif') no-repeat;background-position: -75px;width: 75px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****消息(关闭)按钮***/
+input.news_close{border-width: 0px;background: url('../images/ico/news_close.gif') no-repeat;background-position: left;width: 90px;height: 22px;padding-top: 2px;padding-left: 25px;color: #000000;cursor:pointer;}
+input.news_close:hover{border-width: 0px;background:url('../images/ico/news_close.gif') no-repeat;background-position: -95px;width: 90px;height: 22px;padding-top: 2px;padding-left: 25px;color: #000000;cursor:pointer;}
+/****消息(打开)按钮***/
+input.news_open{border-width: 0px;background: url('../images/ico/news_open.gif') no-repeat;background-position: left;width: 90px;height: 22px;padding-top: 2px;padding-left: 25px;color: #000000;cursor:pointer;}
+input.news_open:hover{border-width: 0px;background:url('../images/ico/news_open.gif') no-repeat;background-position: -95px;width: 90px;height: 22px;padding-top: 2px;padding-left: 25px;color: #000000;cursor:pointer;}
+/****收缩按钮***/
+input.contraction{border-width: 0px;background: url('../images/ico/contraction.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.contraction:hover{border-width: 0px;background:url('../images/ico/contraction.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****展开按钮***/
+input.on{border-width: 0px;background: url('../images/ico/on.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.on:hover{border-width: 0px;background:url('../images/ico/on.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/****提交审核按钮***/
+input.on{border-width: 0px;background: url('../images/ico/key_add.gif') no-repeat;background-position: left;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+input.on:hover{border-width: 0px;background:url('../images/ico/key_add.gif') no-repeat;background-position: -65px;width: 60px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}

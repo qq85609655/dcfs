@@ -1,0 +1,101 @@
+/**查询table样式**/
+.table { background:#a4b5cb; font-family:"宋体"; border-bottom:1px solid #99bbe8;color:black;}
+.table td { height:24px; line-height:24px; background:#FFFFFF; padding:0 5px;}
+.table td img { vertical-align:middle;}
+.table th { height:24px; background:url(../images/thbg.jpg) repeat-x; text-align:left; padding:0 5px;}
+.table td.gn { background:url(../images/gnbg.jpg) repeat-x; height:26px; }
+.table tr.blue {}
+.table tr.blue td{ background:#e9f2fd;}
+.table tr.hover {background:#c6ddfb;}
+.table tr.hover td{ background:#c6ddfb;}
+.table a { text-decoration:none;}
+.table h4 { font-size:13px; padding-left:6px;}
+.table tr.th2 {}
+.table tr.th2 th{ text-align:center; font-weight:normal;}
+.chaxun{
+width:100%;
+}
+table.chaxuntj td{
+	padding-left:5px;
+}
+/**查询table样式**/
+/**分页样式**/
+table.operation{
+ font-size:12px;
+ width:100%;
+ background-color:#D7E4F4;
+}
+.operation tr{
+	height:26px;
+	}
+/**分页样式**/
+/**普通页面样式**/
+table.contenttable{width:100%;border-bottom:1px solid #99bbe8;} 
+.contenttable { background:#e9f2fd; color:#020202; font-family:"宋体";}
+.contenttable td { height:24px; line-height:24px; padding:0 5px;}
+.contenttable td .tianjiard{ height:24px; line-height:24px; padding:0 5px;}
+.contenttable tr{height:24px;}
+/**普通页面样式**/
+/**添加列表样式**/
+table.addtable{width:100%;border-bottom:1px solid #99bbe8;}
+/*表格*/
+.addtable{
+	font-size:12px;
+	border:0;
+	margin:0;
+	background-color:#f3f3f3;
+	table-layout:fixed;
+	/*border-collapse: collapse;*/
+}
+
+/*表格内td内容多后省略*/
+.addtable td
+{
+   overflow:hidden;
+   text-overflow:ellipsis;	
+   white-space:nowrap;
+}
+
+/*表格头tr 默认背景*/
+.addtable thead tr{
+	height:25px;
+}
+.addtable a.thead{text-decoration:none;border-width: 0px;background: url('../SimpleGrid/xx.gif');background-position:left;width:100%;height: 27px;cursor:pointer;padding-top: 5px;padding-left:5px;color:black;}
+.addtable a.thead:hover{text-decoration:none;border-width: 0px;background:url('../SimpleGrid/xx2.gif');background-position:left;width:100%;height: 27px;cursor:pointer;padding-top: 5px;padding-left:5px;color:black;}
+
+/*表格头内td*/
+.addtable thead td{
+	border-right:1px solid #d0d0d0;
+	border-bottom:0px solid #d0d0d0;
+}
+
+/*表格体内tr*/
+.addtable tbody tr{
+	height:24px;
+	line-height:24px;
+}
+
+/*表格体内td*/
+.addtable tbody td{
+	padding-left:4px;
+	border-right:0px solid #d0d0d0;
+	/*border-top:1px solid white;
+	border-bottom:1px solid #ededed;*/
+}
+
+/*单数表格行背景颜色*/
+.tbodyTrDan{
+	background-color:#F6F6F6;
+}
+
+/*双数表格行背景颜色*/
+.tbodyTrShuang{
+	background-color:#FFFFFF;
+}
+
+/*tr 鼠标移入时背景颜色*/
+.tbodyTrMouseOver{
+	background-color:#EFEFEF;
+}
+	
+/**添加列表样式**/

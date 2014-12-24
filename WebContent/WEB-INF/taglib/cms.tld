@@ -1,0 +1,664 @@
+<?xml version="1.0"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+	<tlibversion>1.1</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>cms</shortname>
+	<uri>/WEB-INF/taglib/cms</uri>
+	<info>Cms标签</info>
+	
+	<tag>
+		<name>html</name>
+		<tagclass>com.hx.cms.tags.HtmlTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info></info>
+		<attribute>
+			<name>xmlns</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>contextPath</name>
+		<tagclass>com.hx.cms.tags.ContextPathTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>上下文根</info>
+	</tag>
+	
+	<!-- 表单区 -->
+	<tag>
+		<name>form</name>
+		<tagclass>com.hx.cms.tags.FormTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info></info>
+		
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>action</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>method</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	
+	<!-- 栏目列表区 -->
+	
+	<tag>
+		<name>channelList</name>
+		<tagclass>com.hx.cms.tags.ChannelListTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			channelId:频道ID号，显示指定频道ID号关联的文章&lt;br&gt;
+			length:当type=simple(默认)时，指定列表显示的文章个数&lt;br&gt;
+			orderName:列表排序的字段名&lt;br&gt;
+			orderType:列表排序方式，默认按日期倒序&lt;br&gt;
+				desc为倒序&lt;br&gt;
+				asc为正序&lt;br&gt;
+			forData:指定取出当前循环到的DataList中的Data的参数名&lt;br&gt;
+			type:指定列表显示方式&lt;br&gt;
+				simple(默认)为显示指定length个文章的列表，且只显示标题和日期&lt;br&gt;
+				page为携带分页信息，可以实现分页显示列表数据&lt;br&gt;
+			pageSize:当type值等于page时，pageSize属性起作用&lt;br&gt;
+			twoCols : 是否显示两列true和false，默认false&lt;br&gt;
+		</info>
+		
+		<attribute>
+			<name>channelId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>length</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orderName</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orderType</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>forData</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>twoCols</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>noStat</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>channelAuth</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>channelTitle</name>
+		<tagclass>com.hx.cms.tags.ChannelTitleTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			twoCols : 是否显示两列true和false，默认false&lt;br&gt;
+		</info>
+		
+		<attribute>
+			<name>titleLength</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>link</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>target</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hrefTitle</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>params</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>paramValues</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>twoCols</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>total</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>onclick</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>runChannelStyle</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>channelPublishTime</name>
+		<tagclass>com.hx.cms.tags.ChannelPublishTimeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		
+		<attribute>
+			<name>dateFormat</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>channelStyle</name>
+		<tagclass>com.hx.cms.tags.ChannelStyleTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	
+	<tag>
+		<name>channelUrlLink</name>
+		<tagclass>com.hx.cms.tags.ChannelUrlLinkTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	
+	<tag>
+		<name>channelLinkTarget</name>
+		<tagclass>com.hx.cms.tags.ChannelLinkTargetTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	
+	<!-- 文章列表区 -->
+	
+	<tag>
+		<name>infoList</name>
+		<tagclass>com.hx.cms.tags.InfoListTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			channelId:频道ID号，显示指定频道ID号关联的文章&lt;br&gt;
+			dataList:频道ID号为空时可以接收dataList集合&lt;br&gt;
+			length:当type=simple(默认)时，指定列表显示的文章个数&lt;br&gt;
+			orderName:列表排序的字段名&lt;br&gt;
+			orderType:列表排序方式，默认按日期倒序&lt;br&gt;
+				desc为倒序&lt;br&gt;
+				asc为正序&lt;br&gt;
+			forData:指定取出当前循环到的DataList中的Data的参数名&lt;br&gt;
+			type:指定列表显示方式&lt;br&gt;
+				simple(默认)为显示指定length个文章的列表，且只显示标题和日期&lt;br&gt;
+				page为携带分页信息，可以实现分页显示列表数据
+			pageSize:当type值等于page时，pageSize属性起作用&lt;br&gt;
+			updateChannelId:当前台传递多个channelId时，并且需要实时更新排序方式&lt;br&gt;
+		</info>
+		
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>dataList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>length</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orderName</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orderType</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>forData</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>type</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>channelAuth</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<name>updateChannelId</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>infoI</name>
+		<tagclass>com.hx.cms.tags.InfoITag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	
+	<tag>
+		<name>infoTitle</name>
+		<tagclass>com.hx.cms.tags.InfoTitleTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		
+		<attribute>
+			<name>titleLength</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>link</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>target</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>hrefTitle</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>params</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>paramValues</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>infoSummary</name>
+		<tagclass>com.hx.cms.tags.InfoSummaryTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		
+		<attribute>
+			<name>contentLength</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>link</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>target</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>href</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>params</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>paramValues</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>filter</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+		<name>infoPublishTime</name>
+		<tagclass>com.hx.cms.tags.InfoPublishTimeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		
+		<attribute>
+			<name>dateFormat</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- 显示new标记 -->
+	<tag>
+		<name>infoNew</name>
+		<tagclass>com.hx.cms.tags.InfoNewTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		
+		<!-- 图片路径 -->
+		<attribute>
+			<name>src</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 样式 -->
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<!-- 宽度 -->
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<!-- 高度 -->
+		<attribute>
+			<name>height</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<!-- 备注 -->
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<!-- 显示top标记 -->
+	<tag>
+		<name>infoTop</name>
+		<tagclass>com.hx.cms.tags.InfoTopTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		
+		<!-- 图片路径 -->
+		<attribute>
+			<name>src</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 样式 -->
+		<attribute>
+			<name>style</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<!-- 宽度 -->
+		<attribute>
+			<name>width</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<!-- 高度 -->
+		<attribute>
+			<name>height</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<!-- 备注 -->
+		<attribute>
+			<name>alt</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>infoType</name>
+		<tagclass>com.hx.cms.tags.InfoTypeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	
+	<!-- 分页 -->
+	<tag>
+		<name>infoPage</name>
+		<tagclass>com.hx.cms.tags.InfoPageTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info></info>
+		
+		<attribute>
+			<name>channelId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>dataList</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 表单ID -->
+			<name>formId</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<!-- 当前页大小，要与infolist中一致 -->
+			<name>pageSize</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<!-- 分页子标签 -->
+	<tag>
+		<name>pageHead</name>
+		<tagclass>com.hx.cms.tags.PageHeadTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	<tag>
+		<name>pagePrevious</name>
+		<tagclass>com.hx.cms.tags.PagePreviousTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	<tag>
+		<name>pageNext</name>
+		<tagclass>com.hx.cms.tags.PageNextTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	<tag>
+		<name>pageTail</name>
+		<tagclass>com.hx.cms.tags.PageTailTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	<tag>
+		<name>page</name>
+		<tagclass>com.hx.cms.tags.PageTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	<tag>
+		<name>pageTotal</name>
+		<tagclass>com.hx.cms.tags.PageTotalTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	<tag>
+		<name>totalSize</name>
+		<tagclass>com.hx.cms.tags.PageTotalSizeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+	</tag>
+	
+	<!-- 导入cms.js -->
+	<tag>
+		<name>script</name>
+		<tagclass>com.hx.cms.tags.ScriptTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>导入CMS相关的资源文件</info>
+	</tag>
+	
+	<!-- 文章显示标签部分 -->
+	
+	<tag>
+		<name>infoShow</name>
+		<tagclass>com.hx.cms.tags.InfoShowTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>文章展示框架</info>
+		
+		<attribute>
+			<name>infoId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>artAttPackageId</name>
+		<tagclass>com.hx.cms.tags.ArtAttPackageIdTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<bodycontent>scriplit</bodycontent>
+		<info>文章附件包ID</info>
+	</tag>
+	<tag>
+		<name>artTitle</name>
+		<tagclass>com.hx.cms.tags.ArtTitleTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章标题</info>
+	</tag>
+	<tag>
+		<name>artSource</name>
+		<tagclass>com.hx.cms.tags.ArtSourceTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章来源</info>
+	</tag>
+	<tag>
+		<name>artShortTitle</name>
+		<tagclass>com.hx.cms.tags.ArtShortTitleTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章短标题(关键字)</info>
+	</tag>
+	<tag>
+		<name>artCreator</name>
+		<tagclass>com.hx.cms.tags.ArtCreatorTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章创建者</info>
+	</tag>
+	<tag>
+		<name>artContent</name>
+		<tagclass>com.hx.cms.tags.ArtContentTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info></info>
+		<attribute>
+			<name>filter</name>
+			<required>false</required>
+		</attribute>
+	</tag>
+	<tag>
+		<name>artCreateTime</name>
+		<tagclass>com.hx.cms.tags.ArtCreateTimeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章创建时间</info>
+		<attribute>
+			<name>dateFormat</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>artModifyTime</name>
+		<tagclass>com.hx.cms.tags.ArtModifyTimeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章修改时间</info>
+	</tag>
+	<tag>
+		<name>infoAttIcon</name>
+		<tagclass>com.hx.cms.tags.InfoAttIconTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			attTypeCode:附件图标对应的附件类型名称&lt;br&gt;
+		</info>
+		
+		<attribute>
+			<name>attTypeCode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>InfoAttSize</name>
+		<tagclass>com.hx.cms.tags.InfoAttSizeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			type:附件大小统计的方式&lt;br&gt;
+				single ： 为统计附件列表中的第一个附件大小&lt;br&gt;
+				multiple ： 为统计所有附件大小的总和&lt;br&gt;
+			attTypeCode:附件对应的附件类型名称&lt;br&gt;
+		</info>
+		<attribute>
+			<name>type</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>attTypeCode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>artAuditPassTime</name>
+		<tagclass>com.hx.cms.tags.ArtAuditPassTimeTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章审核通过时间</info>
+		<attribute>
+			<name>dateFormat</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>artSecurityInfo</name>
+		<tagclass>com.hx.cms.tags.ArtSecurityInfoTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>文章密级信息</info>
+		<!-- 机密级别 -->
+		<attribute>
+			<name>securityLevelCodeName</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 保密期限 -->
+		<attribute>
+			<name>periodCodeName</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 信息左边 -->
+		<attribute>
+			<name>left</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 信息右边 -->
+		<attribute>
+			<name>right</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

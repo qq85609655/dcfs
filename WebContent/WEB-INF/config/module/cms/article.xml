@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="article" extends="struts-default" namespace="/article">
+		<!-- ȫ�ļ��� -->
+		<action name="FullText" class="com.hx.cms.article.FullTextRetrievalAction" method="search">
+			<result>/jsp/cms/view/fullTextRetrievalOutside_jsh.jsp</result>
+		</action>
+		<action name="FullTextNei" class="com.hx.cms.article.FullTextRetrievalAction" method="searchNei">
+			<result>/jsp/cms/view/fullTextRetrievalInnerside_jsh.jsp</result>
+		</action>
+		<!-- ����ͳ�� -->
+		<action name="PublishStat" class="com.hx.cms.article.FullTextRetrievalAction" method="publishStat">
+			<result>/jsp/cms/article/publishStatList.jsp</result>
+		</action>
+	
+		<!-- ���� -->
+		<action name="Article" class="com.hx.cms.article.ArticleAction">
+			<result name="default">/jsp/cms/article/articleList.jsp</result>
+			<result name="success">/jsp/cms/article/articleList.jsp</result>
+			<result name="temp">/jsp/cms/article/tempList.jsp</result>
+			<result name="audit">/jsp/cms/article/auditList.jsp</result>
+			<result name="add">/jsp/cms/article/articleAdd.jsp</result>
+			<result name="modify">/jsp/cms/article/articleModify.jsp</result>
+			<result name="tempModify">/jsp/cms/article/tempArticleModify.jsp</result>
+			<result name="detail">/jsp/cms/view/webofficeView.jsp</result>
+			<result name="queryDetail">/jsp/cms/article/articleDetail.jsp</result>
+			<result name="changeChannelFrame">/jsp/cms/article/changeChannelTreeFrame.jsp</result>
+			<result name="changeChannel">/jsp/cms/article/changeChannelTree.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">Article</param>
+				<param name="namespace">/article</param>
+				<param name="method">query</param>
+			</result>
+			<result name="auditQuery" type="chain">
+				<param name="actionName">Article</param>
+				<param name="namespace">/article</param>
+				<param name="method">auditQuery</param>
+			</result>
+			<result name="tempQuery" type="chain">
+				<param name="actionName">Article</param>
+				<param name="namespace">/article</param>
+				<param name="method">tempQuery</param>
+			</result>
+			
+			<result name="test">/test.jsp</result>
+			<result name="detailArt">/jsp/cms/view/articleDetail_xhs.jsp</result>
+			<!-- <result name="detailArtScan">/jsp/cms/view/articleDetailScan_jsh.jsp</result> -->
+			<result name="detailArtScan">/jsp/cms/view/articleDetail_xhs.jsp</result>
+			<result name="auditArt">/jsp/cms/article/auditOpinionList.jsp</result>
+			<result name="generateDownloadUrl">/jsp/cms/article/generateDownloadUrl.jsp</result>
+			<result name="toReferenceArticle">/jsp/cms/channel/referenceArticleTree.jsp</result>
+			<result name="toDataAccess">/jsp/cms/auth/personOrganTree.jsp</result>
+			
+			<result name="webofficeShowAtt" type="redirectAction">
+				<param name="actionName">Article</param>
+				<param name="namespace">/article</param>
+				<param name="method">detail</param>
+				<param name="CODE">CMS_ARTICLE_BODY_TEXT_ATT</param>
+				<param name="PACKAGE_ID">${PACKAGE_ID}</param>
+			</result>
+		</action>
+		
+		<!-- �����б���ҳ -->
+		<action name="ArticleIndex" method="queryIndex" class="com.hx.cms.article.ArticleAction">
+			<result name="index">/jsp/cms/article/articleIndex.jsp</result>
+		</action>
+		
+		<action name="receiptList" class="com.hx.cms.article.ArticleAction" method="receiptList">
+			<result>/jsp/cms/article/articleReceiptList.jsp</result>
+		</action>
+		<action name="receiptAdd" class="com.hx.cms.article.ArticleAction" method="receiptAdd">
+			<result>/jsp/cms/article/articleReceiptAdd.jsp</result>
+		</action>
+		<action name="receiptSave" class="com.hx.cms.article.ArticleAction" method="receiptSave">
+			<result type="chain">receiptAdd</result>
+		</action>
+	</package>
+</struts>

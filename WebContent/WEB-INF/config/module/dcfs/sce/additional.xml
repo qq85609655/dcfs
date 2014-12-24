@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="additional" namespace="/sce/additional" extends="struts-default" >
+
+		<!-- 预批补充查询列表 -->
+	    <action name="findAddList" class="com.dcfs.sce.additional.AdditionalAction" method="findAddList">
+	    	<result name="SHB">/jsp/dcfs/sce/additional/additionalSHB_list.jsp</result>
+	    	<result name="AZB">/jsp/dcfs/sce/additional/additionalAZB_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 预批补充信息查看页面-->
+        <action name="additionalShow" class="com.dcfs.sce.additional.AdditionalAction" method="additionalShow" >
+			<result name="success">/jsp/dcfs/sce/additional/additional_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		<action name="ShowInfoDetail" class="com.dcfs.sce.additional.AdditionalAction" method="ShowInfoDetail">
+	    	<result name="doubleCN">/jsp/dcfs/sce/additional/additional_doubleview_CN.jsp</result>
+			<result name="doubleEN">/jsp/dcfs/sce/additional/additional_doubleview_EN.jsp</result>
+	    	<result name="singleCN">/jsp/dcfs/sce/additional/additional_singleview_CN.jsp</result>
+	    	<result name="singleEN">/jsp/dcfs/sce/additional/additional_singleview_EN.jsp</result>
+	    	<result name="step">/jsp/dcfs/sce/additional/additional_stepview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <action name="ShowNoticeDetail" class="com.dcfs.sce.additional.AdditionalAction" method="ShowNoticeDetail" >
+			<result name="noticeCN">/jsp/dcfs/sce/additional/additional_noticeview_CN.jsp</result>
+			<result name="noticeEN">/jsp/dcfs/sce/additional/additional_noticeview_EN.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 补充通知信息查看页面-->
+        <action name="showNotice" class="com.dcfs.sce.additional.AdditionalAction" method="showNotice" >
+			<result name="success">/jsp/dcfs/sce/additional/additional_noticeview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+
+	</package>
+</struts>

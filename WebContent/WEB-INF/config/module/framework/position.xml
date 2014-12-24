@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="position" namespace="/position" extends="struts-default" >
+	    <!--职务查询action -->
+		<action name="positionList" class="com.hx.framework.position.PositionAction" method="positionList">
+			<result name="success">/jsp/framework/position/positionList.jsp</result>
+		</action>
+		<!--职务添加action -->
+		<action name="positionAdd" class="com.hx.framework.position.PositionAction" method="positionAdd">
+			<result name="success" type="chain">
+			   <param name="actionName">positionList</param>
+			   <param name="namespace">/position</param>
+			   <param name="method">positionList</param>
+			</result>
+		</action>
+		<!--职务修改action -->
+		<action name="positionModify" class="com.hx.framework.position.PositionAction" method="positionModify">
+			<result name="success" type="chain">positionList</result>
+		</action>
+		<!--职务删除action -->
+		<action name="positionDelete" class="com.hx.framework.position.PositionAction" method="positionDelete">
+			<result name="success" type="chain">positionList</result>
+		</action>
+		<!--职务添加跳转action -->
+		<action name="positionToAdd" class="com.hx.framework.position.PositionAction" method="positionToAdd">
+			<result name="success">/jsp/framework/position/positionAdd.jsp</result>
+		</action>
+		<!--职务查看action -->
+		<action name="positionDetailed" class="com.hx.framework.position.PositionAction" method="positionDetailed">
+			<result name="look">/jsp/framework/position/positionDetail.jsp</result>
+			<result name="modify">/jsp/framework/position/positionEdit.jsp</result>
+		</action>
+	</package>
+</struts>

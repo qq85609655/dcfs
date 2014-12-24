@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="addMaterial" namespace="/sce/addMaterial" extends="struts-default" >
+
+		<!-- 补充预批资料查询列表 -->
+	    <action name="findMaterialList" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="findMaterialList">
+	    	<result name="success">/jsp/dcfs/sce/addMaterial/addmaterial_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 补充通知详细信息查看页面-->
+        <action name="showMaterialDetail" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="showMaterialDetail" >
+			<result name="success">/jsp/dcfs/sce/addMaterial/addmaterial_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+	    <!-- 跳转到补充操作页面-->
+        <action name="addMaterialShow" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="addMaterialShow" >
+			<result name="success">/jsp/dcfs/sce/addMaterial/addmaterial_supplement.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 补充预批材料保存 -->
+	    <action name="addMaterialSave" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="addMaterialSave">
+	    	<result name="success" type="chain">/addMaterial/findMaterialList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到预批基本信息/抚育计划和组织意见修改页面 -->
+	    <action name="modInfoPO" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="modInfoPO">
+	    	<result name="double">/jsp/dcfs/sce/addMaterial/addmaterial_revise_doubleinfo.jsp</result>
+	    	<result name="single">/jsp/dcfs/sce/addMaterial/addmaterial_revise_singleinfo.jsp</result>
+	    	<result name="PO">/jsp/dcfs/sce/addMaterial/addmaterial_revise_PO.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 修改预批基本信息保存-->
+        <action name="modInfoSave" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="modInfoSave" >
+		</action>
+	    
+	    <!-- 补充预批材料提交 -->
+	    <action name="materialSubmit" class="com.dcfs.sce.addMaterial.AddMaterialAction" method="materialSubmit">
+	    	<result name="success" type="chain">/addMaterial/findMaterialList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+
+	</package>
+</struts>

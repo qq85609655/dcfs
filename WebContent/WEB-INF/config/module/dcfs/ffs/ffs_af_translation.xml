@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="ffsaftranslation" namespace="/ffs/ffsaftranslation" extends="struts-default" >
+      <!-- 翻译列表页面-->
+        <action name="findList" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="findList" >
+		<result name="success">/jsp/dcfs/ffs/translation/ffs_af_translation_list.jsp</result>
+		</action>
+	 <!-- 重翻列表页面-->
+        <action name="reTranslationList" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="reTranslationList" >
+		<result name="success">/jsp/dcfs/ffs/translation/ffs_af_reTranslation_list.jsp</result>
+		<result name="success1">/jsp/dcfs/ffs/translation/reTranslation_list.jsp</result>
+		</action>
+	 <!-- 补翻列表页面-->
+        <action name="adTranslationList" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="adTranslationList" >
+		<result name="success">/jsp/dcfs/ffs/translation/ffs_af_adTranslation_list.jsp</result>
+		<result name="success1">/jsp/dcfs/ffs/translation/adTranslation_list.jsp</result>
+		</action>
+	<!-- 翻译页面(文件审核)-->
+        <action name="translationForAudit" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="translationForAudit" >
+		<result name="parents">/jsp/dcfs/ffs/translation/ffs_af_parents_translation_audit.jsp</result>
+		<result name="singleparent">/jsp/dcfs/ffs/translation/ffs_af_singleparent_translation_audit.jsp</result>
+		<result name="stepchild">/jsp/dcfs/ffs/translation/ffs_af_stepchild_translation_audit.jsp</result>
+		</action>
+	 <!-- 翻译页面-->
+        <action name="translation" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="translation" >
+		<result name="parents">/jsp/dcfs/ffs/translation/ffs_af_parents_translation.jsp</result>
+		<result name="singleparent">/jsp/dcfs/ffs/translation/ffs_af_singleparent_translation.jsp</result>
+		<result name="stepchild">/jsp/dcfs/ffs/translation/ffs_af_stepchild_translation.jsp</result>
+		</action>
+	 <!-- 补翻页面-->
+        <action name="adTranslation" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="adTranslation" >
+		<result name="success">/jsp/dcfs/ffs/translation/ffs_af_adTranslation.jsp</result>		
+		</action>
+     <!-- 添加页面-->
+        <action name="add" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="add" >
+		<result name="success">/jsp/dcfs/ffs/translation/ffs_af_translation_add.jsp</result>
+		</action>
+	<!-- 保存-->
+        <action name="save" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="save" >
+		<result name="submit" type="chain">ffsaftranslation/findList</result>
+		<result name="adTranslation" type="chain">ffsaftranslation/adTranslationList</result>
+		<result name="reTranslation" type="chain">ffsaftranslation/reTranslationList</result>
+		<result name="save" type="chain">ffsaftranslation/translation</result>
+		</action>
+		
+	<!-- 补翻保存-->
+        <action name="adTranslationSave" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="adTranslationSave" >
+		<result name="submit" type="chain">ffsaftranslation/adTranslationList</result>
+		<result name="save" type="chain">ffsaftranslation/adTranslation</result>
+		</action>		
+	<!-- 查看页面-->
+        <action name="show" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="show" >
+		<result name="parents">/jsp/dcfs/ffs/translation/ffs_af_parents_translation_view.jsp</result>
+		<result name="singleparent">/jsp/dcfs/ffs/translation/ffs_af_singleparent_translation_view.jsp</result>
+		<result name="stepchild">/jsp/dcfs/ffs/translation/ffs_af_stepchild_translation_view.jsp</result>
+		</action>
+	<!-- 补翻查看页面-->
+        <action name="adTranslationShow" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="adTranslationShow" >
+		<result name="success">/jsp/dcfs/ffs/translation/ffs_af_adTranslation_view.jsp</result>
+		</action>		
+	 <!-- 分发 -->
+        <action name="dispatch" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="dispatch" >
+		<result name="success" type="chain">ffsaftranslation/findList</result>
+		</action>
+	<!-- 翻译列表导出 -->
+        <action name="exportTranslationInfo" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="exportTranslationInfo" >
+		</action>
+	<!-- 补翻、重翻列表导出 -->
+        <action name="exportTranslationInfo1" class="com.dcfs.ffs.translation.FfsAfTranslationAction" method="exportTranslationInfo1" >
+		</action>
+	</package>
+</struts>

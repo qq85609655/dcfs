@@ -1,0 +1,12 @@
+/* 选择框所处table的默认样式，防止被其他样式影响 */
+#selectAreaTable{
+	border:0px;
+	padding: 0px;
+	margin: 0px;
+}
+/* 选择框所处table的td的默认样式，防止被其他样式影响 */
+#selectAreaTable td{
+	border : 0px;
+	padding: 0px;
+	margin: 0px;
+}

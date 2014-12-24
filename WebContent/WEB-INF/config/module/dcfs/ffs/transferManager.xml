@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="transferManager" namespace="/transferManager" extends="struts-default" >
+      <!-- 列表页面-->
+        <action name="findList" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferList.jsp</result>
+		</action>
+     <!-- 添加文件页面-->
+        <action name="add" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferAdd" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferAdd.jsp</result>
+		</action>
+	 <!-- 添加材料页面-->
+        <action name="addchildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferAdd" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildinfoAdd.jsp</result>
+		</action>
+	 <!-- 添加材料匹配页面-->
+        <action name="addchildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferAdd" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildMatchinfoAdd.jsp</result>
+		</action>
+	 <!-- 添加票据页面-->
+        <action name="addcheque" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferAdd" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChequeAdd.jsp</result>
+		</action>
+	 <!-- 添加安置后报告页面-->
+        <action name="addarchive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferAdd" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferArchiveAdd.jsp</result>
+		</action>
+	<!-- 保存移交单-->
+        <action name="save" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferListSave" >
+		<result name="success" type="chain">findList</result>
+		</action>
+	<!-- 单项提交移交单-->
+        <action name="submit" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferSubmit" >
+		<result name="success" type="chain">findList</result>
+		</action>
+	<!-- 删除拟移交状态的移交单-->
+        <action name="delete" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferDelete" >
+		<result name="success" type="chain">findList</result>
+		</action>
+	<!-- 批量提交移交单-->
+        <action name="batchsubmit" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferListBatchSubmit" >
+		<result name="success" type="chain">findList</result>
+		</action>
+	 <!-- 移除交接单中选中的文件-->
+        <action name="remove" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="RemoveFile" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferAdd.jsp</result>
+		</action>
+	 <!-- 移除交接单中选中的材料-->
+        <action name="removeChildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="RemoveFile" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildinfoAdd.jsp</result>
+		</action>
+	 <!-- 移除交接单中选中的材料-->
+        <action name="removeChildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="RemoveFile" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildMatchinfoAdd.jsp</result>
+		</action>
+	 <!-- 移除交接单中选中的材料-->
+        <action name="removeCheque" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="RemoveFile" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChequeAdd.jsp</result>
+		</action>
+	 <!-- 移除交接单中选中的材料-->
+        <action name="removeArchive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="RemoveFile" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferArchiveAdd.jsp</result>
+		</action>
+	 <!-- 进入文件移交单修改页面-->
+        <action name="edit" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InUpdateTransfer" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferAdd.jsp</result>
+		</action>
+	 <!-- 进入材料移交单修改页面-->
+        <action name="editChildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InUpdateTransferChildinfo" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildinfoAdd.jsp</result>
+		</action>
+	 <!-- 进入材料移交单匹配修改页面-->
+        <action name="editChildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InUpdateTransferChildMatchinfo" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildMatchinfoAdd.jsp</result>
+		</action>
+	<!-- 进入安置后报告移交单修改页面-->
+        <action name="editArchive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InUpdateTransferArchive" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferArchiveAdd.jsp</result>
+		</action>
+	<!-- 进入票据移交单修改页面-->
+        <action name="editCheque" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InUpdateTransferCheque" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChequeAdd.jsp</result>
+		</action>
+	<!-- 进入文件移交单打印页面-->
+        <action name="inprint" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferFilePrint" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferFilePrint.jsp</result>
+		</action>
+	<!-- 进入文件移交单打印页面(退文)-->
+		<action name="inprintTW" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferFilePrintTW" >
+			<result name="success">/jsp/dcfs/ffs/transferManager/transferFilePrintTw.jsp</result>
+		</action>
+	<!-- 进入文件移交单打印页面-->
+        <action name="inChildinfoPrint" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferChildinfoPrint" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildinfoPrint.jsp</result>
+		</action>
+	<!-- 进入文件移交单打印页面（匹配）-->
+        <action name="inChildMatchinfoPrint" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferChildMatchinfoPrint" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildMatchinfoPrint.jsp</result>
+		</action>
+	<!-- 进入票据移交单打印页面-->
+        <action name="inChequeinfoPrint" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferChequeInfoPrint" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChequeInfoPrint.jsp</result>
+		</action>
+	<!-- 进入安置后报告移交单打印页面-->
+        <action name="inArchiveinfoPrint" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferArchiveInfoPrint" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferArchiveInfoPrint.jsp</result>
+		</action>
+		<!-- 查看材料移交单明细页面-->
+        <action name="InTransferChildinfoView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferChildinfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildinfoView.jsp</result>
+		</action>
+		<!-- 查看材料移交单明细页面（匹配）-->
+        <action name="InTransferChildMatchinfoView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferChildMatchinfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChildMatchinfoView.jsp</result>
+		</action>
+		<!-- 查看材票据移交交单明细页面-->
+        <action name="InTransferChequeInfoView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferChequeInfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferChequeinfoView.jsp</result>
+		</action>
+		<!-- 查看安置后报告移交单明细页面-->
+        <action name="InTransferArchiveInfoView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InTransferArchiveInfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferArchiveinfoView.jsp</result>
+		</action>
+	 <!-- 进入手工添加文件 -->
+        <action name="MannualFile" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferMannualFileList">
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferManualFileList.jsp</result>
+		</action>
+	 <!-- 进入手工添加材料界面 -->
+        <action name="MannualChildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferMannualChildinfoList">
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferManualChildInfoList.jsp</result>
+		</action>
+	 <!-- 进入手工添加材料（匹配）界面 -->
+        <action name="MannualChildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferMannualChildMatchinfoList">
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferManualChildMatchInfoList.jsp</result>
+		</action>
+		<!-- 进入手工添加支票界面 -->
+        <action name="MannualCheque" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferMannualChequeList">
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferManualChequeList.jsp</result>
+		</action>
+		<!-- 进入手工添加安置后报告界面 -->
+        <action name="MannualArchive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferMannualArchiveList">
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferManualArchiveList.jsp</result>
+		</action>
+	 <!-- 选择手工添加文件 -->
+        <action name="MannualChioceFile" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferMannualChioceFile">
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferAdd.jsp</result>
+		</action>
+	
+	 <!-- 接收列表页面-->
+        <action name="findReceiveList" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="TransferReceiveList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/transferReceiveList.jsp</result>
+		</action>
+	 <!-- 进入文件接收确认页面-->
+      <action name="receive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveFileList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveFile.jsp</result>
+		</action>
+	 <!-- 进入材料接收确认页面-->
+      <action name="receiveChildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveChildinfoList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveChildinfo.jsp</result>
+		</action>
+	 <!-- 进入材料（匹配）接收确认页面-->
+      <action name="receiveChildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveChildMatchinfoList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveChildMatchinfo.jsp</result>
+		</action>
+	<!-- 进入票据接收确认页面-->
+      <action name="receiveCheque" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveChequeList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveCheque.jsp</result>
+		</action>
+	 <!-- 进入票据接收确认页面-->
+      <action name="receiveArchive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveArchiveList" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveArchive.jsp</result>
+		</action>
+		
+	 <!-- 接收列表页面-->
+      <action name="receiveConfirm" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveConfirm" >
+		<result name="success" type="chain">findReceiveList</result>
+		</action>
+	 <!-- 接收退回-->
+      <action name="receiveReturn" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="ReceiveReturn" >
+		<result name="success" type="chain">findReceiveList</result>
+		</action>
+	 <!-- 详细查看-文件-->
+      <action name="detailView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InFileView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/fileView.jsp</result>
+		</action>
+	 <!-- 详细查看-材料-->
+      <action name="detailViewChildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InChildinfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/childinfoView.jsp</result>
+		</action>
+	 <!-- 详细查看-材料（匹配）-->
+      <action name="detailViewChildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InChildMatchinfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/childMatchinfoView.jsp</result>
+		</action>
+     <!-- 详细查看-票据-->
+      <action name="detailViewCheque" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InChequeView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/chequeView.jsp</result>
+		</action>
+	 <!-- 详细查看-票据-->
+      <action name="detailViewArchive" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InArchiveView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/archiveView.jsp</result>
+		</action>
+	 <!-- 文件接收单查看-->
+      <action name="inRView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InReceiveFileView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveView.jsp</result>
+		</action>
+	 <!-- 材料接收单查看-->
+      <action name="receiveViewChildinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InReceiveChildinfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveViewChildinfo.jsp</result>
+		</action>		
+	 <!-- 材料（匹配）接收单查看-->
+      <action name="receiveViewChildMatchinfo" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InReceiveChildMatchinfoView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveViewChildMatchinfo.jsp</result>
+		</action>		
+	 <!-- 票据接收单查看-->
+      <action name="inChequeView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InReceiveChequeView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveViewCheque.jsp</result>
+		</action>
+	 <!-- 安置后报告接收单查看-->
+      <action name="inArchiveView" class="com.dcfs.ffs.transferManager.TransferManagerAction" method="InReceiveArchiveView" >
+		<result name="success">/jsp/dcfs/ffs/transferManager/receiveViewArchive.jsp</result>
+		</action>
+	</package>
+</struts>

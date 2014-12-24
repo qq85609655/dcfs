@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:para="base/resource/console/parameter/model" targetNamespace="base/resource/console/parameter/model" elementFormDefault="qualified">
+	<xs:element name="Parameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="parameter" type="para:parameter" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="parameter">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="ref_id" type="xs:string"/>
+			<xs:element name="paraname" type="xs:string"/>
+			<xs:element name="cnname" type="xs:string"/>
+			<xs:element name="paravalue" type="xs:string"/>
+			<xs:element name="optionvalue" type="xs:string"/>
+			<xs:element name="optiontext" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

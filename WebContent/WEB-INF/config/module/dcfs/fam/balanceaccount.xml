@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="balanceaccount" namespace="/fam/balanceaccount" extends="struts-default">
+	
+		<!-- 收养组织结余账户列表 -->
+	    <action name="BalanceAccountList" class="com.dcfs.fam.balanceAccount.BalanceAccountAction" method="BalanceAccountList">
+	    	<result name="success">/jsp/dcfs/fam/balanceAccount/balanceaccount_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 收养组织结余账户信息添加 -->
+	    <action name="BalanceAccountAdd" class="com.dcfs.fam.balanceAccount.BalanceAccountAction" method="BalanceAccountAdd">
+	    	<result name="success">/jsp/dcfs/fam/balanceAccount/balanceaccount_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 收养组织结余账户信息保存 -->
+	    <action name="BalanceAccountSave" class="com.dcfs.fam.balanceAccount.BalanceAccountAction" method="BalanceAccountSave">
+	    	<result name="success" type="chain">/balanceaccount/BalanceAccountList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 收养组织结余账号明细查询列表 -->
+	    <action name="BalanceAccountDetailList" class="com.dcfs.fam.balanceAccount.BalanceAccountAction" method="BalanceAccountDetailList">
+	    	<result name="success">/jsp/dcfs/fam/balanceAccount/balanceaccountdetail_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	</package>
+</struts>

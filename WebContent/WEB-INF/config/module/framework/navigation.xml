@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="navigation" namespace="/navigation" extends="struts-default" >
+		
+		<!-- 选择导航所属的应用 -->
+		<action name="selectApp">
+			<result>/jsp/framework/navigation/showAppFrame.jsp</result>
+		</action>
+	
+	    <!--导航查询action -->
+		<action name="navigationList" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationList">
+			<result name="success">/jsp/framework/navigation/navigationList.jsp</result>
+		</action>
+		<!--导航栏添加action -->
+		<action name="navigationAdd" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationAdd">
+			<result name="success" type="chain">navigationList</result>
+		</action>
+		<!--导航栏修改action -->
+		<action name="navigationModify" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationModify">
+			<result name="success" type="chain">navigationList</result>
+		</action>
+		<!--应用删除action -->
+		<action name="navigationDelete" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationDelete">
+			<result name="success" type="chain">navigationList</result>
+		</action>
+		<!--导航栏添加跳转action -->
+		<action name="navigationToAdd" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationToAdd">
+			<result name="success">/jsp/framework/navigation/navigationAdd.jsp</result>
+		</action>
+		<!--导航栏查看action -->
+		<action name="navigationDetailed" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationDetailed">
+			<result name="look">/jsp/framework/navigation/navigationDetail.jsp</result>
+			<result name="modify">/jsp/framework/navigation/navigationEdit.jsp</result>
+		</action>
+		<!--查找应用跳转action -->
+		<action name="navigationShowApp" class="com.hx.framework.appnavigation.navigation.NavigationAction" method="navigationShowApp">
+			<result name="success">/jsp/framework/navigation/showAppList.jsp</result>
+		</action>
+	</package>
+</struts>

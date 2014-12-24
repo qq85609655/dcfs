@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="prop" namespace="/prop" extends="struts-default" >
+	     <!--扩展属性action -->
+		<action name="propExtend" class="com.hx.framework.propExtend.PropExtendAction" method="gotoListPage">
+			<result name="success">/jsp/framework/propExtend/propSetIndex.jsp</result>
+			<result name="propExtendList">/jsp/framework/propExtend/propExtendList.jsp</result>
+			<result name="personPropList">/jsp/framework/propExtend/personPropList.jsp</result>
+			<result name="setTree">/jsp/framework/propExtend/propSetTree.jsp</result>
+			<result name="addProperty">/jsp/framework/propExtend/addProperty.jsp</result>
+			<result name="inputTypeSelect">/jsp/framework/propExtend/inputTypeSelect.jsp</result>
+			<result name="inputTypeSelectNext">/jsp/framework/propExtend/inputTypeSelectNext.jsp</result>
+			<result name="updateInputTypeSelect">/jsp/framework/propExtend/updateInputTypeSelect.jsp</result>
+			<result name="updateInputTypeSelectNext">/jsp/framework/propExtend/updateInputTypeSelectNext.jsp</result>
+			<result name="modify">/jsp/framework/propExtend/updateProperty.jsp</result>
+		</action>
+	</package>
+</struts>

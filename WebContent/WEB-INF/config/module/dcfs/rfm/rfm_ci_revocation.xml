@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="rfmcirevocation" namespace="/rfm/child" extends="struts-default" >
+      <!-- 列表页面-->
+        <action name="findList" class="com.dcfs.rfm.child.RfmCiRevocationAction" method="findList" >
+		<result name="success">/jsp/dcfs/rfm/child/rfm_ci_revocation_list.jsp</result>
+		</action>
+     <!-- 添加页面-->
+        <action name="add" class="com.dcfs.rfm.child.RfmCiRevocationAction" method="add" >
+		<result name="success">/jsp/dcfs/rfm/child/rfm_ci_revocation_add.jsp</result>
+		</action>
+	<!-- 保存-->
+        <action name="save" class="com.dcfs.rfm.child.RfmCiRevocationAction" method="save" >
+		<result name="success" type="chain">child/findList</result>
+		</action>
+	<!-- 查看修改页面-->
+        <action name="show" class="com.dcfs.rfm.child.RfmCiRevocationAction" method="show" >
+		<result name="show">/jsp/dcfs/rfm/child/rfm_ci_revocation_detail.jsp</result>
+		<result name="mod">/jsp/dcfs/rfm/child/rfm_ci_revocation_add.jsp</result>
+		<result name="success">/jsp/dcfs/rfm/child/rfm_ci_revocation_add.jsp</result>
+		</action>
+	 <!-- 删除-->
+        <action name="delete" class="com.dcfs.rfm.child.RfmCiRevocationAction" method="delete" >
+		<result name="success" type="chain">child/findList</result>
+		</action>
+	</package>
+</struts>

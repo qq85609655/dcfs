@@ -1,0 +1,15 @@
+﻿<public:component lightweight="true">
+<public:attach event="onmouseover" onevent="mouseover()"/>
+<public:attach event="onmouseout" onevent="mouseout()"/>
+<script language="javascript" type="text/javascript">
+    function mouseover()
+    {
+		this.style.backgroundColor='#efefef';	    
+    }
+    
+    function mouseout()
+    {
+	        this.style.backgroundColor='';
+    }
+</script>
+</public:component>

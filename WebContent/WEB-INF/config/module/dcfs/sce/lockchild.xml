@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="lockchild" namespace="/sce/lockchild" extends="struts-default">
+		<!-- 收养协议确认 -->
+		<action name="AdoptionAssociationConfirm" class="com.dcfs.sce.lockChild.LockChildAction" method="AdoptionAssociationConfirm">
+	    	<result name="success">/jsp/dcfs/sce/lockChild/adoptionassociation_confirm.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 查看与锁定儿童列表 -->
+		<action name="LockChildList" class="com.dcfs.sce.lockChild.LockChildAction" method="LockChildList">
+	    	<result name="success">/jsp/dcfs/sce/lockChild/lockchild_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童信息查看 -->
+		<action name="ChildInfoShow" class="com.dcfs.sce.lockChild.LockChildAction" method="ChildInfoShow">
+	    	<result name="success">/jsp/dcfs/sce/lockChild/childinfo_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童信息查看 -->
+		<action name="getChildInfoByCIID" class="com.dcfs.sce.lockChild.LockChildAction" method="getChildInfoByCIID">
+	    	<result name="success">/jsp/dcfs/sce/lockChild/childbaseinfo_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 锁定方式选择页面 -->
+		<action name="LockTypeSelect" class="com.dcfs.sce.lockChild.LockChildAction" method="LockTypeSelect">
+	    	<result name="success">/jsp/dcfs/sce/lockChild/locktype_select.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 文件选择列表页面 -->
+		<action name="FileInfoSelect" class="com.dcfs.sce.lockChild.LockChildAction" method="FileInfoSelect">
+	    	<result name="locktypeA">/jsp/dcfs/sce/lockChild/fileinfoA_select.jsp</result>
+	    	<result name="locktypeB">/jsp/dcfs/sce/lockChild/fileinfoB_select.jsp</result>
+	    	<result name="locktypeC">/jsp/dcfs/sce/lockChild/fileinfoC_select.jsp</result>
+	    	<result name="locktypeE">/jsp/dcfs/sce/lockChild/fileinfoE_select.jsp</result>
+	    	<result name="locktypeF">/jsp/dcfs/sce/lockChild/fileinfoF_select.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童信息锁定页面 -->
+		<action name="ChildInfoLock" class="com.dcfs.sce.lockChild.LockChildAction" method="ChildInfoLock">
+	    	<result name="show">/jsp/dcfs/sce/lockChild/childlock_confirm.jsp</result>
+	    	<result name="add">/jsp/dcfs/sce/lockChild/childlockadd_confirm.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 初始化预批申请记录 -->
+		<action name="InitPreApproveApply" class="com.dcfs.sce.lockChild.LockChildAction" method="InitPreApproveApply">
+			<result name="other" type="chain">/lockchild/LockChildList</result>
+	    	<result name="success" type="chain">
+	    		<param name="actionName">PreApproveApplyShow</param>
+				<param name="namespace">/sce/preapproveapply</param>
+				<param name="method">PreApproveApplyShow</param>
+			</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 委托退回 -->
+		<action name="ConsignReturn" class="com.dcfs.sce.lockChild.LockChildAction" method="ConsignReturn">
+	    	<result name="success">/jsp/dcfs/sce/lockChild/consignreturn_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 委托退回保存 -->
+		<action name="ConsignReturnSave" class="com.dcfs.sce.lockChild.LockChildAction" method="ConsignReturnSave">
+	    	<result name="success" type="chain">/lockchild/LockChildList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 预批申请信息查看 -->
+		<action name="GetAdoptionPersonInfo" class="com.dcfs.sce.lockChild.LockChildAction" method="GetAdoptionPersonInfo">
+	    	<result name="afdouble">/jsp/dcfs/sce/lockChild/adoptionpersoninfoEN_doubleview.jsp</result>
+	    	<result name="afsingle">/jsp/dcfs/sce/lockChild/adoptionpersoninfoEN_singleview.jsp</result>
+	    	<result name="ridouble">/jsp/dcfs/sce/lockChild/adoptionpersoninfoEN_ri_doubleview.jsp</result>
+	    	<result name="risingle">/jsp/dcfs/sce/lockChild/adoptionpersoninfoEN_ri_singleview.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	</package>
+</struts>

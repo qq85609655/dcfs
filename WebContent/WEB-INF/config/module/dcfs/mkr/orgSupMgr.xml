@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="organSupp" namespace="/mkr/organSupp" extends="struts-default">
+		<!-- 在华联系人begin -->
+		<action name="linkManOrganList" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="linkManOrganList">
+			<result name="success">/jsp/dcfs/mkr/organsupp/linkManOrganList.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbLinkManOrganList.jsp</result>
+		</action>
+		<action name="linkManModify" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="linkManModify">
+			<result name="success">/jsp/dcfs/mkr/organsupp/linkManModify.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbLinkManModify.jsp</result>
+		</action>
+		<action name="linkManModifySubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="linkManModifySubmit">
+			<result name="success" type="chain">organSupp/organNull</result>
+		</action>
+		<action name="deleteLinkMan" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="deleteLinkMan">
+		</action>
+		<action name="organNull" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organNull">
+			<result name="success">/jsp/dcfs/mkr/organsupp/ModifyNull.jsp</result>
+		</action>
+		<!-- 在华联系人end -->
+		<!-- 援助或捐赠项目begin -->
+		<action name="aidProjectOrganList" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="aidProjectOrganList">
+			<result name="success">/jsp/dcfs/mkr/organsupp/aidProjectOrganList.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbAidProjectOrganList.jsp</result>
+		</action>
+		<action name="aidProjectModify" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="aidProjectModify">
+			<result name="success">/jsp/dcfs/mkr/organsupp/aidProjectModify.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbAidProjectModify.jsp</result>
+		</action>
+		<action name="aidProjectModifySubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="aidProjectModifySubmit">
+			<result name="success" type="chain">organSupp/organNull</result>
+		</action>
+		<action name="deleteAidProject" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="deleteAidProject">
+		</action>
+		<!-- 援助或捐赠项目end -->
+		<!-- 在华旅行接待begin -->
+		<action name="receptionOrganList" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="receptionOrganList">
+			<result name="success">/jsp/dcfs/mkr/organsupp/receptionOrganList.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbReceptionOrganList.jsp</result>
+		</action>
+		<action name="receptionModify" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="receptionModify">
+			<result name="success">/jsp/dcfs/mkr/organsupp/receptionModify.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbReceptionModify.jsp</result>
+		</action>
+		<action name="receptionModifySubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="receptionModifySubmit">
+			<result name="success" type="chain">organSupp/organNull</result>
+		</action>
+		<action name="deleteReception" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="deleteReception">
+		</action>
+		<!-- 机构备案信息开始 -->
+		<action name="organRecordStateList" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organRecordStateList">
+			<result name="success">/jsp/dcfs/mkr/organsupp/recordStateOrganList.jsp</result>
+		</action>
+		<!-- 跳转到机构备案审核页面 -->
+		<action name="organRecordConfirm" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organRecordConfirm">
+			<result name="success">/jsp/dcfs/mkr/organsupp/recordStateConfirm.jsp</result>
+		</action>
+		<action name="organRecordStateSubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organRecordStateSubmit">
+			<result name="success" type="chain">organSupp/organRecordStateList</result>
+		</action>
+		<!-- 查看机构备案信息 -->
+		<action name="organRecordStateDetail" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organRecordStateDetail">
+			<result name="success">/jsp/dcfs/mkr/organsupp/recordStateDetail.jsp</result>
+		</action>
+		<!-- 更 新纪录-->
+		<action name="organUpdateList" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organUpdateList">
+			<result name="success">/jsp/dcfs/mkr/organsupp/updateList.jsp</result>
+			<result name="shb">/jsp/dcfs/mkr/organsupp/shbUpdateList.jsp</result>
+		</action>
+		<!--机构维护英文版-->
+		<action name="linkManOrganListEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="linkManOrganListEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/linkManOrganList.jsp</result>
+		</action>
+		<action name="linkManModifyEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="linkManModifyEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/linkManModify.jsp</result>
+		</action>
+		<action name="linkManModifySubmitEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="linkManModifySubmitEn">
+			<result name="success" type="chain">organSupp/organNullEn</result>
+		</action>
+		<action name="organNullEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organNullEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/ModifyNull.jsp</result>
+		</action>
+		<action name="deleteLinkManEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="deleteLinkManEn">
+		</action>
+		<action name="aidProjectOrganListEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="aidProjectOrganListEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/aidProjectOrganList.jsp</result>
+		</action>
+		<action name="aidProjectModifyEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="aidProjectModifyEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/aidProjectModify.jsp</result>
+		</action>
+		<action name="aidProjectModifySubmitEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="aidProjectModifySubmitEn">
+			<result name="success" type="chain">organSupp/organNullEn</result>
+		</action>
+		<action name="deleteAidProjectEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="deleteAidProjectEn">
+		</action>
+		<action name="receptionOrganListEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="receptionOrganListEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/receptionOrganList.jsp</result>
+		</action>
+		<action name="receptionModifyEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="receptionModifyEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/receptionModify.jsp</result>
+		</action>
+		<action name="receptionModifySubmitEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="receptionModifySubmitEn">
+			<result name="success" type="chain">organSupp/organNullEn</result>
+		</action>
+		<action name="deleteReceptionEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="deleteReceptionEn">
+		</action>
+		<action name="organUpdateListEn" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="organUpdateListEn">
+			<result name="success">/jsp/dcfs/mkr/organEnglish/updateList.jsp</result>
+		</action>
+		<action name="provinceTree" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="provinceTree">
+			<result name="success">/jsp/dcfs/mkr/welfare/provinceTree.jsp</result>
+		</action>
+		<action name="findWelfareList" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="findWelfareList">
+			<result name="success">/jsp/dcfs/mkr/welfare/welfareList.jsp</result>
+		</action>
+		<action name="toWelfareModif" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="toWelfareModif">
+			<result name="modif">/jsp/dcfs/mkr/welfare/welfareModify.jsp</result>
+			<result name="detail">/jsp/dcfs/mkr/welfare/welfareDetail.jsp</result>
+		</action>
+		<action name="welfareModifySubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="welfareModifySubmit">
+			<result name="success" type="chain">organSupp/toWelfareModif</result>
+		</action>
+		<action name="toWelfareDel" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="toWelfareDel">
+			<result name="success" type="chain">organSupp/findWelfareList</result>
+		</action>
+		<!-- 根据组织机构查找该组织下的附属福利机构 -->
+		<action name="findWelfareByOrgan" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="findWelfareByOrgan">
+			<result name="success">/jsp/dcfs/mkr/welfare/welfareByOrganList.jsp</result>
+		</action>
+		<action name="toModifWelfareById" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="toModifWelfareById">
+			<result name="success">/jsp/dcfs/mkr/welfare/welfareByIdModify.jsp</result>
+		</action>
+		<action name="WelfareByIdSubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="WelfareByIdSubmit">
+			<result name="success" type="chain">organSupp/toModifWelfareById</result>
+		</action>
+		<!--省厅机构维护  -->
+		<action name="toModifProvinceById" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="toModifProvinceById">
+			<result name="success">/jsp/dcfs/mkr/welfare/provinceByIdModify.jsp</result>
+		</action>
+		<action name="PrivinceByIdSubmit" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="PrivinceByIdSubmit">
+			<result name="success" type="chain">organSupp/toModifProvinceById</result>
+		</action>
+		<action name="provinceListMessage" class="com.dcfs.mkr.organesupp.OrganSuppAction" method="provinceListMessage">
+			<result name="success">/jsp/dcfs/mkr/welfare/provinceListMessage.jsp</result>
+		</action>
+	</package>
+</struts>

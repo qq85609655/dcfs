@@ -1,0 +1,63 @@
+.bz-edit-data{
+	padding: 10px;
+}
+.bz-edit-data .title{
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-box-sizing: content-box;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    color: #FFFFFF;
+    min-height: 38px;
+    padding-left: 12px;
+    position: relative;
+    background: none repeat scroll 0 0 #5090C1;
+    border-color: #5090C1;
+}
+.base .bz-edit-data{
+	border:none;
+}
+.bz-edit-data .content{
+	border: 1px solid #5090C1;
+}
+.bz-edit-data-content{
+	margin-top:10px;
+}
+.lighter{
+    font-weight: lighter;
+    line-height: 5px;
+}
+.bz-edit-data .content ul, .bz-edit-data .content li{
+	list-style: none;
+}
+.bz-edit-data .content li{
+	padding: 10px 0 5px 15px;
+	cursor: pointer;
+}
+.bz-edit-data .content li:hover{
+	background-color: #d6dee1;
+}
+.bz-edit-data .content li.selected{
+	background-color: #a7d0e1;
+}
+.bz-edit-data-content hr{
+	height:1px;
+	border:none;
+	border-top:1px solid #5090C1;
+}
+.td_color_table tr, .type_role_tabel tr{
+	height:30px;
+}
+.td_color_table tr td:hover{
+	background-color: #d6dee1;
+	cursor: pointer;
+}
+.type_role_tabel td{
+	padding:0 40px;
+}
+.type_role_tabel tr:hover{
+	background-color: #d6dee1;
+}

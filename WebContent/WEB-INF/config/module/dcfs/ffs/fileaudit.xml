@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 家庭文件审核 -->
+	<package name="audit" namespace="/ffs/jbraudit" extends="struts-default" >
+	    <action name="fileauditpage"  class="com.dcfs.ffs.audit.FileAuditAction" method="selectFileBasicInfo">
+	    	<result name="auditonelevel">/jsp/dcfs/ffs/audit/fileauditpageD.jsp</result>
+	    	<result name="fileS">/jsp/dcfs/ffs/audit/fileauditpageS.jsp</result>
+	    	<result name="success">/jsp/dcfs/ffs/audit/fileauditpageD.jsp</result>
+	    	<result name="error">/error.jsp</result>
+	    </action>
+	    <action name="ajaxaction"  class="com.dcfs.ffs.audit.FileAuditAction">
+	    	<result name="success">/jsp/dcfs/ffs/audit/ajax1.jsp</result>
+	    	<result name="error">/jsp/dcfs/ffs/audit/ajax1.jsp</result>
+	    </action>
+	    <!-- 经办人审核列表页面 -->
+	    <action name="findListForOneLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="findListForOneLevel">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_onelevel_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入经办人审核详细页面 -->
+	    <action name="toAuditForOneLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="toAuditForOneLevel">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_onelevel_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入经办人审核详细页面(查看页面) -->
+	    <action name="toAuditForOneLevelView"  class="com.dcfs.ffs.audit.FileAuditAction" method="toAuditForOneLevelView">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_onelevel_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 部门主任复核列表页面 -->
+	    <action name="findListForTwoLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="findListForTwoLevel">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_twolevel_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入部门主任复核详细页面 -->
+	    <action name="toAuditForTwoLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="toAuditForTwoLevel">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_twolevel_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入部门主任复核详细页面(查看页面) -->
+	    <action name="toAuditForTwoLevelView"  class="com.dcfs.ffs.audit.FileAuditAction" method="toAuditForTwoLevelView">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_twolevel_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 分管主任审批列表页面 -->
+	    <action name="findListForThreeLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="findListForThreeLevel">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_threelevel_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入分管主任审批详细页面 -->
+	    <action name="toAuditForThreeLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="toAuditForThreeLevel">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_threelevel_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入分管主任审批详细页面(查看页面) -->
+	    <action name="toAuditForThreeLevelView"  class="com.dcfs.ffs.audit.FileAuditAction" method="toAuditForThreeLevelView">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_threelevel_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 审核记录列表页面 -->
+	    <action name="findAuditList"  class="com.dcfs.ffs.audit.FileAuditAction" method="findAuditList">
+	    	<result name="success">/jsp/dcfs/ffs/audit/audit_history_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 文件补充记录列表页面 -->
+	    <action name="findBcRecordList"  class="com.dcfs.ffs.audit.FileAuditAction" method="findBcRecordList">
+	    	<result name="success">/jsp/dcfs/ffs/audit/file_bc_history_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 文件翻译记录列表页面 -->
+	    <action name="findTranslationList"  class="com.dcfs.ffs.audit.FileAuditAction" method="findTranslationList">
+	    	<result name="success">/jsp/dcfs/ffs/audit/file_tran_history_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 文件修改记录列表页面 -->
+	    <action name="findReviseList"  class="com.dcfs.ffs.audit.FileAuditAction" method="findReviseList">
+	    	<result name="success">/jsp/dcfs/ffs/audit/file_revise_history_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批审核及儿童信息列表页面 -->
+	    <action name="findYpshAndEtInfoList"  class="com.dcfs.ffs.audit.FileAuditAction" method="findYpshAndEtInfoList">
+	    	<result name="success">/jsp/dcfs/ffs/audit/yp_et_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    
+	     <!-- 经办人审核信息保存 -->
+	    <action name="saveForOneLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="saveForOneLevel">
+	    	<result name="success" type="chain">
+				<param name="actionName">toAuditForOneLevel</param>
+				<param name="namespace">/ffs/jbraudit</param>
+				<param name="method">toAuditForOneLevel</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 经办人审核信息提交 -->
+	    <action name="submitForOneLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="submitForOneLevel">
+	    	<result name="success" type="chain">
+				<param name="actionName">findListForOneLevel</param>
+				<param name="namespace">/ffs/jbraudit</param>
+				<param name="method">findListForOneLevel</param>
+			</result>
+			<result name="successbf" type="chain">
+				<param name="actionName">adTranslationList</param>
+				<param name="namespace">/ffs/ffsaftranslation</param>
+				<param name="method">adTranslationList</param>
+			</result>
+			<result name="successcf" type="chain">
+				<param name="actionName">reTranslationList</param>
+				<param name="namespace">/ffs/ffsaftranslation</param>
+				<param name="method">reTranslationList</param>
+			</result>
+			<result name="successbc" type="chain">
+				<param name="actionName">SuppleQueryList</param>
+				<param name="namespace">/ffs/filemanager</param>
+				<param name="method">SuppleQueryList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 部门主任复核信息保存 -->
+	    <action name="saveForTwoLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="saveForTwoLevel">
+	    	<result name="success" type="chain">
+				<param name="actionName">toAuditForTwoLevel</param>
+				<param name="namespace">/ffs/jbraudit</param>
+				<param name="method">toAuditForTwoLevel</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 部门主任复核信息提交 -->
+	    <action name="submitForTwoLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="submitForTwoLevel">
+	    	<result name="success" type="chain">
+				<param name="actionName">findListForTwoLevel</param>
+				<param name="namespace">/ffs/jbraudit</param>
+				<param name="method">findListForTwoLevel</param>
+			</result>
+			<result name="successbf" type="chain">
+				<param name="actionName">adTranslationList</param>
+				<param name="namespace">/ffs/ffsaftranslation</param>
+				<param name="method">reTranslationList</param>
+			</result>
+			<result name="successbc" type="chain">
+				<param name="actionName">SuppleQueryList</param>
+				<param name="namespace">/ffs/filemanager</param>
+				<param name="method">SuppleQueryList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 分管主任审批信息保存 -->
+	    <action name="saveForThreeLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="saveForThreeLevel">
+	    	<result name="success" type="chain">
+				<param name="actionName">toAuditForThreeLevel</param>
+				<param name="namespace">/ffs/jbraudit</param>
+				<param name="method">toAuditForThreeLevel</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 分管主任审批信息提交 -->
+	    <action name="submitForThreeLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="submitForThreeLevel">
+	    	<result name="success" type="chain">
+				<param name="actionName">findListForThreeLevel</param>
+				<param name="namespace">/ffs/jbraudit</param>
+				<param name="method">findListForThreeLevel</param>
+			</result>
+			<result name="successbf" type="chain">
+				<param name="actionName">adTranslationList</param>
+				<param name="namespace">/ffs/ffsaftranslation</param>
+				<param name="method">reTranslationList</param>
+			</result>
+			<result name="successbc" type="chain">
+				<param name="actionName">SuppleQueryList</param>
+				<param name="namespace">/ffs/filemanager</param>
+				<param name="method">SuppleQueryList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	     <!-- 初审文件列表导出页面 -->
+	    <action name="fileExportForOneLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="fileExportForOneLevel">
+	    </action>
+	     <!-- 复核文件列表导出页面 -->
+	    <action name="fileExportForTwoLevel"  class="com.dcfs.ffs.audit.FileAuditAction" method="fileExportForTwoLevel">
+	    </action>
+	    
+	</package>
+</struts>

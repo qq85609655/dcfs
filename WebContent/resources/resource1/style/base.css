@@ -1,0 +1,272 @@
+*{ padding:0; margin:0 auto; font-size:12px; font-family:"宋体";}
+/**页面主题框架**/
+.kuangjia{
+ margin:10px;
+ border:1px solid #99bbe8;
+ width:100%;
+}
+/***标题样式****/
+.heading{
+   background: url(../images/gnbg.jpg) repeat-x; 
+   height: 26px; 
+   font-weight:bold;
+   font-size:13px;
+   height:26px;
+   border-bottom:1px solid #99bbe8;
+   line-height: 26px; 
+   overflow: hidden; 
+   padding-left:15px;
+  }
+.down{
+   background: url(../images/gnbg.jpg) repeat-x; 
+   height: 26px; 
+   font-weight:bold;
+   font-size:13px;
+   height:26px;
+   border-top:1px solid #99bbe8;
+   line-height: 26px; 
+   overflow: hidden; 
+   padding-left:15px;
+   color:#347bd2;
+  }
+.list{
+  width:100%;
+}
+/********统一红色必填样式**********/
+.notnullclass{
+	font-size:12px; 
+	color:red;
+	font-weight:bold;
+ }
+#wrapper{margin:10px auto; text-align:left; width: 98%;}
+ /***************按钮样式***************/
+ 
+ .btn_hui { width:60px; height:20px; font-size:12px; color:#46494b; background:url(../images/btn_hui.jpg) no-repeat; border:none; cursor:pointer; margin:0 5px; font-weight:bold;}
+ 
+ /*修改按钮*/
+.button_update{border-width: 0px;background: url('../images/ico/cz_xg.gif') no-repeat;background-position:left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+ /*新增按钮*/
+.button_add{border-width: 0px;background: url('../images/ico/page_white.gif') no-repeat;background-position:left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+ /*预览按钮*/
+.button_preview{border-width: 0px;background: url('../images/ico/cz_ck.gif') no-repeat;background-position:left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*查询按钮*/
+.button_search{border-width: 0px;background: url('../images/ico/search.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*删除按钮*/
+.button_delete{border-width: 0px;background: url('../images/ico/cross.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*进入列表按钮*/
+.button_goto {border-width: 0px;background: url('../images/ico/page_list.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*发送消息按钮*/
+.button_send{border-width: 0px;background: url('../images/ico/package_out.gif') no-repeat;background-position: left;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+.button_word{border-width: 0px;background: url('../images/ico/word.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*选择按钮*/
+.button_select{border-width: 0px;background: url('../images/ico/cz_ck.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*重置按钮*/
+.button_reset{border-width: 0px;background: url('../images/ico/stop.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*启用按钮*/
+.button_start{border-width: 0px;background: url('../images/ico/start.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*停用按钮*/
+.button_stop{border-width: 0px;background: url('../images/ico/shutdown.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*保存按钮*/
+.button_save{border-width: 0px;background: url('../images/ico/disk.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*关闭按钮*/
+.button_close{border-width: 0px;background: url('../images/ico/cancel.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*日志按钮*/
+.button_bug{border-width: 0px;background: url('../images/bug.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+
+/*提交审核按钮*/
+.button_refer{border-width: 0px;background: url('../images/ico/key_add.gif') no-repeat;background-position:left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+/*提交审核按钮*/
+.button_refer1{border-width: 0px;background: url('../images/ico/key_add.gif') no-repeat;background-position:left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;}
+
+/*返回按钮*/
+.button_back{border-width: 0px;background: url('../images/ico/back.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 20px;color: #000000;cursor:pointer;} 
+
+/*改变状态按钮*/
+.button_change{border-width: 0px;background: url('../images/change.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 25px;color: #000000;cursor:pointer;}
+ 
+
+/*放入历史按钮*/
+.button_puthistory{border-width: 0px;background: url('../images/puthistory.gif') no-repeat;background-position: left;text-align: left;text-indent: 6px;height: 22px;padding-top: 2px;padding-left: 25px;color: #000000;cursor:pointer;}
+
+
+/*定义名为button_3的按钮表单，使用路径是../images/button_3.gif，宽度为64像素，高度为21像素的图片替换，不重复使用，
+按钮中的文字颜色为白色，文字粗体显示，没有边框*/
+
+.mine
+/*定义名为button_1的按钮，使用路径是images/button_1.gif，宽度为64像素，高度为21像素的图片替换，不重复使用，
+按钮中的文字颜色为#3b75cd的蓝色，没有边框，为使文字在按钮居中位置显示，定义位置距离按钮的上边为2像素，距离按钮的左边2个像素*/
+.button_1{background:url(../images/button_1.gif) no-repeat; width: 64px; height: 21px; color: #3b75cd; border: 0; padding-top: 2px; padding-left:2px;}  
+/*为使在不同浏览器中都显示正常，在此单独设置在火狐中的按钮定义，使用路径是images/button_1.gif，
+宽度为64像素，高度为21像素的图片替换，不重复使用，按钮中的文字颜色为#3b75cd的蓝色，没有边框，为使文字在按钮居中位置显示，
+定义位置距离按钮的下边为5像素*/
+html>/**/body .button_1{background:url(../images/button_1.gif) no-repeat; width: 64px; height: 21px; color: #3b75cd; border: 0; padding-bottom: 5px;}
+
+
+/*定义"当前位置"外边距,上边距为10个像素，下边距为5个像素*/
+.Locat{margin: 10px 0 5px;}
+.r1240{}
+/*整体定义页面中所有的链接当前显示为无下划线，鼠标划过为有下划线显示*/
+a{text-decoration: underline;color:#4890e7;}
+a:hover{text-decoration: underline;cursor:hand;}
+/*整体定义body中所有的文字字号为12像素,颜色值为#1c508f的"宋体",Verdana, Arial, Helvetica, sans-serif;
+常规字体，背景色为白色，整体页面在浏览器中居中显示*/
+body{font:12px "宋体",Verdana, Arial, Helvetica, sans-serif; background:#fff;; margin:0px;}
+
+
+/*下拉菜单边框显示为一个像素的颜色值为#b0c4db蓝色实线，背景色是值为#fbfcff淡蓝色，输入文字是值为#4890e7的蓝色，*/
+select{border: 1px solid #b0c4db; background: #fbfcff; padding: 1px;width: 100px; }  
+
+
+/*多行输入框显示为一个像素颜色值为#b0c4db蓝色实线，背景色的值为#fbfcff淡蓝色，
+输入文字的颜色值为#4890e7的蓝色，文字大小为12像素的常规字号，外边距上下为5个像素，内边距离上下左右都为3个像素*/
+textarea{border: 1px solid #b0c4db; background: #fbfcff; color: #4890e7; font-size: 12px; margin:5px 0; padding: 3px;}
+/*定义宽为230像素、高为50像素的多行输入框*/
+.textareaOne{width: 230px; height: 50px;}  
+
+
+/************************数据表格样式说明******************/
+/*定义"当前位置"外边距,上边距为10个像素，下边距为5个像素*/
+.Locat{margin:10px 10px 10px 10px;} 
+/*定义列表背景为横向平铺、高度为29像素的图片背景，文字的前景色为白色*/
+.titleBg{background: url(../images/titleBg.gif) repeat-x; height: 26px; color: #fff;}
+/*定义左边框，下边框为一个像素，颜色值为#b0c4db的实线，高度为25个像素*/
+.borderBlue{border-left: 1px solid #b0c4db; border-bottom: 1px solid #5d7c95; height: 25px;}  
+/*定义文字为粗体显示*/
+.bold{font-weight: bold;}
+/*定义背景色为白色,边框为一个像素颜色值为#5d7c95的实线*/
+.page{background: #fff; border: 1px solid #5d7c95;}
+/*定义背景色的值为#fbfcff的淡蓝色，外边距为上、左各一个像素的距离*/
+.pageNei{background: #fbfcff; margin: 1px 1px 0 0;}
+/*定义背景色的值为#eef5fc的浅蓝色*/
+.colorTwo{background: #eef5fc;}
+
+
+/********************表单样式说明********************/
+/*定义内边距，距离上边0个像素、右边距离1个像素、下边距离为0个像素、左边距离3个像素*/
+.pLeft{padding: 0px 1px 0 3px;}
+.paLeft{padding: 0 10px;}
+/*输入错误后，输入框显示为红色*/
+.inputwrong{border: 1px solid #a92320; background: #fbfcff; color: #4890e7;}
+/*输入正确后，输入框显示为绿色*/
+.inputright{border: 1px solid #93b583; background: #fbfcff; color: #4890e7;}  
+/*定义宽度为150像素的输入框*/
+.inputOne{width: 150px;}
+/*定义宽度为80像素的输入框*/
+.inputTwo{width: 80px;}
+/*定义宽度为260像素的输入框*/
+.inputThree{width: 260px;}
+.inputFour{width: 100px;}
+
+/*定义表单输入部分的整体，边框为一个像素，颜色值为#5d7c95的蓝色实线，
+背景色为#eef5fc的淡蓝色，上下外边距都为13个像素，左右边距为0*/
+.name{border: 1px solid #5d7c95; background:#eef5fc;}
+/*定义翻页部分的高度为30像边框为一个像素的颜色值为 #5d7c95的实线，背景色是颜色值为 #eef5fc;浅蓝色，
+外边距上下为5像素，内边距中定义距离右边15像素，位置显示为粗体*/
+.number{ height: 30px; border: 1px solid #5d7c95; background: #eef5fc; padding-right: 15px;  margin: 5px 0; font-weight: bold;}  
+
+
+/********************文字样式说明***********************/
+/*定义颜色为 #FF0000的红色文字*/
+.red{color: #FF0000;} 
+
+/*定义名为sred的链接文字，颜色在当前显示为 #1c508f的蓝色*/
+.sred{color:#1c508f;} 
+/*定义名为sred的链接文字，颜色在鼠标划过时显示为 #e10406的红色*/
+.sred:hover{color: #e10406;}  
+
+/*定义名为sred的链接文字,颜色在当前显示为#3b75b8的蓝色*/
+.sblue{color: #3b75b8;}
+/*定义名为sred的链接文字,颜色在鼠标划过显示为 #e10406的红色*/
+.sblue:hover{color: #e10406;} 
+
+/*定义名为white的链接文字，颜色在当前显示为白色*/
+.white{color: #fff;}
+/*定义名为white链接文字，颜色在鼠标划过显示为 #4890e7的蓝色*/
+.white:hover{color: #4890e7;} 
+/*模拟select*/
+.textselect{width:90px; height:20px; border:0px;}
+/*模拟select中div样式*/
+.textdiv{width:110px;}
+
+
+/****信息提示样式*****/
+.clewtable{
+	width:500px;
+	height:16px;
+	margin-bottom:5px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.clewid_cg{
+	height:16px;
+	width:16px;
+	background-image:url(../images/drop-yes.gif);
+	background-position:center;
+}
+.clewcontent_cg{
+	height:16px;
+	width:480px;
+	font-size:12px;
+	color:#77BC60;
+}
+.clewid_yc{
+	height:16px;
+	width:16px;
+	background-image:url(../images/ewarn.gif);
+	background-position:center;
+}
+.clewcontent_yc{
+	height:16px;
+	width:480px;
+	font-size:12px;
+	color:#FED000;
+}
+.clewid_cw{
+	height:16px;
+	width:16px;
+	background-image:url(../images/delete.gif);
+	background-position:center;
+}
+.clewcontent_cw{
+	height:16px;
+	width:480px;
+	font-size:12px;
+	color:#E34C40;
+}
+
+.baogao { border:1px solid #99bbe8; background:#dfe8f6;}
+.baogao td { background:#FFFFFF;}
+.baogao h2 { font-family:"黑体"; font-size:20px; font-weight:normal; height:54px; line-height:54px; text-align:center; width:100%; background:#f0f5f9; border-top:1px solid #d6dbe1; border-bottom:1px solid #d4e2f7;}
+.baogao .border { border:1px solid #d6dbe1; border-width:0 1px 0 1px; width:100%;}
+.baogao .table1 { line-height:30px; margin:6px auto;}
+.baogao .table1 td{ height:30px; }
+.baogao .table1 img{ vertical-align:middle}
+
+.table_ziliao { font-size:12px; color:#040404; background:#d9dce1;}
+.table_ziliao th { background:#f0f5f9; text-align:right; padding:5px; font-weight:normal;}
+.table_ziliao td { background:#ffffff; text-align:left; padding:5px;}
+
+.yema { color:#383b3f;}
+/**校验框架用到的class**/
+.jiaoyanred{
+	border:1px solid red;
+	}
+.select_jiaoyan{
+   border:red 1px solid;
+}
+.select_jiaoyan_ok{
+	border:#FFFFF 0px solid;
+ }
+
+

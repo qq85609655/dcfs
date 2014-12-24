@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="match" namespace="/match" extends="struts-default" >
+		<!-- 儿童信息（多人） -->
+        <action name="showCIsInfoInChildNo" class="com.dcfs.ncm.MatchAction" method="showCIsInfoInChildNo" >
+			<result name="success">/jsp/dcfs/ncm/CIs_info_inChildNo.jsp</result>
+		</action>
+		<!-- 儿童信息 -->
+        <action name="showCIInfoFirst" class="com.dcfs.ncm.MatchAction" method="showCIInfoFirst" >
+			<result name="success">/jsp/dcfs/ncm/CI_info_first.jsp</result>
+		</action>
+		<!-- 儿童信息（签批页面） -->
+        <action name="showCIInfoSign" class="com.dcfs.ncm.MatchAction" method="showCIInfoSign" >
+			<result name="success">/jsp/dcfs/ncm/leadersign/CI_info_sign.jsp</result>
+		</action>
+		<!-- 儿童信息（不带照片） -->
+        <action name="showCIInfoSecond" class="com.dcfs.ncm.MatchAction" method="showCIInfoSecond" >
+			<result name="success">/jsp/dcfs/ncm/CI_info_second.jsp</result>
+		</action>
+		<!-- 儿童信息（不带照片） -->
+        <action name="showCIInfoThird" class="com.dcfs.ncm.MatchAction" method="showCIInfoThird" >
+			<result name="success">/jsp/dcfs/ncm/CI_info_third.jsp</result>
+		</action>
+		<!-- 儿童信息  -->
+        <action name="showCIInfoFourth" class="com.dcfs.ncm.MatchAction" method="showCIInfoThird" >
+			<result name="success">/jsp/dcfs/ncm/CI_info_fourth.jsp</result>
+		</action>
+		<!-- 收养人信息 -->
+        <action name="showAFInfoFirst" class="com.dcfs.ncm.MatchAction" method="showAFInfoFirst" >
+			<result name="success">/jsp/dcfs/ncm/AF_info_first.jsp</result>
+		</action>
+		<!-- 收养人信息（签批页面） -->
+        <action name="showAFInfoSign" class="com.dcfs.ncm.MatchAction" method="showAFInfoFirst" >
+			<result name="success">/jsp/dcfs/ncm/leadersign/AF_info_sign.jsp</result>
+		</action>
+		<!-- 收养人信息（不带照片） -->
+        <action name="showAFInfoSecond" class="com.dcfs.ncm.MatchAction" method="showAFInfoSecond" >
+			<result name="success">/jsp/dcfs/ncm/AF_info_second.jsp</result>
+		</action>
+		<!-- 收养人信息（不带照片） -->
+        <action name="showAFInfoThird" class="com.dcfs.ncm.MatchAction" method="showAFInfoThird" >
+			<result name="success">/jsp/dcfs/ncm/AF_info_third.jsp</result>
+		</action>
+		
+		<!-- 收养登记申请书 -->
+        <action name="AdoptionRegistrationApplication" class="com.dcfs.ncm.MatchAction" method="AdoptionRegistrationApplication" >
+			<result name="success">/jsp/dcfs/far/Application.jsp</result>
+		</action>
+		<!-- 收养登记证 -->
+        <action name="AdoptionRegistration" class="com.dcfs.ncm.MatchAction" method="AdoptionRegistration" >
+			<result name="success">/jsp/dcfs/far/Registration.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="childInfoReturn" namespace="/childInfoReturn" extends="struts-default" >
+		<!-- 安置部材料申请退回列表 -->
+        <action name="AZBApplyCIReturnList" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="AZBApplyCIReturnList" >
+			<result name="success">/jsp/dcfs/ncm/CIReturn/AZBApplyCIReturn_list.jsp</result>
+		</action>
+		<!-- 安置部选择材料列表 -->
+        <action name="AZBSelectDABCIList" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="AZBSelectDABCIList" >
+			<result name="success">/jsp/dcfs/ncm/CIReturn/AZBSelectDABCI_list.jsp</result>
+		</action>
+		<!-- 安置部材料申请退回添加 -->
+        <action name="toAZBApplyCIReturnAdd" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="toAZBApplyCIReturnAdd" >
+			<result name="success">/jsp/dcfs/ncm/CIReturn/AZBApplyCIReturn_add.jsp</result>
+		</action>
+		<!-- 安置部材料申请退回添加保存 -->
+        <action name="saveAZBApplyCIReturnAdd" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="saveAZBApplyCIReturnAdd" >
+			<result name="success" type="chain">AZBApplyCIReturnList</result>
+		</action>
+		
+		<!-- 档案部撤销档案列表 -->
+        <action name="DABRevokeArchiveList" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="DABRevokeArchiveList" >
+			<result name="success">/jsp/dcfs/ncm/CIReturn/DABRevokeArchive_list.jsp</result>
+		</action>
+		<!-- 档案部撤销档案 -->
+        <action name="toDABRevokeArchiveAdd" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="toDABRevokeArchiveAdd" >
+			<result name="success">/jsp/dcfs/ncm/CIReturn/DABRevokeArchive_add.jsp</result>
+		</action>
+		<!-- 档案部撤销档案保存 -->
+        <action name="saveDABRevokeArchiveAdd" class="com.dcfs.ncm.CIReturn.ChildInfoReturnAction" method="saveDABRevokeArchiveAdd" >
+			<result name="success" type="chain">DABRevokeArchiveList</result>
+		</action>
+	</package>
+</struts>

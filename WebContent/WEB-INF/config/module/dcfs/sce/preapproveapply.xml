@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="preapproveapply" namespace="/sce/preapproveapply" extends="struts-default">
+		<!-- 预批申请列表 -->
+		<action name="PreApproveApplyList" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveApplyList">
+	    	<result name="success">/jsp/dcfs/sce/preApproveApply/preapproveapply_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请修改/查看 -->
+		<action name="PreApproveApplyShow" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveApplyShow">
+			<result name="mod">/jsp/dcfs/sce/preApproveApply/preapproveapply_resive.jsp</result>
+	    	<result name="moddouble">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_doubleadd.jsp</result>
+	    	<result name="modsingle">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_singleadd.jsp</result>
+	    	<result name="show">/jsp/dcfs/sce/preApproveApply/preapproveapply_view.jsp</result>
+	    	<result name="infodouble">/jsp/dcfs/sce/preApproveApply/adoptivepersoninfo_doubleview.jsp</result>
+	    	<result name="infosingle">/jsp/dcfs/sce/preApproveApply/adoptivepersoninfo_singleview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	     <!-- 预批申请修改/查看(发布管理入口查看) -->
+		<action name="PreApproveApplyShowForFBGL" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveApplyShowForFBGL">
+			<result name="mod">/jsp/dcfs/sce/preApproveApply/preapproveapply_resive.jsp</result>
+	    	<result name="moddouble">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_doubleadd.jsp</result>
+	    	<result name="modsingle">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_singleadd.jsp</result>
+	    	<result name="show">/jsp/dcfs/sce/publishManager/fbgl_preapproveapply_view.jsp</result>
+	    	<result name="infodouble">/jsp/dcfs/sce/preApproveApply/adoptivepersoninfo_doubleview.jsp</result>
+	    	<result name="infosingle">/jsp/dcfs/sce/preApproveApply/adoptivepersoninfo_singleview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请保存/提交 -->
+		<action name="PreApproveApplySave" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveApplySave">
+	    	<result name="submit" type="chain">/preapproveapply/PreApproveApplyList</result>
+	    	<result name="save" type="chain">/preapproveapply/PreApproveApplyShow</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请批量提交 -->
+		<action name="PreApproveApplySubmit" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveApplySubmit">
+	    	<result name="success" type="chain">/preapproveapply/PreApproveApplyList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批申请批量删除 -->
+		<action name="PreApproveApplyDelete" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveApplyDelete">
+	    	<result name="success" type="chain">/preapproveapply/PreApproveApplyList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 抚育计划和组织意见添加查看操作 -->
+		<action name="PlanOpinionShow" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PlanOpinionShow">
+			<result name="showinfoEN1">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_doubleview.jsp</result>
+			<result name="showinfoCN1">/jsp/dcfs/sce/preApproveApply/preadoptioninfoCN_doubleview.jsp</result>
+	    	<result name="modinfoEN1">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_doubleadd.jsp</result>
+	    	<result name="showinfoEN2">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_singleview.jsp</result>
+	    	<result name="showinfoCN2">/jsp/dcfs/sce/preApproveApply/preadoptioninfoCN_singleview.jsp</result>
+	    	<result name="modinfoEN2">/jsp/dcfs/sce/preApproveApply/preadoptioninfoEN_singleadd.jsp</result>
+	    	
+	    	<result name="showchildEN">/jsp/dcfs/sce/preApproveApply/childinfo_view.jsp</result>
+	    	<result name="modplanEN">/jsp/dcfs/sce/preApproveApply/tendingplan_add.jsp</result>
+	    	<result name="showplanEN">/jsp/dcfs/sce/preApproveApply/tendingplan_view.jsp</result>
+	    	<result name="showplanCN">/jsp/dcfs/sce/preApproveApply/tendingplanCN_view.jsp</result>
+	    	<result name="modopinionEN">/jsp/dcfs/sce/preApproveApply/organopinion_add.jsp</result>
+	    	<result name="showopinionEN">/jsp/dcfs/sce/preApproveApply/organopinion_view.jsp</result>
+	    	<result name="showopinionCN">/jsp/dcfs/sce/preApproveApply/organopinionCN_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批审核结果通知 -->
+		<action name="PreApproveAuditResult" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveAuditResult">
+	    	<result name="success">/jsp/dcfs/sce/preApproveApply/preapproveaudit_resultview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 预批审核结果通知 -->
+		<action name="PreApproveRevokeReason" class="com.dcfs.sce.preApproveApply.PreApproveApplyAction" method="PreApproveRevokeReason">
+	    	<result name="success">/jsp/dcfs/sce/preApproveApply/revokereason_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	</package>
+</struts>

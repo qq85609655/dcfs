@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:adapter="base/resource/console/adapter/model" targetNamespace="base/resource/console/adapter/model" elementFormDefault="qualified">
+	<xs:element name="Adapters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="adapter" type="adapter:adapterType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="adapterType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="adapter_name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="ds_type" type="xs:string"/>
+			<xs:element name="impl_calss" type="xs:string"/>
+			<xs:element name="createtime" type="xs:date"/>
+			<xs:element name="creator" type="xs:string"/>
+			<xs:element name="modifytime" type="xs:date"/>
+			<xs:element name="modifier" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

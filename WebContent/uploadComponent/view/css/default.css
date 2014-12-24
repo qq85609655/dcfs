@@ -1,0 +1,45 @@
+/*<up:uploadList />标签中的列表中div大框架的css样式，如果显示时被页面中的其他样式影响可以对此处做处理，比如对其中的table 或 td加样式来屏蔽影响*/
+.init_queue_div table td{
+	border:0px!important;
+}
+
+
+a { 
+	color: #385ea2; 
+	text-decoration: none; 
+}
+a:hover { text-decoration: underline; }
+
+
+/* -- Table Styles ------------------------------- */
+td {
+	font: 10pt Helvetica, Arial, sans-serif;
+	vertical-align: top;
+}
+
+.message {
+	margin: 1em 0;
+	padding: 10px 20px;
+	border: solid 1px #FFDD99;
+	background-color: #FFFFCC;
+	overflow: hidden;
+}
+
+.red {
+	border: solid 1px #B50000;
+	background-color: #FFEBEB;
+}
+
+.green {
+	border: solid 1px #DDF0DD;
+	background-color: #EBFFEB;
+}
+
+.blue {
+	border: solid 1px #CEE2F2;
+	background-color: #F0F5FF;
+}
+
+.swfupload {
+	vertical-align: top;
+}

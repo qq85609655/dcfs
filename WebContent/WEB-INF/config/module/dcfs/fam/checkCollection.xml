@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="checkCollection" namespace="/fam/checkCollection" extends="struts-default">
+	
+		<!-- 支票托收列表 -->
+	    <action name="checkCollectionList" class="com.dcfs.fam.checkCollection.CheckCollectionAction" method="checkCollectionList">
+	    	<result name="success">/jsp/dcfs/fam/checkCollection/checkcollection_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 跳转到支票托收页面-->
+        <action name="checkCollectionShow" class="com.dcfs.fam.checkCollection.CheckCollectionAction" method="checkCollectionShow" >
+			<result name="success">/jsp/dcfs/fam/checkCollection/checkcollection_add.jsp</result>
+		</action>
+		
+		<!-- 支票托收提交 -->
+	    <action name="checkCollectionSave" class="com.dcfs.fam.checkCollection.CheckCollectionAction" method="checkCollectionSave">
+	    	<result name="success" type="chain">/checkCollection/checkCollectionList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	     <!-- 托收单查询 -->
+        <action name="colSearchList" class="com.dcfs.fam.checkCollection.CheckCollectionAction" method="colSearchList" >
+			<result name="success">/jsp/dcfs/fam/checkCollection/checkcollection_colsearch.jsp</result>
+		</action>
+		
+		<!-- 托收单打印页面-->
+        <action name="checkCollectionPrint" class="com.dcfs.fam.checkCollection.CheckCollectionAction" method="checkCollectionPrint" >
+			<result name="success">/jsp/dcfs/fam/checkCollection/checkcollection_print.jsp</result>
+		</action>
+	    
+	</package>
+</struts>

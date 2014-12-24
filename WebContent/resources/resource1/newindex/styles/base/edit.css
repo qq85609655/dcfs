@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/*功能菜单区域的样式*/
+.base .bz-action-frame {
+	width: 100%;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+
+.base .bz-action {
+	width: 98%;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 900;
+	padding: 0;
+	background-color: #FFF;
+	border-bottom: 1px solid #dddddd;
+}
+
+.base .bz-action .btn {
+	margin: 5px;
+}
+
+.base .bz-edit {
+	width: 98%;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	margin-top: 15px;
+	padding: 0px;
+}
+
+.base .bz-edit-warper {
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -5px;
+	background: url(images/tableheader.png) repeat-x center top;
+	min-width: 900px;
+	color: #669FC7;
+}
+
+.base .bz-edit-title {
+	font-size: 16px;
+	font-weight: bold;
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	border: 1px solid #DDD;
+}
+
+.bz-edit-data-content {
+	color: #000;
+}
+
+.base .bz-edit-data-content {
+	background-color: #FFF;
+	padding-bottom: 0;
+}
+
+.base .bz-edit-data-table td {
+	border: 1px solid #ddd;
+}
+
+.base .bz-edit-data {
+	display: inline;
+	float: left;
+	margin-top: 1px;
+	border-bottom: 1px solid #ddd;
+	background-color: #FFF;
+}
+
+.base .bz-edit-data-title {
+	text-align: right;
+	vertical-align: middle;
+	background-color: #EFF3F8;
+	margin-left: -1px;
+	line-height: 36px;
+	padding-right: 5px;
+	height: 36px;
+	font-size: 14px;
+}
+
+.base .bz-edit-data-value {
+	text-align: left;
+	vertical-align: middle;
+	background-color: none;
+	padding: 3px 5px 0px 5px;
+}

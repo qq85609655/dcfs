@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="linkman" namespace="/linkman" extends="struts-default" >
+	    <!-- 联系人手机变更记录 -->
+	    <action name="mobileChange" class="com.hx.framework.shortinfo.Mobile" method="search">
+			<result name="success" >/jsp/framework/shortinfo/mobileChange.jsp</result>
+		</action>
+	    <!-- 联系人列表 -->
+	    <action name="list" class="com.hx.framework.shortinfo.LinkManAction" method="query">
+			<result name="success" >/jsp/framework/shortinfo/linkmanList.jsp</result>
+		</action>
+		<!-- 新增联系人 -->
+		<action name="toadd" class="com.hx.framework.shortinfo.LinkManAction" method="toadd">
+			<result name="success" >/jsp/framework/shortinfo/addLinkMan.jsp</result>
+		</action>
+		<!-- 保存新增联系人 -->
+		<action name="add" class="com.hx.framework.shortinfo.LinkManAction" method="save">
+			<result name="success" type="redirect">/linkman/outerlist.action?ORGAN_ID=${ORGAN_ID}</result>
+		</action>
+		<!-- 跳转修改联系人 -->
+		<action name="toModify" class="com.hx.framework.shortinfo.LinkManAction" method="toModify">
+			<result name="success" >/jsp/framework/shortinfo/modLinkMan.jsp</result>
+		</action>
+		<!-- 保存修改联系人 -->
+		<action name="modify" class="com.hx.framework.shortinfo.LinkManAction" method="modify">
+			<result name="success" type="redirect">/linkman/outerlist.action?ORGAN_ID=${ORGAN_ID}</result>
+		</action>
+		<!-- 删除联系人 -->
+		<action name="delete" class="com.hx.framework.shortinfo.LinkManAction" method="deleteBatch">
+			<result name="success" type="redirect">/linkman/outerlist.action?ORGAN_ID=${ORGAN_ID}</result>
+		</action>
+		<!-- 查询联系人 -->
+		<action name="search" class="com.hx.framework.shortinfo.LinkManAction" method="search">
+			<result name="success">/jsp/framework/shortinfo/linkmanList.jsp</result>
+			<result name="innerperson">/jsp/framework/shortinfo/innerLinkMan.jsp</result>
+		</action>
+		<action name="search2" class="com.hx.framework.shortinfo.LinkManAction" method="search2">
+			<result name="success">/jsp/framework/shortinfo/outlinkmanList.jsp</result>
+		</action>
+		<action name="innerlist" class="com.hx.framework.shortinfo.LinkManAction" method="innerquery">
+			<result name="success">/jsp/framework/shortinfo/innerLinkMan.jsp</result>
+		</action>
+		<action name="outerlist" class="com.hx.framework.shortinfo.LinkManAction" method="outerquery">
+			<result name="success">/jsp/framework/shortinfo/outlinkmanList2.jsp</result>
+		</action>
+		
+		<action name="createWhiteList" class="com.hx.framework.shortinfo.LinkManAction" method="createWhiteList">
+			<result name="success"></result>
+		</action>
+		<!-- 批量保存内部联系人电话号码 -->
+		<action name="saveAllTel" class="com.hx.framework.shortinfo.LinkManAction" method="saveAllTel">
+			<result name="success" type="chain">
+				<param name="actionName">innerlist</param>
+				<param name="namespace">/linkman</param>
+				<param name="method">innerquery</param>
+			</result>
+		</action>
+	</package>
+	<package name="usergroup" namespace="/usergroup" extends="struts-default">
+		<action name="lookGroupOfPersonFrame" class="com.hx.framework.shortinfo.UserGroupAction" method="lookGroupOfPersonFrame">
+			<result>/jsp/framework/shortinfo/lookGroupOfPersonFrame.jsp</result>
+		</action>
+		<action name="lookLinkmansOfPersonFrame" class="com.hx.framework.shortinfo.UserGroupAction" method="lookLinkmansOfPersonFrame">
+			<result>/jsp/framework/shortinfo/lookLinkmansOfPersonFrame.jsp</result>
+		</action>
+		<action name="allotGroupsFrame" class="com.hx.framework.shortinfo.UserGroupAction" method="allotGroupsFrame">
+			<result>/jsp/framework/shortinfo/allotGroupsFrame.jsp</result>
+		</action>
+		<action name="doAllotGroups" class="com.hx.framework.shortinfo.UserGroupAction" method="doAllotGroups">
+		</action>
+		<action name="allotLinkmansFrame">
+			<result>/jsp/framework/shortinfo/allotLinkmansFrame.jsp</result>
+		</action>
+		<action name="doAllotLinkmans" class="com.hx.framework.shortinfo.UserGroupAction" method="doAllotLinkmans">
+		</action>
+		<action name="deleteLinkmansOfPerson" class="com.hx.framework.shortinfo.UserGroupAction" method="deleteLinkmansOfPerson">
+			<result name="success" type="redirect">/usergroup/lookLinkmansOfPerson.action?PERSON_ID=${PERSON_ID}</result>
+		</action>
+		<action name="deleteGroupsOfPerson" class="com.hx.framework.shortinfo.UserGroupAction" method="deleteGroupsOfPerson">
+			<result name="success" type="redirect">/usergroup/lookGroupOfPerson.action?PERSON_ID=${PERSON_ID}</result>
+		</action>
+		<action name="lookLinkmansOfPerson" class="com.hx.framework.shortinfo.UserGroupAction" method="lookLinkmansOfPerson">
+			<result name="success">/jsp/framework/shortinfo/lookLinkmansOfPersonList.jsp</result>
+		</action>
+		<action name="lookGroupOfPerson" class="com.hx.framework.shortinfo.UserGroupAction" method="lookGroupOfPerson">
+			<result name="success">/jsp/framework/shortinfo/lookGroupOfPersonList.jsp</result>
+		</action>
+		<action name="lookPurview" class="com.hx.framework.shortinfo.UserGroupAction" method="lookPurview">
+			<result name="success">/jsp/framework/shortinfo/lookGroupPersonsTree.jsp</result>
+		</action>
+		<action name="exportExcel" class="com.hx.framework.shortinfo.UserGroupAction" method="exportExcel">
+		</action>
+		<action name="allotLinkmans" class="com.hx.framework.shortinfo.UserGroupAction" method="allotLinkmans">
+			<result name="success">/jsp/framework/shortinfo/allotLinkmans.jsp</result>
+		</action>
+		<action name="linkmansTree" class="com.hx.framework.shortinfo.UserGroupAction" method="linkmansTree">
+			<result name="success">/jsp/framework/shortinfo/linkmansTree.jsp</result>
+		</action>
+		<action name="allotGroups" class="com.hx.framework.shortinfo.UserGroupAction" method="allotGroups">
+			<result name="success">/jsp/framework/shortinfo/allotGroups.jsp</result>
+		</action>
+		<action name="list" class="com.hx.framework.shortinfo.UserGroupAction" method="query">
+			<result name="success">/jsp/framework/shortinfo/usergroupList.jsp</result>
+		</action>
+		<action name="generateTree" class="com.hx.framework.shortinfo.UserGroupAction" method="generateTree">
+			<result name="selectOrganTree">/jsp/framework/authorize/selectOrganTree.jsp</result>
+		</action>
+		<action name="personList" class="com.hx.framework.shortinfo.UserGroupAction" method="personList">
+			<result name="success">/jsp/framework/shortinfo/personList.jsp</result>
+		</action>
+		<action name="personList1" class="com.hx.framework.shortinfo.UserGroupAction" method="personList1">
+			<result name="success">/jsp/framework/shortinfo/personList1.jsp</result>
+		</action>
+		<action name="tosetgroup" class="com.hx.framework.shortinfo.UserGroupAction" method="tosetgroup">
+			<result name="success">/jsp/framework/shortinfo/setgroup.jsp</result>
+		</action>
+		<action name="tosetgroup1" class="com.hx.framework.shortinfo.UserGroupAction" method="tosetgroup1">
+			<result name="success">/jsp/framework/shortinfo/setgroup1.jsp</result>
+		</action>
+		<action name="ajaxOrg" class="com.hx.framework.shortinfo.UserGroupAction" method="ajaxPersonofOrg">
+		</action>
+		<action name="ajaxPos" class="com.hx.framework.shortinfo.UserGroupAction" method="ajaxPersonofPos">
+		</action>
+		<action name="ajaxLink" class="com.hx.framework.shortinfo.UserGroupAction" method="ajaxPersonofLinkMan">
+		</action>
+		<action name="add" class="com.hx.framework.shortinfo.UserGroupAction" method="add">
+			<result name="success" type="chain">
+				<param name="actionName">list</param>
+				<param name="namespace">/usergroup</param>
+				<param name="method">query</param>
+				<param name="GROUP_TYPE">${GROUP_TYPE}</param>
+				<param name="reValue">${reValue}</param>
+			</result>
+		</action>
+		<action name="toModify" class="com.hx.framework.shortinfo.UserGroupAction" method="toModify">
+			<result name="success">/jsp/framework/shortinfo/modGroup.jsp</result>
+		</action>
+		<action name="modify" class="com.hx.framework.shortinfo.UserGroupAction" method="modify">
+			<result name="success" type="redirect">/usergroup/list.action</result>
+		</action>
+		<action name="showGroup" class="com.hx.framework.shortinfo.UserGroupAction" method="showGroup">
+			<result name="success">/jsp/framework/shortinfo/userGroup.jsp</result>
+		</action>
+		<action name="delete" class="com.hx.framework.shortinfo.UserGroupAction" method="delGroup">
+			<result name="success" type="chain">
+				<param name="actionName">list</param>
+				<param name="namespace">/usergroup</param>
+				<param name="method">query</param>
+				<param name="GROUP_TYPE">${GROUP_TYPE}</param>
+			</result>
+		</action>
+		
+		<action name="outLinkman" class="com.hx.framework.shortinfo.UserGroupAction" method="outLinkman">
+			<result name="success" >/jsp/framework/shortinfo/outlinkmanList.jsp</result>
+		</action>
+	</package>
+	<package name="sendMessage" namespace="/sendMessage" extends="struts-default">
+		<!-- 发短信 -->
+		<action name="tosend" class="com.hx.framework.shortinfo.SendAction" method="toSend">
+			<result name="success">/jsp/framework/shortinfo/send.jsp</result>
+		</action>
+		<!--转发给其他人  -->
+		<action name="tosendOther" class="com.hx.framework.shortinfo.SendAction" method="toSendOther">
+			<result name="success">/jsp/framework/shortinfo/sendOther.jsp</result>
+		</action>
+		<!-- 重新发送 -->
+		<action name="resend" class="com.hx.framework.shortinfo.SendAction" method="reSend">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/doneinfo</param>
+				<param name="method">query</param>
+				<param name="reValue">${reValue}</param>
+			</result>	
+		</action>
+		<!-- 草稿编辑 -->
+		<action name="toedit" class="com.hx.framework.shortinfo.SendAction" method="toEdit">
+			<result name="success">/jsp/framework/shortinfo/send_modify.jsp</result>
+		</action>
+		<action name="sendModify" class="com.hx.framework.shortinfo.SendAction" method="sendModify">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/doneinfo</param>
+				<param name="method">query</param>
+			</result>	
+			<result name="draft" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/outline</param>
+				<param name="method">query</param>
+				<param name="reValue">${reValue}</param>
+			</result>		
+		</action>
+		<action name="send" class="com.hx.framework.shortinfo.SendAction" method="send">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/doneinfo</param>
+				<param name="method">query</param>
+				<param name="reValue">${reValue}</param>
+			</result>	
+			<result name="draft" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/outline</param>
+				<param name="method">query</param>
+			</result>			
+		</action>
+		<action name="getGroup" class="com.hx.framework.shortinfo.SendAction" method="getGroup">
+			<result name="success">/jsp/framework/shortinfo/selec.jsp</result>
+		</action>
+		<action name="ajaxGetPersonInfo" class="com.hx.framework.shortinfo.SendAction" method="ajaxGetPersonInfo">
+		</action>
+	</package>
+	<package name="doneinfo" namespace="/doneinfo" extends="struts-default">
+		<action name="list" class="com.hx.framework.shortinfo.DoneInfoAction" method="query">
+			<result name="success">/jsp/framework/shortinfo/doneShortInfo.jsp</result>
+		</action>
+		<action name="list2" class="com.hx.framework.shortinfo.DoneInfoAction" method="query2">
+			<result name="success">/jsp/framework/shortinfo/doneShortInfo2.jsp</result>
+		</action>
+		<action name="toreceipt" class="com.hx.framework.shortinfo.DoneInfoAction" method="toreceipt">
+			<result name="success">/jsp/framework/shortinfo/receiptInfo.jsp</result>
+		</action>
+		<action name="search" class="com.hx.framework.shortinfo.DoneInfoAction" method="search">
+			<result name="success">/jsp/framework/shortinfo/doneShortInfo.jsp</result>
+		</action>
+		<action name="searchNoMgr" class="com.hx.framework.shortinfo.DoneInfoAction" method="searchNoMgr">
+			<result name="success">/jsp/framework/shortinfo/doneShortInfoNoMgr.jsp</result>
+		</action>
+		<action name="send" class="com.hx.framework.shortinfo.DoneInfoAction" method="send">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/outline</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+	</package>
+	<package name="outline" namespace="/outline" extends="struts-default">
+		<action name="list" class="com.hx.framework.shortinfo.OutLineAction" method="query">
+			<result name="success">/jsp/framework/shortinfo/outlineList.jsp</result>
+		</action>
+		<action name="delete" class="com.hx.framework.shortinfo.OutLineAction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/outline</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+		<action name="search" class="com.hx.framework.shortinfo.OutLineAction" method="search">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/outline</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+	</package>
+	<package name="magzine" namespace="/magzine" extends="struts-default">
+		<action name="list" class="com.hx.framework.shortinfo.MagzineAction" method="query">
+			<result name="success">/jsp/framework/shortinfo/magzine/magzineList.jsp</result>
+		</action>
+		<action name="toadd" class="com.hx.framework.shortinfo.MagzineAction" method="toadd">
+			<result name="success">/jsp/framework/shortinfo/magzine/magzineAdd.jsp</result>
+		</action>
+		<action name="add" class="com.hx.framework.shortinfo.MagzineAction" method="add">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/magzine</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+		<action name="tomodify" class="com.hx.framework.shortinfo.MagzineAction" method="tomodify">
+			<result name="success">/jsp/framework/shortinfo/magzine/magzineModify.jsp</result>
+		</action>
+		<action name="modify" class="com.hx.framework.shortinfo.MagzineAction" method="modify">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/magzine</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+		<action name="delete" class="com.hx.framework.shortinfo.MagzineAction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/magzine</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+	</package>
+	<package name="shortInfoManager" namespace="/shortInfoManager" extends="struts-default">
+		<action name="index" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="index">	
+			<result name="success">/jsp/framework/shortinfo/shortInfoManager/managerIndex.jsp</result>
+		</action>
+		<action name="generateTree" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="generateTree">
+			<result name="partTree">/jsp/framework/shortinfo/shortInfoManager/partTree.jsp</result>
+		</action>
+		<action name="list" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="query">
+			<result name="success">/jsp/framework/shortinfo/shortInfoManager/managerList.jsp</result>
+		</action>
+		<action name="toadd" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="toadd">
+			<result name="success">/jsp/framework/shortinfo/shortInfoManager/managerAdd.jsp</result>
+		</action>
+		<action name="tomodify" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="tomodify">
+			<result name="success">/jsp/framework/shortinfo/shortInfoManager/managerModify.jsp</result>
+		</action>
+		<action name="delete" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/shortInfoManager</param>
+				<param name="method">query</param>
+				<param name="MAGZINE_ID">${MAGZINE_ID}</param>
+			</result>
+		</action>
+		<action name="add" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="add">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/shortInfoManager</param>
+				<param name="method">query</param>
+				<param name="MAGZINE_ID">${MAGZINE_ID}</param>
+			</result>
+		</action>
+		<action name="modify" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="modify">
+			<result name="success" type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/shortInfoManager</param>
+				<param name="method">query</param>
+				<param name="MAGZINE_ID">${MAGZINE_ID}</param>
+			</result>
+		</action>
+		<action name="preShow" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="queryPre">
+			<result name="success">/jsp/framework/shortinfo/shortInfoManager/managerPreShow.jsp</result>
+		</action>
+		<action name="search" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="searchPre">
+			<result name="success">/jsp/framework/shortinfo/shortInfoManager/managerPreShow.jsp</result>
+		</action>
+		
+		<!-- 短信统计 -->
+		<action name="PublishStat" class="com.hx.framework.shortinfo.ShortInfoManagerAction" method="publishStat">	
+			<result>/jsp/framework/shortinfo/publishStatList.jsp</result>
+		</action>
+	</package>
+</struts>

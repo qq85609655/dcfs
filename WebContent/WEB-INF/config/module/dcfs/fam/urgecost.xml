@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="urgecost" namespace="/fam/urgecost" extends="struts-default">
+		<!-- 费用催缴列表 -->
+	    <action name="UrgeCostList" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostList">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/urgecost_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 催缴通知添加/修改 -->
+	    <action name="UrgeCostNoticeShow" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostNoticeShow">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/urgecostnotice_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 催缴通知保存 -->
+	    <action name="UrgeCostNoticeSave" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostNoticeSave">
+	    	<result name="save" type="chain">/urgecost/UrgeCostNoticeShow</result>
+	    	<result name="submit" type="chain">/urgecost/UrgeCostList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 跳转统计录入页面 -->
+	    <action name="UrgeCostNoticeBatchAdd" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostNoticeBatchAdd">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/urgecostnotice_batchadd.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 跳转统计录入页面 -->
+	    <action name="UrgeCostStatisticsList" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostStatisticsList">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/urgecostnotice_batchadd.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 统计录入催缴通知保存 -->
+	    <action name="UrgeCostBatchNoticeSave" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostBatchNoticeSave">
+	    	<result name="success" type="chain">/urgecost/UrgeCostList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 查看相应的文件儿童列表信息 -->
+	    <action name="ShowFileChildList" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="ShowFileChildList">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/showfilechild_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 催缴通知批量删除 -->
+	    <action name="UrgeCostNoticeBatchDelete" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostNoticeBatchDelete">
+	    	<result name="success" type="chain">/urgecost/UrgeCostList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 催缴通知批量发送 -->
+	    <action name="UrgeCostNoticeBatchSubmit" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostNoticeBatchSubmit">
+	    	<result name="success" type="chain">/urgecost/UrgeCostList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 催缴通知反馈信息录入 -->
+	    <action name="UrgeCostFeedBackAdd" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostFeedBackAdd">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/urgecostfeedback_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 催缴通知反馈信息保存 -->
+	    <action name="UrgeCostFeedBackSave" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostFeedBackSave">
+	    	<result name="success" type="chain">/urgecost/UrgeCostList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 到账反馈信息录入 -->
+	    <action name="UrgeCostReceiveAdd" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostReceiveAdd">
+	    	<result name="success">/jsp/dcfs/fam/urgeCost/urgecostreceive_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 到账反馈信息保存 -->
+	    <action name="UrgeCostReceiveSave" class="com.dcfs.fam.urgeCost.UrgeCostAction" method="UrgeCostReceiveSave">
+	    	<result name="success" type="chain">/urgecost/UrgeCostList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	</package>
+</struts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="leaderSing" namespace="/leaderSing" extends="struts-default" >
+		<!-- 查询待签批列表 -->
+        <action name="findSignlist" class="com.dcfs.ncm.leaderSign.LeaderSignAction" method="FindLeaderSignList" >
+			<result name="success">/jsp/dcfs/ncm/leadersign/leaderSignList.jsp</result>
+		</action>
+		<!-- 进入签批数据表单 -->
+		<action name="inSignfrom" class="com.dcfs.ncm.leaderSign.LeaderSignAction" method="InSignfrom" >
+			<result name="success">/jsp/dcfs/ncm/leadersign/signConfirm.jsp</result>
+		</action>
+		<!-- 签批确认 -->
+		<action name="signConfirm" class="com.dcfs.ncm.leaderSign.LeaderSignAction" method="SignConfirm" >
+			<result name="success" type="chain">findSignlist</result>
+		</action>
+		<!-- 签批确认（批量） -->
+		<action name="signConfirmAll" class="com.dcfs.ncm.leaderSign.LeaderSignAction" method="signConfirmAll" >
+			<result name="success" type="chain">findSignlist</result>
+		</action>
+		<!-- 签批提醒：办公室功能 -->
+        <action name="signRemind" class="com.dcfs.ncm.leaderSign.LeaderSignAction" method="FindLeaderSignList" >
+			<result name="success">/jsp/dcfs/ncm/leadersign/signRemind.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,13 @@
+/* 容器 */
+.in-qq {height:220px;border:0px solid #A6CAF0;margin:10px auto}
+.in-qq dt{height:40px;background:url(../images/i.png) no-repeat 0 -400px;position:relative}
+.in-qq dt a{float:right;margin:12px;color:#666}
+.in-qq dd{width:210px;height:180px;margin:12px 10px 10px 27px;float:left;display:inline}
+.in-qq dd i{width:13px;height:13px;background:url(../images/a.png) no-repeat -177px -40px;float:right;margin-top:-26px}
+.in-qq dd a{color:#666;border-bottom:4px solid #fff;line-height:30px;display:block}
+.in-qq dd a:hover{color:#390;border-bottom:4px solid #A6CAF0;text-decoration:none}
+
+/* 未知大小的图片在已知容器中的垂直居中和水平居中 */
+.in-qq dd img{margin-top:expression(100-this.height/2);max-height:150px}/* max-height可限制图片的最大高度 */
+.in-qq dd p{width:238px;height:158px;border:1px solid #EEE;overflow:hidden;text-align:center;vertical-align:middle;display:table-cell}
+/* 未知大小的图片在已知容器中的垂直居中和水平居中 */

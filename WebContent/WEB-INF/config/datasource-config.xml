@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources groupName="orcle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schema/datasource-config.xsd">
+	<group name="orcle">
+		  <datasource name="breezeCode" connectionType="jdbc" >
+			<description>breeze</description>
+			<driverClass defaultPool="false" maxConnection="100" minConnection="1"
+				incrementBy="1" releaseBy="1" timeOut="5000" autoClose="true"
+				threadStickiness="true" idleTime="1000">oracle.jdbc.driver.OracleDriver
+			</driverClass>
+			<connectionUrl name="test1">jdbc:oracle:thin:@localhost:1521:orcl
+			</connectionUrl>
+			<userName>dcfs</userName>
+			<password>dcfs</password>
+			<validatorQuery>select * from BZ_SYS_RSTYPE</validatorQuery>
+			<detectLeaks detect="false" leakTime="10000" pollThreadTime="5000">
+				hx.database.smartpool.LeakDetectorImpl</detectLeaks>
+		</datasource> 
+		<datasource name="breeze" connectionType="jdbc"  default="true" >
+			<description>breeze</description>
+			<driverClass defaultPool="false" maxConnection="100" minConnection="1"
+				incrementBy="1" releaseBy="1" timeOut="5000" autoClose="true"
+				threadStickiness="true" idleTime="1000">oracle.jdbc.driver.OracleDriver
+			</driverClass>
+			<connectionUrl name="test1">jdbc:oracle:thin:@localhost:1521:orcl
+			</connectionUrl>
+			<userName>dcfs</userName>
+			<password>dcfs</password>
+			<validatorQuery>select * from BZ_SYS_RSTYPE</validatorQuery>
+			<detectLeaks detect="false" leakTime="10000" pollThreadTime="5000">
+				hx.database.smartpool.LeakDetectorImpl</detectLeaks>
+		</datasource>
+		<datasource name="setup" connectionType="jdbc" >
+			<description>breeze</description>
+			<driverClass defaultPool="false" maxConnection="100" minConnection="1"
+				incrementBy="1" releaseBy="1" timeOut="5000" autoClose="true"
+				threadStickiness="true" idleTime="1000">oracle.jdbc.driver.OracleDriver
+			</driverClass>
+			<connectionUrl name="test1">jdbc:oracle:thin:@localhost:1521:orcl
+			</connectionUrl>
+			<userName>dcfs</userName>
+			<password>dcfs</password>
+			<validatorQuery>select * from BZ_SYS_RSTYPE</validatorQuery>
+			<detectLeaks detect="false" leakTime="10000" pollThreadTime="5000">
+				hx.database.smartpool.LeakDetectorImpl</detectLeaks>
+		</datasource>
+	</group>
+</datasources>

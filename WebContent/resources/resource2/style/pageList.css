@@ -1,0 +1,108 @@
+/*∑≠“≥œ‡πÿ*/
+.toolbarTable {
+	width:100%;
+	border :1px solid #cacdd0;
+	background-image:url(../images/page/footerBg.gif); 
+	font-size: 14px;
+}
+
+.pageNav {
+	background-color:transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 0px  #dddddd none;
+	width:20px;
+	height:25px;
+	cursor:pointer;
+	vertical-align: -2px;
+	margin-right: 3px;
+}
+.jumpPage {
+background-image:url(../images/page/gotoPage.gif);
+
+}
+.firstPage {
+background-image:url(../images/page/firstPage.gif);
+}
+
+.prevPage {
+background-image:url(../images/page/prevPage.gif);
+}
+
+.nextPage {
+background-image:url(../images/page/nextPage.gif);
+}
+
+.lastPage {
+background-image:url(../images/page/lastPage.gif);
+}
+
+.firstPageD {
+background-image:url(../images/page/firstPageDisabled.gif);
+}
+
+.prevPageD {
+background-image:url(../images/page/prevPageDisabled.gif);
+}
+
+.nextPageD {
+background-image:url(../images/page/nextPageDisabled.gif);
+}
+
+.lastPageD {
+background-image:url(../images/page/lastPageDisabled.gif);
+}
+
+.jumpPageInput {
+	vertical-align: 1px;
+	height:17px;
+	width:25px;
+	padding-top:1px;
+	margin-top:0px;
+	border:1px solid #337799; 
+	display:inline-block;
+}
+
+.separatorTool {
+	font-size:1px;
+	padding:2px;
+	width:3px;
+	background-image:url(../images/page/separator.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.pageSizeTool {
+padding-top:2px;
+padding-left:2px;
+width:90px;
+}
+
+.pageJumpTool {
+text-align:center;
+padding:0px 3px 0px 3px;
+white-space:nowrap;word-break:keep-all;word-wrap:normal;
+}
+
+.exportTool {
+text-align:center;
+white-space:nowrap;word-break:keep-all;word-wrap:normal;
+}
+
+.extendTool {
+text-align:center;
+width:99%;
+white-space:nowrap;word-break:keep-all;word-wrap:normal;
+}
+
+.extendTool A {
+display:inline;
+white-space:nowrap;word-break:keep-all;word-wrap:normal;
+}
+
+.statusTool {
+	border:0px solid red;
+	padding:2px 3px 0px 3px;
+	text-align: right;
+	white-space:nowrap;word-break:keep-all;word-wrap:normal;
+}

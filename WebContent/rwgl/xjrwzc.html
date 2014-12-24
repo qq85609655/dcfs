@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<title>新建数据源第二步</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F4F9FF;
+}
+-->
+</style>
+</head>
+<script>
+
+function cancelback(){
+	document.location.href="rwzc.html";
+}
+function saveData(){
+	alert("保存");
+}
+</script>
+<body>
+<form>
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="text01">
+  <tr>
+    <td height="18"  valign="middle"><img src="../images/currentpositionbg.jpg" width="8" height="18" id="positionimg"/><div class="currentposition"><strong>&nbsp;当前位置：数据交换平台-&gt; 任务管理-&gt;任务注册-&gt;新建任务注册</strong></div></td>
+    <td  class="currentposition" align="right"><strong></strong></td>
+    <td width="4%" align="right"> 
+    <div align="right"><img src="image/wenhao.jpg" width="16" height="16"></div>
+    </td>
+    <td width="9%"> 
+      <div align="center"><font color="FF6D00"><a href="#" class="A_Help">使用帮助</a></font></div>
+    </td>
+  </tr>
+</table>
+<br>
+<br>	
+<table width="60%" border="0" cellpadding="1" cellspacing="1" align="center" class="text01" bgcolor="#FFFFFF">
+<tr>
+<td>
+<fieldset>
+<table width="100%" border="0" cellpadding="1" cellspacing="1" align="center" >
+<tr><td align="left" nowrap> 任务名称：</td>
+<td><input type="text" name="datasourcename" size="20" maxlength="100"></td></tr>
+<tr><td align="left" nowrap>运行方式：</td><td><select name="selSystem">
+  <option value="0" selected>串行</option>
+  <option value="1">并行</option>
+</select></td></tr>
+<tr><td align="left" nowrap>运行前提：</td><td><select name="selSystem">
+  <option value="0" selected>工作执行失败停止</option>
+  <option value="1">工作执行失败继续</option>
+</select></td></tr>
+<tr><td align="left" nowrap>优先级：</td><td><select name="yxj">
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select></td></tr>
+<tr><td align="left" nowrap>任务超时设置（秒）：</td><td><input name="srcUrl" type="text" size="10" maxlength="15"></td></tr>
+<tr><td align="left" nowrap>预测运行时间（秒）：</td><td><input  type="text" name="dbname" size="10" maxlength="15"></td></tr>
+<tr><td align="left" nowrap>调度方式：</td><td><select name="selSystem">
+  	<option value="">不调度</option>
+	<option value="00">固定时间</option>
+	<option value="hh" >小时间隔</option>
+	<option value="dd" selected>天间隔</option>
+	<option value="ww" >每周</option>
+	<option value="mm" >每月</option>
+</select></td></tr>
+<tr><td align="left" nowrap>开始日期：</td><td><input  type="text" name="dbname" size="10" maxlength="15"></td></tr>
+<tr><td align="left" nowrap>开始时间：</td><td><input  type="text" name="dbname" size="10" maxlength="15"></td></tr>
+<tr><td align="left" nowrap>结束日期：</td><td><input  type="text" name="dbname" size="10" maxlength="15"></td></tr>
+<tr><td align="left" nowrap>结束时间：</td><td><input  type="text" name="dbname" size="10" maxlength="15"></td></tr>
+<tr><td height="14" align="left" colspan="2"><strong>调度明细信息</strong></td></tr>
+<tr><td height="14" align="left" nowrap>间隔：</td><td><input  type="text" name="dbname" size="10" maxlength="15">天</td></tr>
+</table>
+</fieldset>
+</td>
+</tr>
+</table>
+<br>
+<table width="60%" border="0" cellpadding="1" cellspacing="1" align="center" class="text01">
+<tr><td align="center"><input type="button" name="next" value="保存" onclick="saveData();" class="input01">&nbsp;&nbsp; <input type="button" name="cancel" value="返回" onclick="cancelback();" class="input01"></td></tr>
+</table>
+</form>
+</body>
+</html>
+

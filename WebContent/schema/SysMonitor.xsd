@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:monitorinfo="http://www.21softech.com/resource/console/monitorinfo/model" targetNamespace="http://www.21softech.com/resource/console/monitorinfo/model" elementFormDefault="qualified">
+	<xs:element name="MonitorInfos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="monitorInfo" type="monitorinfo:monitorInfoType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="monitorInfoType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="sourceId" type="xs:string"/>
+			<xs:element name="sourceName" type="xs:string"/>
+			<xs:element name="DesId" type="xs:string"/>
+			<xs:element name="DesName" type="xs:string"/>
+			<xs:element name="status" type="xs:int"/>
+			<xs:element name="Monitor_Time" type="xs:dateTime"/>
+			<xs:element name="Return_Time" type="xs:dateTime"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

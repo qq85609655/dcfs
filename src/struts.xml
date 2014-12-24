@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+
+<constant name="struts.i18n.encoding" value="GBK"/>
+
+<!-- 包含配置文件在此添加,此处不允许注册Action -->
+<include file="../config/module/framework/apps.xml"/>
+<include file="../config/module/framework/archive.xml"/>
+<include file="../config/module/framework/audit.xml"/>
+<include file="../config/module/framework/authentication.xml"/>
+<include file="../config/module/framework/cluster.xml"/>
+<include file="../config/module/framework/clickcount.xml"/>
+<include file="../config/module/framework/ldap.xml"/>
+<include file="../config/module/framework/log.xml"/>
+<include file="../config/module/framework/menu.xml"/>
+<include file="../config/module/framework/module.xml"/>
+<include file="../config/module/framework/navigation.xml"/>
+<include file="../config/module/framework/organ.xml"/>
+<include file="../config/module/framework/portal.xml"/>
+<include file="../config/module/framework/position.xml"/>
+<include file="../config/module/framework/positiongrade.xml"/>
+<include file="../config/module/framework/propextend.xml"/>
+<include file="../config/module/framework/resources.xml"/>
+<include file="../config/module/framework/security.xml"/>
+<include file="../config/module/framework/shortinfo.xml"/>
+<include file="../config/module/framework/sync.xml"/>
+<include file="../config/module/framework/setup.xml"/>
+
+<!-- DCFS -->
+
+<!-- 文件 Begin -->
+<include file="../config/module/dcfs/ffs/registration.xml"/>
+<include file="../config/module/dcfs/ffs/fileaudit.xml"/>
+<include file="../config/module/dcfs/ffs/filemanager.xml"/>
+<include file="../config/module/dcfs/ffs/ffs_af_translation.xml"/>
+<include file="../config/module/dcfs/ffs/transferManager.xml"/>
+<include file="../config/module/dcfs/ffs/auditOpinionTem.xml"/>
+<include file="../config/module/dcfs/ffs/pauseFile.xml"/>
+<include file="../config/module/dcfs/ffs/transferManager.xml"/>
+<!-- 文件End -->
+
+<!-- 材料 Begin -->
+<include file="../config/module/dcfs/cms/childmanager.xml"/>
+<include file="../config/module/dcfs/cms/childaddition.xml"/>
+<include file="../config/module/dcfs/cms/childupdate.xml"/>
+<include file="../config/module/dcfs/cms/childstadd.xml"/>
+<include file="../config/module/dcfs/cms/childreturn.xml"/>
+<include file="../config/module/dcfs/cms/childtranslation.xml"/>
+<!-- 材料 End -->
+
+<!-- 退文及退材料 Begin -->
+<include file="../config/module/dcfs/rfm/insteadRecord.xml"/>
+<include file="../config/module/dcfs/rfm/BGSconfirm.xml"/>
+<include file="../config/module/dcfs/rfm/DABconfirm.xml"/>
+<include file="../config/module/dcfs/rfm/DABdisposal.xml"/>
+<include file="../config/module/dcfs/rfm/SHBconfirm.xml"/>
+<include file="../config/module/dcfs/rfm/AZQconfirm.xml"/>
+<!-- 退文及退材料 End -->
+
+<!-- 机构备案 Begin -->
+<include file="../config/module/dcfs/mkr/USAConvention.xml"/>
+<include file="../config/module/dcfs/mkr/MAINCountry.xml"/>
+<include file="../config/module/dcfs/mkr/orgExpMgr.xml"/>
+<include file="../config/module/dcfs/mkr/orgSupMgr.xml"/>
+<!-- 机构备案 End -->
+
+
+<!-- 儿童匹配 Begin -->
+<include file="../config/module/dcfs/ncm/match.xml"/>
+<include file="../config/module/dcfs/ncm/normalMatch.xml"/>
+<include file="../config/module/dcfs/ncm/specialMatch.xml"/>
+<include file="../config/module/dcfs/ncm/matchAudit.xml"/>
+<include file="../config/module/dcfs/ncm/advice.xml"/>
+<include file="../config/module/dcfs/ncm/notice.xml"/>
+<include file="../config/module/dcfs/ncm/leaderSign.xml"/>
+
+<include file="../config/module/dcfs/ncm/childInfoReturn.xml"/>
+<!-- 儿童匹配 End -->
+
+<!-- 收养登记Begin-->
+<include file="../config/module/dcfs/far/appointment.xml"/>
+<include file="../config/module/dcfs/far/adoptionRegis.xml"/>
+<!-- 收养登记End -->
+
+<!-- 安置后报告Begin-->
+<include file="../config/module/dcfs/pfr/feedback.xml"/>
+<!-- 安置后报告End -->
+
+<!-- 特需办理 Begin -->
+<include file="../config/module/dcfs/sce/lockchild.xml"/>
+<include file="../config/module/dcfs/sce/publishManager.xml"/>
+<include file="../config/module/dcfs/sce/publishPlan.xml"/>
+<include file="../config/module/dcfs/sce/additional.xml"/>
+<include file="../config/module/dcfs/sce/addTranslation.xml"/>
+<include file="../config/module/dcfs/sce/addMaterial.xml"/>
+<include file="../config/module/dcfs/sce/fileRemind.xml"/>
+<include file="../config/module/dcfs/sce/preapproveapply.xml"/>
+<include file="../config/module/dcfs/sce/preapproveaudit.xml"/>
+<include file="../config/module/dcfs/sce/pubRecord.xml"/>
+<include file="../config/module/dcfs/sce/overageRemind.xml"/>
+<include file="../config/module/dcfs/sce/setSettle.xml"/>
+<include file="../config/module/dcfs/sce/reqInfo.xml"/>
+<include file="../config/module/dcfs/sce/extensionapply.xml"/>
+<include file="../config/module/dcfs/sce/opinionTem.xml"/>
+<include file="../config/module/dcfs/sce/translation.xml"/>
+<!-- 特需办理 End -->
+
+<!-- 退文及退材料 Begin -->
+<include file="../config/module/dcfs/rfm/insteadRecord.xml"/>
+<include file="../config/module/dcfs/rfm/BGSconfirm.xml"/>
+<include file="../config/module/dcfs/rfm/DABconfirm.xml"/>
+<include file="../config/module/dcfs/rfm/DABdisposal.xml"/>
+<include file="../config/module/dcfs/rfm/SHBconfirm.xml"/>
+<include file="../config/module/dcfs/rfm/AZQconfirm.xml"/>
+<!-- 退文及退材料 End -->
+
+<!-- 费用 Begin -->
+<include file="../config/module/dcfs/fam/billRegistration.xml"/>
+<include file="../config/module/dcfs/fam/checkCollection.xml"/>
+<include file="../config/module/dcfs/fam/receiveconfirm.xml"/>
+<include file="../config/module/dcfs/fam/completeCost.xml"/>
+<include file="../config/module/dcfs/fam/urgecost.xml"/>
+<include file="../config/module/dcfs/fam/balanceaccount.xml"/>
+<!-- 费用 End -->
+
+<!-- 机构备案 Begin -->
+<include file="../config/module/dcfs/mkr/USAConvention.xml"/>
+<include file="../config/module/dcfs/mkr/MAINCountry.xml"/>
+<include file="../config/module/dcfs/mkr/orgExpMgr.xml"/>
+<include file="../config/module/dcfs/mkr/orgSupMgr.xml"/>
+<!-- 机构备案 End -->
+
+<!-- 机构信息维护 Begin -->
+<include file="../config/module/dcfs/mkr/iim_reg_info.xml"/>
+<!-- 机构信息维护 End -->
+
+<!-- 综合查询 Begin -->
+<include file="../config/module/dcfs/igq/BGSFileSearch.xml"/>
+<!-- 综合查询 End -->
+
+<!-- 批量附件管理 Begin -->
+<include file="../config/module/dcfs/common/batchattmanager.xml"/>
+<include file="../config/module/dcfs/common/att_small_type.xml"/>
+<include file="../config/module/dcfs/common/att_package.xml"/>
+<!-- 批量附件管理 end -->
+
+
+<!-- 通知公告 Begin -->
+<include file="../config/module/dcfs/common/noticeManage.xml"/>
+<!-- 通知公告 end -->
+
+<!-- 定时器调用业务相关 Begin -->
+
+<include file="../config/module/dcfs/timer/timerDispatch.xml"/>
+<!-- 定时器调用业务相关 Begin -->
+
+<!-- 内容管理 Begin -->
+<include file="../config/module/cms/article.xml"/>
+<include file="../config/module/cms/auth.xml"/>
+<include file="../config/module/cms/channel.xml"/>
+<!-- 内容管理 end -->
+</struts>

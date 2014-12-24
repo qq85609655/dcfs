@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts> 
+	<package name="audit" extends="struts-default" namespace="/audit">
+	
+		<!-- 审核类型处理器 -->
+		<action name="AuditType" class="com.hx.framework.audit.AuditTypeAction">
+            <result>/jsp/framework/audit/AuditType.jsp</result>
+            <result name="delete">/jsp/framework/audit/AuditType.jsp</result>
+            <result name="addjsp">/jsp/framework/audit/AuditTypeAdd.jsp</result>
+            <result name="modifyjsp">/jsp/framework/audit/AuditTypeModify.jsp</result>
+            <result name="detail">/jsp/framework/audit/AuditTypeDetail.jsp</result>
+            <result name="adderror">/jsp/framework/audit/AuditAddError.jsp</result>
+        </action>
+        
+        <!-- 应用行为审核 -->
+        <action name="AuditPub" class="com.hx.framework.audit.AuditPubAction">
+            <result>/jsp/framework/audit/AuditPub.jsp</result>
+            <result name="detail">/jsp/framework/audit/AuditPubDetail.jsp</result>
+        </action>
+        
+        <!-- 系统行为审核
+        <action name="AuditSys" class="com.hx.framework.audit.AuditSystemAction">
+            <result>/jsp/framework/audit/AuditSystem.jsp</result>
+            <result name="detail">/jsp/framework/audit/AuditSystemDetail.jsp</result>
+        </action>
+         -->
+        
+        <!-- 管理员操作 -->
+        <action name="findAdminAction" class="com.hx.framework.audit.AuditSystemAction" method="findAdminAction" >
+            <result>/jsp/framework/audit/findAdminAction.jsp</result>
+            <result name="detail">/jsp/framework/audit/AuditSystemDetail.jsp</result>
+        </action>
+         <!-- 用户登陆行为 -->
+        <action name="findUserLoginAction" class="com.hx.framework.audit.AuditSystemAction" method="findUserLoginAction" >
+            <result>/jsp/framework/audit/findUserLoginAction.jsp</result>
+            <result name="detail">/jsp/framework/audit/AuditSystemDetail.jsp</result>
+        </action>
+         <!-- 系统访问控制 -->
+        <action name="findSystemAccessControl" class="com.hx.framework.audit.AuditSystemAction" method="findSystemAccessControl" >
+            <result>/jsp/framework/audit/findSystemAccessControl.jsp</result>
+            <result name="detail">/jsp/framework/audit/AuditSystemDetail.jsp</result>
+        </action>
+        
+         <!-- 用户登录行为统计 -->
+        <action name="statisticLogin" class="com.hx.framework.audit.AuditSystemAction" method="statisticLogin" >
+            <result name="success">/jsp/framework/audit/statisticLogin.jsp</result>
+        </action>
+        <!-- 导出系统管理行为审核 -->
+        <action name="exportAdminExcel" class="com.hx.framework.audit.AuditSystemAction" method="exportAdminExcel">
+           <result></result>
+        </action>
+        <!--导出系统访问控制审核  -->
+        <action name="exportAccessControlExcel" class="com.hx.framework.audit.AuditSystemAction" method="exportAccessControlExcel">
+           <result></result>
+        </action>
+        <!--导出用户登录行为审核  -->
+        <action name="exportUserLoginExcel" class="com.hx.framework.audit.AuditSystemAction" method="exportUserLoginExcel">
+           <result></result>
+        </action>
+        <!--导出用户操作行为审核  -->
+        <action name="exportAuditPubExcel" class="com.hx.framework.audit.AuditSystemAction" method="exportAuditPubExcel">
+           <result></result>
+        </action>
+	</package>
+	<!-- 在线人员监控-->
+	<package name="monitor"  extends="struts-default" namespace="/monitor">
+	<!-- 强制退出账号 -->
+	<action name="logoutAction" class="com.hx.framework.monitor.MonitorAction" method="logoutAction">
+		<result name="logOutForce" type="chain">
+			<param name="actionName">query</param>
+			<param name="namespace">/monitor</param>
+				<param name="method">query</param>
+		</result>
+		<!--  <result name="success">/jsp/framework/monitor/monitorList.jsp</result>-->
+	</action>
+	<!-- 查询在线账号 -->
+	<action name="query" class="com.hx.framework.monitor.MonitorAction" method="query">
+		<result name="success">/jsp/framework/monitor/monitorList.jsp</result>
+	</action>
+	<!-- 查询所有在线人员信息 -->
+	<action name="queryLoginPerson" class="com.hx.framework.monitor.MonitorAction" method="queryLoginPerson">
+		<result name="success">/jsp/framework/monitor/loginPersonList.jsp</result>
+	</action>
+	</package>
+</struts>

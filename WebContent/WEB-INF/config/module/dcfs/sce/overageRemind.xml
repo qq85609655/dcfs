@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="overageRemind" namespace="/sce/overageRemind" extends="struts-default" >
+
+		<!-- 儿童超期提醒列表 -->
+	    <action name="overageRemindList" class="com.dcfs.sce.overageRemind.OverageRemindAction" method="overageRemindList">
+	    	<result name="success">/jsp/dcfs/sce/overageRemind/overageremind_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		
+	    <!-- 显示儿童信息 -->
+        <action name="showChildInfo" class="com.dcfs.sce.overageRemind.OverageRemindAction" method="showChildInfo" >
+			<result name="success">/jsp/dcfs/sce/overageRemind/overageremind_ciview.jsp</result>
+		</action>
+		
+		<!-- 儿童同胞信息查看 -->
+        <action name="showTwinsInfo" class="com.dcfs.sce.overageRemind.OverageRemindAction" method="showTwinsInfo" >
+			<result name="success">/jsp/dcfs/sce/overageRemind/overageremind_twinciview.jsp</result>
+		</action>
+
+	</package>
+</struts>

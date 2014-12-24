@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:code="http://www.21softech.com/task/base/exception/model" targetNamespace="http://www.21softech.com/task/base/exception/model" elementFormDefault="qualified">
+	<xs:element name="ExceptionCodes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="exceptionCode" type="code:exceptionCodeType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="exceptionCodeType">
+		<xs:sequence>
+			<xs:element name="Exception_Code" type="xs:string"/>
+			<xs:element name="Exception_Info" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

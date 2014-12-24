@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="childmanager" namespace="/cms/childManager" extends="struts-default" >
+      	<!-- 儿童材料列表页面-->
+        <action name="findList" class="com.dcfs.cms.childManager.ChildManagerAction" method="findList" >
+        <!-- 1、福利院-材料办理-材料报送 -->
+		<result name="CMS_FLY_CLBS_LIST">/jsp/dcfs/cms/childmanager/cmsFlyClbs_list.jsp</result>		
+		<!-- 4、安置部-材料办理-接收 -->
+		<result name="CMS_AZB_JS_LIST">/jsp/dcfs/cms/childmanager/cmsAzbJs_list.jsp</result>
+		<!-- 5、安置部-材料办理-代录 -->
+		<result name="CMS_AZB_DL_LIST">/jsp/dcfs/cms/childmanager/cmsAzbDl_list.jsp</result>
+		<!-- 6、安置部-正常业务办理-审核 -->
+		<result name="CMS_AZB_SH_LIST">/jsp/dcfs/cms/childmanager/cmsAzbZcclsh_list.jsp</result>
+		<!-- 7、安置部-特需业务办理-审核 -->
+		<result name="CMS_AZB_SH_LIST">/jsp/dcfs/cms/childmanager/cmsAzbTxclsh_list.jsp</result>
+		<!-- 8、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料列表页面-->
+        <action name="stDailuList" class="com.dcfs.cms.childManager.ChildManagerAction" method="stDailuList" >
+        <!-- 1、省厅-材料办理-代录 -->
+		<result name="CMS_ST_DL_LIST">/jsp/dcfs/cms/childmanager/cmsStDl_list.jsp</result>
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+
+		<!-- 省厅儿童材料审核、寄送列表页面-->
+        <action name="STAuditList" class="com.dcfs.cms.childManager.ChildManagerAction" method="STAuditList" >
+		<!-- 1、省厅-材料办理-审核及寄送 -->
+		<result name="CMS_ST_SHJS_LIST">/jsp/dcfs/cms/childmanager/cmsStShjs_list.jsp</result>
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		
+		<!-- 儿童材料录入基本信息页面-->
+        <action name="basicadd" class="com.dcfs.cms.childManager.ChildManagerAction" method="basicadd" >
+        <!-- 1、福利院-材料办理-材料录入 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsFlyClbs_basicadd.jsp</result>		
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料基本信息录入页面-->
+        <action name="infoadd" class="com.dcfs.cms.childManager.ChildManagerAction" method="infoadd" >
+        <!-- 1、基本信息录入 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsFlyClbs_infoadd.jsp</result>
+		<!-- 2、业务错误提醒页面 -->
+		<result name="bizerror">/jsp/dcfs/common/bizerror.jsp</result>
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料详细信息录入页面-->
+        <action name="save" class="com.dcfs.cms.childManager.ChildManagerAction" method="save">
+        <!-- 1、详细信息保存 -->
+		<result name="save" type="chain">childManager/show</result>
+        <!-- 2、福利院-材料提交 -->
+		<result name="CMS_FLY_CLBS_LIST" type="chain">childManager/findList</result>		
+		<!-- 4、安置部-材料代录提交 -->
+		<result name="CMS_AZB_DL_LIST" type="chain">        
+		 <param name="namespace">/cms/childManager</param>      
+		 <param name="actionName">findList</param> 
+		 <param name="method">findList</param>           
+		 <param name="listType">CMS_AZB_DL_LIST</param>      
+		 </result>
+        <!-- 5、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息查看、修改页面-->
+        <action name="show" class="com.dcfs.cms.childManager.ChildManagerAction" method="show" >
+        <!-- 1、儿童材料修改 -->
+		<result name="mod">/jsp/dcfs/cms/childmanager/cmsFlyClbs_revise.jsp</result>
+		<!-- 2、儿童材料查看 -->
+		<result name="show">/jsp/dcfs/cms/childmanager/cms_fly_childinfo_view.jsp</result>
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息批量提交页面-->
+        <action name="flyBatchSubmit" class="com.dcfs.cms.childManager.ChildManagerAction" method="flyBatchSubmit" >
+        <!-- 1、福利院-材料办理-材料提交 -->
+		<result name="success" type="chain">childManager/findList</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息删除页面-->
+        <action name="delete" class="com.dcfs.cms.childManager.ChildManagerAction" method="delete" >
+        <!-- 1、福利院 -->
+		<result name="CMS_FLY_CLBS_LIST" type="chain">childManager/findList</result>		
+		<!-- 3、安置部-->
+		<result name="CMS_AZB_DL_LIST" type="chain">        
+		 <param name="namespace">/cms/childManager</param>      
+		 <param name="actionName">findList</param> 
+		 <param name="method">findList</param>           
+		 <param name="listType">CMS_AZB_DL_LIST</param>      
+		 </result>
+        <!-- 5、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料设置同胞页面-->
+        <action name="twinslist" class="com.dcfs.cms.childManager.ChildManagerAction" method="twinsList" >
+        <!-- 1、福利院-材料办理-材料录入 -同胞设置-->
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsTwins_List.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料设置同胞-增加同胞-->
+        <action name="twinsadd" class="com.dcfs.cms.childManager.ChildManagerAction" method="twinsadd" >
+        <!-- 1、福利院-材料办理-材料录入 -同胞设置-->
+        <result name="success" type="chain">childManager/twinslist</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料设置同胞-删除同胞-->
+        <action name="twinsdelete" class="com.dcfs.cms.childManager.ChildManagerAction" method="twinsdelete" >
+        <!-- 1、福利院-材料办理-材料录入 -同胞设置-->
+		<result name="success" type="chain">childManager/twinslist</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息审核页面-->
+        <action name="childInfoAudit" class="com.dcfs.cms.childManager.ChildManagerAction" method="childInfoAudit" >
+        <!-- 1、省厅-材料审核 -->
+		<result name="CMS_ST_SHJS_AUDIT">/jsp/dcfs/cms/childmanager/cmsStShjs_audit.jsp</result>
+        <!-- 2、中心-材料审核 -->
+		<result name="CMS_ZX_CLSH_AUDIT">/jsp/dcfs/cms/childmanager/cmsAzbClsh_audit.jsp</result>        
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息审核确定-->
+        <action name="childInfoAuditSave" class="com.dcfs.cms.childManager.ChildManagerAction" method="childInfoAuditSave" >
+        <!-- 1、省厅-材料审核 -->
+		<result name="CMS_ST_SHJS_LIST" type="chain">childManager/STAuditList</result>
+        <!-- 2、中心-正常儿童 -->		
+		<result name="CMS_ZX_ZCCLSH_LIST" type="chain">        
+		 <param name="namespace">/cms/childManager</param>      
+		 <param name="actionName">azbAuditList</param> 
+		 <param name="method">azbAuditList</param>           
+		 <param name="CHILD_TYPE">1</param>      
+		 </result>
+		<!-- 2、中心-特需儿童 -->
+		<result name="CMS_ZX_TXCLSH_LIST" type="chain">        
+		 <param name="namespace">/cms/childManager</param>      
+		 <param name="actionName">azbAuditList</param> 
+		 <param name="method">azbAuditList</param>           
+		 <param name="CHILD_TYPE">2</param>      
+		 </result>      
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息寄送-->
+        <action name="stBatchPost" class="com.dcfs.cms.childManager.ChildManagerAction" method="stBatchPost" >
+        <!-- 1、寄送成功 -->
+		<result name="success" type="chain">childManager/STAuditList</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息寄送打印-->
+        <action name="postPrint" class="com.dcfs.cms.childManager.ChildManagerAction" method="postPrint" >
+        <!-- 1、寄送成功 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsStShjs_print.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 安置部儿童材料批量提交列表-->
+        <action name="azbBatchSubmit" class="com.dcfs.cms.childManager.ChildManagerAction" method="azbBatchSubmit" >
+        <!-- 1、提交成功 -->
+		<result name="success" type="chain">        
+		 <param name="namespace">/cms/childManager</param>      
+		 <param name="actionName">findList</param> 
+		 <param name="method">findList</param>           
+		 <param name="listType">CMS_AZB_DL_LIST</param>     
+		 </result>
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料接收列表-->
+        <action name="azbReceiveList" class="com.dcfs.cms.childManager.ChildManagerAction" method="azbReceiveList" >
+        <!-- 1、接收成功 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsAzbCljs_list.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料接收操作-->
+        <action name="azbBatchReceive" class="com.dcfs.cms.childManager.ChildManagerAction" method="azbBatchReceive" >
+        <!-- 1、接收成功 -->
+		<result name="success" type="chain">childManager/azbReceiveList</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料接收条码打印-->
+        <action name="receivePrint" class="com.dcfs.cms.childManager.ChildManagerAction" method="receivePrint" >
+        <!-- 1、接收成功 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsAzbCljs_print.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 安置部儿童材料审核列表-->
+        <action name="azbAuditList" class="com.dcfs.cms.childManager.ChildManagerAction" method="azbAuditList" >
+        <!-- 1、正常儿童材料审核 -->
+		<result name="CMS_AZB_ZCSH_LIST">/jsp/dcfs/cms/childmanager/cmsAzbZcclsh_list.jsp</result>
+		<!-- 2、特需儿童材料审核 -->
+		<result name="CMS_AZB_TXSH_LIST">/jsp/dcfs/cms/childmanager/cmsAzbTxclsh_list.jsp</result>
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料审核结果列表-->
+        <action name="getChildAuditRecorderByCIID" class="com.dcfs.cms.childManager.ChildManagerAction" method="getChildAuditRecorderByCIID" >
+        <!-- 1、成功 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_child_auditResult_list.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息修改页面(补充儿童材料时点击"修改材料信息"按钮所进入的页面)-->
+        <action name="toChildInfoModify" class="com.dcfs.cms.childManager.ChildManagerAction" method="toChildInfoModify" >
+        <!-- 1、福利院-材料办理-材料修改 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_child_clbcRevise.jsp</result>
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料信息修改保存操作(补充儿童材料时点击"修改材料信息"按钮进入页面的“保存”操作)-->
+        <action name="saveChildInfo" class="com.dcfs.cms.childManager.ChildManagerAction" method="saveChildInfo" >
+		</action>
+		<!-- 儿童材料综合查询-->
+        <action name="azbChildInfoSynQuery" class="com.dcfs.cms.childManager.ChildManagerAction" method="azbChildInfoSynQuery" >
+		<result name="success">/jsp/dcfs/cms/childmanager/cmsAzbZhcx_list.jsp</result>	
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		
+		<!-- 儿童材料基本信息统一修改页面-->
+        <action name="toBasicInfoMod" class="com.dcfs.cms.childManager.ChildManagerAction" method="toBasicInfoMod" >
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_childBasicInfo_revise.jsp</result>	
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料基本信息统一修改保存操作（下一步）-->
+        <action name="saveBasicInfo" class="com.dcfs.cms.childManager.ChildManagerAction" method="saveBasicInfo" >
+        <result name="success" type="chain">childManager/toDetailInfoMod</result>
+		<!-- 2、业务错误提醒页面 -->
+		<result name="bizerror">/jsp/dcfs/common/bizerror.jsp</result>
+        <!-- 3、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		
+		<!-- 儿童材料详细信息统一修改页面-->
+        <action name="toDetailInfoMod" class="com.dcfs.cms.childManager.ChildManagerAction" method="toDetailInfoMod" >
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_childDetailInfo_revise.jsp</result>	
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童材料详细信统一修改保存方法-->
+        <action name="saveDetailInfo" class="com.dcfs.cms.childManager.ChildManagerAction" method="saveDetailInfo">
+        <!-- 1、详细信息保存 -->
+		<result name="save" type="chain">childManager/toDetailInfoMod</result>
+        <!-- 2、福利院-材料提交 -->
+		 <result name="CMS_FLY_CLBS_LIST" type="chain">childManager/findList</result>		
+		 <!-- 3、安置部-材料代录提交 -->
+		 <result name="CMS_AZB_DL_LIST" type="chain">childManager/findList</result>	       
+		 <!-- 4、省厅-材料代录提交 -->
+		 <result name="CMS_ST_DL_LIST"  type="chain">        
+		 <param name="namespace">/cms/childstadd</param>      
+		 <param name="actionName">findList</param> 
+		 <param name="method">findList</param>           
+		 </result>
+        <!-- 5、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童信息收养组织统一查看页面-->
+        <action name="showForAdoption" class="com.dcfs.cms.childManager.ChildManagerAction" method="showForAdoption" >
+		<!-- 1、儿童材料查看 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_syzz_childinfo_view.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 儿童信息爱之桥特需材料更新统一查看页面-->
+        <action name="showForAZQ" class="com.dcfs.cms.childManager.ChildManagerAction" method="showForAZQ" >
+		<!-- 1、儿童材料查看 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_azq_childinfo_view.jsp</result>
+		</action>
+		<!-- 儿童材料附件EN-->
+        <action name="childAttShowList" class="com.dcfs.cms.childManager.ChildManagerAction" method="childAttShowList" >
+		<!-- 1、儿童材料附件 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_child_attList.jsp</result>
+		</action>
+		<!-- 儿童材料附件CN-->
+        <action name="childAttShowListCN" class="com.dcfs.cms.childManager.ChildManagerAction" method="childAttShowListCN" >
+		<!-- 1、儿童材料附件 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_child_attListCN.jsp</result>
+		</action>
+		<!-- 儿童信息收养组织统一查看页面 基本信息+更新记录 -->
+        <action name="childInfoForAdoption" class="com.dcfs.cms.childManager.ChildManagerAction" method="childInfoForAdoption" >
+		<!-- 1、儿童材料查看 -->
+		<result name="success">/jsp/dcfs/cms/childmanager/cms_syzz_childAllinfo_view.jsp</result>
+        <!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 数据同步 -->
+	<package name="sync" extends="struts-default" namespace="/sync">
+		
+		<!-- 数据同步处理器 -->
+		<action name="DataSync" class="com.hx.framework.sync.DataSyncAction">
+			<result name="default">/jsp/framework/sync/dataSyncIndex.jsp</result>
+			<result name="setTree">/jsp/framework/sync/setTree.jsp</result>
+			<result name="targetSysMgr">/jsp/framework/sync/targetSysMgr.jsp</result>
+		</action>
+		<!-- 目标系统处理器 -->
+		<action name="TargetSys" class="com.hx.framework.sync.TargetSysAction">
+			<result name="targetSysMgr">/jsp/framework/sync/targetSysMgr.jsp</result>
+		</action>
+		<!--目标系统添加跳转action -->
+		<action name="targetSysToAdd" class="com.hx.framework.sync.TargetSysAction" method="targetSysToAdd">
+			<result name="success">/jsp/framework/sync/targetSysAdd.jsp</result>
+		</action>
+		<!--目标系统添加保存action -->
+		<action name="saveTargetSys" class="com.hx.framework.sync.TargetSysAction" method="saveTargetSys">
+			<result name="success" type="chain">
+			   <param name="actionName">TargetSys</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		
+		<!--目标系统修改保存action -->
+		<action name="modifyTargetSys" class="com.hx.framework.sync.TargetSysAction" method="modifyTargetSys">
+			<result name="success" type="chain">
+			   <param name="actionName">TargetSys</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		<!--目标系统添加跳转action -->
+		<action name="targetSysDelete" class="com.hx.framework.sync.TargetSysAction" method="targetSysDelete">
+			<result name="success" type="chain">
+			   <param name="actionName">TargetSys</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		<!--编辑实现类跳转action -->
+		<action name="targetSysEdit" class="com.hx.framework.sync.TargetSysAction" method="targetSysEdit">
+			<result name="edit">/jsp/framework/sync/targetSysEdit.jsp</result>
+			<result name="look">/jsp/framework/sync/targetSysView.jsp</result>
+		</action>
+		<!--编辑实现类参数跳转action -->
+		<action name="editParamToAdd" class="com.hx.framework.sync.TargetSysAction" method="editParamToAdd">
+			<result name="success">/jsp/framework/sync/editImplParams.jsp</result>
+			<result name="view">/jsp/framework/sync/viewImplParams.jsp</result>
+		</action>
+		<!--保存实现类参数action -->
+		<action name="saveImplParams" class="com.hx.framework.sync.TargetSysAction" method="saveImplParams">
+			<result name="success">/jsp/framework/sync/editImplParams.jsp</result>
+		</action>
+		<!-- 同步配置处理器 -->
+		<action name="SyncConfig" class="com.hx.framework.sync.SyncConfigAction">
+			<result name="syncConfigMgr">/jsp/framework/sync/syncConfigMgr.jsp</result>
+		</action>
+		<!-- 同步配置添加跳转 -->
+		<action name="syncConfigToAdd" class="com.hx.framework.sync.SyncConfigAction" method="syncConfigToAdd">
+			<result name="success">/jsp/framework/sync/syncConfigAdd.jsp</result>
+		</action>
+		<!-- 同步配置添加保存 -->
+		<action name="saveSyncConfig" class="com.hx.framework.sync.SyncConfigAction" method="saveSyncConfig">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncConfig</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		<!-- 同步配置删除 -->
+		<action name="syncConfigDelete" class="com.hx.framework.sync.SyncConfigAction" method="syncConfigDelete">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncConfig</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		<!-- 同步配置修改保存 -->
+		<action name="updateSyncConfig" class="com.hx.framework.sync.SyncConfigAction" method="updateSyncConfig">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncConfig</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		<!-- 同步配置修改跳转 -->
+		<action name="syncConfigEdit" class="com.hx.framework.sync.SyncConfigAction" method="syncConfigEdit">
+			<result name="edit">/jsp/framework/sync/syncConfigEdit.jsp</result>
+			<result name="look">/jsp/framework/sync/syncConfigView.jsp</result>
+		</action>
+		<!-- 同步记录处理器 -->
+		<action name="SyncRecord" class="com.hx.framework.sync.SyncRecordAction">
+			<result name="success">/jsp/framework/sync/syncRecordMgr.jsp</result>
+		</action>
+		
+		<!-- 同步记录删除 -->
+		<action name="syncRecordDelete" class="com.hx.framework.sync.SyncRecordAction" method="syncRecordDelete">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncRecord</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		
+		<!-- 手动同步记录 -->
+		<action name="syncRecordManual" class="com.hx.framework.sync.SyncRecordAction" method="syncRecordManual">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncRecord</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		
+		<!-- 一键同步记录 -->
+		<action name="syncRecordOnce" class="com.hx.framework.sync.SyncRecordAction" method="syncRecordOnce">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncRecord</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+		<!-- 数据同步初始化（跳转） -->
+		<action name="SyncInit" class="com.hx.framework.sync.SyncInitAction">
+			<result name="success">/jsp/framework/sync/syncInit.jsp</result>
+		</action>
+		<!-- 数据同步初始化(执行) -->
+		<action name="doSyncInit" class="com.hx.framework.sync.SyncInitAction" method="doSyncInit">
+			<result name="success" type="chain">
+			   <param name="actionName">SyncInit</param>
+			   <param name="namespace">/sync</param>
+			   <param name="method">execute</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>

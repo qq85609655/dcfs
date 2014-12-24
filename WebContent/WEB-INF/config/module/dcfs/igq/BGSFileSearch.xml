@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="BGSFileSearch" namespace="/igq/BGSFileSearch" extends="struts-default" >
+	
+		<!-- 办公室、安置部、档案部、爱之桥文件查询列表 -->
+	    <action name="BGSFileList" class="com.dcfs.igq.fileSearch.BGSFileSearchAction" method="BGSFileList">
+	    	<result name="success">/jsp/dcfs/igq/BGSFileSearch/filesearch_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 审核部文件查询列表 -->
+	    <action name="SHBFileList" class="com.dcfs.igq.fileSearch.BGSFileSearchAction" method="SHBFileList">
+	    	<result name="success">/jsp/dcfs/igq/SHBFileSearch/SHBfilesearch_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 查看文件详细信息（办公室、安置部、档案部、爱之桥）-->
+        <action name="showFileData" class="com.dcfs.igq.fileSearch.BGSFileSearchAction" method="showFileData" >
+			<result name="double">/jsp/dcfs/igq/BGSFileSearch/BGSfilesearch_doubleview.jsp</result>
+	    	<result name="single">/jsp/dcfs/igq/BGSFileSearch/BGSfilesearch_singleview.jsp</result>
+	    	<result name="step">/jsp/dcfs/igq/BGSFileSearch/BGSfilesearch_stepeview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 查看文件详细信息（审核部）-->
+        <action name="showSHBData" class="com.dcfs.igq.fileSearch.BGSFileSearchAction" method="showSHBData" >
+			<result name="double">/jsp/dcfs/igq/SHBFileSearch/SHBfilesearch_doubleview.jsp</result>
+	    	<result name="single">/jsp/dcfs/igq/SHBFileSearch/SHBfilesearch_singleview.jsp</result>
+	    	<result name="step">/jsp/dcfs/igq/SHBFileSearch/SHBfilesearch_stepeview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

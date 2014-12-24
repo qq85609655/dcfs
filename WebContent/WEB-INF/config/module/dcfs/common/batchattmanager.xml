@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="attmanager" namespace="/common" extends="struts-default" >
+      	<!-- 批量附件维护页面-->
+        <action name="batchattmaintain" class="com.dcfs.common.batchattmanager.BatchAttManager" method="BatchAttMaintain" >
+        <!-- 1、维护页面 -->
+		<result name="maintain">/jsp/dcfs/common/batchattmanager/batchAtt_maintain.jsp</result>
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+		<!-- 批量附件查看页面-->
+        <action name="batchattview" class="com.dcfs.common.batchattmanager.BatchAttManager" method="BatchAttView" >
+        <!-- 1、维护页面 -->
+		<result name="view">/jsp/dcfs/common/batchattmanager/batchAtt_view.jsp</result>
+		<!-- 2、错误处理页面 -->
+		<result name="error">/jsp/error.jsp</result>
+		</action>
+	</package>
+</struts>

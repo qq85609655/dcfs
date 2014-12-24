@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="translation" namespace="/sce/translation" extends="struts-default" >
+
+		<!-- 预批申请翻译查询列表 -->
+	    <action name="applyTranslationList" class="com.dcfs.sce.translation.TranslationAction" method="applyTranslationList">
+	    	<result name="success">/jsp/dcfs/sce/translation/apply_translation_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 预批申请翻译、查看页面-->
+        <action name="preTranslation" class="com.dcfs.sce.translation.TranslationAction" method="preTranslation" >
+			<result name="tran">/jsp/dcfs/sce/translation/apply_translation_revise.jsp</result>
+			<result name="show">/jsp/dcfs/sce/translation/apply_translation_view.jsp</result>
+		</action>
+		
+		<!-- 翻译保存-->
+        <action name="preTranslationSave" class="com.dcfs.sce.translation.TranslationAction" method="preTranslationSave" >
+			<result name="success" type="chain">translation/applyTranslationList</result>
+		</action>
+		
+		<!-- 预批补充翻译查询列表 -->
+	    <action name="supplyTranslationList" class="com.dcfs.sce.translation.TranslationAction" method="supplyTranslationList">
+	    	<result name="success">/jsp/dcfs/sce/translation/supply_translation_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 预批补充翻译、查看页面-->
+        <action name="supplyTranslation" class="com.dcfs.sce.translation.TranslationAction" method="supplyTranslation" >
+			<result name="tran">/jsp/dcfs/sce/translation/supply_translation_revise.jsp</result>
+			<result name="show">/jsp/dcfs/sce/translation/supply_translation_view.jsp</result>
+		</action>
+		
+		<!-- 补翻保存-->
+        <action name="supplyTranslationSave" class="com.dcfs.sce.translation.TranslationAction" method="supplyTranslationSave" >
+			<result name="success" type="chain">translation/supplyTranslationList</result>
+		</action>
+
+	</package>
+</struts>

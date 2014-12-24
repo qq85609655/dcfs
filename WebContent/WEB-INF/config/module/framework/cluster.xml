@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 集群管理 -->
+	<package name="clustermanage" extends="struts-default" namespace="/clustermanage">
+		<action name="findCluster" class="com.hx.framework.clustermanage.ClusterManageAction">
+			<result name="success">/jsp/framework/clustermanage/clusterNodeList.jsp</result>
+			<result name="addCluster">/jsp/framework/clustermanage/clusterAdd.jsp</result>
+			<result name="querydetail">/jsp/framework/clustermanage/clusterDetail.jsp</result>
+			<result name="queryModify">/jsp/framework/clustermanage/clusterModify.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">findCluster</param>
+				<param name="namespace">/clustermanage</param>
+				<param name="method">query</param>
+			</result>
+		</action>
+	
+	</package>
+
+
+</struts>

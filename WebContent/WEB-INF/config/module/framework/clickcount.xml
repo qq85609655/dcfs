@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="clickcount" namespace="/clickcount" extends="struts-default" >
+		<action name="count" class="com.hx.framework.clickcount.ClickCountAction" method="count">
+			<result></result>
+		</action>
+	    <!--点击率查询action -->
+		<action name="query" class="com.hx.framework.clickcount.ClickCountAction" method="clickcountList">
+			<result>/jsp/framework/clickcount/clickcountList.jsp</result>
+		</action>
+		<action name="statistic" class="com.hx.framework.clickcount.ClickCountAction" method="statistic">
+			<result>/jsp/framework/clickcount/clickcountStatisic.jsp</result>
+		</action>
+		<action name="statisticTable" class="com.hx.framework.clickcount.ClickCountAction" method="statisticTable">
+			<result>/jsp/framework/clickcount/clickcountStatisicTable.jsp</result>
+		</action>
+		<action name="statisticExport" class="com.hx.framework.clickcount.ClickCountAction" method="statisticExport">
+			<result>/jsp/framework/clickcount/clickcountStatisicTable.jsp</result>
+		</action>
+		<action name="chart" class="com.hx.framework.clickcount.ClickCountAction" method="chart">
+			<result>/jsp/framework/clickcount/clickcountStatisic.jsp</result>
+		</action>
+		
+		<!--生成分类树 -->
+		<action name="clickCountCatelogTree" class="com.hx.framework.clickcount.ClickCountAction" method="generateTree">
+			<result name="success">/jsp/framework/clickcount/clickcountCatelogTree.jsp</result>
+			<result name="multiSel" >/jsp/framework/clickcount/clickcountCatelogTreeMultiSel.jsp</result>
+		</action>	
+	</package>
+</struts>

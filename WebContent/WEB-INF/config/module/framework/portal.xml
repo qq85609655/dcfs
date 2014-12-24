@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="portal" extends="struts-default" namespace="/portal">
+		<action name="menu" class="com.hx.framework.portal.HomePageAction" method="menu">
+			<result>/menuFrame.jsp</result>
+		</action>
+		
+		<action name="leftMenu" class="com.hx.framework.portal.HomePageAction" method="leftMenu">
+			<result>/leftMenuFrame.jsp</result>
+		</action>
+		
+		<action name="leftSwitch" class="com.hx.framework.portal.HomePageAction" method="leftSwitch">
+			<result>/leftSwitchFrame.jsp</result>
+		</action>
+		
+		<action name="nav" class="com.hx.framework.portal.HomePageAction" method="nav">
+			<result>/navFrame.jsp</result>
+		</action>
+		
+		<action name="content" class="com.hx.framework.portal.HomePageAction" method="content">
+			<result>/contentFrame.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="skin" namespace="/skin" extends="struts-default">
+	<action name="Skin" class="com.hx.framework.portal.SkinAction">
+		<result name="changeSkin">/jsp/framework/portal/skin.jsp</result>
+		<result name="success">/jsp/framework/portal/skin.jsp</result>
+		<result name="getSkinFrame">/jsp/framework/portal/skinfream.jsp</result>
+	</action>
+	</package>
+</struts>

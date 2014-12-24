@@ -1,0 +1,41 @@
+.mailtitle td{
+	
+	font-family: Arial, 'Lucida Sans Unicode' , '宋体' , '新宋体' , Verdana, Sans-Serif;
+	font-weight: normal;
+	font-size: small;
+	background-color: #F7F7F7;
+	background-position: left center;
+	border-top-width: 1.5px;
+	border-right-width: 1.5px;
+	border-bottom-width: 1.5px;
+	border-left-width: 1.5px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #D7D7D7;
+	border-right-color: #D7D7D7;
+	border-bottom-color: #D7D7D7;
+	border-left-color: #D7D7D7;
+	font-weight: bold;
+	text-align: left;
+	text-indent: 5px;
+}
+
+.mailrecord td{
+	font-family: Arial, 'Lucida Sans Unicode' , '宋体' , '新宋体' , Verdana, Sans-Serif;
+	font-weight: normal;
+	font-size: small;
+	
+	background-position: left center;
+	border-bottom-width: 1.5px;
+	border-bottom-style: solid; 
+	border-bottom-color: #D7D7D7;
+	font-size:12px;
+	text-align: left;
+	text-indent: 5px;
+}
+
+
+
+  

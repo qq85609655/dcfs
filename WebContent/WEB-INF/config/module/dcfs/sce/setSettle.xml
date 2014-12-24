@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="setSettle" namespace="/sce/setSettle" extends="struts-default" >
+	
+		<!-- 安置期限参数列表 -->
+	    <action name="settleParaList" class="com.dcfs.sce.setSettle.SetSettleAction" method="settleParaList">
+	    	<result name="success">/jsp/dcfs/sce/setSettle/setsettle_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 弹出修改安置期限设置窗口-->
+        <action name="showSettleMonth" class="com.dcfs.sce.setSettle.SetSettleAction" method="showSettleMonth" >
+			<result name="success">/jsp/dcfs/sce/setSettle/setsettle_setrevise.jsp</result>
+		</action>
+		<!-- 保存-->
+        <action name="saveSettleMonth" class="com.dcfs.sce.setSettle.SetSettleAction" method="saveSettleMonth" >
+		</action>
+	</package>
+</struts>

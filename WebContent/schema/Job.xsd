@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:job="base/resource/console/job/model" targetNamespace="base/resource/console/job/model" elementFormDefault="qualified">
+	<xs:element name="Jobs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="job" type="job:jobType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="jobType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="job_name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="group_id" type="xs:string"/>
+			<xs:element name="job_type" type="xs:string"/>
+			<xs:element name="respone_type" type="xs:string"/>
+			<xs:element name="check_type" type="xs:string"/>
+			<xs:element name="source_resid" type="xs:string"/>
+			<xs:element name="dest_resid" type="xs:string"/>
+			<xs:element name="process_resid" type="xs:string"/>
+			<xs:element name="tkn_list" type="xs:string"/>
+			<xs:element name="tkn_max_usetime" type="xs:int"/>
+			<xs:element name="max_wtime" type="xs:int"/>
+			<xs:element name="job_priority" type="xs:int"/>
+			<xs:element name="invoke_name" type="xs:string"/>
+			<xs:element name="invoke_method" type="xs:string"/>
+			<xs:element name="invoke_param" type="xs:string"/>
+			<xs:element name="dest_table" type="xs:string"/>
+			<xs:element name="sql_stmt" type="xs:string"/>
+			<xs:element name="forcast_time" type="xs:int"/>
+			<xs:element name="status" type="xs:string"/>
+			<xs:element name="createtime" type="xs:dateTime"/>
+			<xs:element name="creator" type="xs:string"/>
+			<xs:element name="modifytime" type="xs:dateTime"/>
+			<xs:element name="modifier" type="xs:string"/>
+			<xs:element name="job_catalog" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

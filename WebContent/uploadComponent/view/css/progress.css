@@ -1,0 +1,50 @@
+.progressTable{
+	table-layout:fixed; /* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+	padding: 2px;
+	width: 100%;
+	overflow: hidden;
+	border: solid 1px #E8E8E8;
+	background-color: #F7F7F7;
+}
+
+.progressCommTitle{
+	font-size:12px;
+	text-align:center;
+	border-bottom:1px dashed #999;
+	white-space: nowrap;
+}
+
+.progressCommValue{
+	font-size:12px;
+	text-align:center;
+	border-bottom:1px dashed #999;
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+}
+
+.progressScTitle{
+	font-size:12px;
+	text-align:center;
+	border-top:1px dashed #999;
+}
+
+.progressScTitle a{
+
+}
+
+.progressLine{
+	text-align:left;
+}
+
+/*进度条样式*/
+.progressLine .core{
+	background-color:#399;
+	text-align:center; 
+	border:1px solid #36F; 
+	margin:2px;
+	height:12px;
+	font-size:12px;
+	color:#FFF;
+}

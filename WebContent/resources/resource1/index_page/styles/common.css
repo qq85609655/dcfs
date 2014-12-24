@@ -1,0 +1,50 @@
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	font-size: 0;
+}
+.clearfix {
+	display: inline-block;
+}
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+.clearfix {
+	zoom: 1;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	font-family: "微软雅黑","宋体";
+	height: 100%;
+	width: 100%;
+}
+ul, form {
+	padding: 0;
+	margin: 0;
+}
+.fl {
+	float: left;
+	display: inline;
+}
+.fr {
+	float: right;
+	display: inline;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+img {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}

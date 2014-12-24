@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="registration" namespace="/sce/publishManager" extends="struts-default" >
+
+	    <!-- 发布管理列表页面-->
+        <action name="findListForFBGL" class="com.dcfs.sce.publishManager.PublishManagerAction" method="findListForFBGL" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		 <!-- 已发布组织列表-->
+        <action name="findListForFBORG" class="com.dcfs.sce.publishManager.PublishManagerAction" method="findListForFBORG" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_fborg_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到待发布儿童选择列表页面-->
+        <action name="toChoseETForFB" class="com.dcfs.sce.publishManager.PublishManagerAction" method="toChoseETForFB" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_fb_chose_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到儿童发布提交页面-->
+        <action name="toAddFBTJInfo" class="com.dcfs.sce.publishManager.PublishManagerAction" method="toAddFBTJInfo" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_fb_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!--儿童发布提交-->
+        <action name="saveFbInfo" class="com.dcfs.sce.publishManager.PublishManagerAction" method="saveFbInfo" >
+       		<result name="success" type="chain">
+				<param name="actionName">findListForFBGL</param>
+				<param name="namespace">/sce/publishManager</param>
+				<param name="method">findListForFBGL</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到撤销发布页面-->
+        <action name="toCancleFB" class="com.dcfs.sce.publishManager.PublishManagerAction" method="toCancleFB" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_fb_cancle_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 儿童撤销发布提交-->
+        <action name="saveCxfbInfo" class="com.dcfs.sce.publishManager.PublishManagerAction" method="saveCxfbInfo" >
+			<result name="success" type="chain">
+				<param name="actionName">findListForFBGL</param>
+				<param name="namespace">/sce/publishManager</param>
+				<param name="method">findListForFBGL</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到解除锁定页面-->
+        <action name="toUnlockFB" class="com.dcfs.sce.publishManager.PublishManagerAction" method="toUnlockFB" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_fb_unlock_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 解除锁定提交-->
+        <action name="saveUnlockFbInfo" class="com.dcfs.sce.publishManager.PublishManagerAction" method="saveUnlockFbInfo" >
+			<result name="success" type="chain">
+				<param name="actionName">findListForFBGL</param>
+				<param name="namespace">/sce/publishManager</param>
+				<param name="method">findListForFBGL</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到历次锁定列表页面-->
+        <action name="showLockHistory" class="com.dcfs.sce.publishManager.PublishManagerAction" method="showLockHistory" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_lockhistory_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到历次发布列表页面-->
+        <action name="showFbHistory" class="com.dcfs.sce.publishManager.PublishManagerAction" method="showFbHistory" >
+			<result name="success">/jsp/dcfs/sce/publishManager/fbgl_fbhistory_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+	
+		
+	
+		
+		
+		
+	</package>
+</struts>

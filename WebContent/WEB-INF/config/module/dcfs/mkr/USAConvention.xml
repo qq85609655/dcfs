@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="USAConvention" namespace="/mkr/USAConvention" extends="struts-default" >
+		 <!-- 跳转到机构创建页面-->
+        <action name="toBodyAdd" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="toBodyAdd" >
+			<result name="success">/jsp/dcfs/mkr/USAConvention/certificationBody_add.jsp</result>
+		</action>
+
+		<!-- 认证机构列表 -->
+	    <action name="findBodyList" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="findBodyList">
+	    	<result name="success">/jsp/dcfs/mkr/USAConvention/certificationBody_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+		<!-- 保存-->
+        <action name="saveCerBody" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="saveCerBody" >
+			<result name="success" type="chain">USAConvention/findBodyList</result>
+		</action>
+		
+	    <!-- 跳转到修改页面-->
+        <action name="showCerBody" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="showCerBody" >
+			<result name="success">/jsp/dcfs/mkr/USAConvention/certificationBody_revise.jsp</result>
+		</action>
+		
+		<!-- 删除草稿记录 -->
+	    <action name="bodyDelete" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="bodyDelete">
+	    	<result name="success" type="chain">USAConvention/findBodyList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 批量失效、恢复生效 -->
+	    <action name="changeFail" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="changeFail">
+	    	<result name="success" type="chain">USAConvention/findBodyList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 弹出修改失效日期窗口 -->
+        <action name="modExpireDate" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="modExpireDate" >
+			<result name="success">/jsp/dcfs/mkr/USAConvention/certificationBody_daterecrevise.jsp</result>
+		</action>
+		
+		<!-- 修改失效日期保存 -->
+	    <action name="reviseExpireDate" class="com.dcfs.mkr.USAConvention.CertificationBodyAction" method="reviseExpireDate">
+	    </action>
+
+	</package>
+</struts>

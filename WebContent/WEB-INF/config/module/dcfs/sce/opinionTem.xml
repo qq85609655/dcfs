@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="opinionTem" namespace="/sce/opinionTem" extends="struts-default" >
+
+		<!-- 保存-->
+        <action name="saveOpinionTem" class="com.dcfs.sce.opinionTem.OpinionTemAction" method="saveOpinionTem" >
+			<!-- <result name="success" type="chain">audit/findListTem</result> -->
+		</action>
+		
+		<!-- 审核部预批审核意见模板列表 -->
+	    <action name="SHBfindListTem" class="com.dcfs.sce.opinionTem.OpinionTemAction" method="SHBfindListTem">
+	    	<result name="success">/jsp/dcfs/sce/opinionTem/SHBopinionTem_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+		<!-- 安置部部预批审核意见模板列表 -->
+	    <action name="AZBfindListTem" class="com.dcfs.sce.opinionTem.OpinionTemAction" method="AZBfindListTem">
+	    	<result name="success">/jsp/dcfs/sce/opinionTem/AZBopinionTem_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 查看修改页面-->
+        <action name="showOpinionTem" class="com.dcfs.sce.opinionTem.OpinionTemAction" method="showOpinionTem" >
+			<result name="show">/jsp/dcfs/sce/opinionTem/SHBopinionTem_view.jsp</result>
+			<result name="mod">/jsp/dcfs/sce/opinionTem/SHBopinionTem_revise.jsp</result>
+		</action>
+
+	</package>
+</struts>

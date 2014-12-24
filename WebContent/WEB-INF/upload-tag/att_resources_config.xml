@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<!-- 附件类型格式定义 开始 -->
+	<formats>
+		<!-- 文本类 -->
+		<format name="word" value="*.doc"/>
+		<format name="ppt" value="*.ppt"/>
+		<format name="excel" value="*.xls"/>
+		<format name="pdf" value="*.pdf"/>
+		<!-- 压缩包类 -->
+		<format name="zip" value="*.zip"/>
+		<format name="rar" value="*.rar"/>
+		<!-- 媒体文件类 -->
+		<format name="wmv" value="*.wmv"/>
+		<format name="avi" value="*.avi"/>
+		<format name="rmvb" value="*.rmvb"/>
+		<format name="mp3" value="*.mp3"/>
+		<!-- 图像类 -->
+		<format name="gif" value="*.gif"/>
+		<format name="jpg" value="*.jpg"/>
+		<format name="jpeg" value="*.jpeg"/>
+		<format name="png" value="*.png"/>
+		<!-- 所有文件 -->
+		<format name="所有文件" value="*.*" />
+	</formats>
+	<!-- 附件类型格式定义 结束 -->
+	
+	<!-- 磁盘存储规则接口实现类中英文对照 开始-->
+	<diskStoreRules>
+		<diskStoreRule name="按日分类" value="disk_catalog_rule_day" desc="无需传递接口参数"/>
+		<diskStoreRule name="按月分类" value="disk_catalog_rule_month" desc="无需传递接口参数"/>
+		<diskStoreRule name="按年分类" value="disk_catalog_rule_year" desc="无需传递接口参数"/>
+		<diskStoreRule name="收养文件分类" value="disk_catalog_rule_af" desc="传递接口参数"/>
+		<diskStoreRule name="儿童材料分类" value="disk_catalog_rule_ci" desc="传递接口参数"/>
+		<diskStoreRule name="档案文件分类" value="disk_catalog_rule_ar" desc="传递接口参数"/>
+		<diskStoreRule name="其他文件分类" value="disk_catalog_rule_other" desc="传递接口参数"/>
+	</diskStoreRules>
+	<!-- 磁盘存储规则接口实现类中英文对照 结束-->
+</resources>

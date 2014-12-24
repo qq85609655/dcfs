@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="cmscitranslation" namespace="/cms/childTranslation" extends="struts-default" >
+      <!-- 列表页面-->
+        <action name="findList" class="com.dcfs.cms.childTranslation.CmsCiTranslationAction" method="findList" >
+		<result name="success">/jsp/dcfs/cms/childTranslation/cms_ci_translation_list.jsp</result>
+		</action>
+     <!-- 翻译页面-->
+        <action name="translation" class="com.dcfs.cms.childTranslation.CmsCiTranslationAction" method="translation" >
+		<result name="success">/jsp/dcfs/cms/childTranslation/cms_ci_translation_edit.jsp</result>
+		</action>
+	<!-- 保存-->
+        <action name="save" class="com.dcfs.cms.childTranslation.CmsCiTranslationAction" method="save" >
+		<result name="CHILD_TRANSLATION_SUBMIT" type="chain">childTranslation/findList</result>
+		<result name="CHILD_TRANSLATION_SAVE" type="chain">childTranslation/translation</result>
+		</action>
+	<!-- 查看页面-->
+        <action name="show" class="com.dcfs.cms.childTranslation.CmsCiTranslationAction" method="show" >
+		<result name="success">/jsp/dcfs/cms/childTranslation/cms_ci_translation_view.jsp</result>
+		</action>	 
+	</package>
+</struts>

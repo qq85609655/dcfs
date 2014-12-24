@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="childupdate" namespace="/cms/childupdate" extends="struts-default" >
+		<!-- 福利院儿童材料更新列表页面-->
+        <action name="updateListFLY" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateListFLY" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_list_fly.jsp</result>
+		</action>
+		<!-- 省厅儿童材料更新列表页面-->
+        <action name="updateListST" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateListST" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_list_st.jsp</result>
+		</action>
+		<!-- 中心（爱之桥）儿童材料更新列表页面-->
+        <action name="updateListZX" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateListZX" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_list_zx.jsp</result>
+		</action>
+		<!-- 福利院儿童材料更新选择列表页面-->
+		<action name="updateSelectFLY" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateSelectFLY" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/updateSelect_list_fly.jsp</result>
+		</action>
+		<!-- 省厅儿童材料更新选择列表页面-->
+		<action name="updateSelectST" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateSelectST" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/updateSelect_list_st.jsp</result>
+		</action>
+		<!-- 中心儿童材料更新选择列表页面-->
+		<action name="updateSelectZX" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateSelectZX" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/updateSelect_list_zx.jsp</result>
+		</action>
+		<!-- 儿童材料更新信息添加页面-->
+	    <action name="toUpdateFLY" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="toUpdateFLY" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_add.jsp</result>
+		</action>
+		 <!-- 儿童材料更新信息查看页面-->
+        <action name="getShowData" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="getShowData" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_detail.jsp</result>
+		</action>
+		<!-- 儿童材料更新信息修改页面-->
+        <action name="toModify" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="toModify" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_modify.jsp</result>
+		</action>
+		<!-- 根据儿童材料信息主键获取更新审核通过的更新记录 -->
+		<action name="getShowDataByCIID" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="getShowDataByCIID" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/aChildUpdate_details.jsp</result>
+		</action>
+		<!-- 根据儿童材料信息主键获取更新审核通过的更新记录收养组织查看 -->
+		<action name="getShowDataByCIIDForAdoption" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="getShowDataByCIIDForAdoption" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/aChildUpdate_detailsEN.jsp</result>
+		</action>
+		<!-- 保存儿童材料更新信息 -->
+		 <action name="saveUpdateData" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="saveUpdateData">
+	    	<result name="1" type="chain">/childupdate/updateListFLY</result>
+	    	<result name="2" type="chain">/childupdate/updateListST</result>
+	    	<result name="3" type="chain">/childupdate/updateSelectZX</result>
+	    	<result name="3-1" type="chain">/childupdate/updateListZX</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童材料更新省厅审核列表页面-->
+        <action name="updateAuditListSt" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateAuditListSt" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/updateAudit_list_st.jsp</result>
+		</action>
+		<!-- 儿童材料更新中心审核列表页面-->
+        <action name="updateAuditListZX" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateAuditListZX" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/updateAudit_list_zx.jsp</result>
+		</action>
+		<!-- 儿童材料更新审核页面-->
+        <action name="toUpdateAudit" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="toUpdateAudit" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/childUpdate_audit.jsp</result>
+		</action>
+		<!-- 儿童材料更新审核操作 -->
+		 <action name="saveUpdateAudit" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="saveUpdateAudit">
+	    	<result name="2" type="chain">/childupdate/updateAuditListSt</result>
+	    	<result name="3" type="chain">/childupdate/updateAuditListZX</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童材料附件更新上传-->
+        <action name="updateAtt" class="com.dcfs.cms.childUpdate.ChildUpdateAction" method="updateAtt" >
+        <result name="success">/jsp/dcfs/cms/childUpdate/updateAtt.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.0.2</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>OA</shortname>
+	<uri>/WEB-INF/taglib/oa</uri>
+	<info>oa标签</info>
+
+	<tag>
+		<name>ty</name>
+		<tagclass>hx.oataglib.TyTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			数据区 &lt;br&gt; </info>
+	</tag>
+	
+	<tag>
+		<name>table</name>
+		<tagclass>hx.oataglib.TableTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			Table标签 &lt;br&gt;
+			tableid：table id 默认"tableGrid" &lt;br&gt;
+			tablename：table name 默认"tableGrid" &lt;br&gt;
+			tableclass：table 样式 默认"tableGrid" &lt;br&gt; </info>
+		<attribute>
+			<name>tableid</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>tablename</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>tableclass</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>th</name>
+		<tagclass>hx.oataglib.ThTag</tagclass>
+		<bodycontent>empty</bodycontent>
+		<info>
+			列表标题 &lt;br&gt;
+			width:th宽度 (%或px)&lt;br&gt;
+			name:名称 &lt;br&gt;
+			sortType：排序形式 &lt;br&gt;
+			"none" 不排序&lt;br&gt;
+			"int" 整形排序&lt;br&gt;
+			"string" 字符串排序&lt;br&gt;
+			"float" 浮点型排序&lt;br&gt;
+			"date"
+			时间类型排序&lt;br&gt;
+			sortplan:为数据库排序所用字段 加上此条件即为数据库排序
+			onclick:点击事件
+			sortfield:数据库排序所用字段
+			当选择数据库排序时此字段必须填写
+		</info>
+		<attribute>
+			<name>width</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sortType</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sortplan</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>sortfield</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>thead</name>
+		<tagclass>hx.oataglib.THeadTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			标签头 &lt;br&gt;
+			theadclass：标签头样式 默认"titleBackGrey" &lt;br&gt; </info>
+		<attribute>
+			<name>theadclass</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>tbody</name>
+		<tagclass>hx.oataglib.TBodyTag</tagclass>
+		<bodycontent>jsp</bodycontent>
+		<info>
+			数据区 &lt;br&gt; </info>
+	</tag>
+</taglib>
+
+
+

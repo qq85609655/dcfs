@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:datasourceType="base/resource/console/datasourceType/model" targetNamespace="base/resource/console/datasourceType/model" elementFormDefault="qualified">
+	<xs:element name="DataSourceTypes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dataSourceType" type="datasourceType:dataSourceType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="dataSourceType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="ds_type_name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="AZQconfirm" namespace="/rfm/AZQconfirm" extends="struts-default">
+	
+		<!-- 退文确认列表 -->
+	    <action name="AZQconfirmList" class="com.dcfs.rfm.AZQconfirm.AZQconfirmAction" method="AZQconfirmList">
+	    	<result name="success">/jsp/dcfs/rfm/AZQconfirm/AZQconfirm_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 跳转退文确认页面 -->
+        <action name="confirmShow" class="com.dcfs.rfm.AZQconfirm.AZQconfirmAction" method="confirmShow" >
+			<result name="success">/jsp/dcfs/rfm/AZQconfirm/AZQconfirm_confirm.jsp</result>
+		</action>
+		<!-- 退文确认操作 -->
+	    <action name="AZQconfirmSave" class="com.dcfs.rfm.AZQconfirm.AZQconfirmAction" method="AZQconfirmSave">
+	    	<result name="success" type="chain">/AZQconfirm/AZQconfirmList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 查看退文详细信息 -->
+        <action name="showReturnFile" class="com.dcfs.rfm.AZQconfirm.AZQconfirmAction" method="showReturnFile" >
+			<result name="success">/jsp/dcfs/rfm/AZQconfirm/AZQconfirm_view.jsp</result>
+		</action>
+		<!-- 取消 -->
+	    <action name="returnFileDelete" class="com.dcfs.rfm.AZQconfirm.AZQconfirmAction" method="returnFileDelete">
+	    	<result name="success" type="chain">/AZQconfirm/AZQconfirmList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		
+	</package>
+</struts>

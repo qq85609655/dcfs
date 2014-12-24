@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="cms_auth" extends="struts-default" namespace="/cms_auth">
+		<action name="Auth" class="com.hx.cms.auth.AuthAction">
+			<result name="allotResource">/jsp/cms/auth/allotResourceTree.jsp</result>
+			<result name="allotPersonChannels">/jsp/cms/auth/toAllotPersonsChannelsTree.jsp</result>
+			<result name="allotPersonChannelsFrame">/jsp/cms/auth/toAllotPersonsChannelsTreeFrame.jsp</result>
+			<result name="allotPersonsChannelsTree">/jsp/cms/auth/allotPersonsChannelsTree.jsp</result>
+			<result name="channelsOrganTree">/jsp/cms/auth/channelsOrganTree.jsp</result>
+			<result name="personList">/jsp/cms/auth/personList.jsp</result>
+			<result name="query" type="chain">
+				<param name="actionName">Role</param>
+				<param name="namespace">/role</param>
+				<param name="method">queryChildren</param>
+			</result>
+			<result name="personListQ" type="chain">
+				<param name="actionName">Auth</param>
+				<param name="namespace">/cms_auth</param>
+				<param name="method">personList</param>
+			</result>
+		</action>
+		<action name="AuthIndex">
+			<result>/jsp/cms/auth/personChannelIndex.jsp</result>
+		</action>
+	</package>
+</struts>

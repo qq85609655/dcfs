@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="childaddition" namespace="/cms/childaddition" extends="struts-default" >
+      	<!-- 福利院儿童材料补充列表页面-->
+        <action name="findListFLY" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="findListFLY" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/childAddition_list_fly.jsp</result>
+		</action>
+		<!-- 省厅儿童材料补充列表页面-->
+        <action name="findListST" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="findListST" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/childAddition_list_st.jsp</result>
+		</action>
+		<!-- 省厅 业务查询-补充查询页面-->
+        <action name="findListFromSt" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="findListFromSt" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/childAddition_list_fromSt.jsp</result>
+		</action>
+		<!-- 安置部  业务查询-补充查询页面-->
+        <action name="findListFromAZB" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="findListFromAZB" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/childAddition_list_fromAZB.jsp</result>
+		</action>
+		<!-- 儿童材料补充页面-->
+        <action name="getModifyData" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="getModifyData" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/childAddition_supply.jsp</result>
+		</action>
+		<!-- 儿童材料补充保存/提交操作 -->
+	    <action name="childSupplySave" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="childSupplySave">
+	    	<result name="1" type="chain">/childaddition/findListFLY</result>
+	    	<result name="2" type="chain">/childaddition/findListST</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童材料补充查看页面-->
+        <action name="getShowData" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="getShowData" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/childAddition_detail.jsp</result>
+		</action>
+		<!-- 根据儿童材料信息主键获取已补充的补充记录 -->
+		<action name="getShowDataByCIID" class="com.dcfs.cms.childAdditional.ChildAdditionAction" method="getShowDataByCIID" >
+        <result name="success">/jsp/dcfs/cms/childAdditional/aChildAddition_details.jsp</result>
+        </action>
+	</package>
+</struts>

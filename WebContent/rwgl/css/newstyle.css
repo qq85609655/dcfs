@@ -1,0 +1,238 @@
+/*====== Stylesheet for MTS ======*\
+     Object: style.css
+     Author: Rita
+	 Last Update: 2008-4-27
+\*======================================*/
+
+body
+{
+	margin: 0; 
+	padding: 0; 
+	font-family:arial,tahoma,verdana,sans-serif; 
+	font-size:12px; 
+	color: #333; 
+	text-align:center; 
+}
+p, span, ul, li, dl, dt, dd, hr, h1, h2, h3, h4, h5, h6{margin: 0; padding: 0;}
+.clear{clear: both;}
+
+
+#wrapper
+{
+	width: 100%; 
+	background: #fff; 
+	margin: 0 auto;  
+	text-align: center;
+	background: url(../newimages/background.jpg) repeat-x;
+}
+#wrapper_1
+{
+	width: 100%; 
+	background: #fff; 
+	margin: 0 auto;  
+	text-align: center;
+	background: url(../newimages/background_1.jpg) repeat-x;
+}
+
+#header
+{
+	background: url(../newimages/banner.jpg) no-repeat;
+	width: 100%;
+	height:150px;
+}
+#header_1
+{
+	background: url(../newimages/banner_2.jpg) no-repeat;
+	height:64px;
+	float: left;
+}
+#menu
+{
+	background:url(../newimages/bj.jpg) repeat-x;
+	height: 21px;
+}
+#contents
+{
+	width:100%;
+	text-align: center;
+	margin: auto;
+}
+.login
+{
+	width:341px;
+	height: 175px;
+	background:url(../newimages/denlk.jpg) no-repeat;
+	padding-top:50px;
+	text-align: center;
+	padding-left: 10px;
+	margin-left: 7px;
+}
+.login_1
+{
+	width:341px;
+	height: 175px;
+	background:url(../newimages/denlk_1.jpg) no-repeat;
+	padding-top:45px;
+	text-align: center;
+	padding-left: 10px;
+	margin-left: 7px;
+}
+
+.login p
+{
+	padding-top: 8px;
+}
+.login_1 p
+{
+	padding-top: 6px;
+}
+input
+{
+	border: 1px solid #499cde;
+	width: 180px;
+}
+.wrong
+{
+	background: url(../newimages/denlk_w.jpg) no-repeat;
+	width: 436px;
+	height: 217px;
+	padding-top:45px;
+	text-align: left;
+	padding-left: 10px;
+	margin-left: 7px;
+}
+.wrong p
+{
+	padding-top: 90px;
+	padding-left:20px;
+}
+
+#footer
+{
+	width:100%;
+	text-align: center;
+	color: #999;
+	margin-top: 3px;
+}
+#footer p
+{
+	line-height: 14px;
+}
+
+/***************index_1*****************/
+.index_1
+{
+	text-align:left;
+}
+.index_1 .button_1
+{
+	background:url(../newimages/button_1.jpg);
+	width:644px;
+	height:71px;
+	margin-left:100px;
+}
+.index_1 ul
+{
+	text-align: left;
+	margin-left:350px;
+}
+.index_1 li
+{
+	list-style-image:url(../newimages/icon_2.gif);
+	text-align: left;
+	line-height:18px;
+}
+.index_1 .zhuangs
+{
+	background:url(../newimages/bj_1.png);
+	height:192px;
+	width:449px;
+}
+/***************index_2*****************/
+#menu_1
+{
+	background:url(../newimages/bj_2.jpg) repeat-x;
+	height: 24px;
+}
+
+.blue_bj
+{
+	color:#89bcf1;
+	background-color:#e7f1fb;
+}
+.blue_bj_1
+{
+	color:#89bcf1;
+	background-color:#f7fcff;
+}
+.bj_w
+{
+	background-color: #accff5;
+	width: 1px;
+}
+
+.gundong
+{	
+	float: right;
+	color:#2268c7;
+	padding-top:3px;
+	padding-right:20px; 
+}
+
+/***************index_4*****************/
+.ys
+{
+	background-color:#003287;
+}
+
+/***************font*****************/
+a{color: #003980; text-decoration:none;}
+a:hover{color: #004CAC; text-decoration: underline;}
+
+.white{color: #fff; text-decoration:none;}
+.white:hover{color: #fff; text-decoration: underline;}
+
+.white1{color: #fff; text-decoration:none;}
+.white1:hover{color: #fff;}
+
+.blue2{color:#2268c7; text-decoration: none;}
+.blue2:hover{color:#2268c7;}
+
+
+.gray
+{
+	color: #999;
+}
+.blue
+{
+	color:#499cde;
+	font-weight: bold;
+	font-size:12px;
+}
+.blue_1
+{
+	color:#2268c7;
+}
+.blue_2
+{
+	color:#003287;
+}
+
+.org
+{
+	color:#f60;
+}
+.white_1
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+}
+.red
+{
+	color: #cb0101;
+}
+.yinxktest
+{
+	color: #cb0101;
+}

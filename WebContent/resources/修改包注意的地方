@@ -1,0 +1,11 @@
+1.ajax.jsÎÄ¼þ£º
+breeze.code.AjaxCode
+2.ConnectionManager.properties
+jndi
+jdbc
+3.DataBaseFactory.properties
+dataBaseExtendClassName
+4.common-config.properties
+cache.class
+log.class
+user.class

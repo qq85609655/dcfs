@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:joblog="base/resource/console/joblog/model" targetNamespace="base/resource/console/joblog/model" elementFormDefault="qualified">
+	<xs:element name="JobLogs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="jobLog" type="joblog:jobLogType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="jobLogType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="task_log" type="xs:string"/>
+			<xs:element name="job_id" type="xs:string"/>
+			<xs:element name="start_time" type="xs:dateTime"/>
+			<xs:element name="end_time" type="xs:dateTime"/>
+			<xs:element name="run_state" type="xs:string"/>
+			<xs:element name="resume_keylist" type="xs:string"/>
+			<xs:element name="run_msg" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

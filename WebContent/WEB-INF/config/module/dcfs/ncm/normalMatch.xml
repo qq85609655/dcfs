@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="mormalMatch" namespace="/mormalMatch" extends="struts-default" >
+		<!-- 列表 -->
+        <action name="normalMatchAFList" class="com.dcfs.ncm.normal.NormalMatchAction" method="normalMatchAFList" >
+			<result name="success">/jsp/dcfs/ncm/normal/normalMatchAF_list.jsp</result>
+		</action>
+		<!-- 统计页面 -->
+        <action name="toMatchPlanCount" class="com.dcfs.ncm.normal.NormalMatchAction" method="toMatchPlanCount" >
+			<result name="success">/jsp/dcfs/ncm/normal/normalMatchPlanCount.jsp</result>
+		</action>
+		<!-- 计划统计 -->
+        <action name="planCount" class="com.dcfs.ncm.normal.NormalMatchAction" method="planCount" >
+			<result name="success">/jsp/dcfs/ncm/normal/normalMatchPlanCount.jsp</result>
+		</action>
+		<!-- 正常儿童预分配计划表 -->
+        <action name="AFPlanList" class="com.dcfs.ncm.normal.NormalMatchAction" method="AFPlanList" >
+			<result name="success">/jsp/dcfs/ncm/normal/AFPlan_list.jsp</result>
+		</action>
+		<!-- 导出正常儿童预分配计划表excel -->
+        <action name="exportExcel" class="com.dcfs.ncm.normal.NormalMatchAction" method="exportExcel" >
+			<result></result>
+		</action>
+		<!-- 选择儿童匹配列表 -->
+        <action name="normalMatchCIList" class="com.dcfs.ncm.normal.NormalMatchAction" method="normalMatchCIList" >
+			<result name="success">/jsp/dcfs/ncm/normal/normalMatchCI_list.jsp</result>
+		</action>
+		<!-- 显示儿童信息 -->
+        <action name="showCIs" class="com.dcfs.ncm.normal.NormalMatchAction" method="showCIs" >
+			<result name="success">/jsp/dcfs/ncm/normal/CIs_detail.jsp</result>
+		</action>
+		<!-- 儿童匹配预览 -->
+        <action name="matchPreview" class="com.dcfs.ncm.normal.NormalMatchAction" method="matchPreview" >
+			<result name="success">/jsp/dcfs/ncm/normal/matchPreview.jsp</result>
+		</action>
+		<!-- 儿童同胞信息查看 -->
+        <action name="showTwinsCI" class="com.dcfs.ncm.normal.NormalMatchAction" method="showTwinsCI" >
+			<result name="success">/jsp/dcfs/ncm/normal/TwinsCI_detail.jsp</result>
+		</action>
+		<!-- 保存匹配结果 -->
+        <action name="saveMatchResult" class="com.dcfs.ncm.normal.NormalMatchAction" method="saveMatchResult" >
+			<result name="success" type="chain">matchPreview</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:taskjob="base/resource/console/taskjob/model" targetNamespace="base/resource/console/taskjob/model" elementFormDefault="qualified">
+	<xs:element name="TaskJobs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="taskJob" type="taskjob:taskJobType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="taskJobType">
+		<xs:sequence>
+			<xs:element name="task_id" type="xs:string"/>
+			<xs:element name="job_id" type="xs:string"/>
+			<xs:element name="seq_num" type="xs:int"/>
+			<xs:element name="continue_flag" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

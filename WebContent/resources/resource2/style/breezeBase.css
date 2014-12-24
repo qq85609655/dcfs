@@ -1,0 +1,138 @@
+@CHARSET "UTF-8";
+/**
+ * 显示信息的字体样式，颜色除外
+ */	
+.show_info {
+	font-size: 12px;
+	font-weight: normal;
+}
+/**
+ * 显示调试信息的字体样式，颜色除外
+ */	
+.show_debug {
+	font-size: 12px;
+	font-weight: normal;
+}
+/**
+ * 显示警告信息的字体样式，颜色除外
+ */	
+.show_warn {
+	font-size: 12px;
+	font-weight: normal;
+}
+/**
+ * 显示错误信息的字体样式，颜色除外
+ */	
+.show_error {
+	font-size: 12px;
+	font-weight: normal;
+}
+/**
+ * 显示错误信息的字体样式，颜色除外
+ */	
+.show_fatal {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.msg_div{
+	position:absolute;
+	z-index:9999999;
+	CURSOR:hand;
+	border-style:solid;
+	border-width:1px;
+	background-color: #FCFEE4;
+	font-size: 12px; 
+	width: 120px;
+}
+.msg_div_td{
+	background-color: #FCFEE4;
+	font-size: 12px; 
+}
+.msg_info{
+	position:absolute;
+	z-index:9999999;
+	CURSOR:hand;
+	border-style:solid;
+	border-width:1px;
+	background-color: #edf9f0;
+	font-size: 12px; 
+}
+.msg_info_td{
+	background-color: #edf9f0;
+	font-size: 12px; 
+}
+/**
+ * 简单分页的样式
+ */	
+td.page_simple{
+	text-align: center;
+	font-size:12px;
+	color:#000000;
+}
+td.page_simple A:link {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+td.page_simple A:visited {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+td.page_simple A:active {
+	color: #000000;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+td.page_simple A:hover {
+	color: #FF0000;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+input.inputText{
+	height: 22px;
+	padding-top:4px;
+	padding-left:2px;
+	font-size: 12px;
+	border: 1px solid silver;
+}
+.input123{
+	height: 18px;
+	padding-top:4px;
+	padding-left:2px;
+	font-size: 12px;
+	border: 1px solid silver;
+}
+td.title{
+	height: 22px;
+	font-size: 12px;
+	color:#000000; 
+	font-weight: bold;
+	text-align: right;
+	white-space: pre;
+}
+td.title span{
+	height: 22px;
+	font-size: 12px;
+	color:#000000; 
+	font-weight: bold;
+	text-align: right;
+	white-space: pre;
+}
+td.txt{
+	height: 22px;
+	font-size: 12px;
+	color:#000000; 
+}
+select.txt_select{
+	height:22px;
+	padding-top:4px;
+	padding-left:2px;
+	font-size: 12px;
+	border: 1px solid silver;
+}

@@ -1,0 +1,38 @@
+#navigation {				
+	list-style: none;
+	display:block;
+	margin:0px;
+	padding:0px;	
+}
+#navigation li {
+	float: left;
+	margin-left: 2px;
+	background: url(../images/right-tab.png) no-repeat 100% 0px;
+	font-size: 14px;	
+}
+#navigation li a {	
+	float: left;
+	display: block;
+	height: 3.4em; /* Targets IE 5.5 only */
+	height: 2.5em; /* All Other Browsers */
+	padding: 0.7em 1.5em 0em 1.4em;
+	background: url(../images/left-tab.png) no-repeat 0% 0px;
+	color: #777;
+	text-decoration: none;	
+	overflow: hidden;
+}
+#navigation li.current_page_item {
+	background-position: 100% -150px;
+}
+#navigation li.current_page_item a {
+	background-position: 0% -150px;
+	color: #040404;
+	padding-bottom: 1px;
+}
+#navigation li:hover, #navigation li.ieHover {
+	background-position: 100% -150px;
+}
+#navigation li:hover a, #navigation li.ieHover a {
+	background-position: 0% -150px;
+	color: #040404;
+}

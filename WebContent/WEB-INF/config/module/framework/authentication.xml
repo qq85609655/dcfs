@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="auth" extends="struts-default" namespace="/auth">
+		<!-- 用户登录 -->
+		<action name="login" class="com.hx.framework.authenticate.LoginAction">
+			<result name="success">/selOrg.jsp</result>
+			<result name="index">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+			<result name="toChgPwd">/jsp/framework/person/password2.jsp</result>
+		</action>
+		<!-- 选择登录组织 -->
+		<action name="selOrg" class="com.hx.framework.authenticate.SelectOrgAction">
+			<result name="toSel">/selOrg.jsp</result>
+			<result name="success">/index.jsp</result>
+		</action>
+		 
+		<!-- 用户注销 -->
+		<action name="logout" class="com.hx.framework.authenticate.LogoutAction">
+			<result name="success">/login.jsp</result>
+		</action>
+	</package>
+</struts>

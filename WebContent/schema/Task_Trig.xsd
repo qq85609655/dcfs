@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tasktrig="base/resource/console/tasktrig/model" targetNamespace="base/resource/console/tasktrig/model" elementFormDefault="qualified">
+	<xs:element name="TaskTrig">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="taskTrig" type="tasktrig:taskTrigType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="taskTrigType">
+		<xs:sequence>
+			<xs:element name="task_id" type="xs:string"/>
+			<xs:element name="trig_task_id" type="xs:string"/>
+			<xs:element name="trig_type" type="xs:string"/>
+			<xs:element name="seq_num" type="xs:int"/>
+			<xs:element name="trig_constraint" type="xs:string"/>
+			<xs:element name="trig_time" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

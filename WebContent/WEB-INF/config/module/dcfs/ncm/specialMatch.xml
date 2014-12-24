@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="specialMatch" namespace="/specialMatch" extends="struts-default" >
+		<!-- 列表 -->
+        <action name="AFSpecialMatchList" class="com.dcfs.ncm.special.SpecialMatchAction" method="AFSpecialMatchList" >
+			<result name="success">/jsp/dcfs/ncm/special/AFSpecialMatch_list.jsp</result>
+		</action>
+		<!-- 特需儿童列表 -->
+        <action name="CISpecialMatchList" class="com.dcfs.ncm.special.SpecialMatchAction" method="CISpecialMatchList" >
+			<result name="success">/jsp/dcfs/ncm/special/CISpecialMatch_list.jsp.jsp</result>
+		</action>
+		<!-- 匹配结果预览 -->
+        <action name="specialMatchPreview" class="com.dcfs.ncm.special.SpecialMatchAction" method="specialMatchPreview" >
+			<result name="success">/jsp/dcfs/ncm/special/specialMatchPreview.jsp</result>
+		</action>
+		<!-- 保存匹配结果 -->
+        <action name="saveSpecialMatchResult" class="com.dcfs.ncm.special.SpecialMatchAction" method="saveSpecialMatchResult" >
+			<result name="success" type="chain">specialMatchPreview</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!--默认的数据源配置-->
+	<defaultDataSource>
+		<database>
+		    <!--JNDI数据源配置-->
+			<JNDIProvider>
+				<name>jdbc/DFILE</name>
+				<!-- java:comp/env/jdbc/DFILE -->
+			</JNDIProvider>
+			
+			<!-- JDBC数据源配置
+			<JDBCProvider>
+		    	<driver>COM.ibm.db2.jdbc.net.DB2Driver</driver>
+		    	<url>jdbc:db2://192.9.110.129:/50000/DFILE</url>
+		    	<user>db2admin</user>
+		    	<password>db2admin</password>
+			</JDBCProvider>
+			-->
+			<!--数据库类型-->
+			<dbtype>DB2</dbtype>
+			<!--数据库用户名称-->
+			<dbuser>DB2ADMIN</dbuser>			
+		</database>
+	</defaultDataSource>
+	
+	<!--
+	    可以配置多个数据源，配置的方法如下：
+	    1、其它数据源和defaultDataSource的内部结构是一样的，但是节点的名称必须是×××DataSource形式的。
+	    例如：
+	    <safeDataSource>
+	        ....
+	    </safeDataSource>
+	    2、数据源节点的名称不能重复。
+	-->
+	<dfileDataSource>
+		<database>
+			<JNDIProvider>
+				<name>jdbc/DFILE</name>
+			</JNDIProvider>
+			<dbtype>DB2</dbtype>
+			<dbuser>DB2ADMIN</dbuser>
+		</database>
+	</dfileDataSource>
+	
+		
+	<!--应用程序相关的配置-->
+	<application>
+	
+	    <!-- 分页相关的设置 -->
+	    <page>
+	        <!-- 每页显示10行 -->
+	    	<perPageSize>10</perPageSize>
+	    </page>
+	    
+	    <!-- log日志相关的配置 -->
+	    <log>
+	    	<!-- 日志的工厂实现类 -->
+	        <logFactory>base.common.logging.impl.LogFactoryImpl</logFactory>
+	        <!-- 日志实现类 -->
+			<logger>base.common.logging.impl.Log4JLogger</logger>
+			
+	        <!-- 是否显示日志全称 -->
+	        <showLogName>true</showLogName>
+	        <!-- 是否显示日志简称 -->
+	        <showShortLogName>false</showShortLogName>
+	        <!-- 是否显示日期 -->
+	        <showDatetime>true</showDatetime>
+	        <!-- 显示日期的样式 -->
+	        <dateFormat>yyyy-MM-dd HH:mm:ss</dateFormat>
+	        <!-- 日志的级别:LOG_LEVEL_TRACE:1 LOG_LEVEL_DEBUG:2 LOG_LEVEL_INFO:3 LOG_LEVEL_WARN:4 LOG_LEVEL_ERROR:5 LOG_LEVEL_FATAL:6 LOG_LEVEL_ALL:0 LOG_LEVEL_OFF:7 -->
+	        <logLevel>2</logLevel>
+	    </log>
+	    
+	</application>
+	
+	<!-- 代码生成机配置 -->
+	<codemachine>
+		<src>F:/eclipse3_2_1/workspace/code/src/</src>
+		<jsp>F:/eclipse3_2_1/workspace/code/WebRoot/jsp/</jsp>
+		<user>xinjin</user>
+		<package>com.icss.temp</package>
+	</codemachine>
+</config>

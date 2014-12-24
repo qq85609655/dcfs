@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="filemanager" namespace="/ffs/filemanager" extends="struts-default">
+		
+		<!-- 递交普通文件 -->
+		
+		<!-- 进入递交普通文件列表 -->
+	    <action name="NormalFileList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 新增普通文件第一步操作页面 -->
+	    <action name="NormalFileAddFirst" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileAddFirst">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_addFirst.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 根据男收养人、女收养人姓名查询该组织的收养文件 -->
+	    <action name="NormalFileSaveFirst" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileSaveFirst">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 按收养类型加载收养文件信息添加页面 -->
+	    <action name="NormalFileAdd" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileAdd">
+	    	<result name="double">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_doubletempleteadd.jsp</result>
+	    	<result name="single">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_singletempleteadd.jsp</result>
+	    	<result name="step">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_steptempleteadd.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 按收养类型加载收养文件信息添加页面 -->
+	    <action name="NormalFileSave" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileSave">
+	    	<result name="tijiao" type="chain">/filemanager/NormalFileList</result>
+	    	<result name="baocun" type="chain">/filemanager/NormalFileAdd</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 按收养类型加载收养文件信息添加页面 -->
+	    <action name="NormalFileShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileShow">
+	    	<result name="double">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_doubletempleteview.jsp</result>
+	    	<result name="single">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_singletempleteview.jsp</result>
+	    	<result name="step">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_steptempleteview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 修改未登记或待修改的普通文件 -->
+	    <action name="NormalFileRevise" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileRevise">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/normalFile/normalFile_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 普通文件导出 -->
+		<action name="NormalFileExport" class="com.dcfs.ffs.fileManager.FileManagerAction" method="NormalFileExport">
+		</action>
+		
+		
+		<!-- 递交特需文件 -->
+		
+		<!-- 进入递交特需文件列表 -->
+	    <action name="SpecialFileList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入预批通过的特需文件选择列表 -->
+	    <action name="SpecialFileSelectList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileSelectList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_selectlist.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 按收养类型加载收养文件信息添加页面 -->
+	    <action name="SpecialFileAdd" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileAdd">
+	    	<result name="double">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_doubletempleteadd.jsp</result>
+	    	<result name="single">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_singletempleteadd.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 保存特需文件信息 -->
+	    <action name="SpecialFileSave" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileSave">
+	    	<result name="save" type="chain">/filemanager/SpecialFileRevise</result>
+	    	<result name="submit" type="chain">/filemanager/SpecialFileList</result>
+	    	<result name="select" type="chain">/filemanager/SpecialFileSelectList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 修改未登记或待修改的特需文件 -->
+	    <action name="SpecialFileRevise" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileRevise">
+	    	<result name="double">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_doubletempleteadd.jsp</result>
+	    	<result name="single">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_singletempleteadd.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 特需文件信息查看 -->
+	    <action name="SpecialFileShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileShow">
+	    	<result name="double">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_doubletempleteview.jsp</result>
+	    	<result name="single">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_singletempleteview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 儿童信息查看 -->
+	    <action name="ChildDataShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="ChildDataShow">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_childview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 特需文件导出 -->
+		<action name="SpecialFileExport" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SpecialFileExport">
+		</action>
+		
+		
+		<!-- 补充文件 -->
+		
+		<!-- 进入补充文件列表 -->
+	    <action name="SuppleFileList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SuppleFileList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入补充文件信息添加页面 -->
+	    <action name="SuppleFileAdd" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SuppleFileAdd">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 保存补充文件信息 -->
+	    <action name="SuppleFileSave" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SuppleFileSave">
+	    	<result name="submit" type="chain">/filemanager/SuppleFileList</result>
+	    	<result name="save">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 文件信息查看修改操作 -->
+	    <action name="SuppleFileShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SuppleFileShow">
+	    	<result name="moddouble">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_doubleadd.jsp</result>
+	    	<result name="modsingle">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_singleadd.jsp</result>
+	    	<result name="modstep">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_stepadd.jsp</result>
+	    	<result name="showdouble">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_doubleview.jsp</result>
+	    	<result name="showsingle">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_singleview.jsp</result>
+	    	<result name="showstep">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_stepview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 文件基本信息保存操作 -->
+	    <action name="BasicInfoSave" class="com.dcfs.ffs.fileManager.FileManagerAction" method="BasicInfoSave">
+	    </action>
+		<!-- 补充文件批量提交操作 -->
+	    <action name="SuppleBatchSubmit" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SuppleBatchSubmit">
+	    	<result name="success" type="chain">/filemanager/SuppleFileList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 补充文件导出 -->
+		<action name="SuppleFileExport" class="com.dcfs.ffs.fileManager.FileManagerAction" method="SuppleFileExport">
+		</action>
+		<!-- 审核部补充查询列表 -->
+		<action name="SuppleQueryList" class="com.dcfs.ffs.fileManager.SuppleQueryAction" method="SuppleQueryList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/suppleFile/suppleQuery_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 审核部补充明细查看 -->
+	    <action name="SuppleQueryShow" class="com.dcfs.ffs.fileManager.SuppleQueryAction" method="SuppleQueryShow">
+	    	<result name="File">/jsp/dcfs/ffs/fileManager/suppleFile/suppleFile_view.jsp</result>
+	    	<result name="Query">/jsp/dcfs/ffs/fileManager/suppleFile/suppleQuery_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 审核部文件详细信息查看 -->
+	    <action name="FileDetailShow" class="com.dcfs.ffs.fileManager.SuppleQueryAction" method="FileDetailShow">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/suppleFile/fileDetail_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <action name="GetFileDetail" class="com.dcfs.ffs.fileManager.SuppleQueryAction" method="GetFileDetail">
+	    	<result name="doubleCN">/jsp/dcfs/ffs/fileManager/suppleFile/fileDetailCN_doubleview.jsp</result>
+	    	<result name="doubleEN">/jsp/dcfs/ffs/fileManager/suppleFile/fileDetailEN_doubleview.jsp</result>
+	    	<result name="singleCN">/jsp/dcfs/ffs/fileManager/suppleFile/fileDetailCN_singleview.jsp</result>
+	    	<result name="singleEN">/jsp/dcfs/ffs/fileManager/suppleFile/fileDetailEN_singleview.jsp</result>
+	    	<result name="step">/jsp/dcfs/ffs/fileManager/suppleFile/fileDetail_stepview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 文件预批审核信息 -->
+	    <action name="GetPreApproveData" class="com.dcfs.ffs.fileManager.SuppleQueryAction" method="GetPreApproveData">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/suppleFile/filePreApprove_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		
+		<!-- 文件紧缚及缴费信息列表 -->
+	    <action name="FileProgressList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="FileProgressList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/fileProgress_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 文件办理进度及缴费信息查看 -->
+	    <action name="FileProgressShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="FileProgressShow">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/fileProgress_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 查看预批申请信息 -->
+	     <action name="getReqDataList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="getReqDataList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/preapproveapply_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+		<!-- 退文信息 -->
+		
+		<!-- 退文信息列表 -->
+	    <action name="ReturnFileList" class="com.dcfs.ffs.fileManager.FileReturnAction" method="ReturnFileList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/returnFile/returnFile_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 退文申请列表 -->
+	    <action name="ReturnApplyList" class="com.dcfs.ffs.fileManager.FileReturnAction" method="ReturnApplyList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/returnFile/returnFileApply_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 跳转退文申请确认页面 -->
+        <action name="confirmShow" class="com.dcfs.ffs.fileManager.FileReturnAction" method="confirmShow" >
+			<result name="success">/jsp/dcfs/ffs/fileManager/returnFile/returnFile_confirmadd.jsp</result>
+		</action>
+		<!-- 保存退文申请确认信息 -->
+	    <action name="ReturnFileSave" class="com.dcfs.ffs.fileManager.FileReturnAction" method="ReturnFileSave">
+	    	<result name="success" type="chain">/filemanager/ReturnFileList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		
+		<!-- 缴费信息管理 -->
+		
+		<!-- 进入缴费信息列表 -->
+	    <action name="PaymentList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="PaymentList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/payment_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 缴费信息及收养信息查看 -->
+	    <action name="PaymentShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="PaymentShow">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/payment_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		<!-- 缴费信息导出 -->
+		<action name="PaymentExport" class="com.dcfs.ffs.fileManager.FileManagerAction" method="PaymentExport">
+		</action>
+		
+		<!-- 进入缴费通知列表 -->
+	    <action name="PaymentNoticeList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="PaymentNoticeList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/paymentNotice_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 进入缴费通知查看页面 -->
+	    <action name="PaymentNoticeShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="PaymentNoticeShow">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/paymentNotice_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 结余账户查询列表 -->
+	    <action name="AccountBalanceList" class="com.dcfs.ffs.fileManager.FileManagerAction" method="AccountBalanceList">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/accountBalance_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 结余账户使用记录查看页面 -->
+	    <action name="AccountBalanceShow" class="com.dcfs.ffs.fileManager.FileManagerAction" method="AccountBalanceShow">
+	    	<result name="success">/jsp/dcfs/ffs/fileManager/costQuery/accountBalance_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!--文件办理公共方法类 -->
+	    <!-- 获取收养人基本信息 -->
+	    <action name="GetAdoptionPersonInfo" class="com.dcfs.ffs.fileManager.FileManagerAction" method="GetAdoptionPersonInfo">
+	    	<!-- <result name="doubleENmod">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_doubleadd.jsp</result>
+	    	<result name="singleENmod">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_singleadd.jsp</result>
+	    	<result name="stepENmod">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_stepadd.jsp</result> -->
+	    	<result name="doubleENshow">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_doubleview.jsp</result>
+	    	<result name="doubleCNshow">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_doubleview.jsp</result>
+	    	<result name="singleENshow">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_singleview.jsp</result>
+	    	<result name="singleCNshow">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_singleview.jsp</result>
+	    	<result name="stepENshow">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoEN_stepview.jsp</result>
+	    	<result name="stepCNshow">/jsp/dcfs/ffs/fileManager/info/adoptionpersoninfoCN_stepview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 删除未登记的文件信息 -->
+	    <action name="FileDelete" class="com.dcfs.ffs.fileManager.FileManagerAction" method="FileDelete">
+	    	<result name="normal" type="chain">filemanager/NormalFileList</result>
+	    	<result name="special" type="chain">filemanager/SpecialFileList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 批量提交文件操作 -->
+	    <action name="FileBatchSubmit" class="com.dcfs.ffs.fileManager.FileManagerAction" method="FileBatchSubmit">
+	    	<result name="normal" type="chain">filemanager/NormalFileList</result>
+	    	<result name="special" type="chain">filemanager/SpecialFileList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 流水号打印 -->
+        <action name="seqNoPrint" class="com.dcfs.ffs.fileManager.FileManagerAction" method="seqNoPrint" >
+			<result name="normal">/jsp/dcfs/ffs/fileManager/normalFile/NormalFileSeqNO_print.jsp</result>
+			<result name="special">/jsp/dcfs/ffs/fileManager/specialFile/specialFile_seqnoprint.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 获取文件页面 -->
+        <action name="GetFileInfo" class="com.dcfs.ffs.fileManager.FileManagerAction" method="GetFileInfo" >
+			<!-- 1、双亲收养-原文-编辑 -->
+			<result name="parents_en_edit">/jsp/dcfs/ffs/fileManager/fileInfo/parents_en_edit.jsp</result>
+			<!-- 2、双亲收养-翻译-编辑-->
+			<result name="parents_cn_edit">/jsp/dcfs/ffs/fileManager/fileInfo/parents_cn_edit.jsp</result>
+			<!-- 3、双亲收养-原文-查看 -->
+			<result name="parents_en_view">/jsp/dcfs/ffs/fileManager/fileInfo/parents_en_view.jsp</result>
+			<!-- 4、双亲收养-翻译-查看 -->
+			<result name="parents_cn_view">/jsp/dcfs/ffs/fileManager/fileInfo/parents_cn_view.jsp</result>
+			<!-- 5、单亲收养-原文-编辑 -->
+			<result name="singleparent_en_edit">/jsp/dcfs/ffs/fileManager/fileInfo/singleparent_en_edit.jsp</result>
+			<!-- 6、单亲收养-翻译-编辑-->
+			<result name="singleparent_cn_edit">/jsp/dcfs/ffs/fileManager/fileInfo/singleparent_cn_edit.jsp</result>
+			<!-- 7、单亲收养-原文-查看 -->
+			<result name="singleparent_en_view">/jsp/dcfs/ffs/fileManager/fileInfo/singleparent_en_view.jsp</result>
+			<!-- 8、单亲收养-翻译-查看 -->
+			<result name="singleparent_cn_view">/jsp/dcfs/ffs/fileManager/fileInfo/singleparent_cn_view.jsp</result>
+			<!-- 9、继子女-原文-编辑 -->
+			<result name="stepchild_en_edit">/jsp/dcfs/ffs/fileManager/fileInfo/stepchild_en_edit.jsp</result>
+			<!-- 10、继子女-翻译-编辑-->
+			<result name="stepchild_cn_edit">/jsp/dcfs/ffs/fileManager/fileInfo/stepchild_cn_edit.jsp</result>
+			<!-- 11、继子女-原文-查看 -->
+			<result name="stepchild_en_view">/jsp/dcfs/ffs/fileManager/fileInfo/stepchild_en_view.jsp</result>
+			<!-- 12、继子女-翻译-查看 -->
+			<result name="stepchild_cn_view">/jsp/dcfs/ffs/fileManager/fileInfo/stepchild_cn_view.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

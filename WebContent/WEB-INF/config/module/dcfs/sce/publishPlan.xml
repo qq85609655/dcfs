@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="registration" namespace="/sce/publishPlan" extends="struts-default" >
+
+	    <!-- 发布计划列表页面-->
+        <action name="findListForFBJH" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="findListForFBJH" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到新增计划基本信息页面-->
+        <action name="toPlanBaseInfoAdd" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toPlanBaseInfoAdd" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到修改计划基本信息页面-->
+        <action name="toPlanBaseInfoRevise" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toPlanBaseInfoRevise" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到制定计划详细页面-->
+        <action name="toPlanInfoAdd" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toPlanInfoAdd" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 添加儿童后跳转到计划详细页面-->
+        <action name="addET" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="addET" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 移除儿童后跳转到计划详细页面-->
+        <action name="removeET" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="removeET" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_add.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到待发布儿童选择列表页面-->
+        <action name="toChoseETForJH" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toChoseETForJH" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_et_chose_list.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 保存或提交发布计划基本信息-->
+        <action name="saveFBJHBaseInfo" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="saveFBJHBaseInfo" >
+			<result name="success" type="chain">
+				<param name="actionName">findListForFBJH</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">findListForFBJH</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 发布计划维护提交-->
+        <action name="saveFBJHInfo" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="saveFBJHInfo" >
+			<result name="success" type="chain">
+				<param name="actionName">toModifyPlan</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">toModifyPlan</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 发布计划发布-->
+        <action name="planPublish" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="planPublish" >
+			<result name="success" type="chain">
+				<param name="actionName">findListForFBJH</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">findListForFBJH</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到修改发布计划详细页面-->
+        <action name="toModifyPlan" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toModifyPlan" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_revise.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到查看发布计划详细页面-->
+        <action name="toViewPlan" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toViewPlan" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_jh_view.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到修改发布计划详细页面-->
+        <action name="toFBLXChose" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="toFBLXChose" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_fblx_chose.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 添加儿童后跳转到计划修改详细页面-->
+        <action name="addETForRevise" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="addETForRevise" >
+			<result name="success" type="chain">
+				<param name="actionName">toModifyPlan</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">toModifyPlan</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 移除儿童后跳转到计划修改详细页面-->
+        <action name="removeETForRevise" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="removeETForRevise" >
+			<result name="success" type="chain">
+				<param name="actionName">toModifyPlan</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">toModifyPlan</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 删除发布计划-->
+		<action name="deletePlan" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="deletePlan" >
+			<result name="success" type="chain">
+				<param name="actionName">findListForFBJH</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">findListForFBJH</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到发布计划打印页面-->
+        <action name="printShow" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="printShow" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_print.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到发布计划通告界面-->
+        <action name="getFBJHForYYG" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="getFBJHForYYG" >
+			<result name="success">/jsp/dcfs/sce/publishPlan/fbjh_tg_view.jsp</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 手动预告发布计划-->
+        <action name="sdyg" class="com.dcfs.sce.publishPlan.PublishPlanAction" method="sdyg" >
+			<result name="success" type="chain">
+				<param name="actionName">findListForFBJH</param>
+				<param name="namespace">/sce/publishPlan</param>
+				<param name="method">findListForFBJH</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+	
+		
+		
+		
+	</package>
+</struts>

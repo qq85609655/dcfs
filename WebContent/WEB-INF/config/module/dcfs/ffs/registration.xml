@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="registration" namespace="/ffs/registration" extends="struts-default" >
+
+	    <!-- 跳转到手工登记页面-->
+        <action name="FileHandReg" class="com.dcfs.ffs.registration.RegistrationAction" method="FileHandReg" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_handreg.jsp</result>
+		</action>
+		
+	    <!-- 跳转到文件代录添加页面-->
+        <action name="toAddFlieRecord" class="com.dcfs.ffs.registration.RegistrationAction" method="toAddFlieRecord" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_add.jsp</result>
+		</action>
+		
+		 <!-- 跳转到文件代录添加页面-->
+        <action name="toAddFlieRecordChoise" class="com.dcfs.ffs.registration.RegistrationAction" method="toAddFlieRecordChoise" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_add_choise.jsp</result>
+		</action>
+		
+	    <!-- 跳转到批量文件代录页面-->
+        <action name="batchAddFlieRecord" class="com.dcfs.ffs.registration.RegistrationAction" method="batchAddFlieRecord" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_batchadd.jsp</result>
+		</action>
+		
+		<!-- 跳转到文件转组织页面-->
+        <action name="toChoseFile" class="com.dcfs.ffs.registration.RegistrationAction" method="toChoseFile" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_chosefile.jsp</result>
+		</action>
+		
+		<!-- 文件手工登记提交-->
+        <action name="saveFileHandReg" class="com.dcfs.ffs.registration.RegistrationAction" method="saveFileHandReg" >
+			<result name="success" type="chain">
+				<param name="actionName">findList</param>
+				<param name="namespace">/ffs/registration</param>
+				<param name="method">findList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 新增文件代录-->
+        <action name="saveFlieRecord" class="com.dcfs.ffs.registration.RegistrationAction" method="saveFlieRecord" >
+			<result name="success" type="chain">
+				<param name="actionName">findList</param>
+				<param name="namespace">/ffs/registration</param>
+				<param name="method">findList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 批量文件代录提交-->
+        <action name="saveBatchFlieRecord" class="com.dcfs.ffs.registration.RegistrationAction" method="saveBatchFlieRecord" >
+			<result name="success" type="chain">
+				<param name="actionName">barCodeList</param>
+				<param name="namespace">/ffs/registration</param>
+				<param name="method">barCodeList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+		
+		<!-- 跳转到批量打印条形码页面 -->
+        <action name="barCodeList" class="com.dcfs.ffs.registration.RegistrationAction" method="barCodeList" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_barcode.jsp</result>
+		</action>
+		
+		<!-- 进入文件登记列表 -->
+	    <action name="findList" class="com.dcfs.ffs.registration.RegistrationAction" method="findList">
+	    	<result name="success">/jsp/dcfs/ffs/registration/wjdj_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 查看 -->
+        <action name="show" class="com.dcfs.ffs.registration.RegistrationAction" method="show" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjdl_detail.jsp</result>
+		</action>
+		
+		<!-- 儿童信息查看 -->
+	    <action name="ChildDataShow" class="com.dcfs.ffs.registration.RegistrationAction" method="ChildDataShow">
+	    	<result name="success">/jsp/dcfs/ffs/registration/wjdj_childview.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+		
+		<!-- 跳转到文件退回添加页面 -->
+        <action name="toAddFlieReturnReason" class="com.dcfs.ffs.registration.RegistrationAction" method="toAddFlieReturnReason" >
+			<result name="success">/jsp/dcfs/ffs/registration/wjth_add.jsp</result>
+		</action>
+		
+		<!-- 文件退回保存-->
+        <action name="saveFlieReturnReason" class="com.dcfs.ffs.registration.RegistrationAction" method="saveFlieReturnReason" >
+			<result name="success" type="chain">
+				<param name="actionName">findList</param>
+				<param name="namespace">/ffs/registration</param>
+				<param name="method">findList</param>
+			</result>
+			<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+
+		<!-- 登记文件导出 -->
+		<action name="exportExcelFile" class="com.dcfs.ffs.registration.RegistrationAction"
+		method="exportRegistrationFile"></action>
+		
+	</package>
+</struts>

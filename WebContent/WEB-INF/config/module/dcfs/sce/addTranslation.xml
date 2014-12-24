@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="addTranslation" namespace="/sce/addTranslation" extends="struts-default" >
+
+		<!-- 预批补翻查询列表 -->
+	    <action name="addTranslationList" class="com.dcfs.sce.addTranslation.AddTranslationAction" method="addTranslationList">
+	    	<result name="SHB">/jsp/dcfs/sce/addTranslation/addTranslationSHB_list.jsp</result>
+	    	<result name="AZB">/jsp/dcfs/sce/addTranslation/addTranslationAZB_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    
+	    <!-- 预批补翻信息查看页面-->
+        <action name="addTranslationShow" class="com.dcfs.sce.addTranslation.AddTranslationAction" method="addTranslationShow" >
+			<result name="success">/jsp/dcfs/sce/addTranslation/addTranslation_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+		</action>
+
+	</package>
+</struts>

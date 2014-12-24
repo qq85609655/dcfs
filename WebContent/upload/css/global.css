@@ -1,0 +1,84 @@
+body,button,input,select,textarea {
+	font: 12px/ 1.5 tahoma, arial, "ËÎÌו";
+	color: #666
+}
+
+a {
+	color: #06c;
+	text-decoration: none
+}
+
+a:hover,a:active,a:focus {
+	color: #06c;
+	text-decoration: underline
+}
+
+.global-clearfix:after {
+	content: '.';
+	display: block;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	clear: both
+}
+
+.global-clearfix {
+	zoom: 1
+}
+
+.global-clear {
+	clear: both
+}
+
+.global-bold {
+	font-weight: 700
+}
+
+.global-center {
+	text-align: center
+}
+
+.global-gray2 {
+	color: #AAB2BF
+}
+
+.global-float-left {
+	float: left
+}
+
+.global-float-right {
+	float: right
+}
+
+.global-uploader {
+	position: absolute;
+	top: 10px;
+	left: 22px;
+	opacity: 0;
+	height: 34px;
+	width: 115px;
+	display: block
+}
+
+.global-pdl-30 {
+	padding-left: 30px
+}
+
+.global-pdl-25 {
+	padding-left: 25px
+}
+
+.global-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+
+.global-disabled,.global-disabled:hover,.global-disabled:active {
+	filter: alpha(opacity = 50);
+	-ms-filter: "alpha(opacity=50)";
+	opacity: .5;
+	color: #ccc;
+	cursor: default !important
+}

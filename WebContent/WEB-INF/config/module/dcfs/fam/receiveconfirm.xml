@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="receiveconfirm" namespace="/fam/receiveconfirm" extends="struts-default">
+		<!-- 到账确认列表 -->
+	    <action name="ReceiveConfirmList" class="com.dcfs.fam.receiveConfirm.ReceiveConfirmAction" method="ReceiveConfirmList">
+	    	<result name="success">/jsp/dcfs/fam/receiveConfirm/receiveconfirm_list.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 到账确认添加 -->
+	    <action name="ReceiveConfirmShow" class="com.dcfs.fam.receiveConfirm.ReceiveConfirmAction" method="ReceiveConfirmShow">
+	    	<result name="add">/jsp/dcfs/fam/receiveConfirm/receiveconfirm_add.jsp</result>
+	    	<result name="show">/jsp/dcfs/fam/receiveConfirm/receiveconfirm_view.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 到账确认保存 -->
+	    <action name="ReceiveConfirmSave" class="com.dcfs.fam.receiveConfirm.ReceiveConfirmAction" method="ReceiveConfirmSave">
+	    	<result name="success" type="chain">/receiveconfirm/ReceiveConfirmList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 调账添加 -->
+	    <action name="ReviseAccountAdd" class="com.dcfs.fam.receiveConfirm.ReceiveConfirmAction" method="ReviseAccountAdd">
+	    	<result name="success">/jsp/dcfs/fam/receiveConfirm/reviseaccount_add.jsp</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	    <!-- 调账添加 -->
+	    <action name="ReviseAccountSave" class="com.dcfs.fam.receiveConfirm.ReceiveConfirmAction" method="ReviseAccountSave">
+	    	<result name="success" type="chain">/receiveconfirm/ReceiveConfirmList</result>
+	    	<result name="error1">/error.jsp</result>
+	    	<result name="error2">/error.jsp</result>
+	    </action>
+	</package>
+</struts>

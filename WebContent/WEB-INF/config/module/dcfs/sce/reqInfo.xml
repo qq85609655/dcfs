@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="info" namespace="/info" extends="struts-default" >	
+		<!-- 收养组织撤销预批列表（已撤销） -->
+		<action name="SYZZREQInfoList" class="com.dcfs.sce.REQInfo.REQInfoAction" method="SYZZREQInfoList" >
+			<result name="success">/jsp/dcfs/sce/reqInfo/SYZZREQ_info_list.jsp</result>
+		</action>
+		<!-- 收养组织预批申请列表（未撤销） -->
+		<action name="SYZZREQInfoApplicatList" class="com.dcfs.sce.REQInfo.REQInfoAction" method="SYZZREQInfoApplicatList" >
+			<result name="success">/jsp/dcfs/sce/reqInfo/SYZZREQ_info_applicatList.jsp</result>
+		</action>
+		<!-- 收养组织预批申请填写撤销原因页面 -->
+		<action name="SYZZREQInfoReason" class="com.dcfs.sce.REQInfo.REQInfoAction" method="SYZZREQInfoReason" >
+			<result name="success">/jsp/dcfs/sce/reqInfo/SYZZREQ_info_addReason.jsp</result>
+		</action>
+		<!-- 收养组织预批申请撤销原因保存 -->
+		<action name="SYZZREQInfoAddReason" class="com.dcfs.sce.REQInfo.REQInfoAction" method="SYZZREQInfoAddReason" >
+			<result name="success" type="chain">SYZZREQInfoList</result>
+		</action>
+		<!-- 收养组织查看申请撤销详细信息 -->
+		<action name="SYZZREQInfoSearchById" class="com.dcfs.sce.REQInfo.REQInfoAction" method="SYZZREQInfoSearchById" >
+			<result name="success">/jsp/dcfs/sce/reqInfo/SYZZREQ_info_detail.jsp</result>
+		</action>
+		<!-- 安置部预批撤销列表 -->
+		<action name="AZBREQInfoList" class="com.dcfs.sce.REQInfo.REQInfoAction" method="AZBREQInfoList" >
+			<result name="success">/jsp/dcfs/sce/reqInfo/AZBREQ_info_list.jsp</result>
+		</action>
+		<!-- 安置部预批撤销信息确认页面 -->
+		<action name="AZBREQInfoSearchById" class="com.dcfs.sce.REQInfo.REQInfoAction" method="AZBREQInfoSearchById" >
+			<result name="success">/jsp/dcfs/sce/reqInfo/AZBREQ_info_confirm.jsp</result>
+			<result name="show">/jsp/dcfs/sce/reqInfo/AZBREQ_info_show.jsp</result>
+		</action>
+		<!-- 安置部预批撤销确认 -->
+		<action name="AZBReqInfoconfirm" class="com.dcfs.sce.REQInfo.REQInfoAction" method="AZBReqInfoconfirm" >
+			<result name="success" type="chain">AZBREQInfoList</result>
+		</action>
+	</package>
+</struts>

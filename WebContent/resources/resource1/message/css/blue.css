@@ -1,0 +1,238 @@
+/*页面全局元素字体*/
+body,td,p,li,select,input,div,table,ul,li,h1,h2,h3{font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif,"宋体"}
+
+.fbu,.usrMsg,tLink,.tLink a,.rmbot1 a,a.rsOpt:hover,.fcTit a
+{color:#3F6293}
+fbu2,.gNav li a,.pMsg th
+{color:#4B6888}
+fbu3,.gNav li a:hover,.fdTb th.fdTh
+{color:#364B63}
+.fbk0,a.gfName:hover,.gFdBdy li.on a.gfNm,.gSevBdy a.gFNm:hover,.rmbot1 a.on
+{color:#000}
+.fbk3,a.gfName,a.gfNm,span.gfNm,
+{color:#333}
+.fwt,.gNav li a.on:hover,.gNav li a.on,.gMenuOpt a:hover,.gMenuOpt a.itemOn
+{color:#FFF}
+.fbk6{color:#666}
+.fgn{ color:#278137}
+.fgy,.addTitleN,.addTitleN2,.addInfo{ color:#666}
+.fred{ color:#F00}
+
+/*loading文字*/
+.loading a{ color:#abbbd6}
+.ld_mian h3{color:#2b61ba}
+.ld_mian h3 p{color:#848484}
+.ld_mian h3 p a{color:#627fa3}
+
+/*系统框*/
+.sysWin h2 span{color:#2C71AF}
+.swTit{color:#06559B}
+.pName{color:#963D01}
+a.sdTxt{color:#9BAAB8}
+.cmL1 a{ color:#154568}
+td.cmL2{color:#75828E}
+td.cmL2 a{ color:#75828E}
+td.cmL2 a:hover{ color:#154568}
+.cmpRig h2{ color:#657D94}
+.cmpRig h2 a.on{ color:#646C84}
+.gSbdy h2 .tit,.gSbdy h2 .tit a{color:#388ACD}
+.gSev .on h2 .tit a{color:#055F94}
+
+.f12{ font-size:12px}
+.f14,.gNav li a,.swTit
+{font-size:14px}
+
+.udl{ text-decoration:underline}
+.fbd{ font-weight:bold}
+.f11{ color:#999}
+
+
+.fc1{ color:#900}
+.fc2{ color:#06C}
+.fc3{ color:#1A8714}
+.fc4{ color:#E74173}
+.fc5{ color:#308D80}
+.fc6{ color:#69278D}
+.fc7{ color:#97751A}
+.fc8{ color:#9253DF}
+.fc9{ color:#F03228}
+.fc10{ color:#16296B}
+.fc11{ color:#CC6600}
+.fc12{ color:#156486}
+.fc13{ color:#D02FAC}
+
+/*全局连接*/
+a{text-decoration:none;color:#333}/*(连接文字绿色)*/
+a:hover{ text-decoration:underline}/*（指向文字深绿色）*/
+
+/*背景色*/
+.bgcolor1,.addCntTitle{background-color:#FFFFFF}
+.bgcolor2{background-color:#73A2D6}
+.bgcolor3,./*addCntTitle,.*/addListTitle,.rmbot1 a:hover,.rmbot1 a.on,.qrc
+{background-color:#E6EEF7}
+.bgcolor4{background-color:#EBF2F9}
+.bgcolor5,.fcLst0 a:hover,.fcLst1 a:hover{background-color:#9FBFE3}
+.bgcolor6{background-color:#F2FEFF}
+.bgcolor7{background-color:#456180}
+.bgcolor8,.phBorder{background-color:#E6EEF7}
+.bgcolor11,.sentSuccDiv,.addFooter,.addPage{background-color:#F7F7F7}
+.bgcolor10{background-color:#F7FBFD}/*js3.0的值：F0F0F0*/
+.bgcolor9{background-color:#E6F1FB}
+.bgcolor12,.addInfo,.addInfoN{ background-color:#FFFDD7}/*提示黄色*/
+.bgcolor17,.addTrHover{ background-color:#F8FFE8}/*通讯录绿色高亮*/
+
+/*以上兼容旧系统颜色*/
+.fdTb,.fdTb th,.fdTb td,.fdTb a{ font-size:12px}
+.rmSsn .ctn span,.rmMsgAtc{ color:#666}
+/*兰色 顶部主导航单按钮*/
+.opt_m_title,.opt_m_mob th h3,.opt_p_title,.optTSY,.addListTitle,.addCntTitle{color:#113753}
+
+.autofinish td b{ color:#2670AC}
+.fdBot span.free{color:#060}/*空间剩余数，换色不用改*/
+
+.bgcolor13,.gLoading,.addNone{ background-color:#FFFFE1}/*焦点高亮*/
+.bgcolor14,.addCntTitle2,.addCntTitle3
+{ background-color:#EFEFEF}/*写信通讯录，inbox；列表*/
+.bgcolor15{ background-color:#D5E3F2}/*左边通讯录用户名字背景颜色*/
+.autofinish td.autofinish_over,.opt_m_mob th h3,.opt_p_detail_m h3,.optTSY,.rmMsgtb th,.rmbot1,.bgcolor16,.addCntTitle2,.addCntTitle3
+{background-color:#f2f6fb}/*与bgcolor8一样，自动完成浅绿 + 选项导航条BGCOLOR #E6EEF7*/
+.newmAlert{ background-color:#f2f6fb}/*新邮件提醒背景色*/
+.fcLst0,.fcLst1,.fcLst1a,a.expL,a.expL:hover{background-color:#F2F7FB}/*左边常用联系人底色*/
+.gMenu .bdy,.wbdy,.fdTb th,.fdTb td{ background-color:#F3F8FC}
+.gMenuOpt a:hover,.gMenuOpt a.itemon{ background-color:#2682C6}
+.sysWin div.bdyCtn{background-color:#FBFEFF}
+td.cmfAll{background-color:#EFF9FE}
+a.ps:hover,a.ps0:hover{ background-color:#DCEFFA}
+.gSev .on,.gSev .on h2 .tit{ background-color:#F3F8FC}
+
+
+.newmAlert{border-color:#9FAEB7}
+.cmpAll{ border-color:#F0F4F4}
+.opWin,.wbdy{ border-color:#FFF}
+.cmpRig,.wbdyOut,.SpcBar,.rmSsn,.rms
+{ border-color:#99ACC1}/*浅绿色边框*/
+.ibxBar{border-color:#6592C2}
+.gMenu{ border-color:#81A4C2}
+.gMenuOpt .sep,.spline{ border-top:1px solid #A3BDD3}/*下拉菜单分割线*/
+.gMenuOpt a{ border:1px solid #F3F8FC}
+.gSipt{border-color:#617993}/*搜索输入框边线*/
+.cmpBot{border-top:1px solid #D6E2E5}
+
+a.cmSelSender{border:1px solid #8AA3BE}
+.cmSelSender:hover{ border:1px solid #3B6592}
+
+.col3 h4{ font-size:12px; color:#333}
+
+
+
+/*/////////////通讯录改版新增加///////////////*/
+	.addSearchInp{ border:1px solid #98b1c8}
+	.addTI,.addTI2{ border:1px  solid #A7A6AA}
+	.addTd2{ color:#7A8180}
+	.addNone{ border-bottom:1px solid #EBEBEB}
+
+
+	/*通讯录部分链接文字颜色*/
+	.addITitle a,.addITitle2 a,.addICont a,.addCntDiv a,.addTxt,.addTxt2,.rmMsgtb a:link,.rmMsgtb a:visited{ color:#3F62BA}
+	/*右边部分题头背景*/
+	.addITitleBg,.addCInfo,.addGInfo,.addINote{background-color:#F8FCF6}
+	.addPM3{ background:#f5faff}
+
+body.gb,.bgF1,.spl,a.srhBtn,a.EptFd,.gFdBdy li.on,.expBar,.clsBar,li.mIfoBar,li.mIfoBar0,a.expBtn,a.btnCls,.addPsnBar .tit,.btnLe,.btnRi,a.addfile,.txtEpm,.txtEpm2,.CtrlBtn,.CtrlBtn2,.cmIcoDel,.sysWin h2 .fLe,.sysWin h2 .fRi,.sysWin .bdy,.sysWin .bot .fLe,.sysWin .bot .fRi,.syBtn,.subTit,.rsT1,.rsT2,a.rsOpt,a.AdsrhBtn,.cmLogo,.btnCls4,.cmpRig h2 a,.stnLst .page a.pre,.stnLst .page a.nxt,.gMenuOpt .sub,.icoSearch,.icoClear,.icoOK,span.downIco,.GmFd,
+{ background-image:url(../images/f1.gif); background-repeat:no-repeat}
+
+body.gb{ background-repeat:repeat-y}
+
+.bgF1png,.gMbtn a,.gfTit,.gNav li a.on,.icoIfo
+{ background-image:url(../images/f1png.png); background-repeat:no-repeat}
+
+.bgF2,.gSipt,.gTop,.btnFnt,.gTlBar,.gTlBar .on,.ibxBar,.ibxBar2,.il,.ibxBot,.btnFnt,.txtIpt,.cmpRig h2,.sysWin h2,.sysWin .bot,.fdTb .fdTh,.whd,.wBot,.fcTit,.rms1 h3,.rsOptOut,.gSbdy h2,.addTitleN,a.addGroupList:hover,a.addGroupList2,.ibxBar4,.wel_Topbar,.addTrHover,.gIframe4,.sysWin2 .inner,.addGroupLT
+{ background-image:url(../images/f2.gif); background-repeat:repeat-x}
+
+.icos,.icoBtn,.mbm,.cmf_tb td.ico,.IcoOpen,.IcoCls,a.btnClose,.icoAtn,.icoSw,a.clsWin,.addAdb,.rfsMail,.ivtPpl,.clsIco,.IcoOpen2,.IcoCls2,.btnSent,.addDelCnt,a.addDelCnt:hover,.addEditCnt,.addEditCnt:hover,.addDown,.addUp,.icoMailC,.gOpt_Ico,.vipIcoIbx,.vipIcoRm,.addSpecialUser,.icoIbx,.icoDft,.icoSnt,.icoDel,.icoSpm,.icomFd,.icomFd2,.icoPsn,.btnDel,.btnMove,.btnSet,.btnSpam,.btnRef,.btnNxt
+{ background-image:url(../images/ico.gif); background-repeat:no-repeat}
+
+/*Wel 积分*/
+.Wel_rl,.Wel_rl_0,.w_jf_bg,b.jf_0,b.jf_1,b.jf_2,b.jf_3,b.jf_4,b.jf_5,b.jf_6,.if4_sev_Main,.if4Ico,.wel_Ma460x110img,.wel_Ma460x110img2,.wel_Mtab_head,.wel_Mt_1,.Wel_rl,.Wel_rl_0,.icoPhone,.wel_rl_nolim,.wel_Mt_0,.wel_Mt_2
+{ background-image:url(../images/wel_2.gif); background-repeat:no-repeat}
+
+/*loading*/
+.loading,.ld_head,.ld_head b,.ld_mian{background-image:url(loading_body_theme.gif)}
+.ld_mian h3{background-image:url(../images/loading.gif)}
+.loading_botAd{background-image:url(../images/loading_bottxt.gif)}
+
+.fileIcos{ background-image:url(../images/file_icon.gif); background-repeat:no-repeat}
+.dictLoading,.C_Instr_Impo_Info .Ico{background-image:url(../images/loading_16x16.gif);background-color:#FFFFE1; border:1px solid #98b1c8}
+
+.fb{ font-weight:bolder}
+.bcolor1,.addTxInput,.phBorder,.addListTitle,.addSearchInp,.addTxInput2,.addGroupSearch,.addGroupInput,.addGroupInput2,.txInput,.fLst,.fBdy,.cMmsg,table.autofinish,.gLoading,.fcWin,.quickAdd,.addCntTitle2,.addCntTitle3
+{border-color:#98b1c8}
+.bcolor2,.addFooter{border-color:#e4e4e4}
+.btnFnt{ border:1px solid #87A3C1; color:#174B73;background-color:#DDF0FF}
+.opt_m_mob,.opt_p_detail_m,.optDinpt,.optTSY
+{border-color:#98b1c8; border-top-color:#98b1c8;border-bottom-color:#98b1c8}
+.opt_m_mob th h3,.opt_p_detail_m h3,.opt_m_mob th h3,.opt_p_detail_m h3,.optTSY{border-bottom-color:#98b1c8}
+.bTop{ border-top:1px solid #E3EAF1}
+.bTop2{border-top:1px solid #98b1c8}
+.bTop3,.addCntTd2{border-bottom:1px solid #98b1c8}
+.ld_mian{border:1px solid #7998b7}
+
+.flTCtn{background-color:#EEF9FF; border:1px solid #D0E9F7}
+.cmpOpt{border-color:#D0D8DF; background-color:#EFF9FE}
+.rms1 .rmrpy{background-color:#F8FAFD; border:1px solid #9AB1C3; border-top:1px solid #E3EAF1}
+.bcolor3{border-color:#ACACAC}/*拖动条边框颜色*/
+.loading{background-color:#1e52ae}
+.txtIpt,.txtInput,.optDinpt{border-color:#3B6592;color:#000}
+.rsBody{border-left:1px solid #9DB3C5;border-right:1px solid #9DB3C5;padding-top:2px}
+.gSusBdy .row2{border-top:1px solid #C0CEDA;border-bottom:1px solid #C0CEDA; background-color:#F6F9FD}
+.susTb{border-top:1px dotted #C0CEDA}
+.newCst td,.newCst a{ color:#0058B0}
+.gSaddNew{border:1px solid #C0CEDA;color:#6084A2}
+/*欢迎条*/
+.wel_Topbar{background-color:#e5f6fd;border-bottom:1px solid #d2eefb}/*20070110*/
+	.wel_user{color:#0f62a4}
+	.wel_user a{ color:#094359}
+/*下面的四个大区*/
+.wel_Main{}
+	.txt1 h3,.txt1 h3 a,.txt1 h3 a:hover{color:#4b6888;}
+	.txt1,.txt1 a{ color:#828282}
+	.txt1 a:hover{ color:#626262}
+	.txt1{background-color:#fafcfe}
+	.wel_Mtab{background-color:#FFF}/*TAB推广区*/
+	.wel_Mtab_head{background-color:#f3f3f3}
+	.wel_inbox,.wel_inbox a{color:#094359}
+	.web_rb{color:#ba0001; font-weight:bold}
+		.wel_Mt_0{color:#969696}
+		.wel_Mt_1,.wel_Mt_2{color:#496985}
+	.wel_i_bg{background-color:#a4b2bd}
+	.wel_Ma300x260{background-color:#e4e4e4}/*右上广告*/
+	.wel_Ma460x110{background-color:#f3f8fc;border:1px solid #d0d0d0}/*左下广告*/
+			.wel_Ma460x110txt{ color:#828282}
+			.wel_Ma460x110txt h3{ font-size:14px; color:#4b6888}
+	.wel_Ma300x110{ border:1px solid #d0d0d0}/*右下广告*/
+	.w_jifen a{color:#094359}
+	.wel_if_set{border:1px solid #d4dbd1}
+a.a_kefu{ text-decoration:none; color:#828282; font-family:"宋体"}
+a.a_kefu:hover{ text-decoration:none; color:#333}	
+.wel_LB_GG_R ul li a{color:#7B94AA}/*升级区链接*/
+.wel_LB_GG_R ul li a:hover{color:#5B7691}/*升级区链接*/
+
+.sysWin2{border-color:#A6AFB6}
+.sysWin2 a{color:#069}
+
+/* wayhome 选项 Begin */
+.gOpt_gTitle .Tt{color:#113753;}
+/* wayhome 选项 end */
+
+body.div,h1,h2,h3,ul,li,p{margin:0;padding:0}
+body.gLdPage{text-align:center}
+body.gLdPage div,body.gLdPage h3,body.gLdPage p{text-align:left}
+.loading a{text-decoration:none}
+.loading a:hover{text-decoration:none}
+.loading{width:350px;margin-left:auto;margin-right:auto;margin-top:10%;background-position:0 -68px;background-repeat:repeat-x}
+.ld_head{height:28px;font-size:12px;color:#FFFFFF;font-weight:bold;background-position:100% -34px;background-repeat:no-repeat;overflow:hidden;}
+.ld_head b{display:block;height:29px;padding-top:8px;padding-left:10px;background-position:0 0;background-repeat:no-repeat}
+.ld_mian{border-top:none;background-position:0 -96px;background-repeat:repeat-x;padding-bottom:32px;background-color:#FFFFFF}
+.ld_mian h3{padding-left:109px;font-weight:normal;background-repeat:no-repeat;background-position:68px 34px;padding-top:35px;line-height:19px}
+.ld_mian h3 p{line-height:18px;padding-top:6px}
+.loading_botAd{width:350px;height:42px;margin:10px auto}

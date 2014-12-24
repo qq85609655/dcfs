@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="module" namespace="/module" extends="struts-default" >
+	    <!--模块查询action -->
+		<action name="resourceModuleList" class="com.hx.framework.resource.module.ResourceModuleAction" method="resourceModuleList">
+			<result name="success">/jsp/framework/resourcemodule/resourceModuleList.jsp</result>
+		</action>
+	    <!--模块树查询action -->
+		<action name="resourceModuleTree" class="com.hx.framework.resource.module.ResourceModuleAction" method="generateTree">
+			<result name="success">/jsp/framework/resourcemodule/resourceModuleTree.jsp</result>
+		</action>
+	    <!--模块查询action -->
+		<action name="resourceModuleIndex" class="com.hx.framework.resource.module.ResourceModuleAction" method="execute">
+			<result name="success">/jsp/framework/resourcemodule/resourceModuleIndex.jsp</result>
+		</action>
+		<!--模块添加action -->
+		<action name="resourceModuleAdd" class="com.hx.framework.resource.module.ResourceModuleAction" method="resourceModuleAdd">
+			<result name="success" type="chain">
+			   <param name="actionName">resourceModuleList</param>
+			   <param name="namespace">/module</param>
+			   <param name="method">resourceModuleList</param>
+			</result>
+		</action>
+		<!--模块修改action -->
+		<action name="resourceModuleModify" class="com.hx.framework.resource.module.ResourceModuleAction" method="resourceModuleModify">
+			<result name="success" type="chain">resourceModuleList</result>
+		</action>
+		<!--模块删除action -->
+		<action name="resourceModuleDelete" class="com.hx.framework.resource.module.ResourceModuleAction" method="resourceModuleDelete">
+			<result name="success" type="chain">resourceModuleList</result>
+		</action>
+		<!--模块添加跳转action -->
+		<action name="resourceModuleToAdd" class="com.hx.framework.resource.module.ResourceModuleAction" method="resourceModuleToAdd">
+			<result name="success">/jsp/framework/resourcemodule/resourceModuleAdd.jsp</result>
+		</action>
+		<!--模块查看action -->
+		<action name="resourceModuleDetailed" class="com.hx.framework.resource.module.ResourceModuleAction" method="resourceModuleDetailed">
+			<result name="look">/jsp/framework/resourcemodule/resourceModuleDetail.jsp</result>
+			<result name="modify">/jsp/framework/resourcemodule/resourceModuleEdit.jsp</result>
+		</action>
+		<!--模块查看action -->
+		<action name="addMenue" class="com.hx.framework.resource.module.ResourceModuleAction" method="addMenue">
+			<result name="success" type="chain">resourceModuleList</result>
+		</action>
+	</package>
+</struts>

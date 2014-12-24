@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../schema/action.xsd">
+	<package name="安装" namespace="/setup">
+		<action name="db" code="">
+			<result>/setup/setup.jsp</result>
+		</action>
+		<action name="rundb" class="hx.setup.Setup" code=""></action>
+	</package>
+</struts>
